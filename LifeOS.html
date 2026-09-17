@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="hi">
-<head><style>
+<!DOCTYPE html><html lang="hi"><head><style>
 :root{--bg:#f7f8fa;--card:#fff;--text:#202124;--muted:#70757a;--line:#e0e3e7;--accent:#5b5bd6;--soft:#f1f3f4;--green:#188038;--red:#c5221f}*{box-sizing:border-box}img{content-visibility:auto}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}.app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.side{background:#fff;padding:22px 16px;position:sticky;top:0;height:100vh;border-right:1px solid var(--line)}.brand{font-size:22px;font-weight:800;margin:4px 10px 24px;text-align:center}.brand-logo{display:block;width:190px;height:190px;max-width:100%;object-fit:contain;margin:0 auto 10px;border-radius:14px}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:4px}nav button{width:100%;text-align:left;background:transparent;color:#5f6368;border:0;padding:12px 14px;border-radius:0 22px 22px 0;margin:2px 0;cursor:pointer;font-size:14px;font-weight:600}nav button.active,nav button:hover{background:#eeeafe;color:#4537a8}.main{padding:28px;max-width:1550px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}h1{font-size:30px;margin:0}.sub{color:var(--muted);margin-top:6px}.date{padding:10px;border:1px solid var(--line);border-radius:22px;background:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 2px 10px #00000006}.metric{font-size:28px;font-weight:800;margin-top:7px}.label{color:var(--muted);font-size:13px}.section{display:none}.section.active{display:block}.two{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}h2{font-size:18px;margin:0 0 14px}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.between{display:flex;justify-content:space-between;gap:10px;align-items:center}input,textarea,select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--text);outline:none}input:focus,textarea:focus,select:focus{border-color:#8b82e8;box-shadow:0 0 0 3px #5b5bd614}textarea{min-height:115px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.full{grid-column:1/-1}button.primary,.primary{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:9px;cursor:pointer;font-weight:600}button.secondary{background:#eef2ff;color:#2445b8;border:0;padding:9px 12px;border-radius:9px;cursor:pointer}button.danger{background:#fff0f0;color:#b12f2f;border:0;padding:7px 10px;border-radius:8px;cursor:pointer}.list{display:flex;flex-direction:column;gap:9px}.item{border:1px solid var(--line);padding:12px;border-radius:11px;background:#fff}.item.done{opacity:.65}.item.done .title{text-decoration:line-through}.title{font-weight:650}.meta{font-size:12px;color:var(--muted);margin-top:5px}.tag{display:inline-block;background:#eef2ff;color:#2947a5;padding:3px 7px;border-radius:999px;font-size:11px;margin:2px}.progress{height:8px;background:#edf0f4;border-radius:99px;overflow:hidden;margin-top:8px}.progress i{display:block;height:100%;background:var(--accent)}.kpi{display:flex;gap:14px;flex-wrap:wrap}.kpi .mini{background:#f8fafc;border-radius:10px;padding:10px 12px;min-width:120px}.check{display:flex;gap:10px;align-items:center}.check input,.point input{width:auto}.muted{color:var(--muted)}.empty{color:var(--muted);padding:20px;text-align:center}.points{display:grid;gap:8px;margin:9px 0}.point{display:flex;gap:9px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:8px;background:#fafbff}.point input{margin:0;accent-color:var(--accent);flex:0 0 auto}.point-text{flex:1;min-width:0;line-height:1.45}.point-done .point-text{text-decoration:line-through;opacity:.65}.point-actions{display:flex;gap:6px;align-items:center;flex:0 0 auto}.point-actions button{border-radius:8px;padding:6px 10px;font:inherit;font-weight:700;cursor:pointer}.point-delete{background:#fff;border:1px solid #f3a4ad;color:var(--red)}.point-actions .point-done{background:var(--accent);border:1px solid var(--accent);color:#fff}@media(max-width:640px){.point-actions button{padding:6px 8px;font-size:12px}.point-actions .point-done{font-size:12px}.point-delete{font-size:15px}.point{gap:7px;padding:7px}}.periods{display:flex;gap:6px;flex-wrap:wrap}.periods button{border:1px solid var(--line);background:#fff;color:#444;border-radius:18px;padding:7px 12px;cursor:pointer}.periods button.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}.money{font-size:24px;font-weight:800}.income{color:var(--green)}.expense{color:var(--red)}.finance-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.routine{display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);padding:11px;border-radius:11px;margin-bottom:8px;background:#fff}.time{font-weight:750;color:#4537a8}.cat{font-size:11px;padding:4px 8px;border-radius:99px;background:#f1f3ff;color:#4537a8}.balance{border-radius:14px;padding:15px;background:#f8fafc}.balance b{font-size:25px}.hero{margin-bottom:18px;background:linear-gradient(135deg,#f4f1ff,#fff);border:1px solid #ded8ff;border-radius:18px;padding:18px}.hero b{font-size:20px;color:#4537a8}@media(max-width:1000px){.app{grid-template-columns:1fr}.side{position:static;height:auto}.side nav{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}.grid{grid-template-columns:repeat(2,1fr)}.two,.three{grid-template-columns:1fr}}@media(max-width:600px){.grid,.formgrid{grid-template-columns:1fr}.side nav{grid-template-columns:1fr 1fr}.top{align-items:flex-start;flex-direction:column}.main{padding:16px}.finance-head{align-items:flex-start}.routine{grid-template-columns:60px 1fr}}.note-editor{border-radius:16px;padding:15px;border:1px solid var(--line)}.note-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:16px}.note-card{border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:15px;min-height:150px;box-shadow:0 4px 16px rgba(0,0,0,.04)}.note-card img{max-width:100%;max-height:240px;object-fit:cover;border-radius:12px;margin-top:10px}.points{padding-left:20px}.points li{margin:6px 0}.color-line{display:flex;align-items:center;gap:9px}.form{display:grid;gap:10px}.color-input{width:52px;height:40px;padding:3px}.swatch{width:30px;height:30px;border:1px solid #d8d8dc;border-radius:9px;padding:0}.routine{position:relative;border-left:4px solid var(--accent);padding-left:14px}.time{font-size:13px;font-weight:900;color:var(--accent)}.cat{font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;background:var(--soft);color:#5143b8}.routine-actions{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex:0 0 auto}.routine-actions button{border-radius:8px;padding:6px 9px;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}.routine-delete{background:#fff;border:1px solid #f3a4ad;color:var(--red)}.routine-done{background:var(--accent);border:1px solid var(--accent);color:#fff}.routine.routine-completed{opacity:.72}.routine.routine-completed b,.routine.routine-completed .meta{text-decoration:line-through}.routine.routine-completed .routine-done{background:#eef2ff;border-color:#cfd5ff;color:#5143b8}@media(max-width:640px){.routine-actions button{padding:6px 7px;font-size:12px}.routine-actions{gap:4px}}.photo-preview{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}.photo-preview img{width:90px;height:70px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}.theme-grid{display:flex;gap:8px;flex-wrap:wrap}.theme-btn.active{border-color:var(--text)}.toast{position:fixed;right:20px;bottom:20px;background:#202124;color:#fff;padding:11px 14px;border-radius:11px;display:none;z-index:50}/* ===== My LifeOS — Premium Cosmic UI ===== */
 :root{
   --bg:#070b16;
@@ -663,7 +660,7 @@ body,h1,h2,h3,p,div,span,label,button{overflow-wrap:anywhere;word-break:normal}/
   body{background:#fff!important}
   .side{display:none!important}
   .main{padding:0!important}
-}@media (max-width:600px){.sync-error{font-size:12px}.card{padding:14px}}/* ===== Final phone portrait navigation visibility fix ===== */
+}.sync-error{margin:10px 0;padding:10px 12px;border:1px solid #f1b5b5;background:#fff5f5;color:#9b2c2c;border-radius:10px;font-size:13px;overflow-wrap:anywhere}@media (max-width:600px){.sync-error{font-size:12px}.card{padding:14px}}/* ===== Final phone portrait navigation visibility fix ===== */
 @media (max-width:600px){
   .side{display:block!important;position:sticky;top:0;z-index:100;width:100%;height:auto;min-height:0}
   .side nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;visibility:visible;opacity:1}
@@ -1356,10 +1353,10 @@ html,body{overflow-x:hidden;min-width:0}body{background-attachment:scroll!import
 }@media(pointer:coarse){.card:hover{transform:none!important;box-shadow:none!important}nav button:hover{transform:none!important}.mobile-bottom-nav button{transition:none!important}
 }@media(max-width:600px){.main{contain:layout paint}.date-dual-row{min-width:0}.mobile-bottom-nav{contain:layout paint}
 }/* ===== Full Reset + low-end device hardening ===== */
-.reset-shell{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.reset-shell,.reset-cloud-card{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 }@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}
 }@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}/* ===== Full Reset + low-end device hardening ===== */
-.reset-shell{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side,.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}}@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}
+.reset-shell,.reset-cloud-card{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side,.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}}@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}
 
 /* V29: keep Full Reset directly accessible on tablet/phone bottom navigation. */
 @media(max-width:1050px){
@@ -1393,77 +1390,542 @@ html,body{overflow-x:hidden;min-width:0}body{background-attachment:scroll!import
 /* Compact universal AD + BS date fields: keep the date visible without taking excess card space. */
 @media (max-width: 640px){.universal-date-field{gap:3px}.universal-date-control{gap:4px}.bs-date-action{min-height:32px!important;padding:4px 7px!important}.bs-date-caption{font-size:9.5px;min-height:14px}}
 
-</style>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="#070b16" name="theme-color"/>
 
+/* ===== Final contrast repair: KPI / Capital cards ===== */
+.kpi-grid .kpi-box{
+  color:var(--text)!important;
+  background:var(--card)!important;
+  border-color:var(--line)!important;
+}
+.kpi-grid .kpi-box .muted,
+.kpi-grid .kpi-box .label,
+.kpi-grid .kpi-box small{
+  color:var(--muted)!important;
+  opacity:1!important;
+}
+.kpi-grid .kpi-box .big,
+.kpi-grid .kpi-box strong,
+.kpi-grid .kpi-box b{
+  color:var(--text)!important;
+  text-shadow:none!important;
+}
+html[data-lifeos-mode="dark"] .kpi-grid .kpi-box{
+  background:#181c25!important;
+  color:#f3f4f6!important;
+  border-color:#343a49!important;
+}
+html[data-lifeos-mode="dark"] .kpi-grid .kpi-box .big,
+html[data-lifeos-mode="dark"] .kpi-grid .kpi-box b{color:#f3f4f6!important}
+html[data-lifeos-mode="dark"] .kpi-grid .kpi-box .muted{color:#a8afbd!important}
+</style><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="#070b16" name="theme-color"/><meta content="yes" name="mobile-web-app-capable"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><title>My LifeOS</title><style id="lifeos-smooth-final-overrides">
+:root{
+ --bg:#f7f8fc;--surface:#ffffff;--surface-2:#f2f3f7;--border:#e6e8ef;
+ --text:#171827;--muted:#717587;--accent:#6d5dfc;--accent-soft:#efedff;
+ --shadow:0 10px 30px rgba(28,34,65,.065);--radius:16px;
+}
+html,body{background:var(--bg)!important;color:var(--text)!important}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+.main{background:var(--bg)!important}
+.top,.topbar,.header,.app-header,.sidebar{
+ background:rgba(255,255,255,.96)!important;border-color:var(--border)!important;
+ box-shadow:0 1px 0 rgba(20,25,50,.03)!important;
+}
+.card,.panel,.box,.widget,.stat,.modal,.sheet,.task-card,.note-card,.habit-card,
+.goal-card,.expense-card,.journal-card,.review-card,.mentor-card,.focus-card,
+.kpi,.metric,.tile,.item-card{
+ background:var(--surface)!important;border-color:var(--border)!important;
+ box-shadow:var(--shadow)!important;border-radius:var(--radius)!important;
+}
+input,textarea,select{
+ background:#fff!important;color:var(--text)!important;border-color:var(--border)!important;
+ border-radius:12px!important;
+}
+input:focus,textarea:focus,select:focus{
+ outline:none!important;border-color:rgba(109,93,252,.55)!important;
+ box-shadow:0 0 0 3px rgba(109,93,252,.10)!important;
+}
+button,.btn{border-radius:12px!important;transition:transform .15s ease,box-shadow .15s ease,background .15s ease!important}
+button:hover,.btn:hover{transform:translateY(-1px)}
+.sidebar a,.sidebar button,.nav-item{border-radius:11px!important}
+.sidebar a:hover,.sidebar button:hover,.nav-item:hover{background:var(--accent-soft)!important}
+.sidebar .active,.nav-item.active{background:#ece9ff!important;color:#5547df!important}
+.tag,.chip,.pill{border-radius:999px!important}
+.muted,.subtle,.secondary{color:var(--muted)!important}
+.section{scroll-margin-top:18px}
+@media(max-width:800px){
+ .section{padding-bottom:88px!important}
+ .mobile-bottom-nav{background:rgba(255,255,255,.97)!important;border-top:1px solid var(--border)!important}
+}
+</style><style id="lifeos-fast-final-overrides">
+/* Performance and accessibility layer: theme-aware, non-destructive overrides */
+*,*::before,*::after{scroll-behavior:auto}
+body:before,.main:before,.main:after,.side:before,.side:after,.card:before,.card:after,.top:before,.hero:before{display:none!important}
+.side,.top,.card,.hero,.item,.routine,.date{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body{background:var(--bg)!important;color:var(--text)!important}
+.side{background:var(--card)!important;color:var(--text)!important;border-right:1px solid var(--line)!important}
+nav button{color:var(--muted)!important}
+nav button.active,nav button:hover{background:color-mix(in srgb,var(--accent) 15%,var(--card))!important;color:var(--text)!important}
+.top{background:var(--card)!important;border-color:var(--line)!important}
+.top h1,.sub{color:var(--text)!important}.sub{opacity:.78!important}
+.card,.item,.routine{background:var(--card)!important;color:var(--text)!important;border-color:var(--line)!important}
+.hero{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 18%,var(--card)),var(--card))!important;color:var(--text)!important;border-color:var(--line)!important}
+.hero h2,.hero b,.hero p,.hero .muted{color:var(--text)!important}
+input,textarea,select,.date{background:var(--card)!important;color:var(--text)!important;border-color:var(--line)!important;color-scheme:normal}
+html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select,html[data-lifeos-mode="dark"] .date{color-scheme:dark}
+.mobile-bottom-nav{box-shadow:0 -4px 18px rgba(16,24,40,.10)!important;backdrop-filter:none!important}
+@media(max-width:900px){.side{display:none!important}.mobile-bottom-nav{display:flex!important;overflow-x:auto!important}.main{padding-bottom:92px!important}}
+@media(min-width:901px){.mobile-bottom-nav{display:none!important}}
+.category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.category-grid .card{min-height:150px}
+@media(max-width:600px){.category-grid{grid-template-columns:1fr}.category-grid .card{min-height:0}}
+.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}@media(max-width:700px){.settings-backup-grid{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-<meta content="yes" name="mobile-web-app-capable"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>My LifeOS</title>
+/* Final stability layer */
+html{min-width:0;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+body{min-width:0;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+input,textarea,select,button{max-width:100%;font:inherit}
+textarea{resize:vertical}
+@media(max-width:600px){
+  .main{width:100%;min-width:0;padding-left:12px!important;padding-right:12px!important}
+  .top{gap:10px;flex-wrap:wrap}
+  .top-actions,.date-tools,.date-panel,.date-dual-row{max-width:100%;flex-wrap:wrap}
+  .formgrid,.kpi-grid,.mentor-grid{grid-template-columns:1fr!important}
+  .card{min-width:0;overflow:hidden}
+  .row,.between{min-width:0;flex-wrap:wrap}
+  .btn,button{min-height:40px}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-<body>
-<div class="app">
-<aside class="side">
-<div class="sidebar-top-tools">
-<button aria-label="Toggle light and dark theme" aria-pressed="false" class="sidebar-theme-toggle" id="sidebarThemeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button>
-</div>
-<div class="brand"><div aria-label="ॐ logo" class="brand-logo">ॐ</div></div>
-<nav id="nav"></nav>
-</aside>
-<main class="main">
-<div class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">काम, लक्ष्य, routine, habits, notes और finance — एक जगह।</div></div><div class="top-actions date-tools"><button aria-label="Toggle light and dark theme" aria-pressed="false" class="appearance-btn" hidden="" id="themeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button><div class="date-panel"><div class="date-panel-head"><span class="date-panel-title">📅 Date</span></div><div class="date-dual-row"><label class="date-box compact"><span>AD</span><input class="date" id="today" onchange="syncBsFromAd();render()" type="date"/></label><div class="date-box bs-display"><span>BS</span><strong id="todayBsDisplay">—</strong><input aria-label="Bikram Sambat date" class="bs-date-hidden" id="todayBs" inputmode="numeric" type="text"/><button aria-label="Open Bikram Sambat calendar" class="bs-use-mini" onclick="openBsCalendar('today')" type="button">🇳🇵</button></div></div></div></div></div>
-<section class="section active" id="dashboard"></section>
-<section class="section" id="mentor"></section>
-<section class="section" id="planner"></section>
-<section class="section" id="tasks"></section>
-<section class="section" id="routine"></section>
-<section class="section" id="notes"></section><section class="section" id="journal"></section>
-<section class="section" id="habits"></section>
-<section class="section" id="expenses"></section>
-<section class="section" id="review"></section><section class="section" id="achievements"></section><section class="section" id="goals"></section><section class="section" id="focus"></section><section class="section" id="reset"></section>
-</main></div>
-<div aria-label="LifeOS navigation" class="mobile-bottom-nav" id="mobileBottomNav">
-<button data-section="dashboard" onclick="show('dashboard')">⌂<span>Home</span></button>
-<button data-section="mentor" onclick="show('mentor')">🧭<span>Mentor</span></button>
-<button data-section="planner" onclick="show('planner')">📅<span>Planner</span></button>
-<button data-section="tasks" onclick="show('tasks')">✓<span>Tasks</span></button>
-<button data-section="routine" onclick="show('routine')">🕉<span>Routine</span></button>
-<button data-section="habits" onclick="show('habits')">◌<span>Habits</span></button>
-<button data-section="goals" onclick="show('goals')">🎯<span>Goals</span></button>
-<button data-section="focus" onclick="show('focus')">⏱<span>Focus</span></button>
-<button data-section="notes" onclick="show('notes')">📝<span>Notes</span></button>
-<button data-section="journal" onclick="show('journal')">📔<span>Journal</span></button>
-<button data-section="expenses" onclick="show('expenses')">₹<span>Finance</span></button>
-<button data-section="achievements" onclick="show('achievements')">🏆<span>Wins</span></button>
-<button data-section="review" onclick="show('review')">📊<span>Review</span></button>
-<button class="mobile-reset" data-section="reset" onclick="show('reset')" type="button">🧹<span>Reset</span></button>
-<button aria-label="Toggle light and dark theme" class="bottom-theme" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙<span>Theme</span></button>
-</div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
-<script>
+</style><style id="lifeos-optimized-lightweight">
+/* Lightweight performance layer */
+:root{--perf-blur:none;--perf-shadow:0 2px 12px rgba(0,0,0,.10)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{overflow-x:hidden}
+.side,.top,.card,.item,.routine,.hero,.modal,.sheet,.bottom-nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.side,.top,.card,.item,.routine,.hero,.modal,.sheet{box-shadow:var(--perf-shadow)!important}
+*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.12s!important}
+@media (hover:hover){button:hover,.btn:hover,.card:hover,.item:hover{transform:none!important}}
+@media (hover:none){button:hover,.btn:hover,.card:hover,.item:hover{transform:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:700px){.grid{grid-template-columns:1fr!important}.row{flex-wrap:wrap!important}.side{backdrop-filter:none!important}.main{min-width:0!important}.card,.item,.routine{min-width:0!important}}
+</style><style id="lifeos-universal-contrast-final">
+/* Universal readability/contrast layer — applies across every section and device */
+:root{
+  --readable-text:#182033;
+  --readable-muted:#667085;
+  --readable-surface:#ffffff;
+  --readable-soft:#f4f6fa;
+}
+html[data-lifeos-mode="dark"]{
+  --readable-text:#f3f6fb;
+  --readable-muted:#aeb8c8;
+  --readable-surface:#171c27;
+  --readable-soft:#202735;
+}
+/* Text-bearing surfaces */
+.card,.item,.routine,.hero,.note-card,.kpi-box,.kpi .mini,.balance,.point,
+.focus-stat,.mission-row,.goal-card,.habit-card,.expense-card,.review-card,
+.date-panel,.date-box,.bs-calendar-card,.bs-day,.note-editor,.section-panel{
+  color:var(--readable-text);
+}
+/* Main numbers/values were becoming near-white on light cards */
+.metric,.big,.money,.kpi-box .big,.kpi .mini strong,.balance b,
+.balance strong,.focus-stat strong,.stat-value,.metric-value,.kpi-value,
+.finance-head strong,.card strong:not(.status-good):not(.status-warn):not(.status-bad),
+.card b:not(.status-good):not(.status-warn):not(.status-bad),
+.item strong,.item b,.routine strong,.routine b,.note-card strong,.note-card b,
+.hero strong,.hero b{
+  color:var(--readable-text)!important;
+  text-shadow:none!important;
+}
+/* Secondary text */
+.label,.meta,.muted,.sub,.empty,.date-panel-title,.date-box>span,
+.bs-date-caption,.bs-calendar-title span,.bs-weekday,.bs-calendar-footer,
+.habit-frequency,.habit-time,.habit-time-label,.card small,.item small,
+.routine small,.note-card small{
+  color:var(--readable-muted)!important;
+  text-shadow:none!important;
+}
+/* Rich text/content should never inherit invisible white from old theme layers */
+.card p,.card li,.card div,.item p,.item li,.routine p,.routine li,
+.note-card p,.note-card li,.hero p,.hero li,.kpi-box p,.kpi-box span,
+.focus-stat span,.balance span,.mission-row span{
+  text-shadow:none;
+}
+/* Light mode: eliminate legacy white text on normal light surfaces */
+html[data-lifeos-mode="light"] .card,
+html[data-lifeos-mode="light"] .item,
+html[data-lifeos-mode="light"] .routine,
+html[data-lifeos-mode="light"] .note-card,
+html[data-lifeos-mode="light"] .kpi-box,
+html[data-lifeos-mode="light"] .kpi .mini,
+html[data-lifeos-mode="light"] .balance,
+html[data-lifeos-mode="light"] .point,
+html[data-lifeos-mode="light"] .focus-stat,
+html[data-lifeos-mode="light"] .mission-row,
+html[data-lifeos-mode="light"] .date-panel,
+html[data-lifeos-mode="light"] .date-box,
+html[data-lifeos-mode="light"] .bs-calendar-card,
+html[data-lifeos-mode="light"] .bs-day{
+  color:var(--readable-text)!important;
+}
+html[data-lifeos-mode="light"] .card .text-white,
+html[data-lifeos-mode="light"] .card [style*="color:white"],
+html[data-lifeos-mode="light"] .card [style*="color: white"],
+html[data-lifeos-mode="light"] .item [style*="color:white"],
+html[data-lifeos-mode="light"] .item [style*="color: white"]{
+  color:var(--readable-text)!important;
+}
+/* Keep intentional colored status/action text intact */
+.status-good,.income{color:var(--green)!important}
+.status-bad,.expense{color:var(--red)!important}
+.status-warn{color:#a15c00!important}
+button.primary,.primary,button.danger,button.secondary,
+.routine-done,.routine-delete,.point-actions button,.tag,
+nav button.active{ text-shadow:none!important; }
+/* Form controls */
+input,textarea,select{color:var(--readable-text)!important}
+input::placeholder,textarea::placeholder{color:var(--readable-muted)!important;opacity:.9}
+/* Prevent narrow devices from clipping text */
+.card,.item,.routine,.note-card,.kpi-box,.hero,.balance,.point,
+.date-panel,.date-box{overflow-wrap:anywhere;word-break:normal;min-width:0}
+@media(max-width:700px){
+  .metric,.big,.money{font-size:clamp(18px,5.5vw,28px)!important;line-height:1.15}
+  .label,.meta,.muted{font-size:clamp(11px,3.2vw,13px)}
+  .card strong,.card b{max-width:100%;overflow-wrap:anywhere}
+}
+</style><style id="lifeos-universal-contrast-v19">
+/* V19 — UNIVERSAL LIGHT-MODE CONTRAST NORMALIZER
+   Applies only to light mode content surfaces. Dark/colored hero surfaces remain untouched. */
+html[data-lifeos-mode="light"]{
+  --text:#172033;
+  --muted:#667085;
+  --line:#d7dde8;
+  --card:#ffffff;
+  --bg:#f4f7fb;
+}
+html[data-lifeos-mode="light"] .card,
+html[data-lifeos-mode="light"] .item,
+html[data-lifeos-mode="light"] .routine,
+html[data-lifeos-mode="light"] .note-card,
+html[data-lifeos-mode="light"] .goal-card,
+html[data-lifeos-mode="light"] .habit-card,
+html[data-lifeos-mode="light"] .kpi,
+html[data-lifeos-mode="light"] .kpi-box,
+html[data-lifeos-mode="light"] .metric,
+html[data-lifeos-mode="light"] .summary,
+html[data-lifeos-mode="light"] .entry,
+html[data-lifeos-mode="light"] .point,
+html[data-lifeos-mode="light"] .focus-stat,
+html[data-lifeos-mode="light"] .balance,
+html[data-lifeos-mode="light"] .mentor-date-card,
+html[data-lifeos-mode="light"] .mentor-rules-card,
+html[data-lifeos-mode="light"] .mentor-quotes-card,
+html[data-lifeos-mode="light"] .mentor-quote-card,
+html[data-lifeos-mode="light"] .finance-head,
+html[data-lifeos-mode="light"] .section > .card{
+  color:var(--text);
+}
+html[data-lifeos-mode="light"] .card .big,
+html[data-lifeos-mode="light"] .item .big,
+html[data-lifeos-mode="light"] .routine .big,
+html[data-lifeos-mode="light"] .note-card .big,
+html[data-lifeos-mode="light"] .goal-card .big,
+html[data-lifeos-mode="light"] .habit-card .big,
+html[data-lifeos-mode="light"] .kpi .big,
+html[data-lifeos-mode="light"] .kpi-box .big,
+html[data-lifeos-mode="light"] .metric .big,
+html[data-lifeos-mode="light"] .summary .big,
+html[data-lifeos-mode="light"] .entry .big,
+html[data-lifeos-mode="light"] .point .big,
+html[data-lifeos-mode="light"] .focus-stat .big,
+html[data-lifeos-mode="light"] .balance .big,
+html[data-lifeos-mode="light"] .money,
+html[data-lifeos-mode="light"] .metric-value,
+html[data-lifeos-mode="light"] .kpi-value,
+html[data-lifeos-mode="light"] .stat-value{
+  color:#172033!important;
+  text-shadow:none!important;
+}
+html[data-lifeos-mode="light"] .card .title,
+html[data-lifeos-mode="light"] .item .title,
+html[data-lifeos-mode="light"] .routine .title,
+html[data-lifeos-mode="light"] .card h3,
+html[data-lifeos-mode="light"] .card h4,
+html[data-lifeos-mode="light"] .item h3,
+html[data-lifeos-mode="light"] .item h4,
+html[data-lifeos-mode="light"] .kpi h3,
+html[data-lifeos-mode="light"] .kpi h4,
+html[data-lifeos-mode="light"] .metric h3,
+html[data-lifeos-mode="light"] .metric h4{
+  color:#253044!important;
+}
+html[data-lifeos-mode="light"] .card .label,
+html[data-lifeos-mode="light"] .card .eyebrow,
+html[data-lifeos-mode="light"] .item .label,
+html[data-lifeos-mode="light"] .item .eyebrow,
+html[data-lifeos-mode="light"] .kpi .mini,
+html[data-lifeos-mode="light"] .kpi .meta,
+html[data-lifeos-mode="light"] .metric .meta,
+html[data-lifeos-mode="light"] .metric .muted,
+html[data-lifeos-mode="light"] .card .meta,
+html[data-lifeos-mode="light"] .item .meta,
+html[data-lifeos-mode="light"] .routine .meta,
+html[data-lifeos-mode="light"] .note-card .meta,
+html[data-lifeos-mode="light"] .muted,
+html[data-lifeos-mode="light"] .meta{
+  color:#667085!important;
+  opacity:1!important;
+}
+/* Inline white colors inside ordinary light surfaces are a frequent source of invisible text. */
+html[data-lifeos-mode="light"] .card:not(.hero):not(.module-hero):not(.spiritual-quote) [style*="color:#fff"],
+html[data-lifeos-mode="light"] .card:not(.hero):not(.module-hero):not(.spiritual-quote) [style*="color: #fff"],
+html[data-lifeos-mode="light"] .card:not(.hero):not(.module-hero):not(.spiritual-quote) [style*="color:white"],
+html[data-lifeos-mode="light"] .item [style*="color:#fff"],
+html[data-lifeos-mode="light"] .item [style*="color:white"],
+html[data-lifeos-mode="light"] .routine [style*="color:#fff"],
+html[data-lifeos-mode="light"] .kpi [style*="color:#fff"],
+html[data-lifeos-mode="light"] .metric [style*="color:#fff"]{
+  color:#172033!important;
+  text-shadow:none!important;
+}
+html[data-lifeos-mode="light"] .card:not(.hero):not(.module-hero):not(.spiritual-quote) [style*="rgba(255,255,255"],
+html[data-lifeos-mode="light"] .item [style*="rgba(255,255,255"],
+html[data-lifeos-mode="light"] .routine [style*="rgba(255,255,255"],
+html[data-lifeos-mode="light"] .kpi [style*="rgba(255,255,255"],
+html[data-lifeos-mode="light"] .metric [style*="rgba(255,255,255"]{
+  color:#667085!important;
+  opacity:1!important;
+}
+html[data-lifeos-mode="light"] .card input,
+html[data-lifeos-mode="light"] .card textarea,
+html[data-lifeos-mode="light"] .card select,
+html[data-lifeos-mode="light"] .item input,
+html[data-lifeos-mode="light"] .item textarea,
+html[data-lifeos-mode="light"] .item select{
+  color:#172033!important;
+  background:#fff!important;
+  border-color:#cbd5e1!important;
+  -webkit-text-fill-color:#172033!important;
+}
+html[data-lifeos-mode="light"] .card input::placeholder,
+html[data-lifeos-mode="light"] .card textarea::placeholder,
+html[data-lifeos-mode="light"] .item input::placeholder,
+html[data-lifeos-mode="light"] .item textarea::placeholder{
+  color:#7a8496!important;
+  -webkit-text-fill-color:#7a8496!important;
+  opacity:1!important;
+}
+html[data-lifeos-mode="light"] .card button:not(.primary):not(.danger),
+html[data-lifeos-mode="light"] .item button:not(.primary):not(.danger),
+html[data-lifeos-mode="light"] .routine button:not(.primary):not(.danger){
+  color:#253044;
+}
+@media (max-width:700px){
+  html[data-lifeos-mode="light"] .card .big,
+  html[data-lifeos-mode="light"] .item .big,
+  html[data-lifeos-mode="light"] .kpi .big,
+  html[data-lifeos-mode="light"] .metric .big,
+  html[data-lifeos-mode="light"] .money{font-size:clamp(18px,5vw,28px);line-height:1.2;overflow-wrap:anywhere}
+}
+</style><style id="lifeos-dark-desktop-final-contrast">
+/* FINAL DARK DESKTOP VISIBILITY LAYER — scoped only to dark mode */
+html[data-lifeos-mode="dark"]{
+  --bg:#0b0e16!important;
+  --card:#181c25!important;
+  --text:#f3f4f6!important;
+  --muted:#a8b1c2!important;
+  --line:#343b4c!important;
+  color-scheme:dark!important;
+  background:#0b0e16!important;
+  color:#f3f4f6!important;
+}
+html[data-lifeos-mode="dark"] body{
+  background:#0b0e16!important;
+  color:#f3f4f6!important;
+}
+html[data-lifeos-mode="dark"] .app,
+html[data-lifeos-mode="dark"] .main{
+  background:#0b0e16!important;
+  color:#f3f4f6!important;
+}
+html[data-lifeos-mode="dark"] .side,
+html[data-lifeos-mode="dark"] .top,
+html[data-lifeos-mode="dark"] .card,
+html[data-lifeos-mode="dark"] .item,
+html[data-lifeos-mode="dark"] .routine,
+html[data-lifeos-mode="dark"] .note-card,
+html[data-lifeos-mode="dark"] .goal-card,
+html[data-lifeos-mode="dark"] .habit-card,
+html[data-lifeos-mode="dark"] .kpi,
+html[data-lifeos-mode="dark"] .kpi-box,
+html[data-lifeos-mode="dark"] .metric,
+html[data-lifeos-mode="dark"] .summary,
+html[data-lifeos-mode="dark"] .entry,
+html[data-lifeos-mode="dark"] .point,
+html[data-lifeos-mode="dark"] .focus-stat,
+html[data-lifeos-mode="dark"] .balance,
+html[data-lifeos-mode="dark"] .date-panel,
+html[data-lifeos-mode="dark"] .date-box,
+html[data-lifeos-mode="dark"] .finance-head,
+html[data-lifeos-mode="dark"] .section>.card{
+  background:#181c25!important;
+  color:#f3f4f6!important;
+  border-color:#343b4c!important;
+  box-shadow:0 4px 16px rgba(0,0,0,.24)!important;
+}
+html[data-lifeos-mode="dark"] .hero,
+html[data-lifeos-mode="dark"] .module-hero{
+  color:#fff!important;
+}
+html[data-lifeos-mode="dark"] h1,
+html[data-lifeos-mode="dark"] h2,
+html[data-lifeos-mode="dark"] h3,
+html[data-lifeos-mode="dark"] h4,
+html[data-lifeos-mode="dark"] h5,
+html[data-lifeos-mode="dark"] h6,
+html[data-lifeos-mode="dark"] p,
+html[data-lifeos-mode="dark"] label,
+html[data-lifeos-mode="dark"] strong,
+html[data-lifeos-mode="dark"] b,
+html[data-lifeos-mode="dark"] span,
+html[data-lifeos-mode="dark"] li,
+html[data-lifeos-mode="dark"] td,
+html[data-lifeos-mode="dark"] th{
+  text-shadow:none!important;
+}
+html[data-lifeos-mode="dark"] .card .big,
+html[data-lifeos-mode="dark"] .item .big,
+html[data-lifeos-mode="dark"] .routine .big,
+html[data-lifeos-mode="dark"] .kpi .big,
+html[data-lifeos-mode="dark"] .kpi-box .big,
+html[data-lifeos-mode="dark"] .metric .big,
+html[data-lifeos-mode="dark"] .summary .big,
+html[data-lifeos-mode="dark"] .entry .big,
+html[data-lifeos-mode="dark"] .point .big,
+html[data-lifeos-mode="dark"] .focus-stat .big,
+html[data-lifeos-mode="dark"] .balance .big,
+html[data-lifeos-mode="dark"] .money,
+html[data-lifeos-mode="dark"] .metric-value,
+html[data-lifeos-mode="dark"] .kpi-value,
+html[data-lifeos-mode="dark"] .stat-value{
+  color:#f8fafc!important;
+  -webkit-text-fill-color:#f8fafc!important;
+  opacity:1!important;
+}
+html[data-lifeos-mode="dark"] .muted,
+html[data-lifeos-mode="dark"] .meta,
+html[data-lifeos-mode="dark"] .label,
+html[data-lifeos-mode="dark"] .eyebrow,
+html[data-lifeos-mode="dark"] .sub,
+html[data-lifeos-mode="dark"] small{
+  color:#a8b1c2!important;
+  opacity:1!important;
+}
+html[data-lifeos-mode="dark"] input,
+html[data-lifeos-mode="dark"] textarea,
+html[data-lifeos-mode="dark"] select{
+  background:#111620!important;
+  color:#f3f4f6!important;
+  -webkit-text-fill-color:#f3f4f6!important;
+  border-color:#414b60!important;
+  color-scheme:dark!important;
+}
+html[data-lifeos-mode="dark"] input::placeholder,
+html[data-lifeos-mode="dark"] textarea::placeholder{
+  color:#8e9aad!important;
+  -webkit-text-fill-color:#8e9aad!important;
+  opacity:1!important;
+}
+html[data-lifeos-mode="dark"] button.secondary,
+html[data-lifeos-mode="dark"] .secondary,
+html[data-lifeos-mode="dark"] .card button:not(.primary):not(.danger),
+html[data-lifeos-mode="dark"] .item button:not(.primary):not(.danger){
+  background:#242b38!important;
+  color:#eef2f7!important;
+  border-color:#465268!important;
+}
+html[data-lifeos-mode="dark"] nav button,
+html[data-lifeos-mode="dark"] .mobile-bottom-nav button{
+  color:#c6cfdd!important;
+}
+html[data-lifeos-mode="dark"] nav button.active,
+html[data-lifeos-mode="dark"] .mobile-bottom-nav button.active{
+  color:#fff!important;
+  background:#2b3150!important;
+}
+html[data-lifeos-mode="dark"] [style*="color:#172033"],
+html[data-lifeos-mode="dark"] [style*="color: #172033"],
+html[data-lifeos-mode="dark"] [style*="color:#202124"],
+html[data-lifeos-mode="dark"] [style*="color: #202124"],
+html[data-lifeos-mode="dark"] [style*="color:#253044"],
+html[data-lifeos-mode="dark"] [style*="color: #253044"],
+html[data-lifeos-mode="dark"] [style*="color:#667085"],
+html[data-lifeos-mode="dark"] [style*="color: #667085"]{
+  color:#e7edf6!important;
+  -webkit-text-fill-color:#e7edf6!important;
+}
+html[data-lifeos-mode="dark"] .status-good,
+html[data-lifeos-mode="dark"] .income{color:#65d99b!important}
+html[data-lifeos-mode="dark"] .status-bad,
+html[data-lifeos-mode="dark"] .expense{color:#ff8585!important}
+html[data-lifeos-mode="dark"] .status-warn{color:#f5c76b!important}
+@media(min-width:701px){
+  html[data-lifeos-mode="dark"] .side{background:#111620!important;border-right:1px solid #30394a!important}
+  html[data-lifeos-mode="dark"] .top{background:#111620!important;border-bottom:1px solid #30394a!important}
+  html[data-lifeos-mode="dark"] .main{background:#0b0e16!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-lifeos-mode="dark"] *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style><style id="lifeos-typography-alignment-final">
+/* Universal typography + horizontal/vertical alignment normalization */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body{letter-spacing:0;line-height:1.45;word-spacing:normal;text-align:left}
+body,button,input,textarea,select{font-kerning:normal;font-variant-ligatures:common-ligatures}
+button,input,textarea,select{font:inherit;line-height:1.35;vertical-align:middle}
+h1,h2,h3,h4,h5,h6,p,ul,ol{margin-top:0}
+h1,h2,h3,h4,h5,h6{line-height:1.2;letter-spacing:-.01em;text-wrap:balance}
+p,li,small,.muted,.meta,.hint,.sub,.label,.caption{line-height:1.45}
+small,.muted,.meta,.hint,.sub,.label,.caption{letter-spacing:.005em}
+/* Prevent uneven text blocks and accidental character stretching */
+.card,.item,.routine,.hero,.panel,.section,.modal,.sheet,.notice,.empty,
+.kpi,.metric,.stat,.summary,.tile,.list-item{min-width:0;overflow-wrap:anywhere}
+/* Stable vertical alignment for repeated UI rows */
+.row,.form-row,.toolbar,.actions,.top-actions,.nav-item,.nav-link,.tab,
+.input-row,.field-row,.metric-row,.stat-row,.card-header,.section-header,
+.list-header,.list-footer,.button-row{align-items:center;vertical-align:middle}
+.row>* ,.form-row>* ,.toolbar>* ,.actions>* ,.top-actions>* ,.input-row>* ,.field-row>*{
+  min-width:0;
+}
+/* Keep labels and values aligned without baseline drift */
+label,.label,.field-label,.metric-label,.stat-label,.kpi-label{display:block;line-height:1.3}
+.big,.value,.amount,.money,.metric-value,.stat-value,.kpi-value,.number,
+.price,.balance,.total{line-height:1.15;vertical-align:middle;overflow-wrap:anywhere}
+/* Inputs: consistent text baseline and padding */
+input,textarea,select{padding-top:.62em;padding-bottom:.62em}
+textarea{line-height:1.5;vertical-align:top}
+select{line-height:normal}
+/* Buttons and icon/text combinations */
+button{display:inline-flex;align-items:center;justify-content:center;gap:.45em;text-align:center;white-space:normal}
+button svg,button i,button .icon,.nav-item svg,.nav-link svg{flex:0 0 auto;vertical-align:middle}
+/* Tables and grid-like data */
+table{border-collapse:collapse;width:100%}
+th,td{vertical-align:middle;text-align:left;line-height:1.35}
+/* Do not stretch single-line utility text */
+.nowrap,.chip,.badge,.tag,.pill{white-space:nowrap;line-height:1.2;vertical-align:middle}
+/* Mobile: avoid tiny cramped text and preserve centered controls */
+@media(max-width:700px){
+ body{line-height:1.48}
+ h1,h2,h3,h4,h5,h6{line-height:1.22}
+ .row,.form-row,.toolbar,.actions,.input-row,.field-row{align-items:stretch}
+ button{min-height:40px}
+ .big,.value,.amount,.money,.metric-value,.stat-value,.kpi-value,.number{line-height:1.2}
+}
+</style></head><body><div class="app"><aside class="side"><div class="sidebar-top-tools"><button aria-label="Toggle light and dark theme" aria-pressed="false" class="sidebar-theme-toggle" id="sidebarThemeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button></div><div class="brand"><div aria-label="ॐ logo" class="brand-logo">ॐ</div></div><nav id="nav"></nav></aside><main class="main"><div class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">काम, लक्ष्य, routine, habits, notes और finance — एक जगह।</div></div><div class="top-actions date-tools"><button aria-label="Toggle light and dark theme" aria-pressed="false" class="appearance-btn" hidden="" id="themeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button><div class="date-panel"><div class="date-panel-head"><span class="date-panel-title">📅 Date</span></div><div class="date-dual-row"><label class="date-box compact"><span>AD</span><input class="date" id="today" onchange="syncBsFromAd();render()" type="date"/></label><div class="date-box bs-display"><span>BS</span><strong id="todayBsDisplay">—</strong><input aria-label="Bikram Sambat date" class="bs-date-hidden" id="todayBs" inputmode="numeric" type="text"/><button aria-label="Open Bikram Sambat calendar" class="bs-use-mini" onclick="openBsCalendar('today')" type="button">🇳🇵</button></div></div></div></div></div><section class="section active" id="dashboard"></section><section class="section" id="mentor"></section><section class="section" id="planner"></section><section class="section" id="tasks"></section><section class="section" id="routine"></section><section class="section" id="notes"></section><section class="section" id="journal"></section><section class="section" id="habits"></section><section class="section" id="expenses"></section><section class="section" id="personal"></section><section class="section" id="professional"></section><section class="section" id="spiritual"></section><section class="section" id="economical"></section><section class="section" id="mental"></section><section class="section" id="social"></section><section class="section" id="moral"></section><section class="section" id="settings"></section><section class="section" id="review"></section><section class="section" id="achievements"></section><section class="section" id="goals"></section><section class="section" id="focus"></section><section class="section" id="reset"></section></main></div><div aria-label="LifeOS navigation" class="mobile-bottom-nav" id="mobileBottomNav"><button data-section="dashboard" onclick="show('dashboard')">⌂<span>Home</span></button><button data-section="mentor" onclick="show('mentor')">🧭<span>Mentor</span></button><button data-section="planner" onclick="show('planner')">📅<span>Planner</span></button><button data-section="tasks" onclick="show('tasks')">✓<span>Tasks</span></button><button data-section="routine" onclick="show('routine')">🕉<span>Routine</span></button><button data-section="habits" onclick="show('habits')">◌<span>Habits</span></button><button data-section="goals" onclick="show('goals')">🎯<span>Goals</span></button><button data-section="focus" onclick="show('focus')">⏱<span>Focus</span></button><button data-section="notes" onclick="show('notes')">📝<span>Notes</span></button><button data-section="journal" onclick="show('journal')">📔<span>Journal</span></button><button data-section="expenses" onclick="show('expenses')">₹<span>Finance</span></button><button data-section="settings" onclick="show('settings')">⚙️<span>Settings</span></button><button aria-label="Toggle light and dark theme" class="bottom-theme" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙<span>Theme</span></button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div><script>
 
 const KEY='lifeos_clean_v5';
 const LEGACY_KEYS=['lifeos_upgraded_v4','lifeos_upgraded_v4_drafts','lifeos_upgraded_v4_recovery'];
@@ -1545,12 +2007,13 @@ const navItems=[
  ['dashboard','🏠 Dashboard'],['mentor','🧭 Mentor & Capital'],['planner','📅 Daily Planner'],['tasks','✅ To-Do & Projects'],
  ['routine','🕉 Routine Planner'],['habits','🧘 Habits'],['goals','🎯 Goals'],['focus','⏱ Focus'],
  ['notes','📝 Notes'],['journal','📔 Daily Journal'],['expenses','💰 Expenses & Income'],
- ['achievements','🏆 Achievements'],['review','📊 Review & Progress'],['reset','🧹 Full Reset']
+ ['personal','👤 Personal'],['professional','💼 Professional'],['spiritual','🕉 Spiritual'],['economical','💰 Economical'],['mental','🧠 Mental'],['social','🤝 Social'],['moral','⚖️ Moral'],['settings','⚙️ Settings']
 ];
+
 function renderReset(){
  const el=document.getElementById('reset');if(!el)return;
  const hasLocal=!!localStorage.getItem(KEY);
- el.innerHTML=`<div class="card reset-shell"><div class="eyebrow">CLEAN START</div><h2>🧹 Full Reset</h2><p class="muted">Is tab se LifeOS ko is device par fresh, clean state me start kar sakte ho. Ye browser ka local LifeOS data, drafts, attachments aur local cache clear karega.</p><div class="reset-status"><span class="tag">${hasLocal?'Local data found':'Already clean'}</span></div><div class="reset-actions"><button class="danger reset-main" type="button" onclick="fullLocalReset()">🧹 Reset This Device</button><button class="secondary" type="button" onclick="resetServiceWorkerCache()">♻️ Refresh App Cache</button></div><div class="reset-warning"><b>⚠️ Important:</b> Device reset ke baad is device par saved tasks, notes, journal, habits, expenses, routines, goals, focus history aur local attachments delete ho jayenge.</div></div>`;
+ el.innerHTML=`<div class="card reset-shell"><div class="eyebrow">CLEAN START</div><h2>🧹 Full Reset</h2><p class="muted">LifeOS ka local data is device par fresh state me reset kar sakte ho.</p><div class="reset-status"><span class="tag">${hasLocal?'Local data found':'Already clean'}</span><span class="meta">Only this browser/device data is affected.</span></div><div class="reset-actions"><button class="danger reset-main" type="button" onclick="fullLocalReset()">🧹 Reset This Device</button><button class="secondary" type="button" onclick="resetServiceWorkerCache()">♻️ Refresh App Cache</button></div><div class="reset-warning"><b>⚠️ Important:</b> Reset karne se locally saved tasks, notes, journal, habits, expenses, routines, goals, focus history aur local attachments delete ho jayenge.</div></div>`;
 }
 let draftSaveTimer=null;
 const DRAFT_SKIP_IDS=new Set(['today','nf','filter','voiceLang','ncustom']);
@@ -1600,7 +2063,7 @@ function dailySection(title,items,fields){
 function buildDailyExportHtml(date=today()){
   const d=buildDailyExportObject(date),x=d.daily||{};
   const points=[...(x.planPoints||[]).map(v=>`• ${v.text||v.title||v}`),...(x.achievementPoints||[]).map(v=>`✓ ${v.text||v.title||v}`),...(x.reflectionPoints||[]).map(v=>`✦ ${v.text||v.title||v}`)];
-  const summary=[['Target',x.target],['Progress',x.progress],['Mood',x.mood],['Reflection',x.reflection]].filter(([,v])=>v);
+  const summary=[['Target',x.target],['Progress',x.progress],['Mood',x.mood],['Reflection',x.reflection]].filter(([v])=>v);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LifeOS — ${htmlEscapeText(d.date)}</title><style>body{margin:0;background:#f5f7fb;color:#172033;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.wrap{max-width:980px;margin:auto;padding:32px 18px 60px}.hero{background:linear-gradient(135deg,#111827,#334155);color:white;border-radius:24px;padding:30px;margin-bottom:22px;box-shadow:0 12px 35px #0002}.hero h1{margin:0 0 5px;font-size:32px}.muted{opacity:.72}.summary,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card,section{background:white;border:1px solid #e5e9f0;border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 5px 18px #1720330a}.card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#667085}.card div{font-size:18px;margin-top:4px}section h2{margin:0 0 12px;font-size:19px}.entry{border:1px solid #edf0f5;border-radius:14px;padding:14px;background:#fbfcfe}.entry h3{margin:0 0 8px;font-size:16px}.entry p{margin:5px 0}.empty{color:#98a2b3}.points{white-space:pre-wrap;background:#f8fafc;border-radius:12px;padding:12px}.attachments{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.attachment-image{max-width:100%;max-height:420px;border-radius:12px;object-fit:contain;background:#eef2f7}.file-chip{display:inline-block;padding:7px 10px;border-radius:999px;background:#eef2f7;font-size:13px}@media print{body{background:white}.wrap{padding:0}.hero{box-shadow:none;break-inside:avoid}.card,section{box-shadow:none;break-inside:avoid}}</style></head><body><main class="wrap"><header class="hero"><h1>My LifeOS</h1><div>${htmlEscapeText(d.date)} · Daily Archive</div><div class="muted">Saved: ${htmlEscapeText(new Date().toLocaleString())}</div></header>${summary.length?`<div class="summary">${summary.map(([k,v])=>`<div class="card"><b>${htmlEscapeText(k)}</b><div>${htmlEscapeText(v)}</div></div>`).join('')}</div>`:''}${points.length?`<section><h2>Daily Points</h2><div class="points">${htmlEscapeText(points.join('\n'))}</div></section>`:''}${dailySection('Tasks',d.tasks,[['title','Task'],['category','Category'],['time','Time'],['priority','Priority'],['tags','Tags'],['done','Status']])}${dailySection('Routines',d.routines,[['name','Routine'],['category','Category'],['time','Time'],['note','Note'],['done','Status']])}${dailySection('Habits',d.habits,[['name','Habit'],['time','Time'],['times','Times'],['done','Status']])}${dailySection('Income',d.income,[['source','Source'],['amount','Amount'],['note','Note']])}${dailySection('Expenses',d.expenses,[['source','Source'],['amount','Amount'],['note','Note']])}${dailySection('Notes',d.notes,[['title','Title'],['body','Text'],['points','Points'],['category','Category'],['tags','Tags']])}${dailySection('Journal',d.journal,[['title','Title'],['text','Text'],['color','Theme']])}${dailySection('Achievements',d.achievements,[['title','Achievement'],['note','Note'],['done','Status']])}${dailySection('Focus Sessions',d.focusSessions,[['minutes','Minutes'],['seconds','Seconds'],['label','Label']])}</main></body></html>`;
 }
 function getExportDates(){
@@ -1745,6 +2208,8 @@ function bindDraftAutosave(){
 }
 function save(){
   data.__updatedAt=Date.now();
+  data.__cloudDirty=true;
+  // Local-first: every edit is persisted on this device. Never depend on cloud timing.
   persistLocalNow();
   scheduleDailyComputerExport();
 }
@@ -1752,8 +2217,7 @@ function hasActiveEditor(){
   const el=document.activeElement;
   return !!(el&&((el.tagName==='INPUT'&&el.type!=='button'&&el.type!=='submit')||el.tagName==='TEXTAREA'||el.tagName==='SELECT'||el.isContentEditable));
 }
-
-
+let lastDriveBackupAt=0;
 const BS_MONTHS=['बैसाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मंसिर','पुष','माघ','फागुन','चैत'];
 const BS_DATA={
 2000:[30,32,31,32,31,30,30,30,29,30,29,31],2001:[31,31,32,31,31,31,30,29,30,29,30,30],2002:[31,31,32,32,31,30,30,29,30,29,30,30],2003:[31,32,31,32,31,30,30,30,29,29,30,31],2004:[30,32,31,32,31,30,30,30,29,30,29,31],2005:[31,31,32,31,31,31,30,29,30,29,30,30],2006:[31,31,32,32,31,30,30,29,30,29,30,30],2007:[31,32,31,32,31,30,30,30,29,29,30,31],2008:[31,31,31,32,31,31,29,30,30,29,29,31],2009:[31,31,32,31,31,31,30,29,30,29,30,30],2010:[31,31,32,32,31,30,30,29,30,29,30,30],2011:[31,32,31,32,31,30,30,30,29,29,30,31],2012:[31,31,31,32,31,31,29,30,30,29,30,30],2013:[31,31,32,31,31,31,30,29,30,29,30,30],2014:[31,31,32,32,31,30,30,29,30,29,30,30],2015:[31,32,31,32,31,30,30,30,29,29,30,31],2016:[31,31,31,32,31,31,29,30,30,29,30,30],2017:[31,31,32,31,31,31,30,29,30,29,30,30],2018:[31,32,31,32,31,30,30,29,30,29,30,30],2019:[31,32,31,32,31,30,30,30,29,30,29,31],2020:[31,31,31,32,31,31,30,29,30,29,30,30],2021:[31,31,32,31,31,31,30,29,30,29,30,30],2022:[31,32,31,32,31,30,30,30,29,29,30,30],2023:[31,32,31,32,31,30,30,30,29,30,29,31],2024:[31,31,31,32,31,31,30,29,30,29,30,30],2025:[31,31,32,31,31,31,30,29,30,29,30,30],2026:[31,32,31,32,31,30,30,30,29,29,30,31],2027:[30,32,31,32,31,30,30,30,29,30,29,31],2028:[31,31,32,31,31,31,30,29,30,29,30,30],2029:[31,31,32,31,32,30,30,29,30,29,30,30],2030:[31,32,31,32,31,30,30,30,29,29,30,31],2031:[30,32,31,32,31,30,30,30,29,30,29,31],2032:[31,31,32,31,31,31,30,29,30,29,30,30],2033:[31,31,32,32,31,30,30,29,30,29,30,30],2034:[31,32,31,32,31,30,30,30,29,29,30,31],2035:[30,32,31,32,31,31,29,30,30,29,29,31],2036:[31,31,32,31,31,31,30,29,30,29,30,30],2037:[31,31,32,32,31,30,30,29,30,29,30,30],2038:[31,32,31,32,31,30,30,30,29,29,30,31],2039:[31,31,31,32,31,31,29,30,30,29,30,30],2040:[31,31,32,31,31,31,30,29,30,29,30,30],2041:[31,31,32,32,31,30,30,29,30,29,30,30],2042:[31,32,31,32,31,30,30,30,29,29,30,31],2043:[31,31,31,32,31,31,29,30,30,29,30,30],2044:[31,31,32,31,31,31,30,29,30,29,30,30],2045:[31,32,31,32,31,30,30,29,30,29,30,30],2046:[31,32,31,32,31,30,30,30,29,29,30,31],2047:[31,31,31,32,31,31,30,29,30,29,30,30],2048:[31,31,32,31,31,31,30,29,30,29,30,30],2049:[31,32,31,32,31,30,30,30,29,29,30,30],2050:[31,32,31,32,31,30,30,30,29,30,29,31],2051:[31,31,31,32,31,31,30,29,30,29,30,30],2052:[31,31,32,31,31,31,30,29,30,29,30,30],2053:[31,32,31,32,31,30,30,30,29,29,30,30],2054:[31,32,31,32,31,30,30,30,29,30,29,31],2055:[31,31,32,31,31,31,30,29,30,29,30,30],2056:[31,31,32,31,32,30,30,29,30,29,30,30],2057:[31,32,31,32,31,30,30,30,29,29,30,31],2058:[30,32,31,32,31,30,30,30,29,30,29,31],2059:[31,31,32,31,31,31,30,29,30,29,30,30],2060:[31,31,32,32,31,30,30,29,30,29,30,30],2061:[31,32,31,32,31,30,30,30,29,29,30,31],2062:[30,32,31,32,31,31,29,30,29,30,29,31],2063:[31,31,32,31,31,31,30,29,30,29,30,30],2064:[31,31,32,32,31,30,30,29,30,29,30,30],2065:[31,32,31,32,31,30,30,30,29,29,30,31],2066:[31,31,31,32,31,31,29,30,30,29,29,31],2067:[31,31,32,31,31,31,30,29,30,29,30,30],2068:[31,31,32,32,31,30,30,29,30,29,30,30],2069:[31,32,31,32,31,30,30,30,29,29,30,31],2070:[31,31,31,32,31,31,29,30,30,29,30,30],2071:[31,31,32,31,31,31,30,29,30,29,30,30],2072:[31,32,31,32,31,30,30,29,30,29,30,30],2073:[31,32,31,32,31,30,30,30,29,29,30,31],2074:[31,31,31,32,31,31,30,29,30,29,30,30],2075:[31,31,32,31,31,31,30,29,30,29,30,30],2076:[31,32,31,32,31,30,30,30,29,29,30,30],2077:[31,32,31,32,31,30,30,30,29,30,29,31],2078:[31,31,31,32,31,31,30,29,30,29,30,30],2079:[31,31,32,31,31,31,30,29,30,29,30,30],2080:[31,32,31,32,31,30,30,30,29,29,30,30],2081:[31,31,32,32,31,30,30,30,29,30,30,30],2082:[31,31,31,32,31,31,30,29,30,29,30,30],2083:[31,31,32,31,31,31,30,29,30,29,30,30],2084:[31,31,32,31,31,30,30,29,30,30,30,30],2085:[31,32,31,32,30,31,30,30,29,30,30,30],2086:[30,32,31,32,31,30,30,30,29,30,30,30],2087:[31,31,32,31,31,31,30,30,29,30,30,30],2088:[30,31,32,32,30,31,30,30,29,30,30,30],2089:[30,32,31,32,31,30,30,30,29,30,30,30],2090:[30,32,31,32,31,30,30,30,29,30,30,30]};
@@ -1928,7 +2392,7 @@ function notebookLabel(){const select=document.getElementById('ncatSelect'),inpu
 async function addNote(){let t=document.getElementById('nt').value.trim(),b=richText(),bh=richHtml(),pts=document.getElementById('npoints').value.trim(),cat=notebookLabel();if(!t&&!b&&!pts&&!noteImages.length)return toast('Note में content या image जोड़ें');const note={id:uid(),title:t||'Untitled',body:b,html:bh,points:pts,category:cat||'General',color:document.getElementById('ncustom').value||noteColor,tags:document.getElementById('ntag').value,date:today(),images:noteImages.slice()};data.notes.unshift(note);clearDrafts(['nt','ntag','ncat','ncatSelect','nb','npoints']);const stored=await persistAttachmentItemToIDB('note',note);if(note.images.length&&!stored)return toast('⚠️ Image storage failed. Note save रोक दिया गया — retry करें.');save();renderNotes();toast('Note saved')}
 function renderNoteList(){let q=(document.getElementById('nf')?.value||'').toLowerCase(),a=data.notes.filter(x=>`${x.title||''} ${x.body||''} ${x.points||''} ${x.tags||''} ${x.category||''}`.toLowerCase().includes(q));document.getElementById('noteList').innerHTML=a.length?`<div class="grid g3">${a.map(x=>{let pts=(x.points||'').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);let imgs=Array.isArray(x.images)?x.images:[];return `<article class="note-card" style="background:${/^#[0-9a-f]{6}$/i.test(x.color||'')?x.color:'#fff8c5'}"><div class="between"><div><div class="title">${esc(x.title)}</div><div class="meta">${esc(x.date||'')} · ${esc(x.category||'General')} ${tags(x.tags)}</div></div><button class="btn danger" onclick="delNote('${x.id}')">Delete</button></div>${x.html?`<div style="line-height:1.6">${x.html}</div>`:(x.body?`<p style="white-space:pre-wrap;line-height:1.5">${esc(x.body)}</p>`:'')}${pts.length?`<ul class="points">${pts.map(p=>`<li>• ${esc(p.replace(/^[-•*]\s*/,''))}</li>`).join('')}</ul>`:''}${imgs.map(im=>`<img loading="lazy" decoding="async" src="${esc(im)}" alt="note image">`).join('')}</article>`}).join('')}</div>`:'<div class="meta" style="padding:22px;text-align:center">कोई note नहीं।</div>'}
 function delNote(id){data.notes=data.notes.filter(x=>x.id!==id);deleteAttachmentSet('note',id);save();renderNotes()}
-function toggleVoice(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return alert('Voice-to-Text इस browser में उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।');if(listening){try{recognition.stop()}catch(e){}return}recognition=new SR();recognition.lang=document.getElementById('voiceLang')?.value||'hi-IN';recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;recognition.onstart=()=>{listening=true;document.getElementById('voiceBtn').textContent='⏹️ Stop Voice';toast('🎙️ सुन रहा हूँ...')};recognition.onresult=e=>{let text=e.results[0][0].transcript,editor=document.getElementById('nb');if(!editor)return;editor.focus();const sel=window.getSelection();if(sel&&sel.rangeCount){const range=sel.getRangeAt(0);range.deleteContents();range.insertNode(document.createTextNode((editor.innerText?.trim()?' ':'')+text));range.collapse(false);sel.removeAllRanges();sel.addRange(range)}else{editor.textContent=(editor.textContent?.trim()?' ':'')+text}saveRichDraft();toast('Voice text added')};recognition.onerror=e=>{listening=false;document.getElementById('voiceBtn').textContent='🎙️ Start Voice';if(e.error==='not-allowed'||e.error==='service-not-allowed')alert('Microphone blocked है। Address bar → Microphone → Allow करें।');else toast('Voice error: '+e.error)};recognition.onend=()=>{listening=false;if(document.getElementById('voiceBtn'))document.getElementById('voiceBtn').textContent='🎙️ Start Voice'};try{recognition.start()}catch(e){}}
+function toggleVoice(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Voice-to-Text इस browser में उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।');return}if(listening){try{recognition.stop()}catch(e){}return}const editor=document.getElementById('nb');if(!editor){toast('पहले Notes में नया/मौजूदा note खोलें');return}recognition=new SR();recognition.lang=document.getElementById('voiceLang')?.value||'hi-IN';recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;let started=false;recognition.onstart=()=>{started=true;listening=true;const b=document.getElementById('voiceBtn');if(b)b.textContent='⏹️ Stop Voice';toast('🎙️ सुन रहा हूँ...')};recognition.onresult=e=>{const text=String(e.results?.[0]?.[0]?.transcript||'').trim();if(!text)return;const target=document.getElementById('nb');if(!target)return;target.focus();const sel=window.getSelection();let range;if(sel&&sel.rangeCount&&target.contains(sel.anchorNode)){range=sel.getRangeAt(0).cloneRange()}else{range=document.createRange();range.selectNodeContents(target);range.collapse(false)}range.deleteContents();const node=document.createTextNode((target.innerText?.trim()?' ':'')+text);range.insertNode(node);range.setStartAfter(node);range.collapse(true);if(sel){sel.removeAllRanges();sel.addRange(range)}target.dispatchEvent(new Event('input',{bubbles:true}));saveRichDraft();toast('Voice text added')};recognition.onerror=e=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';if(e.error==='not-allowed'||e.error==='service-not-allowed')alert('Microphone blocked है। Address bar → Microphone → Allow करें।');else if(e.error!=='aborted')toast('Voice error: '+e.error)};recognition.onend=()=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice'};try{recognition.start()}catch(e){if(!started)toast('Voice start नहीं हो पाया; फिर से कोशिश करें')}}
 
 const defaultHabits=[['Meditation','🧘'],['Yoga','🧘‍♂️'],['Water','💧'],['Healthy Food','🥗'],['Sleep','😴'],['Exercise','🏃']];
 function renderHabits(){let custom=[...new Set(data.habits.filter(h=>h.custom).map(h=>h.name))];document.getElementById('habits').innerHTML=`<div class="grid g3">${defaultHabits.map(([n,i])=>habitCard(n,i,false)).join('')}${custom.map(n=>habitCard(n,'⭐',true)).join('')}</div><div class="card" style="margin-top:16px"><h2>➕ Custom Habit + Time</h2><div class="form"><input id="hn" placeholder="Reading, Prayer, Study..."><input id="ht" type="time"><button class="btn primary full" onclick="addHabit()">Add Habit with Time</button></div></div>`}
@@ -1982,10 +2446,9 @@ async function resetServiceWorkerCache(){
 }
 function deleteIndexedDB(name){return new Promise(resolve=>{if(!('indexedDB' in window))return resolve();let settled=false;const finish=()=>{if(!settled){settled=true;resolve()}};try{const req=indexedDB.deleteDatabase(name);req.onsuccess=finish;req.onerror=finish;req.onblocked=finish;}catch(_){finish()}})}
 async function fullLocalReset(){
- if(!confirm('Full Reset करें? इस device का LifeOS data, drafts और attachments permanently clear हो जाएंगे.'))return;
+ if(!confirm('Full Reset करें? इस device का LifeOS data, drafts और attachments permanently clear हो जाएंगे. Cloud/Google Drive data नहीं हटेगा.'))return;
  try{clearTimeout(draftSaveTimer);clearTimeout(window.__lifeosPersistTimer);clearTimeout(dailyExportTimer);if(focusTimer){clearInterval(focusTimer);focusTimer=null}Object.keys(localStorage).filter(k=>/^lifeos_/i.test(k)).forEach(k=>localStorage.removeItem(k));await Promise.all([deleteIndexedDB(LEGACY_ATTACH_DB),deleteIndexedDB(ATTACH_DB)]);await resetServiceWorkerCache();window.location.replace(window.location.pathname+'?reset='+Date.now())}catch(e){console.error('Full local reset failed',e);toast('Reset failed — please try again')}
 }
-
 function makeFreshData(){return {tasks:[],notes:[],journal:[],expenses:[],income:[],habits:[],routines:[],goals:[],daily:{},focus:{},achievement:{},financePeriod:'monthly',settings:{mode:'light'},__drafts:{},mentor:{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},mentorKpis:{},focusSessions:[],achievements:[],mentorQuotes:[],mentorRules:DEFAULT_MENTOR_RULES.map((text,i)=>({id:'mr'+(i+1),text})),mentorSelectedDate:today()}}
 
 function toast(m){let t=document.getElementById('toast');if(!t)return;t.textContent=m;t.style.display='block';clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.style.display='none',1800)}
@@ -2018,8 +2481,8 @@ async function exportTodayToComputer(){const handle=await loadExportDirectoryHan
 function exportDailyHtml(){downloadBlob(buildDailyExportHtml(today()),'text/html;charset=utf-8',`LifeOS-Daily-${exportDateKey(today())}.html`)}
 function exportData(){downloadBlob(JSON.stringify(data,null,2),'application/json','lifeos-backup.json')}
 function exportText(){downloadBlob(buildExportText(),'text/plain;charset=utf-8','lifeos-data.txt')}
-function exportCSV(){const rows=buildExportRows();const csv=rows.map(r=>r.map(csvCell).join(',')).join('\n');downloadBlob('\ufeff'+csv,'text/csv;charset=utf-8','lifeos-data.csv')}
-function csvCell(v){const x=String(v??'').replace(/\r?\n/g,' ');return /[",]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}
+function exportCSV(){toast('CSV export removed in final build')}
+function csvCell(v){const x=String(v??'').replace(/\r?\n/g,' ');return /["]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}
 function exportExcel(){const rows=buildExportRows();const html='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><table border="1"><thead><tr>'+rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+'</tr></thead><tbody>'+rows.slice(1).map(r=>'<tr>'+r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></body></html>';downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','lifeos-data.xls')}
 function financePeriodRows(period){const inc=(data.income||[]).filter(x=>periodOk(x.date,period));const out=(data.expenses||[]).filter(x=>periodOk(x.date,period));const incomeTotal=inc.reduce((n,x)=>n+Number(x.amount||0),0);const expenseTotal=out.reduce((n,x)=>n+Number(x.amount||0),0);const rows=[['LifeOS Finance Report','',period.toUpperCase()],['Metric','Amount','Count'],['Income',incomeTotal.toFixed(2),inc.length],['Expense',expenseTotal.toFixed(2),out.length],['Balance',(incomeTotal-expenseTotal).toFixed(2),inc.length+out.length],['','',''],['Type','Date','Source / Category','Amount','Note','ID']];[...inc.map(x=>({...x,type:'Income'})),...out.map(x=>({...x,type:'Expense'}))].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).forEach(x=>rows.push([x.type,x.date||'',x.source||'',Number(x.amount||0).toFixed(2),x.note||'',x.id||'']));return rows}
 function exportFinanceExcel(period){const rows=financePeriodRows(period);const title='LifeOS '+period[0].toUpperCase()+period.slice(1)+' Finance';const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>'+title+'</title><style>body{font-family:Arial}table{border-collapse:collapse}th,td{border:1px solid #999;padding:6px}th{font-weight:700}</style></head><body><h1>'+esc(title)+'</h1><p>Generated: '+esc(new Date().toLocaleString())+'</p><table><tbody>'+rows.map((r,i)=>'<tr>'+r.map(v=>(i===0||i===1||i===6)?'<th>'+esc(String(v??''))+'</th>':'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></body></html>';downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','lifeos-finance-'+period+'.xls')}
@@ -2080,8 +2543,6 @@ function toggleFocus(){
 function resetFocus(){if(focusTimer){clearInterval(focusTimer);focusTimer=null}focusRemaining=focusModeSeconds;renderFocus()}
 
 function renderAchievements(){const tasksDone=data.tasks.filter(x=>x.done).length,notes=data.notes.length,journals=data.journal.length,goalsDone=data.goals.filter(x=>Number(x.progress)>=100).length,sessions=data.focusSessions.length;const badges=[['⚡','First task',tasksDone>=1,'Complete your first task'],['🔥','10 tasks',tasksDone>=10,'Complete 10 tasks'],['📝','Note maker',notes>=5,'Save 5 notes'],['📔','Journal habit',journals>=5,'Write 5 journal entries'],['🎯','Goal finisher',goalsDone>=1,'Finish one goal'],['⏱','Deep focus',sessions>=5,'Complete 5 focus sessions']];document.getElementById('achievements').innerHTML=`<div class="module-hero"><div><div class="eyebrow" style="color:#d8ccff">ACHIEVEMENTS</div><h2 style="color:#fff;font-size:25px;margin:6px 0">Progress worth celebrating</h2><div class="muted">Keep building small wins into a bigger life.</div></div><div class="big">${badges.filter(x=>x[2]).length}/${badges.length}</div></div><div class="badge-grid">${badges.map(b=>`<article class="badge ${b[2]?'':'locked'}"><div class="badge-icon">${b[0]}</div><b>${b[1]}</b><small>${b[3]}</small><div style="margin-top:10px">${b[2]?'✓ Unlocked':'🔒 Locked'}</div></article>`).join('')}</div><div class="card" style="margin-top:16px"><h2>🏆 Daily achievement points</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button></div>`}
-
-
 
 function mentorQuoteForDate(date){
  const qs=data.mentorQuotes||[]; if(!qs.length)return null;
@@ -2219,7 +2680,33 @@ function renderMentor(){
  <div class="card mentor-quotes-card"><div class="between"><h2>📚 Mentor Principles / Quotes (${(data.mentorQuotes||[]).length})</h2><span class="meta">Dashboard पर भी automatically दिखेगा</span></div><div class="list" style="margin-top:10px">${(data.mentorQuotes||[]).map(x=>`<div class="item"><div class="between"><div style="min-width:0"><b>“${esc(x.text)}”</b><div class="meta">${esc(x.author||'Mentor')} · ${esc(x.category||'Motivation')}</div></div><button class="danger" type="button" onclick="deleteMentorQuote('${x.id}')">Delete</button></div></div>`).join('')}</div></div>
  <div class="card mentor-rules-card"><div class="between"><div><h2>🧭 Mentor Rules</h2><div class="meta">Rules अब editable हैं — strategy बदलने पर यहाँ से update करें. Changes इसी device पर तुरंत save होते हैं.</div></div><span class="tag">${(data.mentorRules||[]).length} Rules</span></div><div class="mentor-rules-editor">${(data.mentorRules||[]).map((r,i)=>`<div class="mentor-rule-row"><span class="tag">${i+1}</span><textarea class="mentor-rule-input" data-rule-id="${esc(r.id||'')}" rows="2" placeholder="Mentor rule लिखें...">${esc(r.text||'')}</textarea><button class="danger" type="button" onclick="deleteMentorRule('${esc(r.id||'')}')" title="Delete rule">Delete</button></div>`).join('')}</div><div class="row" style="margin-top:10px"><button class="primary" type="button" onclick="mentorSaveRules()">💾 Save Rules</button><button class="secondary" type="button" onclick="addMentorRule()">＋ Add Rule</button><button class="secondary" type="button" onclick="resetMentorRules()">↺ Reset Defaults</button></div></div>`;
 }
-function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();restoreDrafts()}
+
+const LIFEOS_CATEGORIES={
+ personal:['👤 Personal','Self-care, habits, health and daily personal growth.','Health, routines, boundaries, self-development'],
+ professional:['💼 Professional','Work, career, skills, projects and execution.','Career goals, projects, learning, work systems'],
+ spiritual:['🕉 Spiritual','Inner peace, faith, reflection and purpose.','Prayer, meditation, gratitude, values'],
+ economical:['💰 Economical','Money, savings, income and responsible resource planning.','Budget, savings, income ideas, financial priorities'],
+ mental:['🧠 Mental','Clarity, emotional awareness and mental fitness.','Stress notes, focus, reflection, recovery'],
+ social:['🤝 Social','Relationships, family, community and communication.','People to contact, relationship goals, contribution'],
+ moral:['⚖️ Moral','Character, ethics, integrity and right action.','Principles, decisions, promises, accountability']
+};
+function categoryKey(id){return 'lifeos_category_'+id}
+function getCategoryItems(id){try{return JSON.parse(localStorage.getItem(categoryKey(id))||'[]')}catch(e){return []}}
+function saveCategoryItems(id,items){try{localStorage.setItem(categoryKey(id),JSON.stringify(items))}catch(e){}}
+function renderCategory(id){
+ const el=document.getElementById(id),meta=LIFEOS_CATEGORIES[id]; if(!el||!meta)return;
+ const items=getCategoryItems(id);
+ el.innerHTML=`<div class="hero"><div class="eyebrow">LIFE BALANCE</div><h2>${meta[0]}</h2><p>${meta[1]}</p></div><div class="two"><div class="card"><h2>＋ Add ${meta[0].replace(/^\S+\s/,'')} item</h2><div class="form"><input id="catTitle-${id}" placeholder="Title / priority"><textarea id="catText-${id}" placeholder="Write a thought, plan, habit, responsibility or next action..."></textarea><button class="primary" onclick="addCategoryItem('${id}')">Save Item</button></div></div><div class="card"><h2>Focus areas</h2><p class="muted">${meta[2]}</p><div class="list"><div class="item">Keep one clear next action.</div><div class="item">Review this area weekly.</div><div class="item">Avoid overloading the page with unnecessary effects.</div></div></div></div><div class="card" style="margin-top:14px"><div class="between"><h2>Saved items</h2><span class="tag">${items.length} items</span></div><div class="list">${items.length?items.map(x=>`<div class="item ${x.done?'done':''}"><div class="between"><label class="check"><input type="checkbox" ${x.done?'checked':''} onchange="toggleCategoryItem('${id}','${x.id}',this.checked)"><span><b>${esc(x.title)}</b><div class="meta">${esc(x.text||'')}</div></span></label><button class="danger" onclick="deleteCategoryItem('${id}','${x.id}')">Delete</button></div></div>`).join(''):'<div class="empty">अभी कोई item नहीं।</div>'}</div></div>`;
+}
+function addCategoryItem(id){const t=document.getElementById('catTitle-'+id),x=document.getElementById('catText-'+id);if(!t||!t.value.trim())return toast('Title लिखें');const a=getCategoryItems(id);a.unshift({id:uid(),title:t.value.trim(),text:x.value.trim(),done:false,createdAt:Date.now()});saveCategoryItems(id,a);renderCategory(id);toast('Saved')}
+function toggleCategoryItem(id,itemId,done){const a=getCategoryItems(id),x=a.find(v=>v.id===itemId);if(x){x.done=done;saveCategoryItems(id,a);renderCategory(id)}}
+function deleteCategoryItem(id,itemId){saveCategoryItems(id,getCategoryItems(id).filter(x=>x.id!==itemId));renderCategory(id)}
+function renderSettings(){
+ const el=document.getElementById('settings');if(!el)return;
+ el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, backup, device connection and lightweight app controls.</p></div><div class="two"><div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div><div class="card"><h2>💾 Backup & Export</h2><p class="muted">JSON and CSV removed. Use document-friendly backups below.</p><div class="settings-backup-grid"><button class="primary" onclick="exportWord()">Word</button><button class="primary" onclick="exportExcel()">Excel</button><button class="primary" onclick="exportPDF()">PDF</button><button class="secondary" onclick="setupComputerExport()">🖥 Connect Computer</button></div><div class="meta" style="margin-top:10px">Computer connection saves daily LifeOS archive files into a folder you select (Chrome/Edge desktop).</div></div></div><div class="card" style="margin-top:14px"><h2>⚡ Performance</h2><p class="muted">Heavy glow, blur, animation and decorative layers are disabled in this final build for faster startup and clearer contrast on low-end devices.</p></div>`;
+}
+
+function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();if(LIFEOS_CATEGORIES[id])renderCategory(id);if(id==='settings')renderSettings();restoreDrafts()}
 if(new URLSearchParams(location.search).has('reset')) history.replaceState({},document.title,location.pathname);
 const __localDate = new Date();
 const __yyyy = __localDate.getFullYear();
@@ -2232,5 +2719,4 @@ nav();show('dashboard');
 // Keep below-the-fold images cheap; the brand logo stays eager for instant header paint.
 document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='lazy';img.decoding='async'});
 
-</script>
-</body></html>
+</script></body></html>
