@@ -40,11 +40,16 @@ jobs:
           npx cap add android
           npx cap sync android
 
-      - name: Setup Java
+      -      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
+
+      - name: Verify Java
+        run: |
+          java -version
+          echo "JAVA_HOME=$JAVA_HOME"
 
       - name: Setup Android
         uses: android-actions/setup-android@v4
