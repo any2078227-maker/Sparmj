@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - run: npm run dist
+      - run: electron-builder --win nsis --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: LifeOS-Windows-64-bit-Installer
