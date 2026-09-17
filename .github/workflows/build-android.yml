@@ -39,7 +39,21 @@ jobs:
         run: |
           npx cap add android
           npx cap sync android
+          
+      - name: Fix Kotlin dependencies
+        run: |
+          cat >> android/build.gradle <<'EOF'
 
+          allprojects {
+              configurations.all {
+                  resolutionStrategy {
+                      force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+                      force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+                      force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+                  }
+              }
+          }
+          EOF
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
