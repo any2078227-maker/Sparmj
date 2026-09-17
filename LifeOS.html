@@ -663,7 +663,7 @@ body,h1,h2,h3,p,div,span,label,button{overflow-wrap:anywhere;word-break:normal}/
   body{background:#fff!important}
   .side{display:none!important}
   .main{padding:0!important}
-}.sync-error{margin:10px 0;padding:10px 12px;border:1px solid #f1b5b5;background:#fff5f5;color:#9b2c2c;border-radius:10px;font-size:13px;overflow-wrap:anywhere}@media (max-width:600px){.sync-error{font-size:12px}.card{padding:14px}}/* ===== Final phone portrait navigation visibility fix ===== */
+}@media (max-width:600px){.sync-error{font-size:12px}.card{padding:14px}}/* ===== Final phone portrait navigation visibility fix ===== */
 @media (max-width:600px){
   .side{display:block!important;position:sticky;top:0;z-index:100;width:100%;height:auto;min-height:0}
   .side nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;visibility:visible;opacity:1}
@@ -1356,10 +1356,10 @@ html,body{overflow-x:hidden;min-width:0}body{background-attachment:scroll!import
 }@media(pointer:coarse){.card:hover{transform:none!important;box-shadow:none!important}nav button:hover{transform:none!important}.mobile-bottom-nav button{transition:none!important}
 }@media(max-width:600px){.main{contain:layout paint}.date-dual-row{min-width:0}.mobile-bottom-nav{contain:layout paint}
 }/* ===== Full Reset + low-end device hardening ===== */
-.reset-shell,.reset-cloud-card{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.reset-shell{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 }@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}
 }@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}/* ===== Full Reset + low-end device hardening ===== */
-.reset-shell,.reset-cloud-card{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side,.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}}@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}
+.reset-shell{max-width:900px}.reset-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.reset-main{font-weight:800}.reset-status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.reset-warning{margin-top:16px;padding:12px 14px;border:1px solid rgba(220,70,70,.25);border-radius:12px;background:rgba(220,70,70,.06);font-size:13px;line-height:1.55}@media (max-width:1050px){body:before{display:none}.side,.top,.card,.hero{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}@media (max-width:600px){.reset-actions>*{width:100%}.reset-warning{font-size:12px}.main{padding-bottom:88px!important}}@media (hover:none){button.primary:hover,.primary:hover,.card:hover{transform:none!important;filter:none!important}}@media (prefers-reduced-motion:reduce){.reset-actions button{transition:none!important}}
 
 /* V29: keep Full Reset directly accessible on tablet/phone bottom navigation. */
 @media(max-width:1050px){
@@ -1444,7 +1444,7 @@ html,body{overflow-x:hidden;min-width:0}body{background-attachment:scroll!import
 <section class="section" id="notes"></section><section class="section" id="journal"></section>
 <section class="section" id="habits"></section>
 <section class="section" id="expenses"></section>
-<section class="section" id="review"></section><section class="section" id="achievements"></section><section class="section" id="goals"></section><section class="section" id="focus"></section><section class="section" id="sync"></section><section class="section" id="reset"></section>
+<section class="section" id="review"></section><section class="section" id="achievements"></section><section class="section" id="goals"></section><section class="section" id="focus"></section><section class="section" id="reset"></section>
 </main></div>
 <div aria-label="LifeOS navigation" class="mobile-bottom-nav" id="mobileBottomNav">
 <button data-section="dashboard" onclick="show('dashboard')">⌂<span>Home</span></button>
@@ -1460,7 +1460,6 @@ html,body{overflow-x:hidden;min-width:0}body{background-attachment:scroll!import
 <button data-section="expenses" onclick="show('expenses')">₹<span>Finance</span></button>
 <button data-section="achievements" onclick="show('achievements')">🏆<span>Wins</span></button>
 <button data-section="review" onclick="show('review')">📊<span>Review</span></button>
-<button data-section="sync" onclick="show('sync')">☁<span>Cloud</span></button>
 <button class="mobile-reset" data-section="reset" onclick="show('reset')" type="button">🧹<span>Reset</span></button>
 <button aria-label="Toggle light and dark theme" class="bottom-theme" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙<span>Theme</span></button>
 </div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
@@ -1546,53 +1545,13 @@ const navItems=[
  ['dashboard','🏠 Dashboard'],['mentor','🧭 Mentor & Capital'],['planner','📅 Daily Planner'],['tasks','✅ To-Do & Projects'],
  ['routine','🕉 Routine Planner'],['habits','🧘 Habits'],['goals','🎯 Goals'],['focus','⏱ Focus'],
  ['notes','📝 Notes'],['journal','📔 Daily Journal'],['expenses','💰 Expenses & Income'],
- ['achievements','🏆 Achievements'],['review','📊 Review & Progress'],['sync','☁️ Cloud Sync'],['reset','🧹 Full Reset']
+ ['achievements','🏆 Achievements'],['review','📊 Review & Progress'],['reset','🧹 Full Reset']
 ];
-let syncBusy=false,lastCloudUpdated=0,currentUser=null,cloudReady=false,syncLastError='';
-let oauthStatus={google:false};
-let providerBusy={google:false};
-let providerErrors={google:''};
-function identityUser(){return window.netlifyIdentity&&window.netlifyIdentity.currentUser?window.netlifyIdentity.currentUser():null}
-let identityLoadPromise=null;
-function loadIdentity(){
-  if(window.netlifyIdentity)return Promise.resolve(window.netlifyIdentity);
-  if(identityLoadPromise)return identityLoadPromise;
-  identityLoadPromise=new Promise((resolve,reject)=>{
-    const script=document.createElement('script');
-    script.src='https://identity.netlify.com/v1/netlify-identity-widget.js';
-    script.async=true;
-    script.onload=()=>{setupIdentity();resolve(window.netlifyIdentity)};
-    script.onerror=()=>{identityLoadPromise=null;reject(new Error('Identity service could not load'))};
-    document.head.appendChild(script);
-  });
-  return identityLoadPromise;
-}
-function openLogin(){loadIdentity().then(api=>api?.open('login')).catch(e=>toast('Login service unavailable'))}
-function openSignup(){loadIdentity().then(api=>api?.open('signup')).catch(e=>toast('Login service unavailable'))}
-function logoutUser(){if(window.netlifyIdentity)window.netlifyIdentity.logout()}
-async function authHeaders(){
-  const h={'Cache-Control':'no-cache','Accept':'application/json'};
-  try{
-    const ni=window.netlifyIdentity;
-    const u=identityUser();
-    if(!u)return h;
-    let token=null;
-    if(typeof u.jwt==='function') token=await u.jwt();
-    if(!token&&typeof u.jwt==='function') token=await u.jwt(true);
-    if(!token&&ni&&typeof ni.refresh==='function') token=await ni.refresh();
-    if(!token&&u.token) token=u.token.access_token||u.token;
-    if(typeof token==='string'&&token.trim()) h.Authorization='Bearer '+token;
-  }catch(e){console.warn('Identity token refresh failed',e)}
-  return h;
-}
-function syncLabel(){if(!currentUser)return 'Not signed in'; if(syncBusy)return 'Syncing…'; if(!navigator.onLine)return 'Offline — local data safe'; if(syncLastError)return 'Sync error'; if(lastCloudUpdated)return 'Synced'; return 'Ready to sync'}
 function renderReset(){
  const el=document.getElementById('reset');if(!el)return;
  const hasLocal=!!localStorage.getItem(KEY);
- el.innerHTML=`<div class="card reset-shell"><div class="eyebrow">CLEAN START</div><h2>🧹 Full Reset</h2><p class="muted">Is tab se LifeOS ko is device par fresh, clean state me start kar sakte ho. Ye browser ka local LifeOS data, drafts, attachments aur local cache clear karega.</p><div class="reset-status"><span class="tag">${hasLocal?'Local data found':'Already clean'}</span><span class="meta">Cloud data अलग रहता है.</span></div><div class="reset-actions"><button class="danger reset-main" type="button" onclick="fullLocalReset()">🧹 Reset This Device</button><button class="secondary" type="button" onclick="resetServiceWorkerCache()">♻️ Refresh App Cache</button></div><div class="reset-warning"><b>⚠️ Important:</b> Device reset के बाद इस browser में saved tasks, notes, journal, habits, expenses, routines, goals, focus history और local attachments हट जाएंगे. Google Drive backup या private cloud copy अपने-आप delete नहीं होगी.</div></div><div class="card reset-cloud-card"><h2>☁️ Cloud Data</h2>${currentUser?`<p class="muted">अगर private cloud में भी पूरा LifeOS data हटाना है, तो नीचे वाला action अलग से चलाएँ.</p><button class="danger" type="button" onclick="fullCloudReset()">🗑 Delete My Cloud LifeOS Data</button><p class="meta">यह account का saved LifeOS data हटाएगा. Google Drive की backup file इससे delete नहीं होगी.</p>`:`<p class="muted">Cloud reset के लिए पहले Cloud Sync tab में login करें.</p><button class="secondary" type="button" onclick="show('sync')">Open Cloud Sync</button>`}</div>`;
+ el.innerHTML=`<div class="card reset-shell"><div class="eyebrow">CLEAN START</div><h2>🧹 Full Reset</h2><p class="muted">Is tab se LifeOS ko is device par fresh, clean state me start kar sakte ho. Ye browser ka local LifeOS data, drafts, attachments aur local cache clear karega.</p><div class="reset-status"><span class="tag">${hasLocal?'Local data found':'Already clean'}</span></div><div class="reset-actions"><button class="danger reset-main" type="button" onclick="fullLocalReset()">🧹 Reset This Device</button><button class="secondary" type="button" onclick="resetServiceWorkerCache()">♻️ Refresh App Cache</button></div><div class="reset-warning"><b>⚠️ Important:</b> Device reset ke baad is device par saved tasks, notes, journal, habits, expenses, routines, goals, focus history aur local attachments delete ho jayenge.</div></div>`;
 }
-function renderSync(){let el=document.getElementById('sync');if(!el)return;let u=currentUser;let when=lastCloudUpdated?new Date(lastCloudUpdated).toLocaleString(): 'Not synced yet';el.innerHTML=`<div class="card"><h2>🔐 Private Cloud Sync</h2>${u?`<p class="muted">Logged in as <b>${esc(u.email||'account')}</b>. आपका data आपके private account से जुड़ा है.</p><div class="row" style="margin:12px 0"><span class="tag">☁️ ${syncLabel()}</span><span class="meta">Last synced: <b>${esc(when)}</b></span></div>${syncLastError?`<div class="sync-error"><b>Sync error:</b> ${esc(syncLastError)}</div>`:''}<div class="formgrid"><button class="primary" onclick="cloudSaveNow()">💾 Save & Sync</button><button class="secondary" onclick="cloudUpdateFromCloud()">☁️ Update from Cloud</button><button class="secondary" onclick="logoutUser()">Log out</button></div><p class="meta">Typing हमेशा पहले इसी device पर सुरक्षित save होता है. Cloud में भेजने के लिए <b>Save & Sync</b> दबाएँ. दूसरे device पर <b>Update from Cloud</b> दबाएँ. कोई background auto-sync नहीं चलता.</p><p class="meta">Backend diagnostic: <a href="/.netlify/functions/cloud-health" target="_blank" rel="noopener">Cloud health check</a></p>`:`<p class="muted">Private cross-device sync के लिए account बनाइए या login कीजिए.</p><div class="formgrid"><button class="primary" onclick="openLogin()">🔐 Google / Email Login</button><button class="secondary" onclick="openSignup()">✨ Create account</button></div><p class="meta">Login popup में Google चुन सकते हैं. Email/password के लिए वहीं <b>Forgot password?</b> recovery option मिलेगा.</p>`}</div>${u?`<div class="card" style="margin-top:16px"><h2>☁️ Manual Google Drive Backup</h2><p class="meta">Google Drive backup automatic नहीं है. जब चाहें <b>Backup Now</b> दबाकर current LifeOS data का manual backup बनाइए.</p><div class="card"><h3>Google Drive</h3><p>${oauthStatus.google?'🟢 Connected':'⚪ Not connected'}</p>${providerErrors.google?`<div class="sync-error">${esc(providerErrors.google)}</div>`:''}<div class="row"><button class="${oauthStatus.google?'secondary':'primary'}" onclick="connectProvider('google')">${oauthStatus.google?'Reconnect':'Connect Google Drive'}</button>${oauthStatus.google?`<button class="secondary" onclick="backupProvider('google')">${providerBusy.google?'Uploading…':'Backup Now'}</button><button class="danger" onclick="disconnectProvider('google')">Disconnect</button>`:''}</div></div><p class="meta">Backup file: <b>LifeOS-backup.json</b>. Disconnect करने से cloud file delete नहीं होगी.</p></div>`:''}`;}
-
 let draftSaveTimer=null;
 const DRAFT_SKIP_IDS=new Set(['today','nf','filter','voiceLang','ncustom']);
 function isDraftField(el){
@@ -1786,8 +1745,6 @@ function bindDraftAutosave(){
 }
 function save(){
   data.__updatedAt=Date.now();
-  data.__cloudDirty=true;
-  // Local-first: every edit is persisted on this device. Never depend on cloud timing.
   persistLocalNow();
   scheduleDailyComputerExport();
 }
@@ -1795,171 +1752,7 @@ function hasActiveEditor(){
   const el=document.activeElement;
   return !!(el&&((el.tagName==='INPUT'&&el.type!=='button'&&el.type!=='submit')||el.tagName==='TEXTAREA'||el.tagName==='SELECT'||el.isContentEditable));
 }
-function preserveLocalDrafts(remote){
-  const localDrafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};
-  const localUpdated=Number(data.__updatedAt||0);
-  const localDirty=!!data.__cloudDirty;
-  data=remote&&typeof remote==='object'?remote:data;
-  data.__drafts={...(data.__drafts||{}),...localDrafts};
-  if(localUpdated>Number(data.__updatedAt||0))data.__updatedAt=localUpdated;
-  if(localDirty)data.__cloudDirty=true;
-}
-function applyRemoteIfSafe(remote,toastText=''){
-  if(!remote)return false;
-  if(hasActiveEditor()){window.__pendingRemoteData=remote;return false;}
-  preserveLocalDrafts(remote);
-  data.__cloudDirty=false;
-  data.__cloudSyncedAt=Date.now();
-  persistLocalNow();
-  lastCloudUpdated=Number(remote.__updatedAt)||lastCloudUpdated; cloudReady=true;
-  applyTheme(); render();
-  if(toastText)toast(toastText);
-  return true;
-}
-function applyPendingRemote(){
-  if(window.__pendingRemoteData&&!hasActiveEditor()){const r=window.__pendingRemoteData;window.__pendingRemoteData=null;applyRemoteIfSafe(r);}
-}
-async function cloudGet(){
-  if(!currentUser) return null;
-  const r=await fetch('/.netlify/functions/account-data?ts='+Date.now(),{
-    cache:'no-store',credentials:'same-origin',headers:await authHeaders()
-  });
-  const text=await r.text();
-  if(r.status===404) throw new Error('Cloud Function not found (404). Redeploy the full project so netlify/functions/account-data.mjs is included.');
-  if(!r.ok){
-    let detail='HTTP '+r.status;
-    try{const j=JSON.parse(text);detail=(j.error||'HTTP '+r.status)+(j.code?' ['+j.code+']':'')+(j.detail?' — '+j.detail:'')}catch(e){if(text)detail+=' — '+text.slice(0,300)}
-    throw new Error(detail);
-  }
-  const out=JSON.parse(text);
-  return out.found===false?null:(out.data||out);
-}
-async function loadOAuthStatus(){
-  if(!currentUser)return;
-  try{const r=await fetch('/.netlify/functions/oauth-status?ts='+Date.now(),{cache:'no-store',credentials:'same-origin',headers:await authHeaders()});const j=await r.json();if(!r.ok)throw new Error(j.error||'OAuth status failed');oauthStatus={google:!!j.google};}catch(e){console.warn('OAuth status failed',e)}
-}
-async function connectProvider(provider){
-  if(provider!=='google')return;
-  if(!currentUser)return openLogin();
-  try{
-    const endpoint='/.netlify/functions/google-connect?json=1';
-    const r=await fetch(endpoint,{headers:await authHeaders(),credentials:'same-origin',cache:'no-store'});
-    const j=await r.json();
-    if(!r.ok)throw new Error(j.error||'Connect failed');
-    if(!j.url)throw new Error('OAuth URL missing');
-    window.location.href=j.url;
-  }catch(e){
-    providerErrors.google=e?.message||'Connect failed';
-    renderSync();
-    toast('☁️ Google Drive connection failed: '+providerErrors.google);
-  }
-}
-async function backupProvider(provider, silent=false){
-  if(provider!=='google'||!currentUser||providerBusy.google)return false;
-  providerBusy.google=true;providerErrors.google='';renderSync();
-  try{const r=await fetch('/.netlify/functions/google-backup',{method:'PUT',headers:{...(await authHeaders()),'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify(data)});const text=await r.text();let j={};try{j=JSON.parse(text)}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));if(!silent)toast('☁️ Google Drive backup complete');return true;}catch(e){providerErrors.google=e?.message||'Backup failed';if(!silent)toast('☁️ Google Drive backup failed: '+providerErrors.google);console.warn('google backup failed',e);return false;}finally{providerBusy.google=false;renderSync()}
-}
-async function backupConnectedProviders(silent=true){if(!currentUser||!navigator.onLine)return;await loadOAuthStatus();if(oauthStatus.google)await backupProvider('google',silent);}
-async function disconnectProvider(provider){
-  if(provider!=='google'||!currentUser)return;
-  try{const r=await fetch('/.netlify/functions/google-disconnect',{method:'POST',headers:await authHeaders(),credentials:'same-origin'});const j=await r.json();if(!r.ok)throw new Error(j.error||'Disconnect failed');oauthStatus.google=false;providerErrors.google='';renderSync();toast('☁️ Google Drive disconnected');}catch(e){toast('Disconnect failed: '+(e?.message||e))}
-}
-function handleOAuthReturn(){const p=new URLSearchParams(location.search),provider=p.get('oauth'),status=p.get('status');if(provider!=='google')return;if(status==='connected')toast('☁️ Google Drive connected successfully');else if(status==='error')toast('☁️ Google Drive connection failed');history.replaceState({},document.title,location.pathname);setTimeout(()=>{show('sync');loadOAuthStatus().then(renderSync)},300)}
 
-
-let lastDriveBackupAt=0;
-async function cloudPush(allowDriveBackup=false){
-  if(!currentUser||syncBusy)return false;
-  syncBusy=true;renderSync();
-  try{
-    const payload={...data,__updatedAt:Number(data.__updatedAt)||Date.now()};
-    const raw=JSON.stringify(payload);
-    if(raw.length>4900000){toast('Cloud sync: data 5MB से अधिक है');return false}
-    const r=await fetch('/.netlify/functions/account-data',{
-      method:'PUT',
-      headers:{...(await authHeaders()),'Content-Type':'application/json'},
-      body:raw,cache:'no-store',credentials:'same-origin'
-    });
-    const text=await r.text();
-    if(!r.ok){
-      let detail='HTTP '+r.status;
-      let body=null;
-      try{body=JSON.parse(text);detail=(body.error||'HTTP '+r.status)+(body.code?' ['+body.code+']':'')+(body.detail?' — '+body.detail:'')}catch(e){if(text)detail+=' — '+text.slice(0,300)}
-      if(r.status===409 && body?.data){
-        applyRemoteIfSafe(body.data,'☁️ Newer cloud copy loaded');
-        return false;
-      }
-      throw new Error(detail);
-    }
-    const result=JSON.parse(text);
-    lastCloudUpdated=Number(result.updatedAt)||payload.__updatedAt;
-    data.__cloudDirty=false;
-    data.__cloudSyncedAt=Date.now();
-    persistLocalNow();
-    cloudReady=true;
-    if(allowDriveBackup){lastDriveBackupAt=Date.now();await backupConnectedProviders(true)}
-    return true;
-  }catch(e){
-    console.warn('Cloud write failed',e);cloudReady=false;
-    toast('☁️ Sync failed: '+e.message);return false;
-  }finally{syncBusy=false;renderSync()}
-}
-async function cloudUpdateFromCloud(){
-  if(!currentUser){openLogin();return}
-  if(syncBusy)return
-  try{
-    syncLastError='';
-    const remote=await cloudGet();
-    if(!remote){toast('☁️ Cloud में अभी कोई saved copy नहीं है');return}
-    // Never erase local data silently. Keep a recovery snapshot before replacing it.
-    flushLocalPersist();
-    const recovery={...data,__recoverySavedAt:Date.now()};
-    try{localStorage.setItem(KEY+'_recovery',JSON.stringify(recovery))}catch(e){console.warn('Recovery snapshot failed',e)}
-    const ok=confirm('Cloud की copy इस device के current data को replace करेगी. पहले local recovery copy सुरक्षित कर दी गई है. Continue?');
-    if(!ok){toast('↩️ Local data रखा गया');return}
-    applyRemoteIfSafe(remote,'☁️ Latest cloud data loaded');
-    renderSync();
-  }catch(e){cloudReady=false;syncLastError=e?.message||'Unknown cloud error';toast('☁️ Update failed: '+syncLastError);console.error(e)}
-  renderSync();
-}
-async function cloudSaveNow(){
-  if(!currentUser){openLogin();return}
-  if(syncBusy)return
-  try{
-    flushLocalPersist();
-    syncLastError='';
-    const ok=await cloudPush(false);
-    if(ok)toast('💾 Saved & synced to cloud');
-  }catch(e){syncLastError=e?.message||'Unknown cloud error';toast('☁️ Save failed: '+syncLastError);console.error(e)}
-  renderSync();
-}
-async function initCloudSync(){
-  if(!currentUser)return;
-  try{
-    syncLastError='';
-    const remote=await cloudGet();
-    const localTime=Number(data.__updatedAt||0);
-    const remoteTime=Number(remote&&remote.__updatedAt||0);
-    if(remoteTime>localTime){
-      lastCloudUpdated=remoteTime;cloudReady=true;
-      toast('☁️ Cloud में newer data है — Update from Cloud दबाएँ');
-    }else if(localTime>remoteTime){
-      cloudReady=true;
-    }else if(remoteTime){
-      lastCloudUpdated=remoteTime;cloudReady=true;
-    }
-  }catch(e){cloudReady=false;syncLastError=e?.message||'Unknown cloud error';console.error('Cloud init failed',e)}
-  renderSync();
-}
-function setupIdentity(){
-  if(!window.netlifyIdentity)return;
-  window.netlifyIdentity.on('login',async user=>{currentUser=user;syncLastError='';toast('🔐 Login successful');await initCloudSync();show('sync')});
-  window.netlifyIdentity.on('init',async user=>{currentUser=user||null;if(currentUser){await initCloudSync();await loadOAuthStatus();renderSync()}else renderSync()});
-  window.netlifyIdentity.on('error',err=>{console.error('Netlify Identity error',err);toast('🔐 Login error: '+(err?.message||'Identity service error'))});
-  window.netlifyIdentity.on('logout',()=>{currentUser=null;cloudReady=false;lastCloudUpdated=0;syncLastError='';renderSync()});
-  currentUser=identityUser();
-  if(currentUser){initCloudSync().then(()=>loadOAuthStatus().then(renderSync));}
-}
 
 const BS_MONTHS=['बैसाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मंसिर','पुष','माघ','फागुन','चैत'];
 const BS_DATA={
@@ -2035,7 +1828,7 @@ function today(){const el=document.getElementById('today');if(el&&el.value)retur
 function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function uid(){return (crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now()+Math.random().toString(16).slice(2)}
 function nav(){document.getElementById('nav').innerHTML=navItems.map(([id,t])=>`<button onclick="show('${id}')" id="nav-${id}">${t}</button>`).join('')}
-function show(id){if(id==='sync'&&!window.netlifyIdentity)loadIdentity().then(()=>renderSync()).catch(()=>{});document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));const target=document.getElementById(id);if(target)target.classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));const nb=document.getElementById('nav-'+id);if(nb)nb.classList.add('active');document.querySelectorAll('#mobileBottomNav button[data-section]').forEach(x=>x.classList.toggle('active',x.dataset.section===id));const item=navItems.find(x=>x[0]===id);document.getElementById('pageTitle').textContent=item?item[1].replace(/^[^ ]+ /,''):id;render()}
+function show(id){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));const target=document.getElementById(id);if(target)target.classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));const nb=document.getElementById('nav-'+id);if(nb)nb.classList.add('active');document.querySelectorAll('#mobileBottomNav button[data-section]').forEach(x=>x.classList.toggle('active',x.dataset.section===id));const item=navItems.find(x=>x[0]===id);document.getElementById('pageTitle').textContent=item?item[1].replace(/^[^ ]+ /,''):id;render()}
 function dayObj(){if(!data.daily[today()])data.daily[today()]={target:'',progress:'',planPoints:[],achievementPoints:[],reflectionPoints:[]};return data.daily[today()]}
 function addPoint(kind){let x=prompt('Point लिखें:');if(x&&x.trim()){dayObj()[kind].push({id:uid(),text:x.trim(),done:false});save();render()}}
 function togglePoint(kind,id){let p=dayObj()[kind].find(x=>x.id===id);if(p)p.done=!p.done;save();render()}
@@ -2189,14 +1982,10 @@ async function resetServiceWorkerCache(){
 }
 function deleteIndexedDB(name){return new Promise(resolve=>{if(!('indexedDB' in window))return resolve();let settled=false;const finish=()=>{if(!settled){settled=true;resolve()}};try{const req=indexedDB.deleteDatabase(name);req.onsuccess=finish;req.onerror=finish;req.onblocked=finish;}catch(_){finish()}})}
 async function fullLocalReset(){
- if(!confirm('Full Reset करें? इस device का LifeOS data, drafts और attachments permanently clear हो जाएंगे. Cloud/Google Drive data नहीं हटेगा.'))return;
+ if(!confirm('Full Reset करें? इस device का LifeOS data, drafts और attachments permanently clear हो जाएंगे.'))return;
  try{clearTimeout(draftSaveTimer);clearTimeout(window.__lifeosPersistTimer);clearTimeout(dailyExportTimer);if(focusTimer){clearInterval(focusTimer);focusTimer=null}Object.keys(localStorage).filter(k=>/^lifeos_/i.test(k)).forEach(k=>localStorage.removeItem(k));await Promise.all([deleteIndexedDB(LEGACY_ATTACH_DB),deleteIndexedDB(ATTACH_DB)]);await resetServiceWorkerCache();window.location.replace(window.location.pathname+'?reset='+Date.now())}catch(e){console.error('Full local reset failed',e);toast('Reset failed — please try again')}
 }
-async function fullCloudReset(){
- if(!currentUser){toast('Please login first');return}
- if(!confirm('Cloud LifeOS data delete करें? यह action आपके private cloud में saved LifeOS data permanently हटाएगा. Google Drive backup file delete नहीं होगी.'))return;
- try{const h=await authHeaders();const r=await fetch('/.netlify/functions/account-data',{method:'DELETE',headers:h,cache:'no-store'});const body=await r.json().catch(()=>({}));if(!r.ok)throw new Error(body.error||'Cloud reset failed');data=makeFreshData();persistLocalNow();toast('☁️ Cloud data deleted');renderReset()}catch(e){console.error(e);toast('Cloud reset failed: '+(e?.message||e))}
-}
+
 function makeFreshData(){return {tasks:[],notes:[],journal:[],expenses:[],income:[],habits:[],routines:[],goals:[],daily:{},focus:{},achievement:{},financePeriod:'monthly',settings:{mode:'light'},__drafts:{},mentor:{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},mentorKpis:{},focusSessions:[],achievements:[],mentorQuotes:[],mentorRules:DEFAULT_MENTOR_RULES.map((text,i)=>({id:'mr'+(i+1),text})),mentorSelectedDate:today()}}
 
 function toast(m){let t=document.getElementById('toast');if(!t)return;t.textContent=m;t.style.display='block';clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.style.display='none',1800)}
@@ -2430,7 +2219,7 @@ function renderMentor(){
  <div class="card mentor-quotes-card"><div class="between"><h2>📚 Mentor Principles / Quotes (${(data.mentorQuotes||[]).length})</h2><span class="meta">Dashboard पर भी automatically दिखेगा</span></div><div class="list" style="margin-top:10px">${(data.mentorQuotes||[]).map(x=>`<div class="item"><div class="between"><div style="min-width:0"><b>“${esc(x.text)}”</b><div class="meta">${esc(x.author||'Mentor')} · ${esc(x.category||'Motivation')}</div></div><button class="danger" type="button" onclick="deleteMentorQuote('${x.id}')">Delete</button></div></div>`).join('')}</div></div>
  <div class="card mentor-rules-card"><div class="between"><div><h2>🧭 Mentor Rules</h2><div class="meta">Rules अब editable हैं — strategy बदलने पर यहाँ से update करें. Changes इसी device पर तुरंत save होते हैं.</div></div><span class="tag">${(data.mentorRules||[]).length} Rules</span></div><div class="mentor-rules-editor">${(data.mentorRules||[]).map((r,i)=>`<div class="mentor-rule-row"><span class="tag">${i+1}</span><textarea class="mentor-rule-input" data-rule-id="${esc(r.id||'')}" rows="2" placeholder="Mentor rule लिखें...">${esc(r.text||'')}</textarea><button class="danger" type="button" onclick="deleteMentorRule('${esc(r.id||'')}')" title="Delete rule">Delete</button></div>`).join('')}</div><div class="row" style="margin-top:10px"><button class="primary" type="button" onclick="mentorSaveRules()">💾 Save Rules</button><button class="secondary" type="button" onclick="addMentorRule()">＋ Add Rule</button><button class="secondary" type="button" onclick="resetMentorRules()">↺ Reset Defaults</button></div></div>`;
 }
-function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='sync')renderSync();if(id==='reset')renderReset();restoreDrafts()}
+function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();restoreDrafts()}
 if(new URLSearchParams(location.search).has('reset')) history.replaceState({},document.title,location.pathname);
 const __localDate = new Date();
 const __yyyy = __localDate.getFullYear();
@@ -2438,7 +2227,7 @@ const __mm = String(__localDate.getMonth()+1).padStart(2,'0');
 const __dd = String(__localDate.getDate()).padStart(2,'0');
 document.getElementById('today').value=`${__yyyy}-${__mm}-${__dd}`;
 syncBsFromAd();
-nav();show('dashboard');initCloudSync();handleOAuthReturn();
+nav();show('dashboard');
 
 // Keep below-the-fold images cheap; the brand logo stays eager for instant header paint.
 document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='lazy';img.decoding='async'});
