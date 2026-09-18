@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -17,10 +17,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "21"
@@ -32,12 +32,13 @@ jobs:
           echo "Files:"
           ls -la
           echo "WWW folder:"
-          ls -la www || true
+          ls -la www
+          test -f www/index.html
 
       - name: Install Capacitor
         run: |
           npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install @capacitor/core@7 @capacitor/cli@7 @capacitor/android@7
 
       - name: Create Capacitor config
         run: |
@@ -67,6 +68,15 @@ jobs:
         run: |
           npx cap copy android
           npx cap sync android
+
+      - name: Verify Android HTML
+        run: |
+          echo "Checking Android HTML..."
+          test -f android/app/src/main/assets/public/index.html
+          echo "Android index.html FOUND"
+          wc -c android/app/src/main/assets/public/index.html
+          head -c 500 android/app/src/main/assets/public/index.html
+          echo
 
       - name: Add microphone permission
         run: |
@@ -110,6 +120,7 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
+          ./gradlew clean
           ./gradlew assembleDebug
 
       - name: Upload APK
