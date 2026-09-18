@@ -26,16 +26,12 @@ jobs:
           java-version: "21"
 
       - name: Install dependencies
-        run: |
-          npm install
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+        run: npm install
 
-      - name: Setup Android
-        uses: android-actions/setup-android@v3
-        with:
-          packages: ""
+      - name: Install Capacitor
+        run: npm install @capacitor/core @capacitor/cli @capacitor/android
 
-            - name: Create Capacitor config
+      - name: Create Capacitor config
         run: |
           cat > capacitor.config.json <<'EOF'
           {
@@ -45,6 +41,11 @@ jobs:
           }
           EOF
 
+      - name: Setup Android
+        uses: android-actions/setup-android@v3
+        with:
+          packages: ""
+
       - name: Create Android project
         run: |
           npx cap add android
@@ -52,25 +53,7 @@ jobs:
 
       - name: Add microphone permission
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          p = Path("android/app/src/main/AndroidManifest.xml")
-          s = p.read_text()
-
-          permission = '    <uses-permission android:name="android.permission.RECORD_AUDIO" />\n'
-
-          if 'android.permission.RECORD_AUDIO' not in s:
-              s = re.sub(
-                  r'(<manifest\b[^>]*>)',
-                  r'\1\n' + permission,
-                  s,
-                  count=1
-              )
-
-          p.write_text(s)
-          PY
+          python -c "from pathlib import Path; p=Path('android/app/src/main/AndroidManifest.xml'); s=p.read_text(); permission='    <uses-permission android:name=\"android.permission.RECORD_AUDIO\" />\n'; p.write_text(s if 'android.permission.RECORD_AUDIO' in s else s.replace('>', '>\n'+permission, 1))"
 
       - name: Fix Kotlin dependencies
         run: |
