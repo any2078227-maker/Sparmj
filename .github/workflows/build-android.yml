@@ -27,11 +27,8 @@ jobs:
 
       - name: Check project files
         run: |
-          echo "Current folder:"
           pwd
-          echo "Files:"
           ls -la
-          echo "WWW folder:"
           ls -la www
           test -f www/index.html
 
@@ -42,18 +39,13 @@ jobs:
 
       - name: Create Capacitor config
         run: |
-          cat > capacitor.config.json <<'EOF'
+          cat > capacitor.config.json << 'EOF'
           {
             "appId": "com.lifeos.app",
             "appName": "LifeOS",
             "webDir": "www"
           }
           EOF
-
-      - name: Verify Capacitor config
-        run: |
-          cat capacitor.config.json
-          test -f www/index.html
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -64,59 +56,42 @@ jobs:
         run: |
           npx cap add android
 
-      - name: Copy web files to Android
+      - name: Sync Web Files
         run: |
           npx cap copy android
           npx cap sync android
 
-      - name: Verify Android HTML
+      - name: Add Storage Permissions
         run: |
-          echo "Checking Android HTML..."
-          test -f android/app/src/main/assets/public/index.html
-          echo "Android index.html FOUND"
-          wc -c android/app/src/main/assets/public/index.html
-          head -c 500 android/app/src/main/assets/public/index.html
-          echo
-
-      - name: Add microphone permission
-        run: |
-          python - <<'PY'
+          python - << 'PY'
           from pathlib import Path
-          import re
 
           manifest = Path("android/app/src/main/AndroidManifest.xml")
           content = manifest.read_text()
 
-          permission = '<uses-permission android:name="android.permission.RECORD_AUDIO" />'
+          permissions = """
+              <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+              <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+              <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+              <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+          """
 
-          if "android.permission.RECORD_AUDIO" not in content:
-              content = re.sub(
-                  r'(<manifest\b[^>]*>)',
-                  r'\1\n    ' + permission,
-                  content,
-                  count=1
+          if "READ_MEDIA_IMAGES" not in content:
+              content = content.replace(
+                  "<manifest",
+                  permissions + "\n<manifest",
+                  1
               )
 
           manifest.write_text(content)
-          print("Microphone permission added")
+          print("Storage permissions added")
           PY
 
-      - name: Fix Kotlin dependencies
+      - name: Show Manifest
         run: |
-          cat >> android/build.gradle <<'EOF'
+          cat android/app/src/main/AndroidManifest.xml
 
-          allprojects {
-              configurations.all {
-                  resolutionStrategy {
-                      force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
-                      force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
-                      force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
-                  }
-              }
-          }
-          EOF
-
-      - name: Build Debug APK
+      - name: Build APK
         working-directory: android
         run: |
           chmod +x gradlew
