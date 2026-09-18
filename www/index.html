@@ -803,68 +803,6 @@ const __todayInput=document.getElementById('today'); if(__todayInput) __todayInp
     const items=getCategoryItems(id);
     el.innerHTML=`<div class="hero"><div class="eyebrow">LIFE BALANCE</div><h2>${meta[0]}</h2><p>${meta[1]}</p></div><div class="two"><div class="card"><h2>＋ Add ${meta[0].replace(/^\S+\s/,'')} item</h2><div class="form"><input id="catTitle-${id}" placeholder="Title / priority"><textarea id="catText-${id}" placeholder="Write a thought, plan, habit, responsibility or next action..."></textarea><button class="primary" onclick="addCategoryItem('${id}')">Save Item</button></div></div><div class="card"><h2>Focus areas</h2><p class="muted">${meta[2]}</p><div class="list"><div class="item">Keep one clear next action.</div><div class="item">Review this area weekly.</div><div class="item">Avoid overloading the page with unnecessary effects.</div></div></div></div><div class="card" style="margin-top:14px"><div class="between"><h2>Saved items</h2><span class="tag">${items.length} items</span></div><div class="list">${items.length?items.map(x=>`<div class="item ${x.done?'done':''}"><div class="saved-item-row"><div class="saved-main"><b>${esc(x.title)}</b><div class="meta">${esc(x.text||'')}</div></div><div class="saved-item-actions"><button class="secondary" type="button" onclick="toggleCategoryItem('${id}','${x.id}',${!x.done})">${x.done?'↩ Undo':'✓ Done'}</button><button class="danger" type="button" onclick="deleteCategoryItem('${id}','${x.id}')">🗑 Delete</button></div></div></div>`).join(''):'<div class="empty">अभी कोई item नहीं।</div>'}</div></div>`;
   };
-  /* Dedicated Device Storage */
-  function formatBytes(n){
-    if(!Number.isFinite(Number(n)))return 'Browser did not report';
-    const v=Number(n);if(v<1024)return v+' B';
-    const units=['KB','MB','GB','TB'];let x=v/1024,i=0;
-    while(x>=1024&&i<units.length-1){x/=1024;i++}
-    return x.toFixed(x>=100?0:x>=10?1:2)+' '+units[i];
-  }
-  window.clearAppData=function(){
-    if(!confirm('⚠️ Clear App Data?\n\nThis deletes LifeOS data, drafts and local attachments from this browser/device. This cannot be undone.'))return;
-    try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_drafts');Object.keys(localStorage).filter(k=>k.startsWith('lifeos_category_')).forEach(k=>localStorage.removeItem(k))}catch(e){}
-    try{indexedDB.deleteDatabase(DEVICE_DB);indexedDB.deleteDatabase(ATTACH_DB)}catch(e){}
-    location.reload();
-  };
-  window.syncPrimaryToAppState=async function(){
-    const status=document.getElementById('storageSyncStatus');
-    if(status)status.textContent='Saving Primary → App State…';
-    data.__updatedAt=Date.now();
-    data.__localSavedAt=Date.now();
-    let primary=false, fallback=false;
-    try{ primary=await persistDeviceNow(); }catch(e){ primary=false; }
-    try{
-      const raw=JSON.stringify(localSnapshot(data));
-      if(raw.length<=MAX_LOCAL_BYTES){localStorage.setItem(KEY,raw);fallback=true;}
-    }catch(e){fallback=false;}
-    if(status)status.textContent=primary?'✓ Primary IndexedDB → App State saved':'⚠️ Primary save unavailable — local fallback '+(fallback?'saved':'failed');
-    toast(primary?'✓ App State saved to Primary Device Storage':fallback?'✓ Saved to localStorage fallback':'Storage save failed');
-    await renderDeviceStorage();
-    return primary||fallback;
-  };
-  let deviceStorageRenderSeq=0;
-  window.renderDeviceStorage=async function(){
-    const seq=++deviceStorageRenderSeq;
-    const el=document.getElementById('settingsDeviceStorage');
-    if(!el)return;
-    el.innerHTML=`<div class="hero"><div class="eyebrow">DEVICE STORAGE</div><h2>📱 Android Device Storage</h2><p>LifeOS automatically saves normal app data on this device. IndexedDB is primary; localStorage is the fallback.</p></div><div class="card"><div class="storage-stat-grid"><div class="storage-stat"><b>Primary</b><div class="meta">Checking IndexedDB…</div></div><div class="storage-stat"><b>Fallback</b><div class="meta">Checking localStorage…</div></div><div class="storage-stat"><b>Persistent</b><div class="meta">Checking…</div></div><div class="storage-stat"><b>Approx. usage</b><div class="meta">Checking…</div></div><div class="storage-stat"><b>Approx. quota</b><div class="meta">Checking…</div></div><div class="storage-stat"><b>App State</b><div class="meta">Checking…</div></div></div><div class="storage-status">✓ Normal Save automatically uses device storage.</div><div class="storage-action-row"><button class="primary" type="button" onclick="window.syncPrimaryToAppState()">💾 Primary → App State</button><button class="secondary" type="button" onclick="window.renderDeviceStorage()">↻ Refresh Status</button><button class="danger" type="button" onclick="window.clearAppData()">🗑 Clear App Data</button></div><div id="storageSyncStatus" class="storage-sync-status" style="margin-top:8px">Ready — IndexedDB is the primary store.</div></div>`;
-
-    let est=null;
-    try{est=navigator.storage?.estimate?await navigator.storage.estimate():null}catch(e){}
-    const usage=est?.usage!=null?formatBytes(est.usage):'Browser did not report';
-    const quota=est?.quota!=null?formatBytes(est.quota):'Browser did not report';
-    const persisted=await (navigator.storage?.persisted?navigator.storage.persisted().catch(()=>false):Promise.resolve(false));
-    const idb='indexedDB' in window,local='localStorage' in window;
-    let primaryState='Unavailable';
-    if(idb){
-      try{
-        const st=await readDeviceState();
-        primaryState=st?'✓ App State present':'✓ IndexedDB ready — no App State yet';
-      }catch(e){primaryState='⚠️ IndexedDB read failed';}
-    }
-    if(seq!==deviceStorageRenderSeq)return;
-    const cards=el.querySelectorAll('.storage-stat');
-    if(cards.length>=6){
-      cards[0].querySelector('.meta').innerHTML=`${idb?'✓ IndexedDB available':'⚠️ IndexedDB unavailable'}<br>${esc(primaryState)}`;
-      cards[1].querySelector('.meta').textContent=local?'✓ localStorage available':'⚠️ localStorage unavailable';
-      cards[2].querySelector('.meta').textContent=persisted?'✓ Enabled':'Available / not confirmed';
-      cards[3].querySelector('.meta').textContent=usage;
-      cards[4].querySelector('.meta').textContent=quota;
-      cards[5].querySelector('.meta').textContent='Primary → App State sync available';
-    }
-  };
-
   /* Settings + currency */
   window.setCustomCurrency=function(v){
     const raw=String(v??'').trim();data.settings.customCurrency={code:'CUSTOM',symbol:(raw||'¤').slice(0,8)};
@@ -887,35 +825,23 @@ const __todayInput=document.getElementById('today'); if(__todayInput) __todayInp
     result.textContent=`${fromInfo.symbol||from} ${amount.toLocaleString('en-IN')} = ${toInfo.symbol||to} ${value.toLocaleString('en-IN',{maximumFractionDigits:4})}`;
   };
 
-  window.toggleDeviceStoragePanel=function(){
-    const panel=document.getElementById('settingsDeviceStorage');
-    const btn=document.getElementById('deviceStorageToggle');
-    const chev=document.getElementById('deviceStorageChevron');
-    if(!panel||!btn)return;
-    const open=panel.hidden;
-    panel.hidden=!open;
-    btn.setAttribute('aria-expanded',String(open));
-    if(chev)chev.textContent=open?'▴':'▾';
-    if(open)window.renderDeviceStorage();
-  };
+
+  window.exportBackup=function(){try{const backup={format:'LifeOS Backup',version:1,exportedAt:new Date().toISOString(),data:data};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='LifeOS_Backup.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Backup exported')}catch(e){console.error('Backup export failed',e);toast('Backup export failed')}};
+  window.importBackup=async function(input){const file=input?.files?.[0];if(!file)return;try{const parsed=JSON.parse(await file.text());const imported=parsed?.format==='LifeOS Backup'&&parsed?.data?parsed.data:parsed;if(!imported||typeof imported!=='object'||Array.isArray(imported))throw new Error('Invalid backup');if(!confirm('Import this backup? Current LifeOS data will be replaced.')){input.value='';return}data=imported;data.__drafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};data.settings={...{mode:'light'},...(data.settings||{})};data.__updatedAt=Date.now();if(!persistLocalNow())throw new Error('Save failed');persistAttachmentsToIDB(data).catch(()=>{});toast('✓ Backup imported');setTimeout(()=>location.reload(),450)}catch(e){console.error('Backup import failed',e);alert('Invalid or unreadable LifeOS backup.');input.value=''}};
+  window.resetLifeOSData=function(){if(!confirm('Delete all LifeOS data?\n\nThis will remove saved LifeOS data, drafts and local attachments. This cannot be undone.'))return;try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_drafts');Object.keys(localStorage).filter(k=>k.startsWith('lifeos_category_')).forEach(k=>localStorage.removeItem(k))}catch(e){}try{indexedDB.deleteDatabase(ATTACH_DB);indexedDB.deleteDatabase(DEVICE_DB)}catch(e){}location.reload()};
 
   window.renderSettings=function(){
     const el=document.getElementById('settings');if(!el)return;
     const code=currencyCode(),info=currencyInfo();
-    el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, currency and device storage controls.</p></div>
+    el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, currency and backup controls.</p></div>
     <div class="two settings-top-grid">
       <div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" type="button" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div>
-      <div class="card"><h2>💾 Device Storage</h2><p class="muted">Automatic local save on this device. IndexedDB is primary; localStorage is the fallback.</p><button class="device-storage-toggle" id="deviceStorageToggle" type="button" aria-expanded="false" aria-controls="settingsDeviceStorage" onclick="window.toggleDeviceStoragePanel()"><span>📱 Android Device Storage</span><span id="deviceStorageChevron" aria-hidden="true">▾</span></button><div id="settingsDeviceStorage" class="settings-device-storage device-storage-panel" hidden></div></div>
+      <div class="card"><h2>💾 Backup &amp; Restore</h2><p class="muted">Export or import your LifeOS data as a JSON backup file.</p><div class="row"><button class="primary" type="button" onclick="exportBackup()">📤 Export Backup</button><button class="secondary" type="button" onclick="document.getElementById('lifeosBackupFile').click()">📥 Import Backup</button><button class="danger" type="button" onclick="resetLifeOSData()">🗑 Reset LifeOS Data</button></div><input id="lifeosBackupFile" type="file" accept=".json,application/json" hidden onchange="importBackup(this)"></div>
     </div>
+    <div class="card settings-card"><h2>📤 Export Reports</h2><p class="muted">Apne LifeOS data ko PDF, Word ya Excel-compatible file mein export karein.</p><div class="row"><button class="primary" type="button" onclick="exportLifeOSPDF()">📄 Export PDF</button><button class="secondary" type="button" onclick="exportLifeOSWord()">📝 Export Word</button><button class="secondary" type="button" onclick="exportLifeOSExcel()">📊 Export Excel</button></div></div>
     <div class="card settings-card"><h2>💱 Currency</h2><p class="muted">Changing currency changes display/accounting currency only. Existing amounts are not live-converted and no exchange-rate API is used.</p><div class="currency-grid"><label>Currency<select id="lifeosCurrencySelect" onchange="setLifeOSCurrency(this.value)">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]===code?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM" ${code==='CUSTOM'?'selected':''}>CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>Custom Currency Symbol / Code<input id="customCurrencyInput" value="${esc(data.settings.customCurrency?.symbol||'¤')}" placeholder="e.g. ₿ or XYZ" onchange="setCustomCurrency(this.value)"></label></div><div class="currency-note" style="margin-top:7px">Default: NPR — रू · Includes INR, USD, EUR, GBP, JPY, CNY, AUD, CAD, AED, SAR, RUB and the broader ISO-style list.</div></div>
     <div class="card settings-card"><h2>🔄 Currency Converter</h2><p class="muted">Manual-rate converter: enter the rate as <b>1 From = X To</b>. No live exchange-rate API is used.</p><div class="currency-converter-grid"><label>From<select id="convFrom" onchange="convertCurrencyAmount()">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]===code?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM">CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>To<select id="convTo" onchange="convertCurrencyAmount()">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]==='USD'?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM">CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>Amount<input id="convAmount" type="number" step="any" min="0" value="1" oninput="convertCurrencyAmount()"></label><label>Rate (1 From = X To)<input id="convRate" type="number" step="any" min="0" value="1" oninput="convertCurrencyAmount()"></label></div><div id="convResult" class="currency-result" style="margin-top:9px">—</div></div>
     <div class="card settings-card"><h2>⚡ Performance</h2><p class="muted">No external libraries, no external fonts, no heavy blur/animation layers, and lightweight local storage for fast startup on low-end devices.</p></div>`;
-    const panel=document.getElementById('settingsDeviceStorage');
-    const btn=document.getElementById('deviceStorageToggle');
-    const chev=document.getElementById('deviceStorageChevron');
-    if(panel){panel.hidden=true;panel.innerHTML='';}
-    if(btn)btn.setAttribute('aria-expanded','false');
-    if(chev)chev.textContent='▾';
     convertCurrencyAmount();
   };
 
@@ -943,6 +869,35 @@ nav();show('dashboard');
 
 // Keep below-the-fold images cheap; the brand logo stays eager for instant header paint.
 document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='lazy';img.decoding='async'});
+
+
+  /* Universal report exports: no external libraries required; works in browser and Capacitor WebView. */
+  function lifeosExportRows(){
+    const rows=[];
+    const add=(section,arr)=>{(Array.isArray(arr)?arr:[]).forEach((x,i)=>rows.push({Section:section,No:i+1,Date:x.date||'',Title:x.title||x.name||x.mission||x.category||'',Category:x.category||'',Status:x.done===true?'Done':(x.status||''),Amount:x.amount??'',Details:x.body||x.text||x.note||x.action||x.points||x.html?.replace(/<[^>]+>/g,' ')||''}))};
+    add('Tasks',data.tasks);add('Notes',data.notes);add('Journal',data.journal);add('Routines',data.routines);add('Habits',data.habits);add('Goals',data.goals);add('Expenses',data.expenses);add('Income',data.income);
+    Object.entries(data.daily||{}).forEach(([date,x])=>rows.push({Section:'Daily',No:'',Date:date,Title:'Daily record',Category:'',Status:'',Amount:'',Details:JSON.stringify(x)}));
+    return rows;
+  }
+  function lifeosEscapeHtml(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  function lifeosReportHtml(title='LifeOS Report'){
+    const rows=lifeosExportRows(),now=new Date().toLocaleString();
+    const head='<tr><th>Section</th><th>No.</th><th>Date</th><th>Title/Name</th><th>Category</th><th>Status</th><th>Amount</th><th>Details</th></tr>';
+    const body=rows.map(r=>`<tr><td>${lifeosEscapeHtml(r.Section)}</td><td>${lifeosEscapeHtml(r.No)}</td><td>${lifeosEscapeHtml(r.Date)}</td><td>${lifeosEscapeHtml(r.Title)}</td><td>${lifeosEscapeHtml(r.Category)}</td><td>${lifeosEscapeHtml(r.Status)}</td><td>${lifeosEscapeHtml(r.Amount)}</td><td>${lifeosEscapeHtml(r.Details)}</td></tr>`).join('');
+    return `<!doctype html><html><head><meta charset="utf-8"><title>${lifeosEscapeHtml(title)}</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#111}h1{font-size:22px}p{color:#555;font-size:12px}table{border-collapse:collapse;width:100%;font-size:10px}th,td{border:1px solid #bbb;padding:5px;text-align:left;vertical-align:top}th{background:#eee} @media print{body{padding:8px}}</style></head><body><h1>${lifeosEscapeHtml(title)}</h1><p>Generated: ${lifeosEscapeHtml(now)} · LifeOS data export</p><table>${head}${body||'<tr><td colspan="8">No data available</td></tr>'}</table></body></html>`;
+  }
+  function lifeosDownloadBlob(content,name,type){
+    const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+  }
+  window.exportLifeOSWord=function(){
+    try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Word Report'),'LifeOS_Report.doc','application/msword');toast('✓ Word report exported')}catch(e){console.error(e);toast('Word export failed')}
+  };
+  window.exportLifeOSExcel=function(){
+    try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Excel Report'),'LifeOS_Report.xls','application/vnd.ms-excel');toast('✓ Excel report exported')}catch(e){console.error(e);toast('Excel export failed')}
+  };
+  window.exportLifeOSPDF=function(){
+    try{const w=window.open('','_blank');if(!w){toast('Popup blocked. Allow popups and try again.');return}w.document.open();w.document.write(lifeosReportHtml('LifeOS PDF Report'));w.document.close();setTimeout(()=>{w.focus();w.print()},500);toast('✓ Print dialog opened — choose Save as PDF')}catch(e){console.error(e);toast('PDF export failed')}
+  };
 
 </script>
 </body>
