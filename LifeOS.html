@@ -1,234 +1,6 @@
-<!doctype html>
-<html lang="hi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<title>My LifeOS</title>
-<style>
-:root{
- --bg:#f5f6f8;--surface:#fff;--surface2:#f8f9fb;--text:#1b2330;--muted:#707988;
- --line:#dfe3e9;--accent:#5d57c9;--accent2:#318fb8;--green:#16834b;--red:#c23a3a;
- --sidebar:#121822;--shadow:0 3px 14px rgba(22,31,45,.06);--r:12px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;min-height:100%;overflow-x:hidden}
-html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font:13px/1.4 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
-button,input,textarea,select{font:inherit;max-width:100%}
-button{cursor:pointer;touch-action:manipulation}
-img,svg,video,canvas{max-width:100%;height:auto}
-.app{display:grid;grid-template-columns:218px minmax(0,1fr);min-height:100dvh}
-.side{position:sticky;top:0;height:100dvh;overflow:auto;background:var(--sidebar);color:#fff;padding:10px;z-index:50}
-.brand{display:flex;align-items:center;gap:8px;padding:5px 6px 10px;margin-bottom:7px;border-bottom:1px solid #293241}
-.brand-logo{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:50%;background:#202a39;border:1px solid #5c5540;color:#f2cc68;font-size:23px}
-.brand b{display:block;font-size:15px}.brand small{display:block;color:#9faaba;font-size:10px}
-.sidebar-top-tools{display:flex;justify-content:flex-end}.sidebar-theme-toggle{width:32px;height:30px;border:1px solid #303b4d;border-radius:8px;background:#1b2432;color:#fff}
-nav{display:grid;gap:2px}
-nav button{width:100%;min-height:35px;padding:7px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:#bdc6d3;text-align:left;font-weight:650;font-size:11.5px;line-height:1.2}
-nav button:hover{background:#1d2736;color:#fff}nav button.active{background:#302b55;border-color:#49427b;color:#fff}
-.main{min-width:0;width:100%;padding:14px 16px 24px;overflow-x:hidden}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-.top h1{margin:0;font-size:22px;line-height:1.15}.sub{margin-top:2px;color:var(--muted);font-size:11px}.date-panel{display:flex;align-items:center;gap:7px;min-width:0}.date{width:145px!important;min-height:36px}
-.section{display:none;min-width:0}.section.active{display:block}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.g3,.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:10px}
-.card,.item,.routine,.note-card,.module-hero,.hero,.kpi-box,.focus-stat,.badge,.mentor-date-card,.mentor-quote-card{
- background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-width:0
-}
-.card{padding:12px}.hero,.module-hero{padding:15px;margin-bottom:10px}.module-hero{background:linear-gradient(135deg,#2a2550,#355e78);color:#fff}
-h2{font-size:16px;margin:0 0 9px;line-height:1.2}h3{font-size:14px;margin:0 0 7px}h4{font-size:13px;margin:0 0 5px}
-p{margin:0 0 7px}.label{font-size:10px;color:var(--muted);font-weight:750}.muted,.meta{color:var(--muted)}.meta{font-size:10px}
-.row,.between{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}
-.form,.formgrid{display:grid;gap:7px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-input,textarea,select{width:100%;min-height:36px;padding:7px 9px;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:8px;outline:0}
-textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#7871d7;box-shadow:0 0 0 2px rgba(93,87,201,.1)}
-.primary,.secondary,.danger{min-height:35px;padding:7px 10px;border-radius:8px;font-weight:700}.primary{border:1px solid #5650bd;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
-.secondary{border:1px solid var(--line);background:#f5f6fb;color:#4d46a5}.danger{border:1px solid #efcccc;background:#fff4f4;color:var(--red)}
-.list{display:grid;gap:6px}.item{padding:9px}.title{font-weight:700}.tag,.pill,.chip{display:inline-block;padding:3px 6px;border-radius:999px;background:#eeefff;color:#4e47ac;font-size:9px;font-weight:750}
-.progress{height:6px;background:#e8ebf0;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.kpi-box{padding:9px;background:var(--surface2);box-shadow:none}.metric,.money,.big{font-size:22px;font-weight:800;line-height:1.1}
-.routine{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:7px;align-items:center;padding:9px;margin-bottom:6px}.time{font-weight:800;color:var(--accent)}.cat{font-size:9px;padding:3px 6px;border-radius:999px;background:#f0f1ff;color:#5149b8}
-.routine-actions,.point-actions{display:flex;gap:5px}.point{display:flex;gap:7px;align-items:center;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}
-.point input{width:auto;min-height:17px}.point-text{flex:1;min-width:0}.point-done .point-text{text-decoration:line-through;opacity:.6}
-.note-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:10px}.note-card{padding:10px;min-height:110px}.note-card img{max-width:100%;max-height:210px;object-fit:cover;border-radius:8px;margin-top:6px}
-.photo-preview,.attachment-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.photo-preview img{width:70px;height:52px;object-fit:cover;border-radius:7px}.attachment-chip{display:inline-block;padding:5px 7px;border-radius:7px;background:#f1f3f6;font-size:10px}
-.periods{display:flex;gap:5px;flex-wrap:wrap}.periods button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:6px 9px}.periods button.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.balance{padding:10px;border-radius:9px;background:var(--surface2)}.income{color:var(--green)}.expense{color:var(--red)}
-.toast{position:fixed;right:12px;bottom:12px;display:none;z-index:5000;padding:9px 12px;background:#202633;color:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
-.mission-fields{display:grid;grid-template-columns:1.1fr .7fr 1.2fr .7fr 1fr;gap:6px}.mission-row{padding:7px;border:1px solid var(--line);border-radius:8px;margin-bottom:5px}.mission-row-title{margin-bottom:5px}
-.mentor-quote-text{font-size:17px;line-height:1.5;margin:9px 0}.mentor-quote-form{display:grid;grid-template-columns:1.5fr .8fr .9fr auto;gap:6px}
-.focus-shell{text-align:center}.focus-clock{font-size:48px;font-weight:850;letter-spacing:1px;margin:10px 0}.focus-presets{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.focus-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.focus-stat{padding:9px;background:var(--surface2);box-shadow:none}
-.badge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.badge{padding:11px}.badge-icon{font-size:23px}.badge.locked{opacity:.55}
-#bsCalendarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:6000;padding:12px;align-items:center;justify-content:center}
-#bsCalendarModal.open{display:flex}.bs-calendar-card{width:min(520px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:12px;padding:12px}
-.bs-calendar-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.bs-calendar-title{text-align:center;display:grid;gap:1px}.bs-calendar-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0}.bs-calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.bs-weekday{text-align:center;font-size:9px;color:#667085;padding:3px}.bs-day{min-height:47px;border:1px solid #e5e8ef;background:#fafbfe;border-radius:6px;padding:3px;font-size:9px}.bs-day.selected{border-color:var(--accent);background:#efedff}.bs-day.today{box-shadow:inset 0 0 0 2px #e8b94a}.bs-num{display:block;font-weight:800}.ad-num{display:block;color:#7b8494;font-size:8px;margin-top:1px}.bs-calendar-footer{display:flex;justify-content:space-between;align-items:center;margin-top:7px}
-.mobile-bottom-nav{display:none}
-@media(max-width:1050px){
- .app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}.brand{padding:2px 3px 6px;margin-bottom:5px}.brand-logo{width:34px;height:34px;flex-basis:34px;font-size:20px}.brand b{font-size:14px}
- .sidebar-top-tools{display:none}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}
- .main{padding:9px 10px 76px}.top{padding:9px 11px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.three,.note-grid{grid-template-columns:1fr}
- .mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16);backdrop-filter:blur(8px)}
- .mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}
- .mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.mobile-bottom-nav .bottom-theme{max-width:48px;border-left:1px solid var(--line)}
-}
-@media(max-width:700px){
- .main{padding:7px 7px 72px}.top{display:block;padding:10px;margin-bottom:8px}.top h1{font-size:19px}.top .date{width:100%!important;margin-top:6px}
- .grid,.formgrid,.kpi-grid,.badge-grid,.mentor-quote-form{grid-template-columns:1fr}.card{padding:10px;border-radius:10px}.hero,.module-hero{padding:12px}
- .metric,.money,.big{font-size:20px}.routine{grid-template-columns:47px minmax(0,1fr);gap:6px;padding:8px}.routine-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.routine-actions button{width:100%}
- .mission-fields{grid-template-columns:1fr}.focus-clock{font-size:40px}.focus-stats{grid-template-columns:1fr}.mentor-quote-text{font-size:15px}.date-panel{display:block}
-}
-@media(max-width:380px){nav button{font-size:9px;padding:5px 8px}.mobile-bottom-nav button{font-size:7px}.mobile-bottom-nav .mi{font-size:16px}.main{padding-left:5px;padding-right:5px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}
-html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select{background:#101720;color:#edf1f7;border-color:#354052}
-html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}
-html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}
-html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}
-
-/* FINAL CLEAN RESPONSIVE */
-html{scroll-behavior:smooth}
-body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,h4,p,.label,.meta,.muted,.tag,.pill,.chip,button,label{overflow-wrap:normal;word-break:normal}
-button,input,textarea,select{font-family:inherit;max-width:100%}
-button{white-space:nowrap;touch-action:manipulation}
-.primary,.secondary,.danger{display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
-.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
-.mini{min-width:0;padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--surface2)}
-.mini b{font-size:15px;line-height:1.1}
-.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:7px}
-.settings-backup-grid button{width:100%;min-width:0}
-.mentor-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:10px}
-.mentor-rule-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center}
-.universal-date-control{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center}
-.universal-date-control input{min-width:0}
-.bs-date-action{min-width:60px}
-.bs-date-caption{margin-top:4px;min-height:14px;font-size:10px;color:var(--muted)}
-.card,.item,.routine,.note-card,.hero,.module-hero{overflow-wrap:anywhere}
-.voice-status{font-size:10px;color:var(--muted);margin-top:4px}
-#voiceBtn:disabled{opacity:.65}
-@media(max-width:1050px){
- .app{display:block}
- .side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}
- nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}
- nav::-webkit-scrollbar{display:none}
- nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}
- .main{padding:9px 10px 78px}
- .mentor-grid{grid-template-columns:1fr}
- .settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16)}
- .mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}
- .mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}
- .mobile-bottom-nav .mi{font-size:17px;line-height:1}
-}
-@media(max-width:700px){
- .main{padding:7px 7px 72px}
- .top{padding:10px}
- .grid,.formgrid,.kpi-grid,.badge-grid{grid-template-columns:1fr}
- .kpi{grid-template-columns:repeat(3,minmax(0,1fr))}
- .card{padding:10px;border-radius:10px}
- .settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .settings-backup-grid button{min-height:38px;padding:7px 8px;font-size:12px}
-}
-@media(max-width:430px){
- body{font-size:12px}
- .main{padding-left:5px;padding-right:5px}
- h2{font-size:15px}
- .card{padding:9px}
- .kpi{gap:5px}
- .mini{padding:7px 5px}
- .mini b{font-size:13px}
- .mini .meta{font-size:9px}
- .universal-date-control{grid-template-columns:minmax(0,1fr) 55px}
- .bs-date-action{min-width:55px;padding:6px 5px}
- .settings-backup-grid{gap:5px}
- .settings-backup-grid button{font-size:11px;padding:6px 5px}
-}
-@media(max-width:340px){
- .kpi{grid-template-columns:1fr}
- .settings-backup-grid{grid-template-columns:1fr}
- .universal-date-control{grid-template-columns:1fr}
- .bs-date-action{width:100%}
-}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-</style>
-</head>
-<body>
-<div class="app">
-  <aside class="side">
-    <div class="sidebar-top-tools">
-      <button id="sidebarThemeToggle" class="sidebar-theme-toggle" type="button" onclick="toggleAppearance()" aria-label="Toggle theme">🌙</button>
-    </div>
-    <div class="brand">
-      <div class="brand-logo" aria-hidden="true">ॐ</div>
-      <div><b>My LifeOS</b><small>Personal life management</small></div>
-    </div>
-    <nav id="nav" aria-label="LifeOS navigation"><button type="button" id="nav-dashboard" onclick="show('dashboard')">🏠 Dashboard</button>
-<button type="button" id="nav-mentor" onclick="show('mentor')">🧭 Mentor & Capital</button>
-<button type="button" id="nav-planner" onclick="show('planner')">📅 Daily Planner</button>
-<button type="button" id="nav-tasks" onclick="show('tasks')">✅ To-Do & Projects</button>
-<button type="button" id="nav-routine" onclick="show('routine')">🕉 Routine Planner</button>
-<button type="button" id="nav-habits" onclick="show('habits')">🧘 Habits</button>
-<button type="button" id="nav-goals" onclick="show('goals')">🎯 Goals</button>
-<button type="button" id="nav-focus" onclick="show('focus')">⏱ Focus</button>
-<button type="button" id="nav-notes" onclick="show('notes')">📝 Notes</button>
-<button type="button" id="nav-journal" onclick="show('journal')">📔 Daily Journal</button>
-<button type="button" id="nav-expenses" onclick="show('expenses')">💰 Expenses & Income</button>
-<button type="button" id="nav-personal" onclick="show('personal')">👤 Personal</button>
-<button type="button" id="nav-professional" onclick="show('professional')">💼 Professional</button>
-<button type="button" id="nav-spiritual" onclick="show('spiritual')">🕉 Spiritual</button>
-<button type="button" id="nav-economical" onclick="show('economical')">💰 Economical</button>
-<button type="button" id="nav-mental" onclick="show('mental')">🧠 Mental</button>
-<button type="button" id="nav-social" onclick="show('social')">🤝 Social</button>
-<button type="button" id="nav-moral" onclick="show('moral')">⚖️ Moral</button>
-<button type="button" id="nav-settings" onclick="show('settings')">⚙️ Settings</button></nav>
-  </aside>
-  <main class="main">
-    <header class="top">
-      <div>
-        <h1 id="pageTitle">Dashboard</h1>
-        <div class="sub">Your daily system — simple, fast and mobile friendly.</div>
-      </div>
-      <div class="date-panel">
-        <input id="today" class="date" type="date" aria-label="Today" onchange="syncBsFromAd();render()">
-        <input id="todayBs" type="hidden">
-        <span id="todayBsDisplay" class="meta"></span>
-      </div>
-    </header>
-    <section id="dashboard" class="section" aria-labelledby="pageTitle"></section>
-<section id="mentor" class="section" aria-labelledby="pageTitle"></section>
-<section id="planner" class="section" aria-labelledby="pageTitle"></section>
-<section id="tasks" class="section" aria-labelledby="pageTitle"></section>
-<section id="routine" class="section" aria-labelledby="pageTitle"></section>
-<section id="habits" class="section" aria-labelledby="pageTitle"></section>
-<section id="goals" class="section" aria-labelledby="pageTitle"></section>
-<section id="focus" class="section" aria-labelledby="pageTitle"></section>
-<section id="notes" class="section" aria-labelledby="pageTitle"></section>
-<section id="journal" class="section" aria-labelledby="pageTitle"></section>
-<section id="expenses" class="section" aria-labelledby="pageTitle"></section>
-<section id="personal" class="section" aria-labelledby="pageTitle"></section>
-<section id="professional" class="section" aria-labelledby="pageTitle"></section>
-<section id="spiritual" class="section" aria-labelledby="pageTitle"></section>
-<section id="economical" class="section" aria-labelledby="pageTitle"></section>
-<section id="mental" class="section" aria-labelledby="pageTitle"></section>
-<section id="social" class="section" aria-labelledby="pageTitle"></section>
-<section id="moral" class="section" aria-labelledby="pageTitle"></section>
-<section id="settings" class="section" aria-labelledby="pageTitle"></section>
-  </main>
-</div>
-<div id="mobileBottomNav" class="mobile-bottom-nav" aria-label="Quick navigation">
-<button type="button" data-section="dashboard" onclick="show('dashboard')"><span class="mi">⌂</span><span>Home</span></button>
-<button type="button" data-section="planner" onclick="show('planner')"><span class="mi">▦</span><span>Plan</span></button>
-<button type="button" data-section="tasks" onclick="show('tasks')"><span class="mi">✓</span><span>Tasks</span></button>
-<button type="button" data-section="habits" onclick="show('habits')"><span class="mi">◉</span><span>Habits</span></button>
-<button type="button" data-section="notes" onclick="show('notes')"><span class="mi">▤</span><span>Notes</span></button>
-<button type="button" data-section="settings" onclick="show('settings')"><span class="mi">⚙</span><span>More</span></button>
-<button type="button" class="bottom-theme" onclick="toggleAppearance()" aria-label="Toggle theme">☾</button>
-</div>
-<div class="toast" id="toast"></div>
-<div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><title>My LifeOS</title>
+<style>:root{--bg:#f5f6f8;--surface:#fff;--surface2:#f8f9fb;--text:#1b2330;--muted:#707988;--line:#dfe3e9;--accent:#5d57c9;--accent2:#318fb8;--green:#16834b;--red:#c23a3a;--sidebar:#121822;--shadow:0 3px 14px rgba(22,31,45,.06);--r:12px}*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;overflow-x:hidden}html{-webkit-text-size-adjust:100%}body{background:var(--bg);color:var(--text);font:13px/1.4 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit;max-width:100%}button{cursor:pointer;touch-action:manipulation}img,svg,video,canvas{max-width:100%;height:auto}.app{display:grid;grid-template-columns:218px minmax(0,1fr);min-height:100dvh}.side{position:sticky;top:0;height:100dvh;overflow:auto;background:var(--sidebar);color:#fff;padding:10px;z-index:50}.brand{display:flex;align-items:center;gap:8px;padding:5px 6px 10px;margin-bottom:7px;border-bottom:1px solid #293241}.brand-logo{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:50%;background:#202a39;border:1px solid #5c5540;color:#f2cc68;font-size:23px}.brand b{display:block;font-size:15px}.brand small{display:block;color:#9faaba;font-size:10px}.sidebar-top-tools{display:flex;justify-content:flex-end}.sidebar-theme-toggle{width:32px;height:30px;border:1px solid #303b4d;border-radius:8px;background:#1b2432;color:#fff}nav{display:grid;gap:2px}nav button{width:100%;min-height:35px;padding:7px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:#bdc6d3;text-align:left;font-weight:650;font-size:11.5px;line-height:1.2}nav button:hover{background:#1d2736;color:#fff}nav button.active{background:#302b55;border-color:#49427b;color:#fff}.main{min-width:0;width:100%;padding:14px 16px 24px;overflow-x:hidden}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.top h1{margin:0;font-size:22px;line-height:1.15}.sub{margin-top:2px;color:var(--muted);font-size:11px}.date-panel{display:flex;align-items:center;gap:7px;min-width:0}.date{width:145px!important;min-height:36px}.section{display:none;min-width:0}.section.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.g3,.three{grid-template-columns:repeat(3,minmax(0,1fr))}.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:10px}.card,.item,.routine,.note-card,.module-hero,.hero,.kpi-box,.focus-stat,.badge,.mentor-date-card,.mentor-quote-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}.card{padding:12px}.hero,.module-hero{padding:15px;margin-bottom:10px}.module-hero{background:linear-gradient(135deg,#2a2550,#355e78);color:#fff}h2{font-size:16px;margin:0 0 9px;line-height:1.2}h3{font-size:14px;margin:0 0 7px}h4{font-size:13px;margin:0 0 5px}p{margin:0 0 7px}.label{font-size:10px;color:var(--muted);font-weight:750}.muted,.meta{color:var(--muted)}.meta{font-size:10px}.row,.between{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.form,.formgrid{display:grid;gap:7px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}input,textarea,select{width:100%;min-height:36px;padding:7px 9px;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:8px;outline:0}textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#7871d7;box-shadow:0 0 0 2px rgba(93,87,201,.1)}.primary,.secondary,.danger{min-height:35px;padding:7px 10px;border-radius:8px;font-weight:700}.primary{border:1px solid #5650bd;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.secondary{border:1px solid var(--line);background:#f5f6fb;color:#4d46a5}.danger{border:1px solid #efcccc;background:#fff4f4;color:var(--red)}.list{display:grid;gap:6px}.item{padding:9px}.title{font-weight:700}.tag,.pill,.chip{display:inline-block;padding:3px 6px;border-radius:999px;background:#eeefff;color:#4e47ac;font-size:9px;font-weight:750}.progress{height:6px;background:#e8ebf0;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.kpi-box{padding:9px;background:var(--surface2);box-shadow:none}.metric,.money,.big{font-size:22px;font-weight:800;line-height:1.1}.routine{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:7px;align-items:center;padding:9px;margin-bottom:6px}.time{font-weight:800;color:var(--accent)}.cat{font-size:9px;padding:3px 6px;border-radius:999px;background:#f0f1ff;color:#5149b8}.routine-actions,.point-actions{display:flex;gap:5px}.point{display:flex;gap:7px;align-items:center;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}.point input{width:auto;min-height:17px}.point-text{flex:1;min-width:0}.point-done .point-text{text-decoration:line-through;opacity:.6}.note-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:10px}.note-card{padding:10px;min-height:110px}.note-card img{max-width:100%;max-height:210px;object-fit:cover;border-radius:8px;margin-top:6px}.photo-preview,.attachment-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.photo-preview img{width:70px;height:52px;object-fit:cover;border-radius:7px}.attachment-chip{display:inline-block;padding:5px 7px;border-radius:7px;background:#f1f3f6;font-size:10px}.periods{display:flex;gap:5px;flex-wrap:wrap}.periods button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:6px 9px}.periods button.active{background:var(--accent);border-color:var(--accent);color:#fff}.balance{padding:10px;border-radius:9px;background:var(--surface2)}.income{color:var(--green)}.expense{color:var(--red)}.toast{position:fixed;right:12px;bottom:12px;display:none;z-index:5000;padding:9px 12px;background:#202633;color:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}.mission-fields{display:grid;grid-template-columns:1.1fr .7fr 1.2fr .7fr 1fr;gap:6px}.mission-row{padding:7px;border:1px solid var(--line);border-radius:8px;margin-bottom:5px}.mission-row-title{margin-bottom:5px}.mentor-quote-text{font-size:17px;line-height:1.5;margin:9px 0}.mentor-quote-form{display:grid;grid-template-columns:1.5fr .8fr .9fr auto;gap:6px}.focus-shell{text-align:center}.focus-clock{font-size:48px;font-weight:850;letter-spacing:1px;margin:10px 0}.focus-presets{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.focus-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.focus-stat{padding:9px;background:var(--surface2);box-shadow:none}.badge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.badge{padding:11px}.badge-icon{font-size:23px}.badge.locked{opacity:.55}#bsCalendarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:6000;padding:12px;align-items:center;justify-content:center}#bsCalendarModal.open{display:flex}.bs-calendar-card{width:min(520px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:12px;padding:12px}.bs-calendar-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.bs-calendar-title{text-align:center;display:grid;gap:1px}.bs-calendar-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0}.bs-calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.bs-weekday{text-align:center;font-size:9px;color:#667085;padding:3px}.bs-day{min-height:47px;border:1px solid #e5e8ef;background:#fafbfe;border-radius:6px;padding:3px;font-size:9px}.bs-day.selected{border-color:var(--accent);background:#efedff}.bs-day.today{box-shadow:inset 0 0 0 2px #e8b94a}.bs-num{display:block;font-weight:800}.ad-num{display:block;color:#7b8494;font-size:8px;margin-top:1px}.bs-calendar-footer{display:flex;justify-content:space-between;align-items:center;margin-top:7px}.mobile-bottom-nav{display:none}@media(max-width:1050px){.app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}.brand{padding:2px 3px 6px;margin-bottom:5px}.brand-logo{width:34px;height:34px;flex-basis:34px;font-size:20px}.brand b{font-size:14px}.sidebar-top-tools{display:none}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}.main{padding:9px 10px 76px}.top{padding:9px 11px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.three,.note-grid{grid-template-columns:1fr}.mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16);backdrop-filter:blur(8px)}.mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}.mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.mobile-bottom-nav .bottom-theme{max-width:48px;border-left:1px solid var(--line)}}@media(max-width:700px){.main{padding:7px 7px 72px}.top{display:block;padding:10px;margin-bottom:8px}.top h1{font-size:19px}.top .date{width:100%!important;margin-top:6px}.grid,.formgrid,.kpi-grid,.badge-grid,.mentor-quote-form{grid-template-columns:1fr}.card{padding:10px;border-radius:10px}.hero,.module-hero{padding:12px}.metric,.money,.big{font-size:20px}.routine{grid-template-columns:47px minmax(0,1fr);gap:6px;padding:8px}.routine-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.routine-actions button{width:100%}.mission-fields{grid-template-columns:1fr}.focus-clock{font-size:40px}.focus-stats{grid-template-columns:1fr}.mentor-quote-text{font-size:15px}.date-panel{display:block}}@media(max-width:380px){nav button{font-size:9px;padding:5px 8px}.mobile-bottom-nav button{font-size:7px}.mobile-bottom-nav .mi{font-size:16px}.main{padding-left:5px;padding-right:5px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select{background:#101720;color:#edf1f7;border-color:#354052}html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}body{font-size:13px;line-height:1.4}.top h1{font-size:20px;line-height:1.18}.sub{font-size:11px}h2{font-size:17px;line-height:1.2}h3{font-size:14px}p{font-size:12px;line-height:1.4}input,textarea,select{font-size:13px;min-width:0}button{font-size:12px;line-height:1.2;min-width:0}.card,.item,.routine,.note-card,.hero,.module-hero{overflow-wrap:anywhere}.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.settings-backup-grid button{width:100%}@media(max-width:1050px){.app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}.main{padding:9px 10px 76px}.mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.14)}.mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}.mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.settings-backup-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:700px){.main{padding:8px 8px 74px}.top{padding:10px 11px}.top h1{font-size:19px}h2{font-size:16px}h3{font-size:13px}p{font-size:11px}input,textarea,select{font-size:13px;min-height:36px;padding:7px 9px}.primary,.secondary,.danger{font-size:12px;min-height:36px;padding:7px 10px}.card{padding:10px}.hero,.module-hero{padding:12px}.metric,.money,.big{font-size:20px}.mentor-quote-text{font-size:15px;line-height:1.42}.settings-backup-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.settings-backup-grid button{font-size:11px;padding:6px 5px}}@media(max-width:430px){body{font-size:12.5px}.top h1{font-size:18px}h2{font-size:15px}h3{font-size:12.5px}p{font-size:10.5px}input,textarea,select{font-size:12px}.primary,.secondary,.danger{font-size:11px}}@media(max-width:360px){.settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-bottom-nav button{font-size:7px}}</style>
+</head><body><div class="app"><aside class="side"><div class="sidebar-top-tools"><button id="sidebarThemeToggle" class="sidebar-theme-toggle" type="button" onclick="toggleAppearance()" aria-label="Toggle theme">🌙</button></div><div class="brand"><div class="brand-logo" aria-hidden="true">ॐ</div><div><b>My LifeOS</b><small>Personal life management</small></div></div><nav id="nav" aria-label="LifeOS navigation"><button type="button" id="nav-dashboard" onclick="show('dashboard')">🏠 Dashboard</button><button type="button" id="nav-mentor" onclick="show('mentor')">🧭 Mentor & Capital</button><button type="button" id="nav-planner" onclick="show('planner')">📅 Daily Planner</button><button type="button" id="nav-tasks" onclick="show('tasks')">✅ To-Do & Projects</button><button type="button" id="nav-routine" onclick="show('routine')">🕉 Routine Planner</button><button type="button" id="nav-habits" onclick="show('habits')">🧘 Habits</button><button type="button" id="nav-goals" onclick="show('goals')">🎯 Goals</button><button type="button" id="nav-focus" onclick="show('focus')">⏱ Focus</button><button type="button" id="nav-notes" onclick="show('notes')">📝 Notes</button><button type="button" id="nav-journal" onclick="show('journal')">📔 Daily Journal</button><button type="button" id="nav-expenses" onclick="show('expenses')">💰 Expenses & Income</button><button type="button" id="nav-personal" onclick="show('personal')">👤 Personal</button><button type="button" id="nav-professional" onclick="show('professional')">💼 Professional</button><button type="button" id="nav-spiritual" onclick="show('spiritual')">🕉 Spiritual</button><button type="button" id="nav-economical" onclick="show('economical')">💰 Economical</button><button type="button" id="nav-mental" onclick="show('mental')">🧠 Mental</button><button type="button" id="nav-social" onclick="show('social')">🤝 Social</button><button type="button" id="nav-moral" onclick="show('moral')">⚖️ Moral</button><button type="button" id="nav-settings" onclick="show('settings')">⚙️ Settings</button></nav></aside><main class="main"><header class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">Your daily system — simple, fast and mobile friendly.</div></div><div class="date-panel"><input id="today" class="date" type="date" aria-label="Today" onchange="syncBsFromAd();render()"><input id="todayBs" type="hidden"><span id="todayBsDisplay" class="meta"></span></div></header><section id="dashboard" class="section" aria-labelledby="pageTitle"></section><section id="mentor" class="section" aria-labelledby="pageTitle"></section><section id="planner" class="section" aria-labelledby="pageTitle"></section><section id="tasks" class="section" aria-labelledby="pageTitle"></section><section id="routine" class="section" aria-labelledby="pageTitle"></section><section id="habits" class="section" aria-labelledby="pageTitle"></section><section id="goals" class="section" aria-labelledby="pageTitle"></section><section id="focus" class="section" aria-labelledby="pageTitle"></section><section id="notes" class="section" aria-labelledby="pageTitle"></section><section id="journal" class="section" aria-labelledby="pageTitle"></section><section id="expenses" class="section" aria-labelledby="pageTitle"></section><section id="personal" class="section" aria-labelledby="pageTitle"></section><section id="professional" class="section" aria-labelledby="pageTitle"></section><section id="spiritual" class="section" aria-labelledby="pageTitle"></section><section id="economical" class="section" aria-labelledby="pageTitle"></section><section id="mental" class="section" aria-labelledby="pageTitle"></section><section id="social" class="section" aria-labelledby="pageTitle"></section><section id="moral" class="section" aria-labelledby="pageTitle"></section><section id="settings" class="section" aria-labelledby="pageTitle"></section></main></div><div id="mobileBottomNav" class="mobile-bottom-nav" aria-label="Quick navigation"><button type="button" data-section="dashboard" onclick="show('dashboard')"><span class="mi">⌂</span><span>Home</span></button><button type="button" data-section="planner" onclick="show('planner')"><span class="mi">▦</span><span>Plan</span></button><button type="button" data-section="tasks" onclick="show('tasks')"><span class="mi">✓</span><span>Tasks</span></button><button type="button" data-section="habits" onclick="show('habits')"><span class="mi">◉</span><span>Habits</span></button><button type="button" data-section="notes" onclick="show('notes')"><span class="mi">▤</span><span>Notes</span></button><button type="button" data-section="settings" onclick="show('settings')"><span class="mi">⚙</span><span>More</span></button><button type="button" class="bottom-theme" onclick="toggleAppearance()" aria-label="Toggle theme">☾</button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
 <script>
 
 
@@ -638,36 +410,13 @@ function renderDashboard(){
  const inc=data.income.filter(x=>x.date===today()).reduce((a,b)=>a+Number(b.amount||0),0);
  const h=data.habits.filter(x=>x.date===today()),hd=h.filter(x=>x.done).length;
  document.getElementById('dashboard').innerHTML=`
- <div class="hero"><b>आज का Dashboard</b><div class="muted">Simple overview — all your detailed work stays in its own sections.</div></div>
- <div class="grid">
-  <div class="card"><div class="label">आज के Tasks</div><div class="metric">${done}/${td.length}</div><div class="progress"><i style="width:${td.length?done/td.length*100:0}%"></i></div></div>
-  <div class="card"><div class="label">आज की Habits</div><div class="metric">${hd}/${h.length}</div></div>
-  <div class="card"><div class="label">आज का Balance</div><div class="metric">₹${(inc-ex).toFixed(2)}</div></div>
- </div>
- <div class="card">
-  <h2>💰 Today's Finance</h2>
-  <div class="two"><div><div class="label">Income</div><div class="money income">₹${inc.toFixed(2)}</div></div><div><div class="label">Expense</div><div class="money expense">₹${ex.toFixed(2)}</div></div></div>
- </div>
- <div class="mentor-grid">
-  <div class="card dashboard-quote-card"><div class="between"><div><h2>🧭 Today's Mentor Principle / Quote</h2><div class="meta">AD ${esc(today())} · BS ${esc(formatBsShort(today()))}</div></div><button class="secondary" type="button" onclick="show('mentor')">Open Mentor</button></div><div class="dashboard-quote-text">“${esc(mentorQuoteForDate(today())?.text||'आज का छोटा अनुशासन, कल की बड़ी स्वतंत्रता बनता है।')}”</div><div class="meta">— ${esc(mentorQuoteForDate(today())?.author||'Mentor')} · ${esc(mentorQuoteForDate(today())?.category||'Discipline')}</div></div>
-  <div class="card"><h2>💰 Runway</h2><div class="metric">${mentorFinance().runway.toFixed(1)} days</div><div class="muted">Current: ₹${Math.round(mentorFinance().balance).toLocaleString('en-IN')} · ₹60k essential burn</div></div>
- </div>
- <div class="card" style="margin-top:16px"><h2>📊 Finance Overview</h2><div id="financeDashboardChart" class="muted">Loading…</div></div>`;
+ <div class="hero"><b>आज का Dashboard</b><div class="muted">Simple overview — all your detailed work stays in its own sections.</div></div><div class="grid"><div class="card"><div class="label">आज के Tasks</div><div class="metric">${done}/${td.length}</div><div class="progress"><i style="width:${td.length?done/td.length*100:0}%"></i></div></div><div class="card"><div class="label">आज की Habits</div><div class="metric">${hd}/${h.length}</div></div><div class="card"><div class="label">आज का Balance</div><div class="metric">₹${(inc-ex).toFixed(2)}</div></div></div><div class="card"><h2>💰 Today's Finance</h2><div class="two"><div><div class="label">Income</div><div class="money income">₹${inc.toFixed(2)}</div></div><div><div class="label">Expense</div><div class="money expense">₹${ex.toFixed(2)}</div></div></div></div><div class="mentor-grid"><div class="card dashboard-quote-card"><div class="between"><div><h2>🧭 Today's Mentor Principle / Quote</h2><div class="meta">AD ${esc(today())} · BS ${esc(formatBsShort(today()))}</div></div><button class="secondary" type="button" onclick="show('mentor')">Open Mentor</button></div><div class="dashboard-quote-text">“${esc(mentorQuoteForDate(today())?.text||'आज का छोटा अनुशासन, कल की बड़ी स्वतंत्रता बनता है।')}”</div><div class="meta">— ${esc(mentorQuoteForDate(today())?.author||'Mentor')} · ${esc(mentorQuoteForDate(today())?.category||'Discipline')}</div></div><div class="card"><h2>💰 Runway</h2><div class="metric">${mentorFinance().runway.toFixed(1)} days</div><div class="muted">Current: ₹${Math.round(mentorFinance().balance).toLocaleString('en-IN')} · ₹60k essential burn</div></div></div><div class="card" style="margin-top:16px"><h2>📊 Finance Overview</h2><div id="financeDashboardChart" class="muted">Loading…</div></div>`;
  drawFinanceDashboardChart();
 }
 
 function renderPlanner(){
  let d=dayObj();
- document.getElementById('planner').innerHTML=`<div class="two">
- <div class="card"><h2>📅 Daily Plan</h2><div class="formgrid">
- <div class="full"><label class="label">Main Target</label><input value="${esc(d.target)}" oninput="dayObj().target=this.value;save()"></div>
- <div><label class="label">Progress</label><input value="${esc(d.progress)}" placeholder="जैसे 70%" oninput="dayObj().progress=this.value;save()"></div>
- </div>
- <h2 style="margin-top:18px">📌 Top Priorities — Point Wise</h2><div class="points">${pointHtml('planPoints')}</div><button class="secondary" onclick="addPoint('planPoints')">+ Add Priority Point</button>
- </div>
- <div class="card"><h2>🏆 Achievement — Point Wise</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button>
- <h2 style="margin-top:20px">🪞 Reflection — Point Wise</h2><div class="points">${pointHtml('reflectionPoints')}</div><button class="secondary" onclick="addPoint('reflectionPoints')">+ Add Reflection Point</button></div>
- </div>`;
+ document.getElementById('planner').innerHTML=`<div class="two"><div class="card"><h2>📅 Daily Plan</h2><div class="formgrid"><div class="full"><label class="label">Main Target</label><input value="${esc(d.target)}" oninput="dayObj().target=this.value;save()"></div><div><label class="label">Progress</label><input value="${esc(d.progress)}" placeholder="जैसे 70%" oninput="dayObj().progress=this.value;save()"></div></div><h2 style="margin-top:18px">📌 Top Priorities — Point Wise</h2><div class="points">${pointHtml('planPoints')}</div><button class="secondary" onclick="addPoint('planPoints')">+ Add Priority Point</button></div><div class="card"><h2>🏆 Achievement — Point Wise</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button><h2 style="margin-top:20px">🪞 Reflection — Point Wise</h2><div class="points">${pointHtml('reflectionPoints')}</div><button class="secondary" onclick="addPoint('reflectionPoints')">+ Add Reflection Point</button></div></div>`;
 }
 function renderTasks(){
  document.getElementById('tasks').innerHTML=`<div class="two"><div class="card"><h2>➕ Add Task</h2><div class="formgrid"><input id="tt" placeholder="Task title"><select id="tc"><option>Professional</option><option>Personal</option><option>Spiritual</option><option>Social</option><option>Moral</option><option>Health</option><option>Finance</option></select>${dateFieldMarkup('td',today(),'Task date')}<input id="tm" type="time"><select id="tp"><option>High</option><option>Medium</option><option>Low</option></select><input id="ttag" placeholder="Tags"><button class="primary" onclick="addTask()">Add Task</button></div></div><div class="card"><h2>📌 Filter</h2><select id="filter" onchange="renderTaskList()"><option>All</option><option>Professional</option><option>Personal</option><option>Spiritual</option><option>Social</option><option>Moral</option><option>Health</option><option>Finance</option><option>Completed</option></select></div></div><div class="card" style="margin-top:16px"><div id="taskList"></div></div>`;
@@ -685,21 +434,7 @@ function routineList(todayOnly=false){let a=data.routines.filter(x=>!todayOnly||
 function renderRoutine(){document.getElementById('routine').innerHTML=`<div class="two"><div class="card"><h2>🕉 Routine Planner</h2><div class="formgrid"><input id="rt" type="time"><select id="rc"><option>Personal</option><option>Professional</option><option>Spiritual</option><option>Social</option><option>Moral</option></select><input id="rn" placeholder="Routine / Activity"><input id="rnote" placeholder="Short note"><button class="primary" onclick="addRoutine()">Add Routine</button></div></div><div class="card"><h2>🎯 Routine Categories</h2><p class="muted">Personal · Professional · Spiritual · Social · Moral</p></div></div><div class="card" style="margin-top:16px"><h2>Today's Routine</h2>${routineList(true)}</div>`}
 
 function setNoteColor(c){noteColor=c||'#fff8c5';let e=document.getElementById('noteEditor');if(e)e.style.background=noteColor;let p=document.getElementById('ncustom');if(p)p.value=noteColor}
-function renderNotes(){noteColor='#fff8c5';noteImages=[];document.getElementById('notes').innerHTML=`<div class="note-grid">
-<div class="card note-editor" id="noteEditor"><h2>📝 Rich Note</h2><div class="form">
-<input id="nt" placeholder="Note title"><input id="ntag" placeholder="Tags: idea, meeting"><div class="two"><select id="ncatSelect" onchange="syncNotebookManual()"><option value="">Select notebook / category</option>${financeNotebookCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="ncat" placeholder="Manual notebook / category (optional)" disabled></div>
-<div class="full color-line"><span class="label">Color</span><input id="ncustom" class="color-input" type="color" value="#fff8c5" onchange="setNoteColor(this.value)"><span class="label">Any color</span></div>
-<div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setNoteColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setNoteColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setNoteColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setNoteColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setNoteColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setNoteColor('#fff')"></button></div></div>
-<div class="full"><div class="rich-toolbar">
-<button type="button" onclick="richCmd('bold')"><b>B</b></button><button type="button" onclick="richCmd('italic')"><i>I</i></button><button type="button" onclick="richCmd('underline')"><u>U</u></button><button type="button" onclick="richCmd('insertUnorderedList')">• List</button><button type="button" onclick="richCmd('justifyLeft')">←</button><button type="button" onclick="richCmd('justifyCenter')">↔</button><button type="button" onclick="richCmd('justifyRight')">→</button>
-<select onchange="richFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="richColor(this.value)" title="Font color">
-</div><div id="nb" class="rich-editor full" contenteditable="true" data-draft-id="nb"></div></div>
-<textarea id="npoints" class="full" placeholder="Point-wise notes — हर line एक point"></textarea>
-<div class="full"><b>🖼️ Add Images</b><input id="nfiles" type="file" accept="image/*" multiple onchange="previewImages(this)" style="margin-top:7px"><div id="photoPreview" class="photo-preview"></div></div>
-<div class="full"><div class="between"><b>🎙️ Voice-to-Text</b><div class="row"><select id="voiceLang" style="width:145px"><option value="hi-IN">Hindi 🇮🇳</option><option value="en-IN">English 🇮🇳</option></select><button class="btn secondary" id="voiceBtn" onclick="toggleVoice()">🎙️ Start Voice</button></div></div><div class="meta">Chrome/Edge में microphone permission Allow करें।</div></div>
-<button class="btn primary full" onclick="addNote()">Save Note</button></div></div>
-<div class="card"><h2>🔎 Search Notes</h2><input id="nf" placeholder="Search title, text, tag..." oninput="renderNoteList()"></div>
-</div><div class="card" style="margin-top:16px"><div id="noteList"></div></div>`;renderNoteList()}
+function renderNotes(){noteColor='#fff8c5';noteImages=[];document.getElementById('notes').innerHTML=`<div class="note-grid"><div class="card note-editor" id="noteEditor"><h2>📝 Rich Note</h2><div class="form"><input id="nt" placeholder="Note title"><input id="ntag" placeholder="Tags: idea, meeting"><div class="two"><select id="ncatSelect" onchange="syncNotebookManual()"><option value="">Select notebook / category</option>${financeNotebookCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="ncat" placeholder="Manual notebook / category (optional)" disabled></div><div class="full color-line"><span class="label">Color</span><input id="ncustom" class="color-input" type="color" value="#fff8c5" onchange="setNoteColor(this.value)"><span class="label">Any color</span></div><div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setNoteColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setNoteColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setNoteColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setNoteColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setNoteColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setNoteColor('#fff')"></button></div></div><div class="full"><div class="rich-toolbar"><button type="button" onclick="richCmd('bold')"><b>B</b></button><button type="button" onclick="richCmd('italic')"><i>I</i></button><button type="button" onclick="richCmd('underline')"><u>U</u></button><button type="button" onclick="richCmd('insertUnorderedList')">• List</button><button type="button" onclick="richCmd('justifyLeft')">←</button><button type="button" onclick="richCmd('justifyCenter')">↔</button><button type="button" onclick="richCmd('justifyRight')">→</button><select onchange="richFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="richColor(this.value)" title="Font color"></div><div id="nb" class="rich-editor full" contenteditable="true" data-draft-id="nb"></div></div><textarea id="npoints" class="full" placeholder="Point-wise notes — हर line एक point"></textarea><div class="full"><b>🖼️ Add Images</b><input id="nfiles" type="file" accept="image/*" multiple onchange="previewImages(this)" style="margin-top:7px"><div id="photoPreview" class="photo-preview"></div></div><div class="full"><div class="between"><b>🎙️ Voice-to-Text</b><div class="row"><select id="voiceLang" style="width:145px"><option value="hi-IN">Hindi 🇮🇳</option><option value="en-IN">English 🇮🇳</option></select><button class="btn secondary" id="voiceBtn" onclick="toggleVoice()">🎙️ Start Voice</button></div></div><div class="meta">Chrome/Edge में microphone permission Allow करें।</div></div><button class="btn primary full" onclick="addNote()">Save Note</button></div></div><div class="card"><h2>🔎 Search Notes</h2><input id="nf" placeholder="Search title, text, tag..." oninput="renderNoteList()"></div></div><div class="card" style="margin-top:16px"><div id="noteList"></div></div>`;renderNoteList()}
 async function compressImage(file){
   if(!file.type.startsWith('image/')) return null;
   if(!('createImageBitmap' in window) && !/image\/(jpeg|jpg|png|webp)$/i.test(file.type)) return null;
@@ -820,9 +555,7 @@ function deleteCustomHabit(n){n=decodeURIComponent(n);data.habits=data.habits.fi
 
 function periodOk(date,p){let x=new Date(date+'T00:00:00'),n=new Date(),s=new Date(n.getFullYear(),n.getMonth(),n.getDate());if(p==='daily')return date===today();if(p==='weekly'){let z=new Date(s);z.setDate(z.getDate()-6);return x>=z&&x<=s}if(p==='monthly')return x.getMonth()===n.getMonth()&&x.getFullYear()===n.getFullYear();return x.getFullYear()===n.getFullYear()}
 function periodButtons(){return ['daily','weekly','monthly','yearly'].map(p=>`<button class="${data.financePeriod===p?'active':''}" onclick="data.financePeriod='${p}';save();renderExpenses()">${p[0].toUpperCase()+p.slice(1)}</button>`).join('')}
-function renderExpenses(){let p=data.financePeriod||'monthly',inc=data.income.filter(x=>periodOk(x.date,p)),out=data.expenses.filter(x=>periodOk(x.date,p)),ia=inc.reduce((s,x)=>s+Number(x.amount),0),ea=out.reduce((s,x)=>s+Number(x.amount),0);document.getElementById('expenses').innerHTML=`<div class="card"><div class="finance-head"><h2>💰 Expenses & Income</h2><div class="periods">${periodButtons()}</div></div><div class="grid" style="margin-top:15px"><div class="card"><div class="label">Income — ${p}</div><div class="money income">₹${ia.toFixed(2)}</div></div><div class="card"><div class="label">Expense — ${p}</div><div class="money expense">₹${ea.toFixed(2)}</div></div><div class="card"><div class="label">Balance — ${p}</div><div class="money">₹${(ia-ea).toFixed(2)}</div></div><div class="card"><div class="label">Transactions</div><div class="metric">${inc.length+out.length}</div></div></div></div>
-<div class="two" style="margin-top:16px"><div class="card"><h2>➕ Add Income</h2><div class="formgrid"><select id="isSelect" onchange="syncFinanceManual('income')"><option value="">Select income source</option>${financeIncomeSources.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="is" placeholder="Manual income source (optional)" disabled><input id="ia" inputmode="decimal" placeholder="Amount (e.g. 1500+500)" oninput="previewFinanceAmount('ia','iap')"><div id="iap" class="meta"></div>${dateFieldMarkup('id',today(),'Income date')}<input id="inote" placeholder="Note"><button class="primary" onclick="addIncome()">Save Income</button></div></div><div class="card"><h2>➕ Add Expense</h2><div class="formgrid"><select id="esSelect" onchange="syncFinanceManual('expense')"><option value="">Select expense category</option>${financeExpenseCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="es" placeholder="Manual expense category (optional)" disabled><input id="ea" inputmode="decimal" placeholder="Amount (e.g. 1200+300)" oninput="previewFinanceAmount('ea','eap')"><div id="eap" class="meta"></div>${dateFieldMarkup('ed',today(),'Expense date')}<input id="en" placeholder="Note"><button class="primary" onclick="addExpense()">Save Expense</button></div></div></div>
-<div class="card" style="margin-top:16px"><h2>🧮 Built-in Calculator</h2><div class="formgrid"><input id="finCalc" inputmode="decimal" placeholder="Example: 1500 + 250 - 100 × 2" oninput="calculateFinanceExpression()"><div id="finCalcResult" class="money">₹0.00</div><div class="meta">Amount fields also support +, -, ×, ÷ and brackets. Example: 1000+500-200.</div></div></div><div class="card" style="margin-top:16px"><h2>📋 ${p[0].toUpperCase()+p.slice(1)} Transactions</h2><div id="finList"></div></div>`;let all=[...inc.map(x=>({...x,type:'income'})),...out.map(x=>({...x,type:'expense'}))].sort((a,b)=>b.date.localeCompare(a.date));document.getElementById('finList').innerHTML=all.length?`<div class="list">${all.map(x=>`<div class="item"><div class="between"><div><b class="${x.type==='income'?'income':'expense'}">${x.type==='income'?'+':'-'} ₹${Number(x.amount).toFixed(2)}</b> · ${esc(x.source)}<div class="meta">${x.date} · ${esc(x.note||'')}</div></div><button class="danger" onclick="delFinance('${x.type}','${x.id}')">Delete</button></div></div>`).join('')}</div>`:'<div class="empty">इस period में कोई transaction नहीं।</div>'}
+function renderExpenses(){let p=data.financePeriod||'monthly',inc=data.income.filter(x=>periodOk(x.date,p)),out=data.expenses.filter(x=>periodOk(x.date,p)),ia=inc.reduce((s,x)=>s+Number(x.amount),0),ea=out.reduce((s,x)=>s+Number(x.amount),0);document.getElementById('expenses').innerHTML=`<div class="card"><div class="finance-head"><h2>💰 Expenses & Income</h2><div class="periods">${periodButtons()}</div></div><div class="grid" style="margin-top:15px"><div class="card"><div class="label">Income — ${p}</div><div class="money income">₹${ia.toFixed(2)}</div></div><div class="card"><div class="label">Expense — ${p}</div><div class="money expense">₹${ea.toFixed(2)}</div></div><div class="card"><div class="label">Balance — ${p}</div><div class="money">₹${(ia-ea).toFixed(2)}</div></div><div class="card"><div class="label">Transactions</div><div class="metric">${inc.length+out.length}</div></div></div></div><div class="two" style="margin-top:16px"><div class="card"><h2>➕ Add Income</h2><div class="formgrid"><select id="isSelect" onchange="syncFinanceManual('income')"><option value="">Select income source</option>${financeIncomeSources.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="is" placeholder="Manual income source (optional)" disabled><input id="ia" inputmode="decimal" placeholder="Amount (e.g. 1500+500)" oninput="previewFinanceAmount('ia','iap')"><div id="iap" class="meta"></div>${dateFieldMarkup('id',today(),'Income date')}<input id="inote" placeholder="Note"><button class="primary" onclick="addIncome()">Save Income</button></div></div><div class="card"><h2>➕ Add Expense</h2><div class="formgrid"><select id="esSelect" onchange="syncFinanceManual('expense')"><option value="">Select expense category</option>${financeExpenseCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="es" placeholder="Manual expense category (optional)" disabled><input id="ea" inputmode="decimal" placeholder="Amount (e.g. 1200+300)" oninput="previewFinanceAmount('ea','eap')"><div id="eap" class="meta"></div>${dateFieldMarkup('ed',today(),'Expense date')}<input id="en" placeholder="Note"><button class="primary" onclick="addExpense()">Save Expense</button></div></div></div><div class="card" style="margin-top:16px"><h2>🧮 Built-in Calculator</h2><div class="formgrid"><input id="finCalc" inputmode="decimal" placeholder="Example: 1500 + 250 - 100 × 2" oninput="calculateFinanceExpression()"><div id="finCalcResult" class="money">₹0.00</div><div class="meta">Amount fields also support +, -, ×, ÷ and brackets. Example: 1000+500-200.</div></div></div><div class="card" style="margin-top:16px"><h2>📋 ${p[0].toUpperCase()+p.slice(1)} Transactions</h2><div id="finList"></div></div>`;let all=[...inc.map(x=>({...x,type:'income'})),...out.map(x=>({...x,type:'expense'}))].sort((a,b)=>b.date.localeCompare(a.date));document.getElementById('finList').innerHTML=all.length?`<div class="list">${all.map(x=>`<div class="item"><div class="between"><div><b class="${x.type==='income'?'income':'expense'}">${x.type==='income'?'+':'-'} ₹${Number(x.amount).toFixed(2)}</b> · ${esc(x.source)}<div class="meta">${x.date} · ${esc(x.note||'')}</div></div><button class="danger" onclick="delFinance('${x.type}','${x.id}')">Delete</button></div></div>`).join('')}</div>`:'<div class="empty">इस period में कोई transaction नहीं।</div>'}
 const financeIncomeSources=['Salary','Freelance','Business','Investment','Bonus','Interest','Rental Income','Other Income'];
 const financeExpenseCategories=['Food','Groceries','Rent','Utilities','Transport','Fuel','Shopping','Health','Education','Entertainment','Bills','Travel','EMI / Loan','Subscriptions','Other Expense'];
 function syncFinanceManual(type){const select=document.getElementById(type==='income'?'isSelect':'esSelect'),input=document.getElementById(type==='income'?'is':'es');if(!select||!input)return;const manual=select.value==='__manual__';input.disabled=!manual;input.required=manual;if(!manual)input.value='';if(manual)input.focus()}
@@ -1201,5 +934,4 @@ document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='laz
 })();
 </script>
 
-</body>
-</html>
+</body></html>
