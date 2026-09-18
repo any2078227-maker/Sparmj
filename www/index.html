@@ -1924,8 +1924,7 @@ th,td{vertical-align:middle;text-align:left;line-height:1.35}
  .row,.form-row,.toolbar,.actions,.input-row,.field-row{align-items:stretch}
  button{min-height:40px}
  .big,.value,.amount,.money,.metric-value,.stat-value,.kpi-value,.number{line-height:1.2}
-}
-</style></head><body><div class="app"><aside class="side"><div class="sidebar-top-tools"><button aria-label="Toggle light and dark theme" aria-pressed="false" class="sidebar-theme-toggle" id="sidebarThemeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button></div><div class="brand"><div aria-label="ॐ logo" class="brand-logo">ॐ</div></div><nav id="nav"></nav></aside><main class="main"><div class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">काम, लक्ष्य, routine, habits, notes और finance — एक जगह।</div></div><div class="top-actions date-tools"><button aria-label="Toggle light and dark theme" aria-pressed="false" class="appearance-btn" hidden="" id="themeToggle" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙</button><div class="date-panel"><div class="date-panel-head"><span class="date-panel-title">📅 Date</span></div><div class="date-dual-row"><label class="date-box compact"><span>AD</span><input class="date" id="today" onchange="syncBsFromAd();render()" type="date"/></label><div class="date-box bs-display"><span>BS</span><strong id="todayBsDisplay">—</strong><input aria-label="Bikram Sambat date" class="bs-date-hidden" id="todayBs" inputmode="numeric" type="text"/><button aria-label="Open Bikram Sambat calendar" class="bs-use-mini" onclick="openBsCalendar('today')" type="button">🇳🇵</button></div></div></div></div></div><section class="section active" id="dashboard"></section><section class="section" id="mentor"></section><section class="section" id="planner"></section><section class="section" id="tasks"></section><section class="section" id="routine"></section><section class="section" id="notes"></section><section class="section" id="journal"></section><section class="section" id="habits"></section><section class="section" id="expenses"></section><section class="section" id="personal"></section><section class="section" id="professional"></section><section class="section" id="spiritual"></section><section class="section" id="economical"></section><section class="section" id="mental"></section><section class="section" id="social"></section><section class="section" id="moral"></section><section class="section" id="settings"></section><section class="section" id="review"></section><section class="section" id="achievements"></section><section class="section" id="goals"></section><section class="section" id="focus"></section><section class="section" id="reset"></section></main></div><div aria-label="LifeOS navigation" class="mobile-bottom-nav" id="mobileBottomNav"><button data-section="dashboard" onclick="show('dashboard')">⌂<span>Home</span></button><button data-section="mentor" onclick="show('mentor')">🧭<span>Mentor</span></button><button data-section="planner" onclick="show('planner')">📅<span>Planner</span></button><button data-section="tasks" onclick="show('tasks')">✓<span>Tasks</span></button><button data-section="routine" onclick="show('routine')">🕉<span>Routine</span></button><button data-section="habits" onclick="show('habits')">◌<span>Habits</span></button><button data-section="goals" onclick="show('goals')">🎯<span>Goals</span></button><button data-section="focus" onclick="show('focus')">⏱<span>Focus</span></button><button data-section="notes" onclick="show('notes')">📝<span>Notes</span></button><button data-section="journal" onclick="show('journal')">📔<span>Journal</span></button><button data-section="expenses" onclick="show('expenses')">₹<span>Finance</span></button><button data-section="settings" onclick="show('settings')">⚙️<span>Settings</span></button><button aria-label="Toggle light and dark theme" class="bottom-theme" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙<span>Theme</span></button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div><script>
+}urnal</span></button><button data-section="expenses" onclick="show('expenses')">₹<span>Finance</span></button><button data-section="settings" onclick="show('settings')">⚙️<span>Settings</span></button><button aria-label="Toggle light and dark theme" class="bottom-theme" onclick="window.toggleAppearance(); return false;" title="Toggle light / dark theme" type="button">🌙<span>Theme</span></button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div><script>
 
 const KEY='lifeos_clean_v5';
 const LEGACY_KEYS=['lifeos_upgraded_v4','lifeos_upgraded_v4_drafts','lifeos_upgraded_v4_recovery'];
@@ -1949,6 +1948,36 @@ data.settings={...{mode:'light'},...(data.settings||{})};
 data.mentor={...{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},...(data.mentor||{})};
 data.mentorKpis=(data.mentorKpis&&typeof data.mentorKpis==='object')?data.mentorKpis:{};
 data.mentorQuotes=Array.isArray(data.mentorQuotes)?data.mentorQuotes:[];
+<nav id="nav">
+<button onclick="show('dashboard')">🏠 Dashboard</button>
+<button onclick="show('mentor')">🧭 Mentor</button>
+<button onclick="show('planner')">📅 Planner</button>
+<button onclick="show('tasks')">✅ Tasks</button>
+<button onclick="show('routine')">🕉️ Routine</button>
+<button onclick="show('notes')">📝 Notes</button>
+<button onclick="show('journal')">📔 Journal</button>
+<button onclick="show('habits')">🔁 Habits</button>
+<button onclick="show('expenses')">💸 Expenses</button>
+
+<div class="nav-group-title">Life Dimensions</div>
+
+<button onclick="show('personal')">👤 Personal</button>
+<button onclick="show('professional')">💼 Professional</button>
+<button onclick="show('spiritual')">🕉️ Spiritual</button>
+<button onclick="show('economical')">💰 Economical</button>
+<button onclick="show('mental')">🧠 Mental</button>
+<button onclick="show('social')">👥 Social</button>
+<button onclick="show('moral')">⚖️ Moral</button>
+
+<div class="nav-group-title">More</div>
+
+<button onclick="show('goals')">🎯 Goals</button>
+<button onclick="show('focus')">⏱ Focus</button>
+<button onclick="show('settings')">⚙️ Settings</button>
+<button onclick="show('review')">📊 Review</button>
+<button onclick="show('achievements')">🏆 Achievements</button>
+<button onclick="show('reset')">♻️ Reset</button>
+</nav>
 // One-time cleanup: older built-in entries used the label 'Mentor Principle' as an author.
 data.mentorQuotes=data.mentorQuotes.map(q=>({...q,author:String(q?.author||'Mentor')==='Mentor Principle'?'Mentor':(q?.author||'Mentor')}));
 // Normalize/sanitize stored rich text from older versions before it is rendered.
