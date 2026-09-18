@@ -1,4 +1,4 @@
-name: Build LifeOS Android APK
+name: Build Android APK
 
 on:
   workflow_dispatch:
@@ -11,36 +11,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
       - name: Install dependencies
         run: |
           npm install
-          npm install @capacitor/core @capacitor/android
-          npm install --save-dev @capacitor/cli
+          npm install @capacitor/core @capacitor/cli @capacitor/android
 
-      - name: Create Capacitor config
-        run: |
-          cat > capacitor.config.json <<'EOF'
-          {
-            "appId": "com.sparmj.lifeos",
-            "appName": "LifeOS",
-            "webDir": "www"
-          }
-          EOF
+      - name: Setup Android
+        uses: android-actions/setup-android@v3
+        with:
+          packages: ""
 
       - name: Create Android project
         run: |
           npx cap add android
           npx cap sync android
 
-          - name: Add microphone permission
+      - name: Add microphone permission
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -61,7 +61,7 @@ jobs:
 
           p.write_text(s)
           PY
-          
+
       - name: Fix Kotlin dependencies
         run: |
           cat >> android/build.gradle <<'EOF'
@@ -76,30 +76,15 @@ jobs:
               }
           }
           EOF
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "21"
-
-      - name: Verify Java
-        run: |
-          java -version
-          echo "JAVA_HOME=$JAVA_HOME"
-
-      - name: Setup Android
-        uses: android-actions/setup-android@v4
-        with:
-          packages: ""
 
       - name: Build APK
+        working-directory: android
         run: |
-          chmod +x android/gradlew
-          cd android
+          chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: LifeOS-Android-APK
+          name: LifeOS-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
