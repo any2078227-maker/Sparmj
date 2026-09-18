@@ -39,17 +39,15 @@ jobs:
         run: |
           if [ ! -f "capacitor.config.json" ] && [ ! -f "capacitor.config.ts" ]; then
             npx cap init LifeOS com.lifeos.app --web-dir=www
-          else
-            echo "Capacitor config already exists"
           fi
 
-      - name: Create Android project
+      - name: Remove incomplete Android project
         run: |
-          if [ ! -d "android" ]; then
-            npx cap add android
-          else
-            echo "Android project already exists, skipping creation"
-          fi
+          rm -rf android
+
+      - name: Create fresh Android project
+        run: |
+          npx cap add android
 
       - name: Add Android permissions
         run: |
@@ -57,23 +55,13 @@ jobs:
           from pathlib import Path
 
           manifest = Path("android/app/src/main/AndroidManifest.xml")
-
           text = manifest.read_text()
 
           permissions = """
               <uses-permission android:name="android.permission.INTERNET" />
               <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
-              <!-- Storage permissions for older Android versions -->
-              <uses-permission
-                  android:name="android.permission.READ_EXTERNAL_STORAGE"
-                  android:maxSdkVersion="32" />
-
-              <uses-permission
-                  android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-                  android:maxSdkVersion="28" />
-
-              <!-- Media permissions for Android 13+ -->
+              <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+              <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
               <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
               <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
               <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
@@ -86,7 +74,7 @@ jobs:
               )
 
           manifest.write_text(text)
-          print("Android permissions added successfully")
+          print("Permissions added")
           PY
 
       - name: Sync Web Files
