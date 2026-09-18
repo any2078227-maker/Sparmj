@@ -35,6 +35,16 @@ jobs:
         with:
           packages: ""
 
+            - name: Create Capacitor config
+        run: |
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.lifeos.app",
+            "appName": "LifeOS",
+            "webDir": "www"
+          }
+          EOF
+
       - name: Create Android project
         run: |
           npx cap add android
