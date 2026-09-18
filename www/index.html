@@ -826,7 +826,7 @@ const __todayInput=document.getElementById('today'); if(__todayInput) __todayInp
   };
 
 
-  window.exportBackup=function(){try{const backup={format:'LifeOS Backup',version:1,exportedAt:new Date().toISOString(),data:data};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='LifeOS_Backup.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Backup exported')}catch(e){console.error('Backup export failed',e);toast('Backup export failed')}};
+  window.exportBackup=function(){try{const backup={format:'LifeOS Backup',version:1,exportedAt:new Date().toISOString(),data:data};lifeosDownloadBlob(JSON.stringify(backup,null,2),'LifeOS_Backup.json','application/json');toast('✓ Save location choose karein')}catch(e){console.error('Backup export failed',e);toast('Backup export failed')}};
   window.importBackup=async function(input){const file=input?.files?.[0];if(!file)return;try{const parsed=JSON.parse(await file.text());const imported=parsed?.format==='LifeOS Backup'&&parsed?.data?parsed.data:parsed;if(!imported||typeof imported!=='object'||Array.isArray(imported))throw new Error('Invalid backup');if(!confirm('Import this backup? Current LifeOS data will be replaced.')){input.value='';return}data=imported;data.__drafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};data.settings={...{mode:'light'},...(data.settings||{})};data.__updatedAt=Date.now();if(!persistLocalNow())throw new Error('Save failed');persistAttachmentsToIDB(data).catch(()=>{});toast('✓ Backup imported');setTimeout(()=>location.reload(),450)}catch(e){console.error('Backup import failed',e);alert('Invalid or unreadable LifeOS backup.');input.value=''}};
   window.resetLifeOSData=function(){if(!confirm('Delete all LifeOS data?\n\nThis will remove saved LifeOS data, drafts and local attachments. This cannot be undone.'))return;try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_drafts');Object.keys(localStorage).filter(k=>k.startsWith('lifeos_category_')).forEach(k=>localStorage.removeItem(k))}catch(e){}try{indexedDB.deleteDatabase(ATTACH_DB);indexedDB.deleteDatabase(DEVICE_DB)}catch(e){}location.reload()};
 
@@ -887,14 +887,11 @@ document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='laz
     return `<!doctype html><html><head><meta charset="utf-8"><title>${lifeosEscapeHtml(title)}</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#111}h1{font-size:22px}p{color:#555;font-size:12px}table{border-collapse:collapse;width:100%;font-size:10px}th,td{border:1px solid #bbb;padding:5px;text-align:left;vertical-align:top}th{background:#eee} @media print{body{padding:8px}}</style></head><body><h1>${lifeosEscapeHtml(title)}</h1><p>Generated: ${lifeosEscapeHtml(now)} · LifeOS data export</p><table>${head}${body||'<tr><td colspan="8">No data available</td></tr>'}</table></body></html>`;
   }
   function lifeosDownloadBlob(content,name,type){
-    const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+    try{if(window.Android && typeof window.Android.saveFile==='function'){const base64=btoa(unescape(encodeURIComponent(String(content))));window.Android.saveFile(String(name),String(type),base64);return true;}}catch(e){console.error('Native save failed',e)}
+    const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);return false;
   }
-  window.exportLifeOSWord=function(){
-    try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Word Report'),'LifeOS_Report.doc','application/msword');toast('✓ Word report exported')}catch(e){console.error(e);toast('Word export failed')}
-  };
-  window.exportLifeOSExcel=function(){
-    try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Excel Report'),'LifeOS_Report.xls','application/vnd.ms-excel');toast('✓ Excel report exported')}catch(e){console.error(e);toast('Excel export failed')}
-  };
+  window.exportLifeOSWord=function(){try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Word Report'),'LifeOS_Report.doc','application/msword');toast('✓ Save location choose karein')}catch(e){console.error(e);toast('Word export failed')}};
+  window.exportLifeOSExcel=function(){try{lifeosDownloadBlob('\ufeff'+lifeosReportHtml('LifeOS Excel Report'),'LifeOS_Report.xls','application/vnd.ms-excel');toast('✓ Save location choose karein')}catch(e){console.error(e);toast('Excel export failed')}};
   window.exportLifeOSPDF=function(){
     try{const w=window.open('','_blank');if(!w){toast('Popup blocked. Allow popups and try again.');return}w.document.open();w.document.write(lifeosReportHtml('LifeOS PDF Report'));w.document.close();setTimeout(()=>{w.focus();w.print()},500);toast('✓ Print dialog opened — choose Save as PDF')}catch(e){console.error(e);toast('PDF export failed')}
   };
