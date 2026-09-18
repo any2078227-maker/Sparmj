@@ -66,22 +66,6 @@ textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus
 #bsCalendarModal.open{display:flex}.bs-calendar-card{width:min(520px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:12px;padding:12px}
 .bs-calendar-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.bs-calendar-title{text-align:center;display:grid;gap:1px}.bs-calendar-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0}.bs-calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.bs-weekday{text-align:center;font-size:9px;color:#667085;padding:3px}.bs-day{min-height:47px;border:1px solid #e5e8ef;background:#fafbfe;border-radius:6px;padding:3px;font-size:9px}.bs-day.selected{border-color:var(--accent);background:#efedff}.bs-day.today{box-shadow:inset 0 0 0 2px #e8b94a}.bs-num{display:block;font-weight:800}.ad-num{display:block;color:#7b8494;font-size:8px;margin-top:1px}.bs-calendar-footer{display:flex;justify-content:space-between;align-items:center;margin-top:7px}
 .mobile-bottom-nav{display:none}
-
-/* Fresh compact layout support for dynamically-rendered cards and date controls */
-.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
-.mini{min-width:0;padding:9px;border:1px solid var(--line);border-radius:9px;background:var(--surface2);text-align:center}
-.mini b{display:block;font-size:17px;line-height:1.15}
-.universal-date-field{min-width:0}
-.universal-date-control{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center}
-.universal-date-control input{min-width:0}
-.bs-date-action{min-width:64px;white-space:nowrap}
-.bs-date-caption{margin-top:5px;font-size:10px;color:var(--muted);min-height:14px}
-.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-.settings-backup-grid button{width:100%;min-width:0}
-.eyebrow{font-size:9px;font-weight:800;letter-spacing:.08em;color:var(--muted)}
-.empty{padding:12px;border:1px dashed var(--line);border-radius:9px;color:var(--muted);text-align:center}
-.full{width:100%}
 @media(max-width:1050px){
  .app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}.brand{padding:2px 3px 6px;margin-bottom:5px}.brand-logo{width:34px;height:34px;flex-basis:34px;font-size:20px}.brand b{font-size:14px}
  .sidebar-top-tools{display:none}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}
@@ -90,14 +74,12 @@ textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus
  .mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}
  .mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.mobile-bottom-nav .bottom-theme{max-width:48px;border-left:1px solid var(--line)}
 }
-@media(max-width:1050px){.settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.universal-date-control{grid-template-columns:minmax(0,1fr) auto}}
 @media(max-width:700px){
  .main{padding:7px 7px 72px}.top{display:block;padding:10px;margin-bottom:8px}.top h1{font-size:19px}.top .date{width:100%!important;margin-top:6px}
  .grid,.formgrid,.kpi-grid,.badge-grid,.mentor-quote-form{grid-template-columns:1fr}.card{padding:10px;border-radius:10px}.hero,.module-hero{padding:12px}
  .metric,.money,.big{font-size:20px}.routine{grid-template-columns:47px minmax(0,1fr);gap:6px;padding:8px}.routine-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.routine-actions button{width:100%}
  .mission-fields{grid-template-columns:1fr}.focus-clock{font-size:40px}.focus-stats{grid-template-columns:1fr}.mentor-quote-text{font-size:15px}.date-panel{display:block}
 }
-@media(max-width:700px){.kpi{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.mini{padding:8px}.mini b{font-size:15px}.universal-date-control{grid-template-columns:minmax(0,1fr) auto}.bs-date-action{min-width:60px;padding-left:8px;padding-right:8px}.settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:380px){nav button{font-size:9px;padding:5px 8px}.mobile-bottom-nav button{font-size:7px}.mobile-bottom-nav .mi{font-size:16px}.main{padding-left:5px;padding-right:5px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}
@@ -105,6 +87,72 @@ html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[
 html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}
 html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}
 html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}
+
+/* FINAL CLEAN RESPONSIVE */
+html{scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p,.label,.meta,.muted,.tag,.pill,.chip,button,label{overflow-wrap:normal;word-break:normal}
+button,input,textarea,select{font-family:inherit;max-width:100%}
+button{white-space:nowrap;touch-action:manipulation}
+.primary,.secondary,.danger{display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
+.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.mini{min-width:0;padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--surface2)}
+.mini b{font-size:15px;line-height:1.1}
+.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:7px}
+.settings-backup-grid button{width:100%;min-width:0}
+.mentor-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:10px}
+.mentor-rule-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center}
+.universal-date-control{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center}
+.universal-date-control input{min-width:0}
+.bs-date-action{min-width:60px}
+.bs-date-caption{margin-top:4px;min-height:14px;font-size:10px;color:var(--muted)}
+.card,.item,.routine,.note-card,.hero,.module-hero{overflow-wrap:anywhere}
+.voice-status{font-size:10px;color:var(--muted);margin-top:4px}
+#voiceBtn:disabled{opacity:.65}
+@media(max-width:1050px){
+ .app{display:block}
+ .side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}
+ nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}
+ nav::-webkit-scrollbar{display:none}
+ nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}
+ .main{padding:9px 10px 78px}
+ .mentor-grid{grid-template-columns:1fr}
+ .settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16)}
+ .mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}
+ .mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}
+ .mobile-bottom-nav .mi{font-size:17px;line-height:1}
+}
+@media(max-width:700px){
+ .main{padding:7px 7px 72px}
+ .top{padding:10px}
+ .grid,.formgrid,.kpi-grid,.badge-grid{grid-template-columns:1fr}
+ .kpi{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .card{padding:10px;border-radius:10px}
+ .settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .settings-backup-grid button{min-height:38px;padding:7px 8px;font-size:12px}
+}
+@media(max-width:430px){
+ body{font-size:12px}
+ .main{padding-left:5px;padding-right:5px}
+ h2{font-size:15px}
+ .card{padding:9px}
+ .kpi{gap:5px}
+ .mini{padding:7px 5px}
+ .mini b{font-size:13px}
+ .mini .meta{font-size:9px}
+ .universal-date-control{grid-template-columns:minmax(0,1fr) 55px}
+ .bs-date-action{min-width:55px;padding:6px 5px}
+ .settings-backup-grid{gap:5px}
+ .settings-backup-grid button{font-size:11px;padding:6px 5px}
+}
+@media(max-width:340px){
+ .kpi{grid-template-columns:1fr}
+ .settings-backup-grid{grid-template-columns:1fr}
+ .universal-date-control{grid-template-columns:1fr}
+ .bs-date-action{width:100%}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -335,43 +383,35 @@ function buildExportIndexHtml(){
 }
 async function setupComputerExport(){
   try{
-    // Desktop Chrome/Edge: direct folder connection
     if('showDirectoryPicker' in window){
-      const handle=await window.showDirectoryPicker({
-        id:'lifeos-export',
-        mode:'readwrite'
-      });
-
-      if(!handle) return false;
-
+      const handle=await window.showDirectoryPicker({id:'lifeos-export',mode:'readwrite'});
+      if(!handle)return false;
       await saveExportDirectoryHandle(handle);
       await writeDailyExportToFolder(handle,today(),true);
-
       toast('✅ LifeOS computer export folder connected');
       return true;
     }
-
-    // Android/mobile fallback: download archive files instead
-    const html=buildDailyExportHtml(today());
-    const blob=new Blob([html],{type:'text/html;charset=utf-8'});
-    const url=URL.createObjectURL(blob);
-
-    const a=document.createElement('a');
-    a.href=url;
-    a.download=`LifeOS-Daily-${exportDateKey(today())}.html`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    setTimeout(()=>URL.revokeObjectURL(url),1000);
-
-    toast('✅ Archive file downloaded. इसे computer में भेजकर खोल सकते हैं।');
-    return true;
-
-  }catch(e){
-    if(e?.name!=='AbortError'){
-      toast('Computer export failed: '+(e?.message||e));
+    const date=exportDateKey(today());
+    const daily=new Blob([buildDailyExportHtml(today())],{type:'text/html'});
+    const data=buildExportText();
+    const word='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><h1>LifeOS Data Export</h1><pre style="white-space:pre-wrap;font-family:Arial">'+esc(data)+'</pre></body></html>';
+    const rows=buildExportRows();
+    const excel='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><table border="1"><tr>'+rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+'</tr>'+rows.slice(1).map(r=>'<tr>'+r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</table></body></html>';
+    const files=[
+      new File([daily],`LifeOS-Daily-${date}.html`,{type:'text/html'}),
+      new File(['\ufeff'+word],`LifeOS-${date}.doc`,{type:'application/msword'}),
+      new File(['\ufeff'+excel],`LifeOS-${date}.xls`,{type:'application/vnd.ms-excel'})
+    ];
+    if(navigator.share&&navigator.canShare&&navigator.canShare({files})){
+      await navigator.share({title:'LifeOS Computer Transfer',text:'LifeOS backup — Daily, Word and Excel',files});
+      toast('✅ LifeOS files ready to transfer');
+      return true;
     }
+    for(const f of files)await downloadBlob(f,f.type,f.name);
+    toast('✅ Backup files downloaded');
+    return true;
+  }catch(e){
+    if(e?.name!=='AbortError')toast('Computer transfer failed: '+(e?.message||e));
     return false;
   }
 }
@@ -687,7 +727,65 @@ function notebookLabel(){const select=document.getElementById('ncatSelect'),inpu
 async function addNote(){let t=document.getElementById('nt').value.trim(),b=richText(),bh=richHtml(),pts=document.getElementById('npoints').value.trim(),cat=notebookLabel();if(!t&&!b&&!pts&&!noteImages.length)return toast('Note में content या image जोड़ें');const note={id:uid(),title:t||'Untitled',body:b,html:bh,points:pts,category:cat||'General',color:document.getElementById('ncustom').value||noteColor,tags:document.getElementById('ntag').value,date:today(),images:noteImages.slice()};data.notes.unshift(note);clearDrafts(['nt','ntag','ncat','ncatSelect','nb','npoints']);const stored=await persistAttachmentItemToIDB('note',note);if(note.images.length&&!stored)return toast('⚠️ Image storage failed. Note save रोक दिया गया — retry करें.');save();renderNotes();toast('Note saved')}
 function renderNoteList(){let q=(document.getElementById('nf')?.value||'').toLowerCase(),a=data.notes.filter(x=>`${x.title||''} ${x.body||''} ${x.points||''} ${x.tags||''} ${x.category||''}`.toLowerCase().includes(q));document.getElementById('noteList').innerHTML=a.length?`<div class="grid g3">${a.map(x=>{let pts=(x.points||'').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);let imgs=Array.isArray(x.images)?x.images:[];return `<article class="note-card" style="background:${/^#[0-9a-f]{6}$/i.test(x.color||'')?x.color:'#fff8c5'}"><div class="between"><div><div class="title">${esc(x.title)}</div><div class="meta">${esc(x.date||'')} · ${esc(x.category||'General')} ${tags(x.tags)}</div></div><button class="btn danger" onclick="delNote('${x.id}')">Delete</button></div>${x.html?`<div style="line-height:1.6">${x.html}</div>`:(x.body?`<p style="white-space:pre-wrap;line-height:1.5">${esc(x.body)}</p>`:'')}${pts.length?`<ul class="points">${pts.map(p=>`<li>• ${esc(p.replace(/^[-•*]\s*/,''))}</li>`).join('')}</ul>`:''}${imgs.map(im=>`<img loading="lazy" decoding="async" src="${esc(im)}" alt="note image">`).join('')}</article>`}).join('')}</div>`:'<div class="meta" style="padding:22px;text-align:center">कोई note नहीं।</div>'}
 function delNote(id){data.notes=data.notes.filter(x=>x.id!==id);deleteAttachmentSet('note',id);save();renderNotes()}
-function toggleVoice(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Voice-to-Text इस browser में उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।');return}if(listening){try{recognition.stop()}catch(e){}return}const editor=document.getElementById('nb');if(!editor){toast('पहले Notes में नया/मौजूदा note खोलें');return}recognition=new SR();recognition.lang=document.getElementById('voiceLang')?.value||'hi-IN';recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;let started=false;recognition.onstart=()=>{started=true;listening=true;const b=document.getElementById('voiceBtn');if(b)b.textContent='⏹️ Stop Voice';toast('🎙️ सुन रहा हूँ...')};recognition.onresult=e=>{const text=String(e.results?.[0]?.[0]?.transcript||'').trim();if(!text)return;const target=document.getElementById('nb');if(!target)return;target.focus();const sel=window.getSelection();let range;if(sel&&sel.rangeCount&&target.contains(sel.anchorNode)){range=sel.getRangeAt(0).cloneRange()}else{range=document.createRange();range.selectNodeContents(target);range.collapse(false)}range.deleteContents();const node=document.createTextNode((target.innerText?.trim()?' ':'')+text);range.insertNode(node);range.setStartAfter(node);range.collapse(true);if(sel){sel.removeAllRanges();sel.addRange(range)}target.dispatchEvent(new Event('input',{bubbles:true}));saveRichDraft();toast('Voice text added')};recognition.onerror=e=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';if(e.error==='not-allowed'||e.error==='service-not-allowed')alert('Microphone blocked है। Address bar → Microphone → Allow करें।');else if(e.error!=='aborted')toast('Voice error: '+e.error)};recognition.onend=()=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice'};try{recognition.start()}catch(e){if(!started)toast('Voice start नहीं हो पाया; फिर से कोशिश करें')}}
+async function ensureMicrophoneAccess(){
+  if(!window.isSecureContext&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1')return{ok:false,reason:'secure'};
+  if(!navigator.mediaDevices?.getUserMedia)return{ok:false,reason:'unsupported'};
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    stream.getTracks().forEach(t=>t.stop());
+    return{ok:true};
+  }catch(e){
+    const n=e?.name||'';
+    if(n==='NotAllowedError'||n==='PermissionDeniedError')return{ok:false,reason:'denied'};
+    if(n==='NotFoundError')return{ok:false,reason:'missing'};
+    return{ok:false,reason:'error'};
+  }
+}
+function voicePermissionHelp(reason){
+  const msg={
+    secure:'Voice के लिए HTTPS या localhost पर app चलाएँ।',
+    unsupported:'इस browser में microphone access उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।',
+    denied:'Microphone blocked है। Address bar → Site settings → Microphone → Allow करें, फिर Voice दबाएँ।',
+    missing:'Microphone उपलब्ध नहीं मिला। Device microphone check करें।',
+    error:'Microphone access नहीं मिल पाया। Site permission check करके फिर कोशिश करें।'
+  }[reason]||'Microphone access नहीं मिल पाया।';
+  toast('🎙️ '+msg);
+}
+async function toggleVoice(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){toast('Voice-to-Text इस browser में उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।');return}
+  if(listening){try{recognition?.stop()}catch(e){}return}
+  const editor=document.getElementById('nb');
+  if(!editor){toast('पहले Notes में नया/मौजूदा note खोलें');return}
+  const btn=document.getElementById('voiceBtn');
+  if(btn){btn.disabled=true;btn.textContent='🎙️ Checking Mic…'}
+  const access=await ensureMicrophoneAccess();
+  if(btn)btn.disabled=false;
+  if(!access.ok){if(btn)btn.textContent='🎙️ Start Voice';voicePermissionHelp(access.reason);return}
+  recognition=new SR();
+  recognition.lang=document.getElementById('voiceLang')?.value||'hi-IN';
+  recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;
+  recognition.onstart=()=>{listening=true;const b=document.getElementById('voiceBtn');if(b)b.textContent='⏹️ Stop Voice';toast('🎙️ सुन रहा हूँ...')};
+  recognition.onresult=e=>{
+    const t=String(e.results?.[0]?.[0]?.transcript||'').trim();if(!t)return;
+    const target=document.getElementById('nb');if(!target)return;target.focus();
+    const sel=window.getSelection();let r;
+    if(sel&&sel.rangeCount&&target.contains(sel.anchorNode))r=sel.getRangeAt(0).cloneRange();
+    else{r=document.createRange();r.selectNodeContents(target);r.collapse(false)}
+    r.deleteContents();const n=document.createTextNode((target.innerText?.trim()?' ':'')+t);
+    r.insertNode(n);r.setStartAfter(n);r.collapse(true);
+    if(sel){sel.removeAllRanges();sel.addRange(r)}
+    target.dispatchEvent(new Event('input',{bubbles:true}));saveRichDraft();toast('Voice text added');
+  };
+  recognition.onerror=e=>{
+    listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';
+    if(e.error==='not-allowed'||e.error==='service-not-allowed')voicePermissionHelp('denied');
+    else if(e.error==='audio-capture')voicePermissionHelp('missing');
+    else if(e.error!=='aborted')toast('Voice error: '+e.error);
+  };
+  recognition.onend=()=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice'};
+  try{recognition.start()}catch(e){listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';toast('Voice start नहीं हो पाया; फिर से कोशिश करें')}
+}
 
 const defaultHabits=[['Meditation','🧘'],['Yoga','🧘‍♂️'],['Water','💧'],['Healthy Food','🥗'],['Sleep','😴'],['Exercise','🏃']];
 function renderHabits(){let custom=[...new Set(data.habits.filter(h=>h.custom).map(h=>h.name))];document.getElementById('habits').innerHTML=`<div class="grid g3">${defaultHabits.map(([n,i])=>habitCard(n,i,false)).join('')}${custom.map(n=>habitCard(n,'⭐',true)).join('')}</div><div class="card" style="margin-top:16px"><h2>➕ Custom Habit + Time</h2><div class="form"><input id="hn" placeholder="Reading, Prayer, Study..."><input id="ht" type="time"><button class="btn primary full" onclick="addHabit()">Add Habit with Time</button></div></div>`}
@@ -771,31 +869,22 @@ scheduleDailyComputerExport();
 
 
 function renderReview(){let days=Object.values(data.daily),completed=data.tasks.filter(x=>x.done).length;document.getElementById('review').innerHTML=`<div class="grid"><div class="card"><div class="label">Daily Entries</div><div class="metric">${days.length}</div></div><div class="card"><div class="label">Tasks Completed</div><div class="metric">${completed}</div></div><div class="card"><div class="label">Notes</div><div class="metric">${data.notes.length}</div></div><div class="card"><div class="label">Routines</div><div class="metric">${data.routines.length}</div></div></div><div class="two"><div class="card"><h2>📈 Recent Daily Review</h2><div class="list">${days.slice(-7).reverse().map(x=>`<div class="item"><b>${esc(x.target||'No target')}</b><div class="meta">Progress: ${esc(x.progress||'-')} · Priority points: ${(x.planPoints||[]).length} · Achievement points: ${(x.achievementPoints||[]).length}</div></div>`).join('')||'<div class="empty">अभी data नहीं है।</div>'}</div></div><div class="card"><h2>💾 Data & Computer Archive</h2><p class="muted">Daily archive आपके computer के चुने हुए folder में अपने-आप save हो सकता है. पहली बार सिर्फ folder connect करना होगा.</p><div class="export-tools"><button class="primary" onclick="setupComputerExport()">📁 Connect Computer Folder</button><button class="secondary" onclick="exportTodayToComputer()">⚡ Save Today Now</button><button class="secondary" onclick="exportDailyHtml()">📄 Download Daily HTML</button><button class="secondary" onclick="exportData()">JSON Backup</button><button class="secondary" onclick="exportCSV()">Excel / CSV</button><button class="secondary" onclick="exportExcel()">Excel (All Data)</button><button class="secondary" onclick="exportFinanceExcel('daily')">Excel Daily</button><button class="secondary" onclick="exportFinanceExcel('weekly')">Excel Weekly</button><button class="secondary" onclick="exportFinanceExcel('monthly')">Excel Monthly</button><button class="secondary" onclick="exportFinanceExcel('yearly')">Excel Yearly</button><button class="secondary" onclick="exportWord()">Word (.doc)</button><button class="secondary" onclick="exportPDF()">PDF / Print</button><button class="secondary" onclick="exportText()">Text (.txt)</button><button class="danger" onclick="show('reset')">Open Full Reset</button></div></div></div>`}
-function downloadBlob(content,type,filename){
+async function downloadBlob(content,type,filename){
   try{
-    const blob=new Blob([content],{type});
+    const blob=content instanceof Blob?content:new Blob([content],{type});
     const url=URL.createObjectURL(blob);
-
-    const a=document.createElement('a');
-    a.href=url;
-    a.download=filename;
-    a.target='_blank';
-    a.rel='noopener';
-
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    setTimeout(()=>{
-      URL.revokeObjectURL(url);
-    },3000);
-
-    toast('✅ File export started: '+filename);
+    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||'');
+    if(mobile&&navigator.share&&navigator.canShare){
+      const file=new File([blob],filename,{type:blob.type||type});
+      if(navigator.canShare({files:[file]})){
+        try{await navigator.share({title:'LifeOS Backup',text:filename,files:[file]});setTimeout(()=>URL.revokeObjectURL(url),3000);return true}
+        catch(e){if(e?.name==='AbortError'){URL.revokeObjectURL(url);return false}}
+      }
+    }
+    const a=document.createElement('a');a.href=url;a.download=filename;a.rel='noopener';
+    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
     return true;
-  }catch(e){
-    toast('Export failed: '+(e?.message||e));
-    return false;
-  }
+  }catch(e){toast('Export failed: '+(e?.message||e));return false}
 }
 async function exportTodayToComputer(){const handle=await loadExportDirectoryHandle();if(!handle)return setupComputerExport();const ok=await writeDailyExportToFolder(handle,today(),false);if(ok)toast("✅ Today's LifeOS archive updated on computer")}
 function exportDailyHtml(){downloadBlob(buildDailyExportHtml(today()),'text/html;charset=utf-8',`LifeOS-Daily-${exportDateKey(today())}.html`)}
@@ -1067,10 +1156,16 @@ function toggleCategoryItem(id,itemId,done){const a=getCategoryItems(id),x=a.fin
 function deleteCategoryItem(id,itemId){saveCategoryItems(id,getCategoryItems(id).filter(x=>x.id!==itemId));renderCategory(id)}
 function renderSettings(){
  const el=document.getElementById('settings');if(!el)return;
- el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, backup, device connection and lightweight app controls.</p></div><div class="two"><div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div><div class="card"><h2>💾 Backup & Export</h2><p class="muted">Create document-friendly backups or connect a desktop folder for automatic daily archives.</p><div class="settings-backup-grid"><button class="primary" onclick="exportWord()">Word</button><button class="primary" onclick="exportExcel()">Excel</button><button class="primary" onclick="exportPDF()">PDF</button><button class="secondary" onclick="setupComputerExport()">🖥 Connect Computer</button></div><div class="meta" style="margin-top:10px">Computer connection saves daily LifeOS archive files into a folder you select (Chrome/Edge desktop).</div></div></div><div class="card" style="margin-top:14px"><h2>⚡ Performance</h2><p class="muted">Heavy glow, blur, animation and decorative layers are disabled in this final build for faster startup and clearer contrast on low-end devices.</p></div>`;
+ el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, backup, device connection and lightweight app controls.</p></div><div class="two"><div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div><div class="card"><h2>💾 Backup & Export</h2><p class="muted">Document-friendly backups</p><div class="settings-backup-grid"><button class="primary" onclick="exportWord()">Word</button><button class="primary" onclick="exportExcel()">Excel</button><button class="primary" onclick="exportPDF()">PDF</button><button class="secondary" id="computerExportBtn" onclick="setupComputerExport()">🖥 Connect Computer</button></div><div class="meta" style="margin-top:10px">Computer connection saves daily LifeOS archive files into a folder you select (Chrome/Edge desktop).</div></div></div><div class="card" style="margin-top:14px"><h2>⚡ Performance</h2><p class="muted">Heavy glow, blur, animation and decorative layers are disabled in this final build for faster startup and clearer contrast on low-end devices.</p></div>`;
 }
 
-function render(){const active=document.querySelector('.section.active');if(!active)return;let id=active.id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();if(LIFEOS_CATEGORIES[id])renderCategory(id);if(id==='settings')renderSettings();restoreDrafts()}
+function updateComputerExportLabel(){
+  const b=document.getElementById('computerExportBtn');
+  if(!b)return;
+  b.textContent=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||'')?'📱 Transfer to Computer':'🖥 Connect Computer';
+}
+
+function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();if(LIFEOS_CATEGORIES[id])renderCategory(id);if(id==='settings')renderSettings();updateComputerExportLabel();restoreDrafts()}
 if(new URLSearchParams(location.search).has('reset')) history.replaceState({},document.title,location.pathname);
 const __localDate = new Date();
 const __yyyy = __localDate.getFullYear();
