@@ -2077,8 +2077,46 @@ function buildExportIndexHtml(){
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My LifeOS — Archive</title><style>body{margin:0;background:#f5f7fb;color:#172033;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:850px;margin:auto;padding:36px 18px}.hero{background:linear-gradient(135deg,#111827,#334155);color:#fff;border-radius:24px;padding:30px;margin-bottom:20px}.hero h1{margin:0 0 6px}.list{display:grid;gap:10px}.item{display:block;background:#fff;border:1px solid #e5e9f0;border-radius:16px;padding:16px;text-decoration:none;color:inherit;box-shadow:0 4px 15px #1720330a}.item:hover{transform:translateY(-1px)}.date{font-weight:700}.meta{font-size:13px;color:#667085;margin-top:3px}</style></head><body><main class="wrap"><header class="hero"><h1>My LifeOS</h1><div>Daily Archive</div><div class="meta">Updated ${htmlEscapeText(new Date().toLocaleString())}</div></header><div class="list">${dates.map(d=>`<a class="item" href="LifeOS-Daily-${exportDateKey(d)}.html"><div class="date">${htmlEscapeText(d)}</div><div class="meta">Open daily LifeOS archive</div></a>`).join('')}</div></main></body></html>`;
 }
 async function setupComputerExport(){
-  if(!('showDirectoryPicker' in window)){toast('इस browser में direct computer-folder saving supported नहीं है. Chrome/Edge desktop में खोलें.');return false}
-  try{const handle=await window.showDirectoryPicker({id:'lifeos-export',mode:'readwrite'});if(!handle)return false;await saveExportDirectoryHandle(handle);await writeDailyExportToFolder(handle,today(),true);toast('✅ LifeOS computer export folder connected');return true}catch(e){if(e?.name!=='AbortError')toast('Export folder setup failed: '+(e?.message||e));return false}
+  try{
+    // Desktop Chrome/Edge: direct folder connection
+    if('showDirectoryPicker' in window){
+      const handle=await window.showDirectoryPicker({
+        id:'lifeos-export',
+        mode:'readwrite'
+      });
+
+      if(!handle) return false;
+
+      await saveExportDirectoryHandle(handle);
+      await writeDailyExportToFolder(handle,today(),true);
+
+      toast('✅ LifeOS computer export folder connected');
+      return true;
+    }
+
+    // Android/mobile fallback: download archive files instead
+    const html=buildDailyExportHtml(today());
+    const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    const url=URL.createObjectURL(blob);
+
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=`LifeOS-Daily-${exportDateKey(today())}.html`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+
+    toast('✅ Archive file downloaded. इसे computer में भेजकर खोल सकते हैं।');
+    return true;
+
+  }catch(e){
+    if(e?.name!=='AbortError'){
+      toast('Computer export failed: '+(e?.message||e));
+    }
+    return false;
+  }
 }
 async function writeDailyExportToFolder(handle,date=today(),silent=false){
   try{if(!(await ensureExportPermission(handle))){if(!silent)toast('Export folder permission needed — tap Connect once.');return false}
@@ -2476,17 +2514,85 @@ scheduleDailyComputerExport();
 
 
 function renderReview(){let days=Object.values(data.daily),completed=data.tasks.filter(x=>x.done).length;document.getElementById('review').innerHTML=`<div class="grid"><div class="card"><div class="label">Daily Entries</div><div class="metric">${days.length}</div></div><div class="card"><div class="label">Tasks Completed</div><div class="metric">${completed}</div></div><div class="card"><div class="label">Notes</div><div class="metric">${data.notes.length}</div></div><div class="card"><div class="label">Routines</div><div class="metric">${data.routines.length}</div></div></div><div class="two"><div class="card"><h2>📈 Recent Daily Review</h2><div class="list">${days.slice(-7).reverse().map(x=>`<div class="item"><b>${esc(x.target||'No target')}</b><div class="meta">Progress: ${esc(x.progress||'-')} · Priority points: ${(x.planPoints||[]).length} · Achievement points: ${(x.achievementPoints||[]).length}</div></div>`).join('')||'<div class="empty">अभी data नहीं है।</div>'}</div></div><div class="card"><h2>💾 Data & Computer Archive</h2><p class="muted">Daily archive आपके computer के चुने हुए folder में अपने-आप save हो सकता है. पहली बार सिर्फ folder connect करना होगा.</p><div class="export-tools"><button class="primary" onclick="setupComputerExport()">📁 Connect Computer Folder</button><button class="secondary" onclick="exportTodayToComputer()">⚡ Save Today Now</button><button class="secondary" onclick="exportDailyHtml()">📄 Download Daily HTML</button><button class="secondary" onclick="exportData()">JSON Backup</button><button class="secondary" onclick="exportCSV()">Excel / CSV</button><button class="secondary" onclick="exportExcel()">Excel (All Data)</button><button class="secondary" onclick="exportFinanceExcel('daily')">Excel Daily</button><button class="secondary" onclick="exportFinanceExcel('weekly')">Excel Weekly</button><button class="secondary" onclick="exportFinanceExcel('monthly')">Excel Monthly</button><button class="secondary" onclick="exportFinanceExcel('yearly')">Excel Yearly</button><button class="secondary" onclick="exportWord()">Word (.doc)</button><button class="secondary" onclick="exportPDF()">PDF / Print</button><button class="secondary" onclick="exportText()">Text (.txt)</button><button class="danger" onclick="show('reset')">Open Full Reset</button></div></div></div>`}
-function downloadBlob(content,type,filename){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function downloadBlob(content,type,filename){
+  try{
+    const blob=new Blob([content],{type});
+    const url=URL.createObjectURL(blob);
+
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=filename;
+    a.target='_blank';
+    a.rel='noopener';
+
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    setTimeout(()=>{
+      URL.revokeObjectURL(url);
+    },3000);
+
+    toast('✅ File export started: '+filename);
+    return true;
+  }catch(e){
+    toast('Export failed: '+(e?.message||e));
+    return false;
+  }
+}
 async function exportTodayToComputer(){const handle=await loadExportDirectoryHandle();if(!handle)return setupComputerExport();const ok=await writeDailyExportToFolder(handle,today(),false);if(ok)toast("✅ Today's LifeOS archive updated on computer")}
 function exportDailyHtml(){downloadBlob(buildDailyExportHtml(today()),'text/html;charset=utf-8',`LifeOS-Daily-${exportDateKey(today())}.html`)}
 function exportData(){downloadBlob(JSON.stringify(data,null,2),'application/json','lifeos-backup.json')}
 function exportText(){downloadBlob(buildExportText(),'text/plain;charset=utf-8','lifeos-data.txt')}
 function exportCSV(){toast('CSV export removed in final build')}
 function csvCell(v){const x=String(v??'').replace(/\r?\n/g,' ');return /["]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}
-function exportExcel(){const rows=buildExportRows();const html='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><table border="1"><thead><tr>'+rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+'</tr></thead><tbody>'+rows.slice(1).map(r=>'<tr>'+r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></body></html>';downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','lifeos-data.xls')}
+function exportExcel(){
+  try{
+    const rows=buildExportRows();
+
+    const html='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'+
+      '<table border="1"><thead><tr>'+
+      rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+
+      '</tr></thead><tbody>'+
+      rows.slice(1).map(r=>'<tr>'+
+        r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+
+        '</tr>').join('')+
+      '</tbody></table></body></html>';
+
+    downloadBlob(
+      '\ufeff'+html,
+      'application/vnd.ms-excel;charset=utf-8',
+      'lifeos-data.xls'
+    );
+
+    toast('✅ Excel file तैयार हो रही है');
+  }catch(e){
+    toast('Excel export failed: '+(e?.message||e));
+  }
+}
 function financePeriodRows(period){const inc=(data.income||[]).filter(x=>periodOk(x.date,period));const out=(data.expenses||[]).filter(x=>periodOk(x.date,period));const incomeTotal=inc.reduce((n,x)=>n+Number(x.amount||0),0);const expenseTotal=out.reduce((n,x)=>n+Number(x.amount||0),0);const rows=[['LifeOS Finance Report','',period.toUpperCase()],['Metric','Amount','Count'],['Income',incomeTotal.toFixed(2),inc.length],['Expense',expenseTotal.toFixed(2),out.length],['Balance',(incomeTotal-expenseTotal).toFixed(2),inc.length+out.length],['','',''],['Type','Date','Source / Category','Amount','Note','ID']];[...inc.map(x=>({...x,type:'Income'})),...out.map(x=>({...x,type:'Expense'}))].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).forEach(x=>rows.push([x.type,x.date||'',x.source||'',Number(x.amount||0).toFixed(2),x.note||'',x.id||'']));return rows}
 function exportFinanceExcel(period){const rows=financePeriodRows(period);const title='LifeOS '+period[0].toUpperCase()+period.slice(1)+' Finance';const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>'+title+'</title><style>body{font-family:Arial}table{border-collapse:collapse}th,td{border:1px solid #999;padding:6px}th{font-weight:700}</style></head><body><h1>'+esc(title)+'</h1><p>Generated: '+esc(new Date().toLocaleString())+'</p><table><tbody>'+rows.map((r,i)=>'<tr>'+r.map(v=>(i===0||i===1||i===6)?'<th>'+esc(String(v??''))+'</th>':'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></body></html>';downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','lifeos-finance-'+period+'.xls')}
-function exportWord(){const text=buildExportText();const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>LifeOS Export</title></head><body><h1>LifeOS Data Export</h1><p>Exported: '+new Date().toLocaleString()+'</p><pre style="font-family:Arial;white-space:pre-wrap">'+esc(text)+'</pre></body></html>';downloadBlob('\ufeff'+html,'application/msword;charset=utf-8','lifeos-data.doc')}
+function exportWord(){
+  try{
+    const text=buildExportText();
+
+    const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>LifeOS Export</title></head><body>'+
+      '<h1>LifeOS Data Export</h1>'+
+      '<p>Exported: '+new Date().toLocaleString()+'</p>'+
+      '<pre style="font-family:Arial;white-space:pre-wrap">'+esc(text)+'</pre>'+
+      '</body></html>';
+
+    downloadBlob(
+      '\ufeff'+html,
+      'application/msword;charset=utf-8',
+      'lifeos-data.doc'
+    );
+
+    toast('✅ Word file तैयार हो रही है');
+  }catch(e){
+    toast('Word export failed: '+(e?.message||e));
+  }
+}
 function exportPDF(){
   const w=window.open('','_blank');
   if(!w){alert('Please allow pop-ups for PDF export.');return}
