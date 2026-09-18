@@ -826,7 +826,7 @@ const __todayInput=document.getElementById('today'); if(__todayInput) __todayInp
   };
 
 
-  window.exportBackup=function(){try{const backup={format:'LifeOS Backup',version:1,exportedAt:new Date().toISOString(),data:data};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='LifeOS_Backup.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Backup exported')}catch(e){console.error('Backup export failed',e);toast('Backup export failed')}};
+  window.exportBackup=function(){try{const backup={format:'LifeOS Backup',version:1,exportedAt:new Date().toISOString(),data:data};const text=JSON.stringify(backup,null,2);if(!lifeosNativeSave(text,'LifeOS_Backup.json','application/json')){const blob=new Blob([text],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='LifeOS_Backup.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}toast('✓ Backup exported')}catch(e){console.error('Backup export failed',e);toast('Backup export failed')}};
   window.importBackup=async function(input){const file=input?.files?.[0];if(!file)return;try{const parsed=JSON.parse(await file.text());const imported=parsed?.format==='LifeOS Backup'&&parsed?.data?parsed.data:parsed;if(!imported||typeof imported!=='object'||Array.isArray(imported))throw new Error('Invalid backup');if(!confirm('Import this backup? Current LifeOS data will be replaced.')){input.value='';return}data=imported;data.__drafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};data.settings={...{mode:'light'},...(data.settings||{})};data.__updatedAt=Date.now();if(!persistLocalNow())throw new Error('Save failed');persistAttachmentsToIDB(data).catch(()=>{});toast('✓ Backup imported');setTimeout(()=>location.reload(),450)}catch(e){console.error('Backup import failed',e);alert('Invalid or unreadable LifeOS backup.');input.value=''}};
   window.resetLifeOSData=function(){if(!confirm('Delete all LifeOS data?\n\nThis will remove saved LifeOS data, drafts and local attachments. This cannot be undone.'))return;try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_drafts');Object.keys(localStorage).filter(k=>k.startsWith('lifeos_category_')).forEach(k=>localStorage.removeItem(k))}catch(e){}try{indexedDB.deleteDatabase(ATTACH_DB);indexedDB.deleteDatabase(DEVICE_DB)}catch(e){}location.reload()};
 
@@ -886,7 +886,20 @@ document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='laz
     const body=rows.map(r=>`<tr><td>${lifeosEscapeHtml(r.Section)}</td><td>${lifeosEscapeHtml(r.No)}</td><td>${lifeosEscapeHtml(r.Date)}</td><td>${lifeosEscapeHtml(r.Title)}</td><td>${lifeosEscapeHtml(r.Category)}</td><td>${lifeosEscapeHtml(r.Status)}</td><td>${lifeosEscapeHtml(r.Amount)}</td><td>${lifeosEscapeHtml(r.Details)}</td></tr>`).join('');
     return `<!doctype html><html><head><meta charset="utf-8"><title>${lifeosEscapeHtml(title)}</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#111}h1{font-size:22px}p{color:#555;font-size:12px}table{border-collapse:collapse;width:100%;font-size:10px}th,td{border:1px solid #bbb;padding:5px;text-align:left;vertical-align:top}th{background:#eee} @media print{body{padding:8px}}</style></head><body><h1>${lifeosEscapeHtml(title)}</h1><p>Generated: ${lifeosEscapeHtml(now)} · LifeOS data export</p><table>${head}${body||'<tr><td colspan="8">No data available</td></tr>'}</table></body></html>`;
   }
+  function lifeosNativeSave(content,name,type){
+    try{
+      if(window.Android && typeof window.Android.saveFile==='function'){
+        const bytes=new TextEncoder().encode(String(content));
+        let binary=''; const chunk=0x8000;
+        for(let i=0;i<bytes.length;i+=chunk) binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));
+        window.Android.saveFile(name,type,btoa(binary));
+        return true;
+      }
+    }catch(e){console.error('Native save failed',e);}
+    return false;
+  }
   function lifeosDownloadBlob(content,name,type){
+    if(lifeosNativeSave(content,name,type)){toast('✓ File save dialog opened');return}
     const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
   }
   window.exportLifeOSWord=function(){
