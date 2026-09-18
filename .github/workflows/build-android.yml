@@ -39,6 +39,22 @@ jobs:
         run: |
           npx cap add android
           npx cap sync android
+
+      - name: Add microphone permission
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path("android/app/src/main/AndroidManifest.xml")
+          s = p.read_text()
+
+          permission = '<uses-permission android:name="android.permission.RECORD_AUDIO" />'
+
+          if permission not in s:
+              s = s.replace('<manifest ', '<manifest ' + permission + ' ', 1)
+
+          p.write_text(s)
+          PY
           
       - name: Fix Kotlin dependencies
         run: |
