@@ -1,27 +1,45 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><title>My LifeOS</title>
-<style>:root{--bg:#f5f6f8;--surface:#fff;--surface2:#f8f9fb;--text:#1b2330;--muted:#707988;--line:#dfe3e9;--accent:#5d57c9;--accent2:#318fb8;--green:#16834b;--red:#c23a3a;--sidebar:#121822;--shadow:0 3px 14px rgba(22,31,45,.06);--r:12px}*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;overflow-x:hidden}html{-webkit-text-size-adjust:100%}body{background:var(--bg);color:var(--text);font:13px/1.4 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit;max-width:100%}button{cursor:pointer;touch-action:manipulation}img,svg,video,canvas{max-width:100%;height:auto}.app{display:grid;grid-template-columns:218px minmax(0,1fr);min-height:100dvh}.side{position:sticky;top:0;height:100dvh;overflow:auto;background:var(--sidebar);color:#fff;padding:10px;z-index:50}.brand{display:flex;align-items:center;gap:8px;padding:5px 6px 10px;margin-bottom:7px;border-bottom:1px solid #293241}.brand-logo{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:50%;background:#202a39;border:1px solid #5c5540;color:#f2cc68;font-size:23px}.brand b{display:block;font-size:15px}.brand small{display:block;color:#9faaba;font-size:10px}.sidebar-top-tools{display:flex;justify-content:flex-end}.sidebar-theme-toggle{width:32px;height:30px;border:1px solid #303b4d;border-radius:8px;background:#1b2432;color:#fff}nav{display:grid;gap:2px}nav button{width:100%;min-height:35px;padding:7px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:#bdc6d3;text-align:left;font-weight:650;font-size:11.5px;line-height:1.2}nav button:hover{background:#1d2736;color:#fff}nav button.active{background:#302b55;border-color:#49427b;color:#fff}.main{min-width:0;width:100%;padding:14px 16px 24px;overflow-x:hidden}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.top h1{margin:0;font-size:22px;line-height:1.15}.sub{margin-top:2px;color:var(--muted);font-size:11px}.date-panel{display:flex;align-items:center;gap:7px;min-width:0}.date{width:145px!important;min-height:36px}.section{display:none;min-width:0}.section.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.g3,.three{grid-template-columns:repeat(3,minmax(0,1fr))}.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:10px}.card,.item,.routine,.note-card,.module-hero,.hero,.kpi-box,.focus-stat,.badge,.mentor-date-card,.mentor-quote-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}.card{padding:12px}.hero,.module-hero{padding:15px;margin-bottom:10px}.module-hero{background:linear-gradient(135deg,#2a2550,#355e78);color:#fff}h2{font-size:16px;margin:0 0 9px;line-height:1.2}h3{font-size:14px;margin:0 0 7px}h4{font-size:13px;margin:0 0 5px}p{margin:0 0 7px}.label{font-size:10px;color:var(--muted);font-weight:750}.muted,.meta{color:var(--muted)}.meta{font-size:10px}.row,.between{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.form,.formgrid{display:grid;gap:7px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}input,textarea,select{width:100%;min-height:36px;padding:7px 9px;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:8px;outline:0}textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#7871d7;box-shadow:0 0 0 2px rgba(93,87,201,.1)}.primary,.secondary,.danger{min-height:35px;padding:7px 10px;border-radius:8px;font-weight:700}.primary{border:1px solid #5650bd;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.secondary{border:1px solid var(--line);background:#f5f6fb;color:#4d46a5}.danger{border:1px solid #efcccc;background:#fff4f4;color:var(--red)}.list{display:grid;gap:6px}.item{padding:9px}.title{font-weight:700}.tag,.pill,.chip{display:inline-block;padding:3px 6px;border-radius:999px;background:#eeefff;color:#4e47ac;font-size:9px;font-weight:750}.progress{height:6px;background:#e8ebf0;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.kpi-box{padding:9px;background:var(--surface2);box-shadow:none}.metric,.money,.big{font-size:22px;font-weight:800;line-height:1.1}.routine{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:7px;align-items:center;padding:9px;margin-bottom:6px}.time{font-weight:800;color:var(--accent)}.cat{font-size:9px;padding:3px 6px;border-radius:999px;background:#f0f1ff;color:#5149b8}.routine-actions,.point-actions{display:flex;gap:5px}.point{display:flex;gap:7px;align-items:center;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}.point input{width:auto;min-height:17px}.point-text{flex:1;min-width:0}.point-done .point-text{text-decoration:line-through;opacity:.6}.note-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:10px}.note-card{padding:10px;min-height:110px}.note-card img{max-width:100%;max-height:210px;object-fit:cover;border-radius:8px;margin-top:6px}.photo-preview,.attachment-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.photo-preview img{width:70px;height:52px;object-fit:cover;border-radius:7px}.attachment-chip{display:inline-block;padding:5px 7px;border-radius:7px;background:#f1f3f6;font-size:10px}.periods{display:flex;gap:5px;flex-wrap:wrap}.periods button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:6px 9px}.periods button.active{background:var(--accent);border-color:var(--accent);color:#fff}.balance{padding:10px;border-radius:9px;background:var(--surface2)}.income{color:var(--green)}.expense{color:var(--red)}.toast{position:fixed;right:12px;bottom:12px;display:none;z-index:5000;padding:9px 12px;background:#202633;color:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}.mission-fields{display:grid;grid-template-columns:1.1fr .7fr 1.2fr .7fr 1fr;gap:6px}.mission-row{padding:7px;border:1px solid var(--line);border-radius:8px;margin-bottom:5px}.mission-row-title{margin-bottom:5px}.mentor-quote-text{font-size:17px;line-height:1.5;margin:9px 0}.mentor-quote-form{display:grid;grid-template-columns:1.5fr .8fr .9fr auto;gap:6px}.focus-shell{text-align:center}.focus-clock{font-size:48px;font-weight:850;letter-spacing:1px;margin:10px 0}.focus-presets{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.focus-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.focus-stat{padding:9px;background:var(--surface2);box-shadow:none}.badge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.badge{padding:11px}.badge-icon{font-size:23px}.badge.locked{opacity:.55}#bsCalendarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:6000;padding:12px;align-items:center;justify-content:center}#bsCalendarModal.open{display:flex}.bs-calendar-card{width:min(520px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:12px;padding:12px}.bs-calendar-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.bs-calendar-title{text-align:center;display:grid;gap:1px}.bs-calendar-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0}.bs-calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.bs-weekday{text-align:center;font-size:9px;color:#667085;padding:3px}.bs-day{min-height:47px;border:1px solid #e5e8ef;background:#fafbfe;border-radius:6px;padding:3px;font-size:9px}.bs-day.selected{border-color:var(--accent);background:#efedff}.bs-day.today{box-shadow:inset 0 0 0 2px #e8b94a}.bs-num{display:block;font-weight:800}.ad-num{display:block;color:#7b8494;font-size:8px;margin-top:1px}.bs-calendar-footer{display:flex;justify-content:space-between;align-items:center;margin-top:7px}.mobile-bottom-nav{display:none}@media(max-width:1050px){.app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}.brand{padding:2px 3px 6px;margin-bottom:5px}.brand-logo{width:34px;height:34px;flex-basis:34px;font-size:20px}.brand b{font-size:14px}.sidebar-top-tools{display:none}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}.main{padding:9px 10px 76px}.top{padding:9px 11px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.three,.note-grid{grid-template-columns:1fr}.mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16);backdrop-filter:blur(8px)}.mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}.mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.mobile-bottom-nav .bottom-theme{max-width:48px;border-left:1px solid var(--line)}}@media(max-width:700px){.main{padding:7px 7px 72px}.top{display:block;padding:10px;margin-bottom:8px}.top h1{font-size:19px}.top .date{width:100%!important;margin-top:6px}.grid,.formgrid,.kpi-grid,.badge-grid,.mentor-quote-form{grid-template-columns:1fr}.card{padding:10px;border-radius:10px}.hero,.module-hero{padding:12px}.metric,.money,.big{font-size:20px}.routine{grid-template-columns:47px minmax(0,1fr);gap:6px;padding:8px}.routine-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.routine-actions button{width:100%}.mission-fields{grid-template-columns:1fr}.focus-clock{font-size:40px}.focus-stats{grid-template-columns:1fr}.mentor-quote-text{font-size:15px}.date-panel{display:block}}@media(max-width:380px){nav button{font-size:9px;padding:5px 8px}.mobile-bottom-nav button{font-size:7px}.mobile-bottom-nav .mi{font-size:16px}.main{padding-left:5px;padding-right:5px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select{background:#101720;color:#edf1f7;border-color:#354052}html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}body{font-size:13px;line-height:1.4}.top h1{font-size:20px;line-height:1.18}.sub{font-size:11px}h2{font-size:17px;line-height:1.2}h3{font-size:14px}p{font-size:12px;line-height:1.4}input,textarea,select{font-size:13px;min-width:0}button{font-size:12px;line-height:1.2;min-width:0}.card,.item,.routine,.note-card,.hero,.module-hero{overflow-wrap:anywhere}.settings-backup-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.settings-backup-grid button{width:100%}@media(max-width:1050px){.app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}.main{padding:9px 10px 76px}.mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.14)}.mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}.mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.settings-backup-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:700px){.main{padding:8px 8px 74px}.top{padding:10px 11px}.top h1{font-size:19px}h2{font-size:16px}h3{font-size:13px}p{font-size:11px}input,textarea,select{font-size:13px;min-height:36px;padding:7px 9px}.primary,.secondary,.danger{font-size:12px;min-height:36px;padding:7px 10px}.card{padding:10px}.hero,.module-hero{padding:12px}.metric,.money,.big{font-size:20px}.mentor-quote-text{font-size:15px;line-height:1.42}.settings-backup-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.settings-backup-grid button{font-size:11px;padding:6px 5px}}@media(max-width:430px){body{font-size:12.5px}.top h1{font-size:18px}h2{font-size:15px}h3{font-size:12.5px}p{font-size:10.5px}input,textarea,select{font-size:12px}.primary,.secondary,.danger{font-size:11px}}@media(max-width:360px){.settings-backup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-bottom-nav button{font-size:7px}}</style>
-</head><body><div class="app"><aside class="side"><div class="sidebar-top-tools"><button id="sidebarThemeToggle" class="sidebar-theme-toggle" type="button" onclick="toggleAppearance()" aria-label="Toggle theme">🌙</button></div><div class="brand"><div class="brand-logo" aria-hidden="true">ॐ</div><div><b>My LifeOS</b><small>Personal life management</small></div></div><nav id="nav" aria-label="LifeOS navigation"><button type="button" id="nav-dashboard" onclick="show('dashboard')">🏠 Dashboard</button><button type="button" id="nav-mentor" onclick="show('mentor')">🧭 Mentor & Capital</button><button type="button" id="nav-planner" onclick="show('planner')">📅 Daily Planner</button><button type="button" id="nav-tasks" onclick="show('tasks')">✅ To-Do & Projects</button><button type="button" id="nav-routine" onclick="show('routine')">🕉 Routine Planner</button><button type="button" id="nav-habits" onclick="show('habits')">🧘 Habits</button><button type="button" id="nav-goals" onclick="show('goals')">🎯 Goals</button><button type="button" id="nav-focus" onclick="show('focus')">⏱ Focus</button><button type="button" id="nav-notes" onclick="show('notes')">📝 Notes</button><button type="button" id="nav-journal" onclick="show('journal')">📔 Daily Journal</button><button type="button" id="nav-expenses" onclick="show('expenses')">💰 Expenses & Income</button><button type="button" id="nav-personal" onclick="show('personal')">👤 Personal</button><button type="button" id="nav-professional" onclick="show('professional')">💼 Professional</button><button type="button" id="nav-spiritual" onclick="show('spiritual')">🕉 Spiritual</button><button type="button" id="nav-economical" onclick="show('economical')">💰 Economical</button><button type="button" id="nav-mental" onclick="show('mental')">🧠 Mental</button><button type="button" id="nav-social" onclick="show('social')">🤝 Social</button><button type="button" id="nav-moral" onclick="show('moral')">⚖️ Moral</button><button type="button" id="nav-settings" onclick="show('settings')">⚙️ Settings</button></nav></aside><main class="main"><header class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">Your daily system — simple, fast and mobile friendly.</div></div><div class="date-panel"><input id="today" class="date" type="date" aria-label="Today" onchange="syncBsFromAd();render()"><input id="todayBs" type="hidden"><span id="todayBsDisplay" class="meta"></span></div></header><section id="dashboard" class="section" aria-labelledby="pageTitle"></section><section id="mentor" class="section" aria-labelledby="pageTitle"></section><section id="planner" class="section" aria-labelledby="pageTitle"></section><section id="tasks" class="section" aria-labelledby="pageTitle"></section><section id="routine" class="section" aria-labelledby="pageTitle"></section><section id="habits" class="section" aria-labelledby="pageTitle"></section><section id="goals" class="section" aria-labelledby="pageTitle"></section><section id="focus" class="section" aria-labelledby="pageTitle"></section><section id="notes" class="section" aria-labelledby="pageTitle"></section><section id="journal" class="section" aria-labelledby="pageTitle"></section><section id="expenses" class="section" aria-labelledby="pageTitle"></section><section id="personal" class="section" aria-labelledby="pageTitle"></section><section id="professional" class="section" aria-labelledby="pageTitle"></section><section id="spiritual" class="section" aria-labelledby="pageTitle"></section><section id="economical" class="section" aria-labelledby="pageTitle"></section><section id="mental" class="section" aria-labelledby="pageTitle"></section><section id="social" class="section" aria-labelledby="pageTitle"></section><section id="moral" class="section" aria-labelledby="pageTitle"></section><section id="settings" class="section" aria-labelledby="pageTitle"></section></main></div><div id="mobileBottomNav" class="mobile-bottom-nav" aria-label="Quick navigation"><button type="button" data-section="dashboard" onclick="show('dashboard')"><span class="mi">⌂</span><span>Home</span></button><button type="button" data-section="planner" onclick="show('planner')"><span class="mi">▦</span><span>Plan</span></button><button type="button" data-section="tasks" onclick="show('tasks')"><span class="mi">✓</span><span>Tasks</span></button><button type="button" data-section="habits" onclick="show('habits')"><span class="mi">◉</span><span>Habits</span></button><button type="button" data-section="notes" onclick="show('notes')"><span class="mi">▤</span><span>Notes</span></button><button type="button" data-section="settings" onclick="show('settings')"><span class="mi">⚙</span><span>More</span></button><button type="button" class="bottom-theme" onclick="toggleAppearance()" aria-label="Toggle theme">☾</button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>My LifeOS — Clean Fresh Ultra Fast</title>
+<style>:root{--bg:#f5f6f8;--surface:#fff;--surface2:#f8f9fb;--text:#1b2330;--muted:#707988;--line:#dfe3e9;--accent:#5d57c9;--accent2:#318fb8;--green:#16834b;--red:#c23a3a;--sidebar:#121822;--shadow:0 3px 14px rgba(22,31,45,.06);--r:12px}*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;overflow-x:hidden}html{-webkit-text-size-adjust:100%}body{background:var(--bg);color:var(--text);font:13px/1.4 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit;max-width:100%}button{cursor:pointer;touch-action:manipulation}img,svg,video,canvas{max-width:100%;height:auto}.app{display:grid;grid-template-columns:218px minmax(0,1fr);min-height:100dvh}.side{position:sticky;top:0;height:100dvh;overflow:auto;background:var(--sidebar);color:#fff;padding:10px;z-index:50}.brand{display:flex;align-items:center;gap:8px;padding:5px 6px 10px;margin-bottom:7px;border-bottom:1px solid #293241}.brand-logo{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:50%;background:#202a39;border:1px solid #5c5540;color:#f2cc68;font-size:23px}.brand b{display:block;font-size:15px}.brand small{display:block;color:#9faaba;font-size:10px}.sidebar-top-tools{display:flex;justify-content:flex-end}.sidebar-theme-toggle{width:32px;height:30px;border:1px solid #303b4d;border-radius:8px;background:#1b2432;color:#fff}nav{display:grid;gap:2px}nav button{width:100%;min-height:35px;padding:7px 9px;border:1px solid transparent;border-radius:8px;background:transparent;color:#bdc6d3;text-align:left;font-weight:650;font-size:11.5px;line-height:1.2}nav button:hover{background:#1d2736;color:#fff}nav button.active{background:#302b55;border-color:#49427b;color:#fff}.main{min-width:0;width:100%;padding:14px 16px 24px;overflow-x:hidden}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.top h1{margin:0;font-size:22px;line-height:1.15}.sub{margin-top:2px;color:var(--muted);font-size:11px}.date-panel{display:flex;align-items:center;gap:7px;min-width:0}.date{width:145px!important;min-height:36px}.section{display:none;min-width:0}.section.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.g3,.three{grid-template-columns:repeat(3,minmax(0,1fr))}.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:10px}.card,.item,.routine,.note-card,.module-hero,.hero,.kpi-box,.focus-stat,.badge,.mentor-date-card,.mentor-quote-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}.card{padding:12px}.hero,.module-hero{padding:15px;margin-bottom:10px}.module-hero{background:linear-gradient(135deg,#2a2550,#355e78);color:#fff}h2{font-size:16px;margin:0 0 9px;line-height:1.2}h3{font-size:14px;margin:0 0 7px}h4{font-size:13px;margin:0 0 5px}p{margin:0 0 7px}.label{font-size:10px;color:var(--muted);font-weight:750}.muted,.meta{color:var(--muted)}.meta{font-size:10px}.row,.between{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.form,.formgrid{display:grid;gap:7px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}input,textarea,select{width:100%;min-height:36px;padding:7px 9px;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:8px;outline:0}textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#7871d7;box-shadow:0 0 0 2px rgba(93,87,201,.1)}.primary,.secondary,.danger{min-height:35px;padding:7px 10px;border-radius:8px;font-weight:700}.primary{border:1px solid #5650bd;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.secondary{border:1px solid var(--line);background:#f5f6fb;color:#4d46a5}.danger{border:1px solid #efcccc;background:#fff4f4;color:var(--red)}.list{display:grid;gap:6px}.item{padding:9px}.title{font-weight:700}.tag,.pill,.chip{display:inline-block;padding:3px 6px;border-radius:999px;background:#eeefff;color:#4e47ac;font-size:9px;font-weight:750}.progress{height:6px;background:#e8ebf0;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.kpi-box{padding:9px;background:var(--surface2);box-shadow:none}.metric,.money,.big{font-size:22px;font-weight:800;line-height:1.1}.time{font-weight:800;color:var(--accent)}.cat{font-size:9px;padding:3px 6px;border-radius:999px;background:#f0f1ff;color:#5149b8}.point{display:flex;gap:7px;align-items:center;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}.point input{width:auto;min-height:17px}.note-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:10px}.note-card{padding:10px;min-height:110px}.note-card img{max-width:100%;max-height:210px;object-fit:cover;border-radius:8px;margin-top:6px}.photo-preview,.attachment-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.photo-preview img{width:70px;height:52px;object-fit:cover;border-radius:7px}.attachment-chip{display:inline-block;padding:5px 7px;border-radius:7px;background:#f1f3f6;font-size:10px}.periods{display:flex;gap:5px;flex-wrap:wrap}.periods button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:6px 9px}.periods button.active{background:var(--accent);border-color:var(--accent);color:#fff}.balance{padding:10px;border-radius:9px;background:var(--surface2)}.income{color:var(--green)}.expense{color:var(--red)}.toast{position:fixed;right:12px;bottom:12px;display:none;z-index:5000;padding:9px 12px;background:#202633;color:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.18)}.mission-fields{display:grid;grid-template-columns:1.1fr .7fr 1.2fr .7fr 1fr;gap:6px}.mission-row{padding:7px;border:1px solid var(--line);border-radius:8px;margin-bottom:5px}.mission-row-title{margin-bottom:5px}.mentor-quote-text{font-size:17px;line-height:1.5;margin:9px 0}.mentor-quote-form{display:grid;grid-template-columns:1.5fr .8fr .9fr auto;gap:6px}.focus-shell{text-align:center}.focus-clock{font-size:48px;font-weight:850;letter-spacing:1px;margin:10px 0}.focus-presets{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.focus-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.focus-stat{padding:9px;background:var(--surface2);box-shadow:none}.badge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.badge{padding:11px}.badge-icon{font-size:23px}.badge.locked{opacity:.55}#bsCalendarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:6000;padding:12px;align-items:center;justify-content:center}#bsCalendarModal.open{display:flex}.bs-calendar-card{width:min(520px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:12px;padding:12px}.bs-calendar-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.bs-calendar-title{text-align:center;display:grid;gap:1px}.bs-calendar-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0}.bs-calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.bs-weekday{text-align:center;font-size:9px;color:#667085;padding:3px}.bs-day{min-height:47px;border:1px solid #e5e8ef;background:#fafbfe;border-radius:6px;padding:3px;font-size:9px}.bs-day.selected{border-color:var(--accent);background:#efedff}.bs-day.today{box-shadow:inset 0 0 0 2px #e8b94a}.bs-num{display:block;font-weight:800}.ad-num{display:block;color:#7b8494;font-size:8px;margin-top:1px}.bs-calendar-footer{display:flex;justify-content:space-between;align-items:center;margin-top:7px}.mobile-bottom-nav{display:none}@media (max-width:1050px){.app{display:block}.side{position:sticky;top:0;height:auto;padding:7px 8px;overflow:hidden}.brand{padding:2px 3px 6px;margin-bottom:5px}.brand-logo{width:34px;height:34px;flex-basis:34px;font-size:20px}.brand b{font-size:14px}.sidebar-top-tools{display:none}nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto;width:auto;min-height:32px;padding:6px 9px;border-radius:999px;font-size:10px;white-space:nowrap}.main{padding:9px 10px 76px}.top{padding:9px 11px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.three,.note-grid{grid-template-columns:1fr}.mobile-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;display:flex;z-index:1000;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 22px rgba(0,0,0,.16);backdrop-filter:blur(8px)}.mobile-bottom-nav button{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--muted);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px;font-size:8px;font-weight:800}.mobile-bottom-nav button.active{background:#eeecff;color:#4d46aa}.mobile-bottom-nav .mi{font-size:17px;line-height:1}.mobile-bottom-nav .bottom-theme{max-width:48px;border-left:1px solid var(--line)}}@media (max-width:700px){.main{padding:7px 7px 72px}.top{display:block;padding:10px;margin-bottom:8px}.top h1{font-size:19px}.top .date{width:100%!important;margin-top:6px}.grid,.formgrid,.kpi-grid,.badge-grid,.mentor-quote-form{grid-template-columns:1fr}.card{padding:10px;border-radius:10px}.hero,.module-hero{padding:12px}.metric,.money,.big{font-size:20px}.routine{grid-template-columns:47px minmax(0,1fr);gap:6px;padding:8px}.routine-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.routine-actions button{width:100%}.mission-fields{grid-template-columns:1fr}.focus-clock{font-size:40px}.focus-stats{grid-template-columns:1fr}.mentor-quote-text{font-size:15px}.date-panel{display:block}}@media (max-width:380px){nav button{font-size:9px;padding:5px 8px}.mobile-bottom-nav button{font-size:7px}.mobile-bottom-nav .mi{font-size:16px}.main{padding-left:5px;padding-right:5px}}@supports (padding:max(0px)){.mobile-bottom-nav{padding-bottom:max(4px,env(safe-area-inset-bottom));bottom:max(7px,env(safe-area-inset-bottom))}}@media (hover:none) and (pointer:coarse){button{min-height:40px}.mobile-bottom-nav button{min-height:48px}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select{background:#101720;color:#edf1f7;border-color:#354052}html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}html,body{overflow-x:hidden}html{-webkit-text-size-adjust:100%}body{font-size:13px;line-height:1.45}.card,.item,.routine,.note-card,.hero,.module-hero,.top,h1,h2,h3,h4,p,label,button,.label,.meta,.title,.tag,.pill,.chip,.time,.cat{overflow-wrap:anywhere;word-break:normal}button{white-space:normal}.full{grid-column:1/-1;width:100%}.rich-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:5px;width:100%;margin-bottom:6px}.rich-toolbar button{min-width:36px;min-height:34px;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--text)}.rich-toolbar select{width:auto;min-width:80px}.rich-toolbar input[type=color]{width:40px;min-width:40px;padding:3px}.rich-editor{width:100%;min-height:190px;max-width:100%;overflow:auto;overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--text);line-height:1.65;outline:none}.rich-editor:empty:before{content:"यहाँ विस्तार से लिखें…";color:var(--muted)}.points{display:grid;gap:6px;margin-top:8px;margin-bottom:10px}.points li{overflow-wrap:anywhere}.theme-grid{display:flex;gap:6px;flex-wrap:wrap}.swatch{width:28px!important;height:28px!important;min-height:28px!important;padding:0!important;border:1px solid var(--line)!important;border-radius:7px!important}.color-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.color-input{width:42px!important;min-width:42px!important;height:34px!important;padding:2px!important}.time-block-example{font-size:20px;font-weight:850;line-height:1.25;margin-top:4px;overflow-wrap:anywhere}.routine-item{display:grid;grid-template-columns:minmax(0,1fr) max-content;grid-template-areas:"top actions" "body actions";align-items:center;column-gap:10px;row-gap:3px;width:100%;min-width:0;padding:9px;margin:0 0 6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}.routine-item-top{grid-area:top;display:flex;align-items:center;gap:7px;min-width:0;flex-wrap:wrap}.routine-item-time{font-weight:800;color:var(--accent);white-space:nowrap;word-break:keep-all;line-height:1.2}.routine-item-cat{display:inline-block;flex:0 0 auto;font-size:9px;padding:3px 6px;border-radius:999px;background:#f0f1ff;color:#5149b8;white-space:nowrap}.routine-item-body{grid-area:body;min-width:0;overflow:hidden}.routine-item-body b,.routine-item-body .meta{display:block;min-width:0;overflow-wrap:anywhere;word-break:normal;line-height:1.25}.routine-item-actions{grid-area:actions;display:flex;align-items:center;justify-content:flex-end;gap:5px;min-width:max-content;white-space:nowrap}.routine-item-actions button{width:auto!important;min-width:0!important;white-space:nowrap}.saved-item-row{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:10px;width:100%;min-width:0}.saved-main{min-width:0;overflow:hidden}.saved-main b,.saved-main .meta{display:block;min-width:0;overflow-wrap:anywhere;word-break:normal}.saved-item-actions{display:flex;align-items:center;justify-content:flex-end;gap:5px;min-width:max-content;white-space:nowrap;margin-left:auto}.saved-item-actions button{width:auto!important;min-width:62px;white-space:nowrap}.point{display:grid!important;grid-template-columns:auto minmax(0,1fr) max-content;align-items:center;gap:7px;min-width:0}.point-action-done,.point-action-delete{min-height:34px!important;padding:7px 10px!important;border-radius:8px!important;font-size:11px!important;font-weight:700!important;line-height:1.1!important}.point-action-done{border:1px solid var(--line)!important;background:#f5f6fb!important;color:#4d46a5!important}.point-action-delete{border:1px solid #efcccc!important;background:#fff4f4!important;color:var(--red)!important}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0}.section-title>*{min-width:0}.kpi.three-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.kpi.three-kpi .mini{min-width:0;padding:9px;border:1px solid var(--line);border-radius:9px;background:var(--surface2);text-align:center}.quote-date{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin-top:2px;padding:4px 8px;border:1px solid #e0def8;border-radius:999px;background:#eeefff;color:#4e47ac;font-size:9px;font-weight:750;line-height:1.25;white-space:nowrap;word-break:keep-all}.mentor-quote-text{font-size:17px;line-height:1.5;margin:9px 0}.mentor-quote-author{margin-bottom:9px}.mentor-quote-form{display:grid;grid-template-columns:1.5fr .8fr .9fr auto;gap:6px}.mentor-rules-editor{display:grid;gap:6px}.mentor-rule-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:6px;align-items:center}.mentor-rule-input{height:42px!important;min-height:42px!important;max-height:42px!important;resize:none!important;line-height:1.25!important}.mission-fields{display:grid;grid-template-columns:1.1fr .7fr 1.2fr .7fr 1fr;gap:6px}.settings-card{margin-top:14px}.settings-top-grid{align-items:start}.storage-stat{padding:10px;background:var(--surface2);border:1px solid var(--line);border-radius:9px;min-width:0}.currency-grid,.currency-converter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.currency-converter-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:end}.currency-result{padding:11px;border:1px solid var(--line);border-radius:9px;background:var(--surface2);font-size:20px;font-weight:800}.universal-date-control,.top-date-dual{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:7px!important}.universal-date-control>label,.top-date-dual>label{display:grid;gap:3px;min-width:0}.universal-date-control input,.top-date-dual input{width:100%!important}.mobile-bottom-nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}@media (max-width:1050px){.main{padding-bottom:82px}}@media (max-width:700px){body{font-size:13px}.main{padding:8px 8px 82px}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.two,.three,.note-grid{grid-template-columns:1fr}.dashboard-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dashboard-finance{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dashboard-kpi-grid .card{min-height:82px}.dashboard-kpi-grid .metric{font-size:19px}.dashboard-finance .money{font-size:18px}.routine-item{grid-template-columns:1fr;grid-template-areas:"top" "body" "actions";row-gap:5px;column-gap:0;padding:9px}.routine-item-top{width:100%;justify-content:space-between}.routine-item-time{font-size:12px}.routine-item-actions{width:100%;min-width:0;justify-content:flex-end}.routine-item-actions button{min-height:36px!important;padding:6px 9px!important}.saved-item-row{grid-template-columns:minmax(0,1fr) max-content;gap:7px}.saved-item-actions{justify-self:end}.saved-item-actions button{min-width:58px;padding:6px 7px}.point{grid-template-columns:auto minmax(0,1fr) max-content}.quote-date{white-space:nowrap}.kpi.three-kpi{grid-template-columns:repeat(3,minmax(0,1fr))}.mentor-quote-form{grid-template-columns:1fr}.mission-fields{grid-template-columns:1fr}.currency-converter-grid{grid-template-columns:1fr 1fr}.currency-grid{grid-template-columns:1fr}.rich-editor{min-height:170px}.rich-toolbar{gap:4px}.rich-toolbar button{min-height:38px}.rich-toolbar select{flex:1 1 90px;min-width:90px}}@media (max-width:430px){.main{padding-left:6px;padding-right:6px}.card{padding:9px}.top h1{font-size:18px}.dashboard-kpi-grid .metric{font-size:18px}.routine-item-time{font-size:11px}.routine-item-cat{font-size:8px;padding:3px 5px}.routine-item-actions button{padding:6px 8px;font-size:9px}.saved-item-row{grid-template-columns:1fr}.saved-item-actions{width:100%;justify-content:flex-end}.saved-item-actions button{min-width:58px}.point{grid-template-columns:auto minmax(0,1fr) max-content!important;gap:6px}.kpi.three-kpi{grid-template-columns:1fr}.currency-converter-grid{grid-template-columns:1fr}}@media (max-width:380px){.mobile-bottom-nav button{font-size:7px}}@supports (padding:max(0px)){.mobile-bottom-nav{padding-bottom:max(4px,env(safe-area-inset-bottom));bottom:max(7px,env(safe-area-inset-bottom))}}@media (hover:none) and (pointer:coarse){button{min-height:40px}.mobile-bottom-nav button{min-height:48px}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}html[data-lifeos-mode="dark"]{--bg:#0b1018;--surface:#121923;--surface2:#18212d;--text:#edf1f7;--muted:#aab3c1;--line:#2b3544;--sidebar:#080d14}html[data-lifeos-mode="dark"] input,html[data-lifeos-mode="dark"] textarea,html[data-lifeos-mode="dark"] select{background:#101720;color:#edf1f7;border-color:#354052}html[data-lifeos-mode="dark"] .secondary{background:#1b213a;color:#ddd9ff;border-color:#3a456e}html[data-lifeos-mode="dark"] .danger{background:#2a181b;color:#ffb4b4;border-color:#603036}html[data-lifeos-mode="dark"] .mobile-bottom-nav{background:#121923;border-color:#303a49}.dashboard-finance-card{margin-bottom:10px}.mentor-grid{margin-top:10px}.dashboard-finance-box{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);min-width:0}.dashboard-finance-box .money{margin-top:4px}.dashboard-finance{grid-template-columns:repeat(2,minmax(0,1fr))!important}@media (max-width:560px){}.dashboard-quote-card{min-height:112px;height:auto;padding:10px 14px 8px;display:grid;grid-template-columns:minmax(0,1fr) minmax(132px,auto);grid-template-rows:auto 1fr;column-gap:18px;row-gap:0;overflow:hidden;align-items:start}.dashboard-quote-card .quote-head{display:contents}.dashboard-quote-card .quote-title{grid-column:1;grid-row:1;min-width:0;align-self:start;padding:0}.dashboard-quote-card .quote-title h2{margin:0;font-size:15px;line-height:1.25;text-align:left;white-space:normal;overflow-wrap:anywhere}.dashboard-quote-card .dashboard-quote-date-wrap{grid-column:2;grid-row:1;display:flex;align-items:flex-start;justify-content:flex-end;min-width:0;margin:0;padding:0}.dashboard-quote-card .dashboard-quote-date{margin:0;font-size:9px;line-height:1.2;padding:4px 7px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.dashboard-quote-card .mentor-action-stack{grid-column:2;grid-row:2;display:flex;align-items:flex-start;justify-content:flex-end;min-width:0;margin-top:12px}.dashboard-quote-card .mentor-action-stack .secondary{min-height:31px;padding:6px 10px;font-size:11px;white-space:nowrap;touch-action:manipulation}.dashboard-quote-card .dashboard-quote-text{grid-column:1;grid-row:2;min-width:0;text-align:left;font-size:19px;line-height:1.28;font-weight:700;margin:15px 0 0;overflow-wrap:anywhere}.dashboard-quote-card .dashboard-quote-author{grid-column:1;grid-row:2;min-width:0;text-align:left;font-size:10px;line-height:1.2;margin:43px 0 0;overflow-wrap:anywhere}@media (max-width:760px){.dashboard-quote-card{min-height:110px;padding:10px 12px 7px;grid-template-columns:minmax(0,1fr) minmax(124px,auto);column-gap:12px}.dashboard-quote-card .quote-title h2{font-size:14px}.dashboard-quote-card .dashboard-quote-date{font-size:8.5px;padding:4px 6px}.dashboard-quote-card .mentor-action-stack{margin-top:10px}.dashboard-quote-card .mentor-action-stack .secondary{min-height:30px;padding:5px 9px;font-size:11px}.dashboard-quote-card .dashboard-quote-text{font-size:18px;margin-top:13px}.dashboard-quote-card .dashboard-quote-author{font-size:9px;margin-top:39px}}@media (max-width:420px){.dashboard-quote-card{min-height:106px;padding:9px 10px 6px;grid-template-columns:minmax(0,1fr) minmax(112px,auto);column-gap:9px}.dashboard-quote-card .quote-title h2{font-size:13px}.dashboard-quote-card .dashboard-quote-date{font-size:7.5px;padding:3px 5px;max-width:100%}.dashboard-quote-card .mentor-action-stack{margin-top:9px}.dashboard-quote-card .mentor-action-stack .secondary{min-height:29px;padding:5px 7px;font-size:10.5px}.dashboard-quote-card .dashboard-quote-text{font-size:16.5px;line-height:1.22;margin-top:12px}.dashboard-quote-card .dashboard-quote-author{font-size:8.5px;margin-top:36px}}@media (max-width:340px){.dashboard-quote-card{min-height:104px;grid-template-columns:minmax(0,1fr) 104px;column-gap:7px;padding-bottom:6px}.dashboard-quote-card .quote-title h2{font-size:12.5px}.dashboard-quote-card .dashboard-quote-date{font-size:7px}.dashboard-quote-card .mentor-action-stack .secondary{font-size:10px;padding-inline:6px}.dashboard-quote-card .dashboard-quote-text{font-size:15.5px}}.points{display:grid;gap:7px;margin-top:9px;margin-bottom:13px}.point{display:grid;grid-template-columns:auto minmax(0,1fr) max-content;align-items:center;gap:7px;min-width:0;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface2)}.point input{width:auto;min-height:17px}.point-text{min-width:0;overflow-wrap:anywhere}.point-actions{display:flex;align-items:center;justify-content:flex-end;gap:5px;min-width:max-content;margin-left:auto;white-space:nowrap}.point-actions button{width:auto;min-width:0;white-space:nowrap;min-height:34px;padding:7px 8px;font-size:10px}.point-action-done{border:1px solid var(--line);background:#f5f6fb;color:#4d46a5;border-radius:8px;font-weight:700;line-height:1.1}.point-action-delete{border:1px solid #efcccc;background:#fff4f4;color:var(--red);border-radius:8px;font-weight:700;line-height:1.1}.point-done .point-text{text-decoration:line-through;opacity:.6}@media (max-width:760px){.point{grid-template-columns:auto minmax(0,1fr);gap:6px}.point-actions{grid-column:2;justify-self:end}.point-actions button{min-height:32px;padding:6px 8px;font-size:10px}}@media (max-width:420px){.point-actions button{min-height:31px;padding:5px 7px}}/* Backup controls: Import | Export | Connect Computer. Word/Excel/PDF are built into Export. */
+.backup-export-title,.backup-actions-title{font-size:10px;color:var(--muted);font-weight:800;margin:9px 0 5px;text-transform:uppercase;letter-spacing:.3px}
+.backup-actions-grid{position:relative}
+.backup-export-menu-wrap{position:relative;min-width:0}
+.backup-export-menu{display:none;position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:1200;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(22,31,45,.16);gap:4px}
+.backup-export-menu.open{display:grid}
+.backup-export-menu button{width:100%;min-width:0;min-height:34px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface2);color:var(--text);font-weight:700;white-space:nowrap}
+.backup-export-menu button:hover{border-color:#7871d7;background:#eeefff;color:#4d46a5}
+.backup-export-grid,.backup-actions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;align-items:stretch;width:100%;overflow:hidden}.backup-export-grid button,.backup-actions-grid button,.backup-export-grid .backup-import-label,.backup-actions-grid .backup-import-label{width:100%;min-width:0;min-height:38px;padding:8px 10px;border-radius:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;justify-content:center}.backup-import-label{border:1px solid var(--line);cursor:pointer;font-weight:750;text-align:center;background:#f5f6fb;color:#4d46a5}.backup-import-label input{display:none}.backup-connect{border:1px solid #d8dce5!important;background:#f6f7fa!important;color:#3f4b72!important}.backup-connected{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border-radius:999px;background:#eaf7ef;color:#167344;font-size:10px;font-weight:800}.backup-disconnected{background:#f3f4f6;color:#6b7280}@media (max-width:760px){.backup-export-grid,.backup-actions-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.backup-export-grid button,.backup-actions-grid button,.backup-export-grid .backup-import-label,.backup-actions-grid .backup-import-label{min-width:0;min-height:40px;padding:7px 4px;font-size:clamp(8px,2.5vw,10px);line-height:1.1}}@media (max-width:420px){.backup-export-grid,.backup-actions-grid{gap:4px}.backup-export-grid button,.backup-actions-grid button,.backup-export-grid .backup-import-label,.backup-actions-grid .backup-import-label{min-height:40px;padding:6px 2px;font-size:clamp(7px,2.3vw,9px)}}
+.settings-layout-b{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.settings-left-stack{display:grid;grid-template-rows:auto auto;gap:12px}
+@media(max-width:900px){.settings-layout-b{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body><noscript>JavaScript is required for LifeOS.</noscript><div class="app"><aside class="side"><div class="sidebar-top-tools"><button aria-label="Toggle theme" class="sidebar-theme-toggle" id="sidebarThemeToggle" onclick="toggleAppearance()" type="button">🌙</button></div><div class="brand"><div aria-hidden="true" class="brand-logo">ॐ</div><div><b>My LifeOS</b><small>Personal life management</small></div></div><nav aria-label="LifeOS navigation" id="nav"><button id="nav-dashboard" onclick="show('dashboard')" type="button">🏠 Dashboard</button><button id="nav-mentor" onclick="show('mentor')" type="button">🧭 Mentor &amp; Capital</button><button id="nav-planner" onclick="show('planner')" type="button">📅 Daily Planner</button><button id="nav-tasks" onclick="show('tasks')" type="button">✅ To-Do &amp; Projects</button><button id="nav-routine" onclick="show('routine')" type="button">🕉 Routine Planner</button><button id="nav-habits" onclick="show('habits')" type="button">🧘 Habits</button><button id="nav-goals" onclick="show('goals')" type="button">🎯 Goals</button><button id="nav-focus" onclick="show('focus')" type="button">⏱ Focus</button><button id="nav-notes" onclick="show('notes')" type="button">📝 Notes</button><button id="nav-journal" onclick="show('journal')" type="button">📔 Daily Journal</button><button id="nav-expenses" onclick="show('expenses')" type="button">💰 Expenses &amp; Income</button><button id="nav-personal" onclick="show('personal')" type="button">👤 Personal</button><button id="nav-professional" onclick="show('professional')" type="button">💼 Professional</button><button id="nav-spiritual" onclick="show('spiritual')" type="button">🕉 Spiritual</button><button id="nav-economical" onclick="show('economical')" type="button">💰 Economical</button><button id="nav-mental" onclick="show('mental')" type="button">🧠 Mental</button><button id="nav-social" onclick="show('social')" type="button">🤝 Social</button><button id="nav-moral" onclick="show('moral')" type="button">⚖️ Moral</button><button id="nav-device-storage" onclick="show('device-storage')" type="button">💾 Device Storage</button><button id="nav-settings" onclick="show('settings')" type="button">⚙️ Settings</button></nav></aside><main class="main"><header class="top"><div><h1 id="pageTitle">Dashboard</h1><div class="sub">Your daily system — simple, fast and mobile friendly.</div></div><div class="date-panel top-date-dual"><label><span class="label">AD</span><input aria-label="Today (AD)" class="date" id="today" onchange="syncBsFromAd();render()" oninput="syncBsFromAd()" type="date"/></label><label><span class="label">BS</span><input aria-label="Today (BS)" class="date" id="todayBs" inputmode="numeric" onchange="syncTodayFromBs()" onkeydown="if(event.key==='Enter'){event.preventDefault();syncTodayFromBs()}" placeholder="YYYY-MM-DD" type="text"/></label></div></header><section aria-labelledby="pageTitle" class="section" id="dashboard"></section><section aria-labelledby="pageTitle" class="section" id="mentor"></section><section aria-labelledby="pageTitle" class="section" id="planner"></section><section aria-labelledby="pageTitle" class="section" id="tasks"></section><section aria-labelledby="pageTitle" class="section" id="routine"></section><section aria-labelledby="pageTitle" class="section" id="habits"></section><section aria-labelledby="pageTitle" class="section" id="goals"></section><section aria-labelledby="pageTitle" class="section" id="focus"></section><section aria-labelledby="pageTitle" class="section" id="notes"></section><section aria-labelledby="pageTitle" class="section" id="journal"></section><section aria-labelledby="pageTitle" class="section" id="expenses"></section><section aria-labelledby="pageTitle" class="section" id="personal"></section><section aria-labelledby="pageTitle" class="section" id="professional"></section><section aria-labelledby="pageTitle" class="section" id="spiritual"></section><section aria-labelledby="pageTitle" class="section" id="economical"></section><section aria-labelledby="pageTitle" class="section" id="mental"></section><section aria-labelledby="pageTitle" class="section" id="social"></section><section aria-labelledby="pageTitle" class="section" id="moral"></section><section aria-labelledby="pageTitle" class="section" id="device-storage"></section><section aria-labelledby="pageTitle" class="section" id="settings"></section></main></div><div aria-label="Quick navigation" class="mobile-bottom-nav" id="mobileBottomNav"><button data-section="dashboard" onclick="show('dashboard')" type="button"><span class="mi">⌂</span><span>Home</span></button><button data-section="planner" onclick="show('planner')" type="button"><span class="mi">▦</span><span>Plan</span></button><button data-section="tasks" onclick="show('tasks')" type="button"><span class="mi">✓</span><span>Tasks</span></button><button data-section="habits" onclick="show('habits')" type="button"><span class="mi">◉</span><span>Habits</span></button><button data-section="notes" onclick="show('notes')" type="button"><span class="mi">▤</span><span>Notes</span></button><button data-section="settings" onclick="show('settings')" type="button"><span class="mi">⚙</span><span>More</span></button><button aria-label="Toggle theme" class="bottom-theme" onclick="toggleAppearance()" type="button">☾</button></div><div class="toast" id="toast"></div><div id="bsCalendarModal" onclick="if(event.target===this)closeBsCalendar()"></div>
+
 <script>
 
-
 const KEY='lifeos_clean_v5';
-const LEGACY_KEYS=['lifeos_upgraded_v4','lifeos_upgraded_v4_drafts','lifeos_upgraded_v4_recovery'];
-try{LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));}catch(e){}
-const LEGACY_ATTACH_DB='lifeos-attachments-v1';
 const MAX_LOCAL_BYTES=4_500_000;
 const ATTACH_DB='lifeos-attachments-v2';
 const ATTACH_STORE='files';
 let attachmentDBPromise=null;
-try{if('indexedDB' in window)indexedDB.deleteDatabase(LEGACY_ATTACH_DB);}catch(e){}
 const MAX_IMAGE_BYTES=900_000;
 const MAX_IMAGE_SIDE=1600;
 let data=(()=>{try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){console.warn('LifeOS data was invalid; starting safely',e);return null}})()||{
  tasks:[],notes:[],journal:[],expenses:[],income:[],habits:[],routines:[],goals:[],
- daily:{},focus:{},achievement:{},financePeriod:'monthly',settings:{mode:'light'},__drafts:{},mentor:{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},mentorKpis:{}
+ daily:{},focus:{},financePeriod:'monthly',settings:{mode:'light'},__drafts:{},mentor:{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},mentorKpis:{}
 };
 data.journal=Array.isArray(data.journal)?data.journal:[];
 data.__drafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};
-data.goals=Array.isArray(data.goals)?data.goals:[];data.focusSessions=Array.isArray(data.focusSessions)?data.focusSessions:[];data.achievements=Array.isArray(data.achievements)?data.achievements:[];
+data.goals=Array.isArray(data.goals)?data.goals:[];data.focusSessions=Array.isArray(data.focusSessions)?data.focusSessions:[];
 data.settings={...{mode:'light'},...(data.settings||{})};
 data.mentor={...{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},...(data.mentor||{})};
 data.mentorKpis=(data.mentorKpis&&typeof data.mentorKpis==='object')?data.mentorKpis:{};
@@ -78,7 +96,7 @@ if(!data.mentorQuotes.length)data.mentorQuotes=[
  {id:'q8',text:'कमाई को कौशल, कौशल को स्वतंत्रता और स्वतंत्रता को सेवा में बदलो।',author:'Mentor',category:'Service'}
 ];
 
-let recognition=null,listening=false,noteColor='#fff8c5',noteImages=[],journalThemeColor='#fff8c5';
+let noteColor='#fff8c5',noteImages=[],journalThemeColor='#fff8c5';
 
 const navItems=[
  ['dashboard','🏠 Dashboard'],['mentor','🧭 Mentor & Capital'],['planner','📅 Daily Planner'],['tasks','✅ To-Do & Projects'],
@@ -87,13 +105,8 @@ const navItems=[
  ['personal','👤 Personal'],['professional','💼 Professional'],['spiritual','🕉 Spiritual'],['economical','💰 Economical'],['mental','🧠 Mental'],['social','🤝 Social'],['moral','⚖️ Moral'],['settings','⚙️ Settings']
 ];
 
-function renderReset(){
- const el=document.getElementById('reset');if(!el)return;
- const hasLocal=!!localStorage.getItem(KEY);
- el.innerHTML=`<div class="card reset-shell"><div class="eyebrow">CLEAN START</div><h2>🧹 Full Reset</h2><p class="muted">LifeOS ka local data is device par fresh state me reset kar sakte ho.</p><div class="reset-status"><span class="tag">${hasLocal?'Local data found':'Already clean'}</span><span class="meta">Only this browser/device data is affected.</span></div><div class="reset-actions"><button class="danger reset-main" type="button" onclick="fullLocalReset()">🧹 Reset This Device</button><button class="secondary" type="button" onclick="resetServiceWorkerCache()">♻️ Refresh App Cache</button></div><div class="reset-warning"><b>⚠️ Important:</b> Reset karne se locally saved tasks, notes, journal, habits, expenses, routines, goals, focus history aur local attachments delete ho jayenge.</div></div>`;
-}
 let draftSaveTimer=null;
-const DRAFT_SKIP_IDS=new Set(['today','nf','filter','voiceLang','ncustom']);
+const DRAFT_SKIP_IDS=new Set(['today','nf','filter','ncustom']);
 function isDraftField(el){
   if(!el||!el.id||DRAFT_SKIP_IDS.has(el.id))return false;
   if(el.disabled||el.readOnly)return false;
@@ -111,99 +124,8 @@ function openAttachmentDB(){
   });
   return attachmentDBPromise;
 }
-function exportDateKey(d=today()){return String(d||today()).replace(/[^0-9-]/g,'-')}
-function exportFileSafe(s=''){return String(s).replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim().slice(0,80)||'Untitled'}
-async function saveExportDirectoryHandle(handle){try{const db=await openAttachmentDB();await new Promise((resolve,reject)=>{const tx=db.transaction(ATTACH_STORE,'readwrite');tx.objectStore(ATTACH_STORE).put(handle,'export:directory');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Export folder save failed'))});return true}catch(e){console.warn('Export folder handle save failed',e);return false}}
-async function loadExportDirectoryHandle(){try{const db=await openAttachmentDB();return await new Promise((resolve,reject)=>{const tx=db.transaction(ATTACH_STORE,'readonly'),r=tx.objectStore(ATTACH_STORE).get('export:directory');r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error||new Error('Export folder load failed'))})}catch(e){return null}}
-async function ensureExportPermission(handle){if(!handle||typeof handle.queryPermission!=='function')return false;let p=await handle.queryPermission({mode:'readwrite'});if(p==='granted')return true;if(typeof handle.requestPermission==='function'){p=await handle.requestPermission({mode:'readwrite'});return p==='granted'}return false}
-function buildDailyExportObject(date=today()){
-  const d=String(date||today()), daily=data.daily?.[d]||{};
-  const pick=(arr)=>Array.isArray(arr)?arr.filter(x=>String(x?.date||'')===d):[];
-  return {schema:'LifeOS Daily Export',version:1,date:d,exportedAt:new Date().toISOString(),daily,
-    tasks:pick(data.tasks),routines:pick(data.routines),expenses:pick(data.expenses),income:pick(data.income),
-    notes:pick(data.notes),journal:pick(data.journal),achievements:pick(data.achievements),focusSessions:pick(data.focusSessions),
-    habits:pick(data.habits),goals:Array.isArray(data.goals)?data.goals.map(g=>({...g})):[]};
-}
-function htmlEscapeText(v){return esc(String(v??''))}
-function htmlAttachmentMarkup(item){
-  const imgs=Array.isArray(item?.images)?item.images:[];
-  const files=Array.isArray(item?.files)?item.files:[];
-  const imageTags=imgs.filter(Boolean).map((src,i)=>`<img class="attachment-image" src="${esc(src)}" alt="Note image ${i+1}" loading="lazy">`).join('');
-  const fileImages=files.filter(f=>f?.type?.startsWith('image/')&&f.data).map(f=>`<img class="attachment-image" src="${esc(f.data)}" alt="${htmlEscapeText(f.name||'Attachment') }" loading="lazy">`).join('');
-  const fileNames=files.filter(f=>f&&(!f.type?.startsWith('image/')||!f.data)).map(f=>`<span class="file-chip">📎 ${htmlEscapeText(f.name||'Attachment')}</span>`).join('');
-  return imageTags||fileImages||fileNames?`<div class="attachments">${imageTags}${fileImages}${fileNames}</div>`:'';
-}
-function dailySection(title,items,fields){
-  if(!Array.isArray(items)||!items.length)return `<section><h2>${htmlEscapeText(title)}</h2><p class="empty">No entries for this date.</p></section>`;
-  return `<section><h2>${htmlEscapeText(title)}</h2><div class="cards">${items.map(x=>`<article class="entry"><h3>${htmlEscapeText(x.title||x.name||x.source||title)}</h3>${(x.html&&['Notes','Journal'].includes(title))?`<div class="rich-export">${sanitizeRichHtml(x.html)}</div>`:''}${fields.map(([k,label])=>{let v=x[k];if(Array.isArray(v))v=v.join(', ');if(typeof v==='object'&&v)v=JSON.stringify(v);return v!==undefined&&v!==''&&!(x.html&&['body','text'].includes(k)&&['Notes','Journal'].includes(title))?`<p><b>${htmlEscapeText(label)}:</b> ${htmlEscapeText(v)}</p>`:''}).join('')}${htmlAttachmentMarkup(x)}</article>`).join('')}</div></section>`;
-}
-function buildDailyExportHtml(date=today()){
-  const d=buildDailyExportObject(date),x=d.daily||{};
-  const points=[...(x.planPoints||[]).map(v=>`• ${v.text||v.title||v}`),...(x.achievementPoints||[]).map(v=>`✓ ${v.text||v.title||v}`),...(x.reflectionPoints||[]).map(v=>`✦ ${v.text||v.title||v}`)];
-  const summary=[['Target',x.target],['Progress',x.progress],['Mood',x.mood],['Reflection',x.reflection]].filter(([v])=>v);
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LifeOS — ${htmlEscapeText(d.date)}</title><style>body{margin:0;background:#f5f7fb;color:#172033;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.wrap{max-width:980px;margin:auto;padding:32px 18px 60px}.hero{background:linear-gradient(135deg,#111827,#334155);color:white;border-radius:24px;padding:30px;margin-bottom:22px;box-shadow:0 12px 35px #0002}.hero h1{margin:0 0 5px;font-size:32px}.muted{opacity:.72}.summary,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card,section{background:white;border:1px solid #e5e9f0;border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 5px 18px #1720330a}.card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#667085}.card div{font-size:18px;margin-top:4px}section h2{margin:0 0 12px;font-size:19px}.entry{border:1px solid #edf0f5;border-radius:14px;padding:14px;background:#fbfcfe}.entry h3{margin:0 0 8px;font-size:16px}.entry p{margin:5px 0}.empty{color:#98a2b3}.points{white-space:pre-wrap;background:#f8fafc;border-radius:12px;padding:12px}.attachments{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.attachment-image{max-width:100%;max-height:420px;border-radius:12px;object-fit:contain;background:#eef2f7}.file-chip{display:inline-block;padding:7px 10px;border-radius:999px;background:#eef2f7;font-size:13px}@media print{body{background:white}.wrap{padding:0}.hero{box-shadow:none;break-inside:avoid}.card,section{box-shadow:none;break-inside:avoid}}</style></head><body><main class="wrap"><header class="hero"><h1>My LifeOS</h1><div>${htmlEscapeText(d.date)} · Daily Archive</div><div class="muted">Saved: ${htmlEscapeText(new Date().toLocaleString())}</div></header>${summary.length?`<div class="summary">${summary.map(([k,v])=>`<div class="card"><b>${htmlEscapeText(k)}</b><div>${htmlEscapeText(v)}</div></div>`).join('')}</div>`:''}${points.length?`<section><h2>Daily Points</h2><div class="points">${htmlEscapeText(points.join('\n'))}</div></section>`:''}${dailySection('Tasks',d.tasks,[['title','Task'],['category','Category'],['time','Time'],['priority','Priority'],['tags','Tags'],['done','Status']])}${dailySection('Routines',d.routines,[['name','Routine'],['category','Category'],['time','Time'],['note','Note'],['done','Status']])}${dailySection('Habits',d.habits,[['name','Habit'],['time','Time'],['times','Times'],['done','Status']])}${dailySection('Income',d.income,[['source','Source'],['amount','Amount'],['note','Note']])}${dailySection('Expenses',d.expenses,[['source','Source'],['amount','Amount'],['note','Note']])}${dailySection('Notes',d.notes,[['title','Title'],['body','Text'],['points','Points'],['category','Category'],['tags','Tags']])}${dailySection('Journal',d.journal,[['title','Title'],['text','Text'],['color','Theme']])}${dailySection('Achievements',d.achievements,[['title','Achievement'],['note','Note'],['done','Status']])}${dailySection('Focus Sessions',d.focusSessions,[['minutes','Minutes'],['seconds','Seconds'],['label','Label']])}</main></body></html>`;
-}
-function getExportDates(){
-  const set=new Set(Object.keys(data.daily||{}));
-  for(const arr of [data.tasks,data.routines,data.expenses,data.income,data.notes,data.journal,data.achievements,data.focusSessions,data.habits]) for(const x of (arr||[])) if(x?.date)set.add(String(x.date));
-  set.add(today());
-  return [...set].filter(Boolean).sort().reverse();
-}
-function buildExportIndexHtml(){
-  const dates=getExportDates();
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My LifeOS — Archive</title><style>body{margin:0;background:#f5f7fb;color:#172033;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:850px;margin:auto;padding:36px 18px}.hero{background:linear-gradient(135deg,#111827,#334155);color:#fff;border-radius:24px;padding:30px;margin-bottom:20px}.hero h1{margin:0 0 6px}.list{display:grid;gap:10px}.item{display:block;background:#fff;border:1px solid #e5e9f0;border-radius:16px;padding:16px;text-decoration:none;color:inherit;box-shadow:0 4px 15px #1720330a}.item:hover{transform:translateY(-1px)}.date{font-weight:700}.meta{font-size:13px;color:#667085;margin-top:3px}</style></head><body><main class="wrap"><header class="hero"><h1>My LifeOS</h1><div>Daily Archive</div><div class="meta">Updated ${htmlEscapeText(new Date().toLocaleString())}</div></header><div class="list">${dates.map(d=>`<a class="item" href="LifeOS-Daily-${exportDateKey(d)}.html"><div class="date">${htmlEscapeText(d)}</div><div class="meta">Open daily LifeOS archive</div></a>`).join('')}</div></main></body></html>`;
-}
-async function setupComputerExport(){
-  try{
-    if('showDirectoryPicker' in window){
-      const handle=await window.showDirectoryPicker({id:'lifeos-export',mode:'readwrite'});
-      if(!handle)return false;
-      await saveExportDirectoryHandle(handle);
-      await writeDailyExportToFolder(handle,today(),true);
-      toast('✅ LifeOS computer export folder connected');
-      return true;
-    }
-    const date=exportDateKey(today());
-    const daily=new Blob([buildDailyExportHtml(today())],{type:'text/html'});
-    const data=buildExportText();
-    const word='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><h1>LifeOS Data Export</h1><pre style="white-space:pre-wrap;font-family:Arial">'+esc(data)+'</pre></body></html>';
-    const rows=buildExportRows();
-    const excel='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><table border="1"><tr>'+rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+'</tr>'+rows.slice(1).map(r=>'<tr>'+r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</table></body></html>';
-    const files=[
-      new File([daily],`LifeOS-Daily-${date}.html`,{type:'text/html'}),
-      new File(['\ufeff'+word],`LifeOS-${date}.doc`,{type:'application/msword'}),
-      new File(['\ufeff'+excel],`LifeOS-${date}.xls`,{type:'application/vnd.ms-excel'})
-    ];
-    if(navigator.share&&navigator.canShare&&navigator.canShare({files})){
-      await navigator.share({title:'LifeOS Computer Transfer',text:'LifeOS backup — Daily, Word and Excel',files});
-      toast('✅ LifeOS files ready to transfer');
-      return true;
-    }
-    for(const f of files)await downloadBlob(f,f.type,f.name);
-    toast('✅ Backup files downloaded');
-    return true;
-  }catch(e){
-    if(e?.name!=='AbortError')toast('Computer transfer failed: '+(e?.message||e));
-    return false;
-  }
-}
-async function writeDailyExportToFolder(handle,date=today(),silent=false){
-  try{if(!(await ensureExportPermission(handle))){if(!silent)toast('Export folder permission needed — tap Connect once.');return false}
-    const folder=await handle.getDirectoryHandle('LifeOS Daily', {create:true});
-    const file=await folder.getFileHandle(`LifeOS-Daily-${exportDateKey(date)}.html`,{create:true});
-    const writable=await file.createWritable();await writable.write(buildDailyExportHtml(date));await writable.close();
-    const latest=await folder.getFileHandle('LifeOS-Latest.html',{create:true});const w2=await latest.createWritable();await w2.write(buildDailyExportHtml(date));await w2.close();
-    const index=await folder.getFileHandle('LifeOS-Archive.html',{create:true});const w3=await index.createWritable();await w3.write(buildExportIndexHtml());await w3.close();
-    return true;
-  }catch(e){console.warn('Daily computer export failed',e);if(!silent)toast('Daily export failed: '+(e?.message||e));return false}
-}
-let dailyExportTimer=null;
-async function autoDailyComputerExport(){if(!('showDirectoryPicker' in window))return false;const handle=await loadExportDirectoryHandle();if(!handle)return false;return writeDailyExportToFolder(handle,today(),true)}
-function scheduleDailyComputerExport(){clearTimeout(dailyExportTimer);dailyExportTimer=setTimeout(()=>autoDailyComputerExport(),1800)}
 function attachmentKey(type,id,index){return type+':'+id+':'+index}
-async function putAttachment(type,id,index,value){
-  try{const db=await openAttachmentDB();await new Promise((resolve,reject)=>{const tx=db.transaction(ATTACH_STORE,'readwrite');tx.objectStore(ATTACH_STORE).put(value,attachmentKey(type,id,index));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Attachment save failed'))});return true}catch(e){console.warn('Attachment IndexedDB save failed',e);return false}
-}
+
 async function deleteAttachmentSet(type,id){
   try{const db=await openAttachmentDB();await new Promise((resolve,reject)=>{const tx=db.transaction(ATTACH_STORE,'readwrite'),st=tx.objectStore(ATTACH_STORE),prefix=type+':'+id+':';const r=st.openCursor();r.onsuccess=()=>{const c=r.result;if(!c){return}if(String(c.key).startsWith(prefix))c.delete();c.continue()};r.onerror=()=>reject(r.error);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Attachment delete failed'))});}catch(e){console.warn('Attachment IndexedDB cleanup failed',e)}
 }
@@ -229,22 +151,7 @@ async function persistAttachmentsToIDB(source=data){
     return true;
   }catch(e){console.warn('Attachment IndexedDB persistence failed',e);return false}
 }
-async function hydrateAttachmentsFromIDB(source=data){
-  if(!('indexedDB' in window))return false;
-  try{
-    const db=await openAttachmentDB();
-    const get=key=>new Promise((resolve,reject)=>{const tx=db.transaction(ATTACH_STORE,'readonly'),r=tx.objectStore(ATTACH_STORE).get(key);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
-    for(const n of (source.notes||[])){
-      if(!Array.isArray(n.images)||!n.images.length)n.images=[];
-      for(let i=0;i<n.images.length;i++) if(!n.images[i]){const v=await get(attachmentKey('note',n.id,i));if(v)n.images[i]=v;}
-    }
-    for(const j of (source.journal||[])){
-      if(!Array.isArray(j.files))j.files=[];
-      for(let i=0;i<j.files.length;i++) if(!j.files[i]?.data){const v=await get(attachmentKey('journal',j.id,i));if(v)j.files[i]={...(j.files[i]||{}),data:v};}
-    }
-    return true;
-  }catch(e){console.warn('Attachment IndexedDB hydration failed',e);return false}
-}
+
 function localSnapshot(source=data){
   const copy={...source,
     notes:(source.notes||[]).map(n=>({...n,images:Array.isArray(n.images)?n.images.map(()=>null):[]})),
@@ -252,23 +159,74 @@ function localSnapshot(source=data){
   };
   return copy;
 }
+const DEVICE_DB='lifeos-device-storage-v1';
+const DEVICE_STORE='app_state';
+let deviceDBPromise=null;
+let deviceSaveTimer=null;
+function openDeviceDB(){
+  if(deviceDBPromise)return deviceDBPromise;
+  deviceDBPromise=new Promise((resolve,reject)=>{
+    if(!('indexedDB' in window)){reject(new Error('IndexedDB unavailable'));return}
+    const req=indexedDB.open(DEVICE_DB,1);
+    req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(DEVICE_STORE))db.createObjectStore(DEVICE_STORE)};
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>reject(req.error||new Error('Device storage unavailable'));
+  });
+  return deviceDBPromise;
+}
+function requestPersistentDeviceStorage(){
+  try{
+    if(navigator.storage?.persist)navigator.storage.persist().catch(()=>{});
+  }catch(e){}
+}
+function readDeviceState(){
+  return openDeviceDB().then(db=>new Promise((resolve,reject)=>{
+    const tx=db.transaction(DEVICE_STORE,'readonly');
+    const req=tx.objectStore(DEVICE_STORE).get('state');
+    req.onsuccess=()=>resolve(req.result||null);
+    req.onerror=()=>reject(req.error||new Error('Device state read failed'));
+  }));
+}
+function writeDeviceState(source=data){
+  return openDeviceDB().then(db=>new Promise((resolve,reject)=>{
+    const tx=db.transaction(DEVICE_STORE,'readwrite');
+    tx.objectStore(DEVICE_STORE).put(localSnapshot(source),'state');
+    tx.oncomplete=resolve;
+    tx.onerror=()=>reject(tx.error||new Error('Device state save failed'));
+  }));
+}
+function scheduleDeviceSave(delay=180){
+  clearTimeout(deviceSaveTimer);
+  deviceSaveTimer=setTimeout(()=>{writeDeviceState().catch(e=>console.warn('Device storage save failed',e))},delay);
+}
+async function persistDeviceNow(){
+  try{await writeDeviceState();return true}catch(e){console.warn('IndexedDB device save failed',e);return false}
+}
 function persistLocalNow(){
+  let ok=false;
   try{
     data.__updatedAt=Number(data.__updatedAt)||Date.now();
     data.__localSavedAt=Date.now();
     const raw=JSON.stringify(localSnapshot(data));
-    if(raw.length>MAX_LOCAL_BYTES){
-      toast('⚠️ Local data बहुत बड़ा है। पुराने records साफ करें या JSON Backup लें।');
-      return false;
+    if(raw.length<=MAX_LOCAL_BYTES){localStorage.setItem(KEY,raw);ok=true}
+  }catch(e){console.warn('localStorage fallback save failed',e)}
+  scheduleDeviceSave(0);
+  return ok;
+}
+async function bootDeviceStorage(){
+  requestPersistentDeviceStorage();
+  try{
+    const stored=await readDeviceState();
+    if(stored&&typeof stored==='object'){
+      const localUpdated=Number(data.__updatedAt)||0;
+      const deviceUpdated=Number(stored.__updatedAt)||0;
+      if(deviceUpdated>localUpdated){data={...data,...stored};}
+      else if(localUpdated>deviceUpdated){await persistDeviceNow();}
+    }else{
+      await persistDeviceNow();
     }
-    localStorage.setItem(KEY,raw);
-    return true;
-  }catch(e){
-    console.warn('Local save failed',e);
-    if(e?.name==='QuotaExceededError'||/quota/i.test(e?.message||'')) toast('⚠️ Browser storage full. JSON Backup लें और पुराने records साफ करें।');
-    else toast('⚠️ Local save failed. कृपया JSON Backup लें और फिर retry करें।');
-    return false;
-  }
+  }catch(e){console.warn('Device storage boot failed',e)}
+  render();
 }
 function scheduleLocalPersist(delay=220){
   clearTimeout(window.__lifeosPersistTimer);
@@ -311,20 +269,13 @@ function bindDraftAutosave(){
   window.addEventListener('beforeunload',flushLocalPersist);
   window.addEventListener('pagehide',flushLocalPersist,{passive:true});
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')flushLocalPersist();},{passive:true});
-  document.addEventListener('focusout',()=>{setTimeout(applyPendingRemote,0);},{passive:true});
 }
 function save(){
   data.__updatedAt=Date.now();
-  data.__cloudDirty=true;
-  // Local-first: every edit is persisted on this device. Never depend on cloud timing.
   persistLocalNow();
-  scheduleDailyComputerExport();
+  scheduleDeviceSave(120);
 }
-function hasActiveEditor(){
-  const el=document.activeElement;
-  return !!(el&&((el.tagName==='INPUT'&&el.type!=='button'&&el.type!=='submit')||el.tagName==='TEXTAREA'||el.tagName==='SELECT'||el.isContentEditable));
-}
-let lastDriveBackupAt=0;
+
 const BS_MONTHS=['बैसाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मंसिर','पुष','माघ','फागुन','चैत'];
 const BS_DATA={
 2000:[30,32,31,32,31,30,30,30,29,30,29,31],2001:[31,31,32,31,31,31,30,29,30,29,30,30],2002:[31,31,32,32,31,30,30,29,30,29,30,30],2003:[31,32,31,32,31,30,30,30,29,29,30,31],2004:[30,32,31,32,31,30,30,30,29,30,29,31],2005:[31,31,32,31,31,31,30,29,30,29,30,30],2006:[31,31,32,32,31,30,30,29,30,29,30,30],2007:[31,32,31,32,31,30,30,30,29,29,30,31],2008:[31,31,31,32,31,31,29,30,30,29,29,31],2009:[31,31,32,31,31,31,30,29,30,29,30,30],2010:[31,31,32,32,31,30,30,29,30,29,30,30],2011:[31,32,31,32,31,30,30,30,29,29,30,31],2012:[31,31,31,32,31,31,29,30,30,29,30,30],2013:[31,31,32,31,31,31,30,29,30,29,30,30],2014:[31,31,32,32,31,30,30,29,30,29,30,30],2015:[31,32,31,32,31,30,30,30,29,29,30,31],2016:[31,31,31,32,31,31,29,30,30,29,30,30],2017:[31,31,32,31,31,31,30,29,30,29,30,30],2018:[31,32,31,32,31,30,30,29,30,29,30,30],2019:[31,32,31,32,31,30,30,30,29,30,29,31],2020:[31,31,31,32,31,31,30,29,30,29,30,30],2021:[31,31,32,31,31,31,30,29,30,29,30,30],2022:[31,32,31,32,31,30,30,30,29,29,30,30],2023:[31,32,31,32,31,30,30,30,29,30,29,31],2024:[31,31,31,32,31,31,30,29,30,29,30,30],2025:[31,31,32,31,31,31,30,29,30,29,30,30],2026:[31,32,31,32,31,30,30,30,29,29,30,31],2027:[30,32,31,32,31,30,30,30,29,30,29,31],2028:[31,31,32,31,31,31,30,29,30,29,30,30],2029:[31,31,32,31,32,30,30,29,30,29,30,30],2030:[31,32,31,32,31,30,30,30,29,29,30,31],2031:[30,32,31,32,31,30,30,30,29,30,29,31],2032:[31,31,32,31,31,31,30,29,30,29,30,30],2033:[31,31,32,32,31,30,30,29,30,29,30,30],2034:[31,32,31,32,31,30,30,30,29,29,30,31],2035:[30,32,31,32,31,31,29,30,30,29,29,31],2036:[31,31,32,31,31,31,30,29,30,29,30,30],2037:[31,31,32,32,31,30,30,29,30,29,30,30],2038:[31,32,31,32,31,30,30,30,29,29,30,31],2039:[31,31,31,32,31,31,29,30,30,29,30,30],2040:[31,31,32,31,31,31,30,29,30,29,30,30],2041:[31,31,32,32,31,30,30,29,30,29,30,30],2042:[31,32,31,32,31,30,30,30,29,29,30,31],2043:[31,31,31,32,31,31,29,30,30,29,30,30],2044:[31,31,32,31,31,31,30,29,30,29,30,30],2045:[31,32,31,32,31,30,30,29,30,29,30,30],2046:[31,32,31,32,31,30,30,30,29,29,30,31],2047:[31,31,31,32,31,31,30,29,30,29,30,30],2048:[31,31,32,31,31,31,30,29,30,29,30,30],2049:[31,32,31,32,31,30,30,30,29,29,30,30],2050:[31,32,31,32,31,30,30,30,29,30,29,31],2051:[31,31,31,32,31,31,30,29,30,29,30,30],2052:[31,31,32,31,31,31,30,29,30,29,30,30],2053:[31,32,31,32,31,30,30,30,29,29,30,30],2054:[31,32,31,32,31,30,30,30,29,30,29,31],2055:[31,31,32,31,31,31,30,29,30,29,30,30],2056:[31,31,32,31,32,30,30,29,30,29,30,30],2057:[31,32,31,32,31,30,30,30,29,29,30,31],2058:[30,32,31,32,31,30,30,30,29,30,29,31],2059:[31,31,32,31,31,31,30,29,30,29,30,30],2060:[31,31,32,32,31,30,30,29,30,29,30,30],2061:[31,32,31,32,31,30,30,30,29,29,30,31],2062:[30,32,31,32,31,31,29,30,29,30,29,31],2063:[31,31,32,31,31,31,30,29,30,29,30,30],2064:[31,31,32,32,31,30,30,29,30,29,30,30],2065:[31,32,31,32,31,30,30,30,29,29,30,31],2066:[31,31,31,32,31,31,29,30,30,29,29,31],2067:[31,31,32,31,31,31,30,29,30,29,30,30],2068:[31,31,32,32,31,30,30,29,30,29,30,30],2069:[31,32,31,32,31,30,30,30,29,29,30,31],2070:[31,31,31,32,31,31,29,30,30,29,30,30],2071:[31,31,32,31,31,31,30,29,30,29,30,30],2072:[31,32,31,32,31,30,30,29,30,29,30,30],2073:[31,32,31,32,31,30,30,30,29,29,30,31],2074:[31,31,31,32,31,31,30,29,30,29,30,30],2075:[31,31,32,31,31,31,30,29,30,29,30,30],2076:[31,32,31,32,31,30,30,30,29,29,30,30],2077:[31,32,31,32,31,30,30,30,29,30,29,31],2078:[31,31,31,32,31,31,30,29,30,29,30,30],2079:[31,31,32,31,31,31,30,29,30,29,30,30],2080:[31,32,31,32,31,30,30,30,29,29,30,30],2081:[31,31,32,32,31,30,30,30,29,30,30,30],2082:[31,31,31,32,31,31,30,29,30,29,30,30],2083:[31,31,32,31,31,31,30,29,30,29,30,30],2084:[31,31,32,31,31,30,30,29,30,30,30,30],2085:[31,32,31,32,30,31,30,30,29,30,30,30],2086:[30,32,31,32,31,30,30,30,29,30,30,30],2087:[31,31,32,31,31,31,30,30,29,30,30,30],2088:[30,31,32,32,30,31,30,30,29,30,30,30],2089:[30,32,31,32,31,30,30,30,29,30,30,30],2090:[30,32,31,32,31,30,30,30,29,30,30,30]};
@@ -386,38 +337,32 @@ function bsToAd(iso){
   return `${dt.getUTCFullYear()}-${String(dt.getUTCMonth()+1).padStart(2,'0')}-${String(dt.getUTCDate()).padStart(2,'0')}`;
 }
 function formatBsShort(iso){const bs=adToBs(iso);return bs?`${bs.day} ${bs.monthName} ${bs.year}`:'—'}
-function syncBsFromAd(){const value=document.getElementById('today')?.value||'';const bs=adToBs(value);const hidden=document.getElementById('todayBs');if(hidden)hidden.value=bs?bs.label:'';const display=document.getElementById('todayBsDisplay');if(display)display.textContent=bs?`${bs.day} ${bs.monthName} ${bs.year}`:'—';}
-function syncFieldBs(id){const input=document.getElementById(id),caption=document.getElementById(id+'BsCaption');if(!input||!caption)return;const bs=adToBs(input.value||'');caption.innerHTML=bs?`BS <b>${esc(bs.day+' '+bs.monthName+' '+bs.year)}</b>`:'BS date not available';if(id==='mentorSelectedDate'){data.mentorSelectedDate=input.value||today();save();setTimeout(renderMentor,0)}}
-function dateFieldMarkup(id,value='',label='Date'){const bs=adToBs(value||'');const caption=bs?`BS <b>${bs.day} ${bs.monthName} ${bs.year}</b>`:'BS date will appear here';return `<div class="universal-date-field full"><div class="universal-date-control"><input id="${id}" type="date" value="${esc(value||'')}" aria-label="${esc(label)}" onchange="syncFieldBs('${id}')"><button type="button" class="secondary bs-date-action" onclick="openBsCalendar('${id}')">🇳🇵 BS</button></div><div class="bs-date-caption" id="${id}BsCaption">${caption}</div></div>`}
+
 let bsCalendarTarget='today',bsCalendarYear=2083,bsCalendarMonth=1;
-function openBsCalendar(target='today'){bsCalendarTarget=target;const ad=document.getElementById(target)?.value||today();const bs=adToBs(ad);if(bs){bsCalendarYear=bs.year;bsCalendarMonth=bs.month}else{bsCalendarYear=2083;bsCalendarMonth=1}renderBsCalendar();document.getElementById('bsCalendarModal')?.classList.add('open');document.body.classList.add('bs-calendar-open');}
+
 function closeBsCalendar(){document.getElementById('bsCalendarModal')?.classList.remove('open');document.body.classList.remove('bs-calendar-open')}
 function moveBsMonth(delta){let y=bsCalendarYear,m=bsCalendarMonth+delta;if(m<1){m=12;y--}if(m>12){m=1;y++}if(BS_DATA[y]){bsCalendarYear=y;bsCalendarMonth=m;renderBsCalendar()}}
 function renderBsCalendar(){const root=document.getElementById('bsCalendarModal');if(!root)return;const months=BS_DATA[bsCalendarYear];if(!months)return;const firstAd=bsToAd(`${bsCalendarYear}-${String(bsCalendarMonth).padStart(2,'0')}-01`);const days=months[bsCalendarMonth-1];const firstDay=new Date(firstAd+'T00:00:00Z').getUTCDay();const selectedAd=document.getElementById(bsCalendarTarget)?.value||'';const currentAd=document.getElementById('today')?.value||today();let cells='';for(let i=0;i<firstDay;i++)cells+='<div></div>';for(let d=1;d<=days;d++){const bsIso=`${bsCalendarYear}-${String(bsCalendarMonth).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const ad=bsToAd(bsIso);const wd=new Date(ad+'T00:00:00Z').getUTCDay();const selected=ad===selectedAd?' selected':'';const isToday=ad===currentAd?' today':'';cells+=`<button type="button" class="bs-day ${wd===6?'sat':''}${selected}${isToday}" onclick="selectBsCalendarDate('${ad}')"><span class="bs-num">${d}</span><span class="ad-num">${ad.slice(8,10)} ${new Date(ad+'T00:00:00Z').toLocaleString('en',{month:'short',timeZone:'UTC'})}</span></button>`;}const monthName=BS_MONTHS[bsCalendarMonth-1];const startAd=bsToAd(`${bsCalendarYear}-${String(bsCalendarMonth).padStart(2,'0')}-01`);const endAd=bsToAd(`${bsCalendarYear}-${String(bsCalendarMonth).padStart(2,'0')}-${String(days).padStart(2,'0')}`);root.innerHTML=`<div class="bs-calendar-card" role="dialog" aria-modal="true" aria-label="Bikram Sambat calendar"><div class="bs-calendar-top"><button type="button" class="bs-cal-nav" onclick="moveBsMonth(-1)" aria-label="Previous month">‹</button><div class="bs-calendar-title"><strong>${monthName} ${bsCalendarYear}</strong><span>${startAd} → ${endAd}</span></div><button type="button" class="bs-cal-nav" onclick="moveBsMonth(1)" aria-label="Next month">›</button></div><div class="bs-calendar-tools"><select aria-label="BS year" onchange="bsCalendarYear=Number(this.value);renderBsCalendar()">${Object.keys(BS_DATA).map(y=>`<option value="${y}" ${Number(y)===bsCalendarYear?'selected':''}>${y} BS</option>`).join('')}</select><select aria-label="BS month" onchange="bsCalendarMonth=Number(this.value);renderBsCalendar()">${BS_MONTHS.map((m,i)=>`<option value="${i+1}" ${i+1===bsCalendarMonth?'selected':''}>${m}</option>`).join('')}</select></div><div class="bs-calendar-grid"><div class="bs-weekday">आइत</div><div class="bs-weekday">सोम</div><div class="bs-weekday">मंगल</div><div class="bs-weekday">बुध</div><div class="bs-weekday">बिहि</div><div class="bs-weekday">शुक्र</div><div class="bs-weekday">शनि</div>${cells}</div><div class="bs-calendar-footer"><span>BS दिन मुख्य · AD नीचे</span><button type="button" class="secondary bs-close" onclick="closeBsCalendar()">Close</button></div></div>`}
-function selectBsCalendarDate(ad){const input=document.getElementById(bsCalendarTarget);if(!input)return;input.value=ad;if(bsCalendarTarget==='today'){syncBsFromAd();render()}else{syncFieldBs(bsCalendarTarget)}closeBsCalendar();}
+
 function today(){const el=document.getElementById('today');if(el&&el.value)return el.value;const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
 function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function uid(){return (crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now()+Math.random().toString(16).slice(2)}
 function nav(){document.getElementById('nav').innerHTML=navItems.map(([id,t])=>`<button onclick="show('${id}')" id="nav-${id}">${t}</button>`).join('')}
 function show(id){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));const target=document.getElementById(id);if(target)target.classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));const nb=document.getElementById('nav-'+id);if(nb)nb.classList.add('active');document.querySelectorAll('#mobileBottomNav button[data-section]').forEach(x=>x.classList.toggle('active',x.dataset.section===id));const item=navItems.find(x=>x[0]===id);document.getElementById('pageTitle').textContent=item?item[1].replace(/^[^ ]+ /,''):id;render()}
-function dayObj(){if(!data.daily[today()])data.daily[today()]={target:'',progress:'',planPoints:[],achievementPoints:[],reflectionPoints:[]};return data.daily[today()]}
+function dayObj(){const key=today();if(!data.daily[key]||typeof data.daily[key]!=='object')data.daily[key]={target:'',progress:'',planPoints:[],achievementPoints:[],reflectionPoints:[]};const d=data.daily[key];if(!Array.isArray(d.planPoints))d.planPoints=[];if(!Array.isArray(d.achievementPoints))d.achievementPoints=[];if(!Array.isArray(d.reflectionPoints))d.reflectionPoints=[];return d}
 function addPoint(kind){let x=prompt('Point लिखें:');if(x&&x.trim()){dayObj()[kind].push({id:uid(),text:x.trim(),done:false});save();render()}}
 function togglePoint(kind,id){let p=dayObj()[kind].find(x=>x.id===id);if(p)p.done=!p.done;save();render()}
-function delPoint(kind,id){if(!confirm('इस point को delete करें?'))return;let a=dayObj()[kind]||[];dayObj()[kind]=a.filter(x=>x.id!==id);save();render()} function pointHtml(kind){let a=dayObj()[kind]||[];return a.length?a.map(x=>`<div class="point ${x.done?'point-done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="togglePoint('${kind}','${x.id}')"><span class="point-text">${esc(x.text)}</span><div class="point-actions"><button class="point-delete" type="button" title="Delete" aria-label="Delete point" onclick="delPoint('${kind}','${x.id}')">🗑</button><button class="point-done" type="button" onclick="togglePoint('${kind}','${x.id}')">${x.done?'↩ Undo':'✓ Done'}</button></div></div>`).join(''):'<div class="muted">अभी कोई point नहीं है।</div>'}
+function delPoint(kind,id){if(!confirm('इस point को delete करें?'))return;let a=dayObj()[kind]||[];dayObj()[kind]=a.filter(x=>x.id!==id);save();render()} function pointHtml(kind){let a=dayObj()[kind]||[];return a.length?a.map(x=>`<div class="point ${x.done?'point-done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="togglePoint('${kind}','${x.id}')"><span class="point-text">${esc(x.text)}</span><div class="point-actions"><button class="secondary point-action-done" type="button" onclick="togglePoint('${kind}','${x.id}')">${x.done?'Undo':'Done'}</button><button class="danger point-action-delete" type="button" onclick="delPoint('${kind}','${x.id}')">Delete</button></div></div>`).join(''):'<div class="muted">अभी कोई point नहीं है।</div>'}
 function renderDashboard(){
  const td=data.tasks.filter(x=>x.date===today()),done=td.filter(x=>x.done).length;
  const ex=data.expenses.filter(x=>x.date===today()).reduce((a,b)=>a+Number(b.amount||0),0);
  const inc=data.income.filter(x=>x.date===today()).reduce((a,b)=>a+Number(b.amount||0),0);
  const h=data.habits.filter(x=>x.date===today()),hd=h.filter(x=>x.done).length;
  document.getElementById('dashboard').innerHTML=`
- <div class="hero"><b>आज का Dashboard</b><div class="muted">Simple overview — all your detailed work stays in its own sections.</div></div><div class="grid"><div class="card"><div class="label">आज के Tasks</div><div class="metric">${done}/${td.length}</div><div class="progress"><i style="width:${td.length?done/td.length*100:0}%"></i></div></div><div class="card"><div class="label">आज की Habits</div><div class="metric">${hd}/${h.length}</div></div><div class="card"><div class="label">आज का Balance</div><div class="metric">₹${(inc-ex).toFixed(2)}</div></div></div><div class="card"><h2>💰 Today's Finance</h2><div class="two"><div><div class="label">Income</div><div class="money income">₹${inc.toFixed(2)}</div></div><div><div class="label">Expense</div><div class="money expense">₹${ex.toFixed(2)}</div></div></div></div><div class="mentor-grid"><div class="card dashboard-quote-card"><div class="between"><div><h2>🧭 Today's Mentor Principle / Quote</h2><div class="meta">AD ${esc(today())} · BS ${esc(formatBsShort(today()))}</div></div><button class="secondary" type="button" onclick="show('mentor')">Open Mentor</button></div><div class="dashboard-quote-text">“${esc(mentorQuoteForDate(today())?.text||'आज का छोटा अनुशासन, कल की बड़ी स्वतंत्रता बनता है।')}”</div><div class="meta">— ${esc(mentorQuoteForDate(today())?.author||'Mentor')} · ${esc(mentorQuoteForDate(today())?.category||'Discipline')}</div></div><div class="card"><h2>💰 Runway</h2><div class="metric">${mentorFinance().runway.toFixed(1)} days</div><div class="muted">Current: ₹${Math.round(mentorFinance().balance).toLocaleString('en-IN')} · ₹60k essential burn</div></div></div><div class="card" style="margin-top:16px"><h2>📊 Finance Overview</h2><div id="financeDashboardChart" class="muted">Loading…</div></div>`;
+ <div class="hero"><b>आज का Dashboard</b><div class="muted">Simple overview — all your detailed work stays in its own sections.</div></div><div class="grid dashboard-kpi-grid"><div class="card"><div class="label">आज के Tasks</div><div class="metric">${done}/${td.length}</div><div class="progress"><i style="width:${td.length?done/td.length*100:0}%"></i></div></div><div class="card"><div class="label">आज की Habits</div><div class="metric">${hd}/${h.length}</div></div><div class="card"><div class="label">आज का Balance</div><div class="metric">₹${(inc-ex).toFixed(2)}</div></div><div class="card"><div class="label">💰 Runway</div><div class="metric">${mentorFinance().runway.toFixed(1)} days</div></div></div><div class="card dashboard-finance-card"><h2>💰 Today's Finance</h2><div class="two dashboard-finance" style="grid-template-columns:repeat(2,minmax(0,1fr));"><div class="dashboard-finance-box income-box"><div class="label">Income</div><div class="money income">₹${inc.toFixed(2)}</div></div><div class="dashboard-finance-box expense-box"><div class="label">Expenses</div><div class="money expense">₹${ex.toFixed(2)}</div></div></div></div><div class="mentor-grid"><div class="card dashboard-quote-card"><div class="quote-head"><div class="dashboard-quote-date-wrap"><div class="meta quote-date dashboard-quote-date">AD ${esc(today())} · BS ${esc(formatBsShort(today()))}</div></div><div class="quote-title"><h2>🧭 Today's Mentor Principle / Quote</h2></div><div class="mentor-action-stack"><button class="secondary" type="button" onclick="show('mentor')">Open Mentor</button></div></div><div class="dashboard-quote-text">“${esc(mentorQuoteForDate(today())?.text||'आज का छोटा अनुशासन, कल की बड़ी स्वतंत्रता बनता है।')}”</div><div class="meta dashboard-quote-author">— ${esc(mentorQuoteForDate(today())?.author||'Mentor')} · ${esc(mentorQuoteForDate(today())?.category||'Discipline')}</div></div></div><div class="card" style="margin-top:16px"><h2>📊 Finance Overview</h2><div id="financeDashboardChart" class="muted">Loading…</div></div>`;
  drawFinanceDashboardChart();
 }
 
-function renderPlanner(){
- let d=dayObj();
- document.getElementById('planner').innerHTML=`<div class="two"><div class="card"><h2>📅 Daily Plan</h2><div class="formgrid"><div class="full"><label class="label">Main Target</label><input value="${esc(d.target)}" oninput="dayObj().target=this.value;save()"></div><div><label class="label">Progress</label><input value="${esc(d.progress)}" placeholder="जैसे 70%" oninput="dayObj().progress=this.value;save()"></div></div><h2 style="margin-top:18px">📌 Top Priorities — Point Wise</h2><div class="points">${pointHtml('planPoints')}</div><button class="secondary" onclick="addPoint('planPoints')">+ Add Priority Point</button></div><div class="card"><h2>🏆 Achievement — Point Wise</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button><h2 style="margin-top:20px">🪞 Reflection — Point Wise</h2><div class="points">${pointHtml('reflectionPoints')}</div><button class="secondary" onclick="addPoint('reflectionPoints')">+ Add Reflection Point</button></div></div>`;
-}
 function renderTasks(){
  document.getElementById('tasks').innerHTML=`<div class="two"><div class="card"><h2>➕ Add Task</h2><div class="formgrid"><input id="tt" placeholder="Task title"><select id="tc"><option>Professional</option><option>Personal</option><option>Spiritual</option><option>Social</option><option>Moral</option><option>Health</option><option>Finance</option></select>${dateFieldMarkup('td',today(),'Task date')}<input id="tm" type="time"><select id="tp"><option>High</option><option>Medium</option><option>Low</option></select><input id="ttag" placeholder="Tags"><button class="primary" onclick="addTask()">Add Task</button></div></div><div class="card"><h2>📌 Filter</h2><select id="filter" onchange="renderTaskList()"><option>All</option><option>Professional</option><option>Personal</option><option>Spiritual</option><option>Social</option><option>Moral</option><option>Health</option><option>Finance</option><option>Completed</option></select></div></div><div class="card" style="margin-top:16px"><div id="taskList"></div></div>`;
  renderTaskList();
@@ -427,14 +372,31 @@ function renderTaskList(){let f=document.getElementById('filter')?.value||'All',
 function addTask(){let title=document.getElementById('tt').value.trim();if(!title)return;data.tasks.push({id:uid(),title,category:document.getElementById('tc').value,date:document.getElementById('td').value, time:document.getElementById('tm').value,priority:document.getElementById('tp').value,tags:document.getElementById('ttag').value,done:false});clearDrafts(['tt','tc','td','tm','tp','ttag']);save();renderTasks()}
 function toggleTask(id){let x=data.tasks.find(x=>x.id===id);if(x)x.done=!x.done;save();renderTasks()}function delTask(id){data.tasks=data.tasks.filter(x=>x.id!==id);save();renderTasks()}
 
-function addRoutine(){let n=document.getElementById('rn').value.trim();if(!n)return;data.routines.push({id:uid(),name:n,time:document.getElementById('rt').value,category:document.getElementById('rc').value,note:document.getElementById('rnote').value,date:today(),done:false});clearDrafts(['rt','rc','rn','rnote']);save();renderRoutine()}
+function routineStart(x){return String(x?.startTime||x?.time||'').slice(0,5)}
+function routineEnd(x){return String(x?.endTime||'').slice(0,5)}
+function routineRange(x){const a=routineStart(x),b=routineEnd(x);return a&&b?`${a} से ${b} तक`:a||'--:--'}
+function addRoutine(){
+  const n=document.getElementById('rn')?.value.trim()||'';
+  const start=document.getElementById('rtStart')?.value||'';
+  const end=document.getElementById('rtEnd')?.value||'';
+  if(!n)return toast('Routine / Activity लिखें');
+  if(!start||!end)return toast('Start और End दोनों time चुनें');
+  if(end<=start)return toast('End time, Start time के बाद होना चाहिए');
+  data.routines.push({id:uid(),name:n,startTime:start,endTime:end,time:start,category:document.getElementById('rc')?.value||'Personal',note:document.getElementById('rnote')?.value.trim()||'',date:today(),done:false});
+  clearDrafts(['rtStart','rtEnd','rc','rn','rnote']);save();renderRoutine();
+}
 function toggleRoutine(id){let x=data.routines.find(x=>x.id===id);if(x){x.done=!x.done;save();renderRoutine()}}
 function delRoutine(id){if(!confirm('इस routine को delete करें?'))return;data.routines=data.routines.filter(x=>x.id!==id);save();renderRoutine()}
-function routineList(todayOnly=false){let a=data.routines.filter(x=>!todayOnly||x.date===today()).slice().sort((a,b)=>(a.time||'').localeCompare(b.time||''));return a.length?a.map(x=>`<div class="routine ${x.done?'routine-completed':''}"><span class="time">${esc(x.time||'--:--')}</span><div><b>${esc(x.name)}</b><div class="meta">${esc(x.note||'')}</div></div><span class="cat">${esc(x.category)}</span><div class="routine-actions"><button class="routine-delete" type="button" title="Delete" aria-label="Delete routine" onclick="delRoutine('${x.id}')">🗑</button><button class="routine-done" type="button" onclick="toggleRoutine('${x.id}')">${x.done?'↩ Undo':'✓ Done'}</button></div></div>`).join(''):'<div class="muted">आज कोई routine नहीं।</div>'}
-function renderRoutine(){document.getElementById('routine').innerHTML=`<div class="two"><div class="card"><h2>🕉 Routine Planner</h2><div class="formgrid"><input id="rt" type="time"><select id="rc"><option>Personal</option><option>Professional</option><option>Spiritual</option><option>Social</option><option>Moral</option></select><input id="rn" placeholder="Routine / Activity"><input id="rnote" placeholder="Short note"><button class="primary" onclick="addRoutine()">Add Routine</button></div></div><div class="card"><h2>🎯 Routine Categories</h2><p class="muted">Personal · Professional · Spiritual · Social · Moral</p></div></div><div class="card" style="margin-top:16px"><h2>Today's Routine</h2>${routineList(true)}</div>`}
+
+function routineList(todayOnly=false){
+  const a=data.routines.filter(x=>!todayOnly||x.date===today()).slice().sort((a,b)=>routineStart(a).localeCompare(routineStart(b)));
+  return a.length?a.map(x=>`<div class="routine-item ${x.done?'routine-completed':''}"><div class="routine-item-top"><span class="routine-item-time">${esc(routineRange(x))}</span><span class="routine-item-cat">${esc(x.category||'Personal')}</span></div><div class="routine-item-body"><b>${esc(x.name)}</b><div class="meta">${esc(x.note||'')}</div></div><div class="routine-item-actions"><button class="routine-done secondary" type="button" onclick="toggleRoutine('${x.id}')">${x.done?'↩ Undo':'✓ Done'}</button><button class="routine-delete danger" type="button" onclick="delRoutine('${x.id}')">🗑 Delete</button></div></div>`).join(''):'<div class="muted">आज कोई routine नहीं।</div>';
+}
+
+function renderRoutine(){document.getElementById('routine').innerHTML=`<div class="two"><div class="card"><h2>🕉 Routine Planner</h2><p class="muted">हर routine को स्पष्ट time block में रखें — जैसे <b>04:00 से 05:00 तक</b>.</p><div class="formgrid"><div><label class="label">Start time</label><input id="rtStart" type="time"></div><div><label class="label">End time</label><input id="rtEnd" type="time"></div><select id="rc"><option>Personal</option><option>Professional</option><option>Spiritual</option><option>Social</option><option>Moral</option></select><input id="rn" placeholder="Routine / Activity"><input id="rnote" placeholder="Short note"><button class="primary full" onclick="addRoutine()">+ Add Time Block</button></div></div><div class="card"><h2>🎯 Routine Categories</h2><p class="muted">Personal · Professional · Spiritual · Social · Moral</p><div class="balance"><b>Example</b><div class="time-block-example">04:00 से 05:00 तक</div><div class="meta">Morning study / prayer / exercise</div></div></div></div><div class="card" style="margin-top:14px"><div class="between"><h2 style="margin:0">Today's Routine</h2><span class="tag">Time blocks</span></div>${routineList(true)}</div>`}
 
 function setNoteColor(c){noteColor=c||'#fff8c5';let e=document.getElementById('noteEditor');if(e)e.style.background=noteColor;let p=document.getElementById('ncustom');if(p)p.value=noteColor}
-function renderNotes(){noteColor='#fff8c5';noteImages=[];document.getElementById('notes').innerHTML=`<div class="note-grid"><div class="card note-editor" id="noteEditor"><h2>📝 Rich Note</h2><div class="form"><input id="nt" placeholder="Note title"><input id="ntag" placeholder="Tags: idea, meeting"><div class="two"><select id="ncatSelect" onchange="syncNotebookManual()"><option value="">Select notebook / category</option>${financeNotebookCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="ncat" placeholder="Manual notebook / category (optional)" disabled></div><div class="full color-line"><span class="label">Color</span><input id="ncustom" class="color-input" type="color" value="#fff8c5" onchange="setNoteColor(this.value)"><span class="label">Any color</span></div><div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setNoteColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setNoteColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setNoteColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setNoteColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setNoteColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setNoteColor('#fff')"></button></div></div><div class="full"><div class="rich-toolbar"><button type="button" onclick="richCmd('bold')"><b>B</b></button><button type="button" onclick="richCmd('italic')"><i>I</i></button><button type="button" onclick="richCmd('underline')"><u>U</u></button><button type="button" onclick="richCmd('insertUnorderedList')">• List</button><button type="button" onclick="richCmd('justifyLeft')">←</button><button type="button" onclick="richCmd('justifyCenter')">↔</button><button type="button" onclick="richCmd('justifyRight')">→</button><select onchange="richFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="richColor(this.value)" title="Font color"></div><div id="nb" class="rich-editor full" contenteditable="true" data-draft-id="nb"></div></div><textarea id="npoints" class="full" placeholder="Point-wise notes — हर line एक point"></textarea><div class="full"><b>🖼️ Add Images</b><input id="nfiles" type="file" accept="image/*" multiple onchange="previewImages(this)" style="margin-top:7px"><div id="photoPreview" class="photo-preview"></div></div><div class="full"><div class="between"><b>🎙️ Voice-to-Text</b><div class="row"><select id="voiceLang" style="width:145px"><option value="hi-IN">Hindi 🇮🇳</option><option value="en-IN">English 🇮🇳</option></select><button class="btn secondary" id="voiceBtn" onclick="toggleVoice()">🎙️ Start Voice</button></div></div><div class="meta">Chrome/Edge में microphone permission Allow करें।</div></div><button class="btn primary full" onclick="addNote()">Save Note</button></div></div><div class="card"><h2>🔎 Search Notes</h2><input id="nf" placeholder="Search title, text, tag..." oninput="renderNoteList()"></div></div><div class="card" style="margin-top:16px"><div id="noteList"></div></div>`;renderNoteList()}
+function renderNotes(){noteColor='#fff8c5';noteImages=[];document.getElementById('notes').innerHTML=`<div class="note-grid"><div class="card note-editor" id="noteEditor"><h2>📝 Detailed Note</h2><p class="muted">Title, category, rich text, point-wise details और images के साथ पूरा note लिखें.</p><div class="form"><input id="nt" placeholder="Note title"><input id="ntag" placeholder="Tags: idea, meeting"><div class="two"><select id="ncatSelect" onchange="syncNotebookManual()"><option value="">Select notebook / category</option>${financeNotebookCategories.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}<option value="__manual__">✍️ Manual entry</option></select><input id="ncat" placeholder="Manual notebook / category (optional)" disabled></div><div class="full color-line"><span class="label">Color</span><input id="ncustom" class="color-input" type="color" value="#fff8c5" onchange="setNoteColor(this.value)"><span class="label">Any color</span></div><div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setNoteColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setNoteColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setNoteColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setNoteColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setNoteColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setNoteColor('#fff')"></button></div></div><div class="full"><div class="rich-toolbar"><button type="button" onclick="richCmd('bold')"><b>B</b></button><button type="button" onclick="richCmd('italic')"><i>I</i></button><button type="button" onclick="richCmd('underline')"><u>U</u></button><button type="button" onclick="richCmd('insertUnorderedList')">• List</button><button type="button" onclick="richCmd('justifyLeft')">←</button><button type="button" onclick="richCmd('justifyCenter')">↔</button><button type="button" onclick="richCmd('justifyRight')">→</button><select onchange="richFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="richColor(this.value)" title="Font color"></div><div id="nb" class="rich-editor full" contenteditable="true" data-draft-id="nb"></div></div><textarea id="npoints" class="full" placeholder="Point-wise notes — हर line एक point"></textarea><div class="full"><b>🖼️ Add Images</b><input id="nfiles" type="file" accept="image/*" multiple onchange="previewImages(this)" style="margin-top:7px"><div id="photoPreview" class="photo-preview"></div></div><button class="btn primary full" onclick="addNote()">Save Note</button></div></div><div class="card"><h2>🔎 Search Notes</h2><input id="nf" placeholder="Search title, text, tag..." oninput="renderNoteList()"></div></div><div class="card" style="margin-top:16px"><div id="noteList"></div></div>`;renderNoteList()}
 async function compressImage(file){
   if(!file.type.startsWith('image/')) return null;
   if(!('createImageBitmap' in window) && !/image\/(jpeg|jpg|png|webp)$/i.test(file.type)) return null;
@@ -462,66 +424,6 @@ function notebookLabel(){const select=document.getElementById('ncatSelect'),inpu
 async function addNote(){let t=document.getElementById('nt').value.trim(),b=richText(),bh=richHtml(),pts=document.getElementById('npoints').value.trim(),cat=notebookLabel();if(!t&&!b&&!pts&&!noteImages.length)return toast('Note में content या image जोड़ें');const note={id:uid(),title:t||'Untitled',body:b,html:bh,points:pts,category:cat||'General',color:document.getElementById('ncustom').value||noteColor,tags:document.getElementById('ntag').value,date:today(),images:noteImages.slice()};data.notes.unshift(note);clearDrafts(['nt','ntag','ncat','ncatSelect','nb','npoints']);const stored=await persistAttachmentItemToIDB('note',note);if(note.images.length&&!stored)return toast('⚠️ Image storage failed. Note save रोक दिया गया — retry करें.');save();renderNotes();toast('Note saved')}
 function renderNoteList(){let q=(document.getElementById('nf')?.value||'').toLowerCase(),a=data.notes.filter(x=>`${x.title||''} ${x.body||''} ${x.points||''} ${x.tags||''} ${x.category||''}`.toLowerCase().includes(q));document.getElementById('noteList').innerHTML=a.length?`<div class="grid g3">${a.map(x=>{let pts=(x.points||'').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);let imgs=Array.isArray(x.images)?x.images:[];return `<article class="note-card" style="background:${/^#[0-9a-f]{6}$/i.test(x.color||'')?x.color:'#fff8c5'}"><div class="between"><div><div class="title">${esc(x.title)}</div><div class="meta">${esc(x.date||'')} · ${esc(x.category||'General')} ${tags(x.tags)}</div></div><button class="btn danger" onclick="delNote('${x.id}')">Delete</button></div>${x.html?`<div style="line-height:1.6">${x.html}</div>`:(x.body?`<p style="white-space:pre-wrap;line-height:1.5">${esc(x.body)}</p>`:'')}${pts.length?`<ul class="points">${pts.map(p=>`<li>• ${esc(p.replace(/^[-•*]\s*/,''))}</li>`).join('')}</ul>`:''}${imgs.map(im=>`<img loading="lazy" decoding="async" src="${esc(im)}" alt="note image">`).join('')}</article>`}).join('')}</div>`:'<div class="meta" style="padding:22px;text-align:center">कोई note नहीं।</div>'}
 function delNote(id){data.notes=data.notes.filter(x=>x.id!==id);deleteAttachmentSet('note',id);save();renderNotes()}
-async function ensureMicrophoneAccess(){
-  if(!window.isSecureContext&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1')return{ok:false,reason:'secure'};
-  if(!navigator.mediaDevices?.getUserMedia)return{ok:false,reason:'unsupported'};
-  try{
-    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
-    stream.getTracks().forEach(t=>t.stop());
-    return{ok:true};
-  }catch(e){
-    const n=e?.name||'';
-    if(n==='NotAllowedError'||n==='PermissionDeniedError')return{ok:false,reason:'denied'};
-    if(n==='NotFoundError')return{ok:false,reason:'missing'};
-    return{ok:false,reason:'error'};
-  }
-}
-function voicePermissionHelp(reason){
-  const msg={
-    secure:'Voice के लिए HTTPS या localhost पर app चलाएँ।',
-    unsupported:'इस browser में microphone access उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।',
-    denied:'Microphone blocked है। Address bar → Site settings → Microphone → Allow करें, फिर Voice दबाएँ।',
-    missing:'Microphone उपलब्ध नहीं मिला। Device microphone check करें।',
-    error:'Microphone access नहीं मिल पाया। Site permission check करके फिर कोशिश करें।'
-  }[reason]||'Microphone access नहीं मिल पाया।';
-  toast('🎙️ '+msg);
-}
-async function toggleVoice(){
-  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){toast('Voice-to-Text इस browser में उपलब्ध नहीं है। Latest Chrome/Edge इस्तेमाल करें।');return}
-  if(listening){try{recognition?.stop()}catch(e){}return}
-  const editor=document.getElementById('nb');
-  if(!editor){toast('पहले Notes में नया/मौजूदा note खोलें');return}
-  const btn=document.getElementById('voiceBtn');
-  if(btn){btn.disabled=true;btn.textContent='🎙️ Checking Mic…'}
-  const access=await ensureMicrophoneAccess();
-  if(btn)btn.disabled=false;
-  if(!access.ok){if(btn)btn.textContent='🎙️ Start Voice';voicePermissionHelp(access.reason);return}
-  recognition=new SR();
-  recognition.lang=document.getElementById('voiceLang')?.value||'hi-IN';
-  recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;
-  recognition.onstart=()=>{listening=true;const b=document.getElementById('voiceBtn');if(b)b.textContent='⏹️ Stop Voice';toast('🎙️ सुन रहा हूँ...')};
-  recognition.onresult=e=>{
-    const t=String(e.results?.[0]?.[0]?.transcript||'').trim();if(!t)return;
-    const target=document.getElementById('nb');if(!target)return;target.focus();
-    const sel=window.getSelection();let r;
-    if(sel&&sel.rangeCount&&target.contains(sel.anchorNode))r=sel.getRangeAt(0).cloneRange();
-    else{r=document.createRange();r.selectNodeContents(target);r.collapse(false)}
-    r.deleteContents();const n=document.createTextNode((target.innerText?.trim()?' ':'')+t);
-    r.insertNode(n);r.setStartAfter(n);r.collapse(true);
-    if(sel){sel.removeAllRanges();sel.addRange(r)}
-    target.dispatchEvent(new Event('input',{bubbles:true}));saveRichDraft();toast('Voice text added');
-  };
-  recognition.onerror=e=>{
-    listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';
-    if(e.error==='not-allowed'||e.error==='service-not-allowed')voicePermissionHelp('denied');
-    else if(e.error==='audio-capture')voicePermissionHelp('missing');
-    else if(e.error!=='aborted')toast('Voice error: '+e.error);
-  };
-  recognition.onend=()=>{listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice'};
-  try{recognition.start()}catch(e){listening=false;const b=document.getElementById('voiceBtn');if(b)b.textContent='🎙️ Start Voice';toast('Voice start नहीं हो पाया; फिर से कोशिश करें')}
-}
-
 const defaultHabits=[['Meditation','🧘'],['Yoga','🧘‍♂️'],['Water','💧'],['Healthy Food','🥗'],['Sleep','😴'],['Exercise','🏃']];
 function renderHabits(){let custom=[...new Set(data.habits.filter(h=>h.custom).map(h=>h.name))];document.getElementById('habits').innerHTML=`<div class="grid g3">${defaultHabits.map(([n,i])=>habitCard(n,i,false)).join('')}${custom.map(n=>habitCard(n,'⭐',true)).join('')}</div><div class="card" style="margin-top:16px"><h2>➕ Custom Habit + Time</h2><div class="form"><input id="hn" placeholder="Reading, Prayer, Study..."><input id="ht" type="time"><button class="btn primary full" onclick="addHabit()">Add Habit with Time</button></div></div>`}
 function habitTimesFor(x){
@@ -567,16 +469,6 @@ function addIncome(){let s=financeLabel('income'),raw=document.getElementById('i
 function addExpense(){let s=financeLabel('expense'),raw=document.getElementById('ea').value,a=safeFinanceCalc(raw);if(!s||!Number.isFinite(a)||a<=0)return;data.expenses.unshift({id:uid(),source:s,amount:a,date:document.getElementById('ed').value,note:document.getElementById('en').value});clearDrafts(['es','esSelect','ea','ed','en']);save();renderExpenses()}
 function delFinance(type,id){if(type==='income')data.income=data.income.filter(x=>x.id!==id);else data.expenses=data.expenses.filter(x=>x.id!==id);save();renderExpenses()}
 
-async function resetServiceWorkerCache(){
- try{if('caches' in window){const keys=await caches.keys();await Promise.all(keys.filter(k=>/^lifeos-/i.test(k)).map(k=>caches.delete(k)))}if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()))}toast('♻️ App cache refreshed')}catch(e){toast('Cache refresh failed');console.warn(e)}
-}
-function deleteIndexedDB(name){return new Promise(resolve=>{if(!('indexedDB' in window))return resolve();let settled=false;const finish=()=>{if(!settled){settled=true;resolve()}};try{const req=indexedDB.deleteDatabase(name);req.onsuccess=finish;req.onerror=finish;req.onblocked=finish;}catch(_){finish()}})}
-async function fullLocalReset(){
- if(!confirm('Full Reset करें? इस device का LifeOS data, drafts और attachments permanently clear हो जाएंगे. Cloud/Google Drive data नहीं हटेगा.'))return;
- try{clearTimeout(draftSaveTimer);clearTimeout(window.__lifeosPersistTimer);clearTimeout(dailyExportTimer);if(focusTimer){clearInterval(focusTimer);focusTimer=null}Object.keys(localStorage).filter(k=>/^lifeos_/i.test(k)).forEach(k=>localStorage.removeItem(k));await Promise.all([deleteIndexedDB(LEGACY_ATTACH_DB),deleteIndexedDB(ATTACH_DB)]);await resetServiceWorkerCache();window.location.replace(window.location.pathname+'?reset='+Date.now())}catch(e){console.error('Full local reset failed',e);toast('Reset failed — please try again')}
-}
-function makeFreshData(){return {tasks:[],notes:[],journal:[],expenses:[],income:[],habits:[],routines:[],goals:[],daily:{},focus:{},achievement:{},financePeriod:'monthly',settings:{mode:'light'},__drafts:{},mentor:{startingCapital:300000,startDate:'',survivalReserve:180000,emergencyReserve:60000,careerFund:30000,opportunityFund:30000,dailyBurn:2000,monthlyBurn:60000,balanceMode:'auto',manualBalance:0},mentorKpis:{},focusSessions:[],achievements:[],mentorQuotes:[],mentorRules:DEFAULT_MENTOR_RULES.map((text,i)=>({id:'mr'+(i+1),text})),mentorSelectedDate:today()}}
-
 function toast(m){let t=document.getElementById('toast');if(!t)return;t.textContent=m;t.style.display='block';clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.style.display='none',1800)}
 function applyTheme(){let mode=(data.settings&&data.settings.mode==='dark')?'dark':'light';let t=mode==='dark'?['#a78bfa','#c4b5fd']:['#6750e8','#8b5cf6'];document.documentElement.style.setProperty('--accent',t[0]);document.documentElement.style.setProperty('--accent2',t[1]);document.documentElement.dataset.lifeosMode=mode;document.documentElement.style.colorScheme=mode;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',mode==='dark'?'#0b0e16':'#f7f8fa');if(mode==='dark'){document.documentElement.style.setProperty('--bg','#0b0e16');document.documentElement.style.setProperty('--card','#181c25');document.documentElement.style.setProperty('--text','#f3f4f6');document.documentElement.style.setProperty('--muted','#a8afbd');document.documentElement.style.setProperty('--line','#343a49')}else{document.documentElement.style.setProperty('--bg','#f7f8fa');document.documentElement.style.setProperty('--card','#fff');document.documentElement.style.setProperty('--text','#202124');document.documentElement.style.setProperty('--muted','#70757a');document.documentElement.style.setProperty('--line','#e0e3e7')}updateAppearanceButton()}
 function toggleAppearance(){data.settings.mode=(data.settings.mode==='dark'?'light':'dark');save();applyTheme();render();toast(data.settings.mode==='dark'?'🌙 Dark mode enabled':'☀️ Light mode enabled')}
@@ -594,92 +486,11 @@ data.expenses=Array.isArray(data.expenses)?data.expenses:[];
 const __defaultHabitNames=['Meditation','Yoga','Water','Healthy Food','Sleep','Exercise'];
 data.habits.forEach(h=>{if(h.custom===undefined)h.custom=!__defaultHabitNames.includes(h.name)});
 save();
-// Attachments live in IndexedDB, while lightweight metadata stays in localStorage.
+bootDeviceStorage();
+// Main app data stays in device storage; attachments stay device-local in IndexedDB to avoid localStorage quota problems.
 // Hydrate them after the initial shell is ready so startup remains fast.
 persistAttachmentsToIDB(data).catch(()=>{});
-// Existing attachments are migrated once to IndexedDB; the current view then hydrates them.
-scheduleDailyComputerExport();
-
-
-function renderReview(){let days=Object.values(data.daily),completed=data.tasks.filter(x=>x.done).length;document.getElementById('review').innerHTML=`<div class="grid"><div class="card"><div class="label">Daily Entries</div><div class="metric">${days.length}</div></div><div class="card"><div class="label">Tasks Completed</div><div class="metric">${completed}</div></div><div class="card"><div class="label">Notes</div><div class="metric">${data.notes.length}</div></div><div class="card"><div class="label">Routines</div><div class="metric">${data.routines.length}</div></div></div><div class="two"><div class="card"><h2>📈 Recent Daily Review</h2><div class="list">${days.slice(-7).reverse().map(x=>`<div class="item"><b>${esc(x.target||'No target')}</b><div class="meta">Progress: ${esc(x.progress||'-')} · Priority points: ${(x.planPoints||[]).length} · Achievement points: ${(x.achievementPoints||[]).length}</div></div>`).join('')||'<div class="empty">अभी data नहीं है।</div>'}</div></div><div class="card"><h2>💾 Data & Computer Archive</h2><p class="muted">Daily archive आपके computer के चुने हुए folder में अपने-आप save हो सकता है. पहली बार सिर्फ folder connect करना होगा.</p><div class="export-tools"><button class="primary" onclick="setupComputerExport()">📁 Connect Computer Folder</button><button class="secondary" onclick="exportTodayToComputer()">⚡ Save Today Now</button><button class="secondary" onclick="exportDailyHtml()">📄 Download Daily HTML</button><button class="secondary" onclick="exportData()">JSON Backup</button><button class="secondary" onclick="exportCSV()">Excel / CSV</button><button class="secondary" onclick="exportExcel()">Excel (All Data)</button><button class="secondary" onclick="exportFinanceExcel('daily')">Excel Daily</button><button class="secondary" onclick="exportFinanceExcel('weekly')">Excel Weekly</button><button class="secondary" onclick="exportFinanceExcel('monthly')">Excel Monthly</button><button class="secondary" onclick="exportFinanceExcel('yearly')">Excel Yearly</button><button class="secondary" onclick="exportWord()">Word (.doc)</button><button class="secondary" onclick="exportPDF()">PDF / Print</button><button class="secondary" onclick="exportText()">Text (.txt)</button><button class="danger" onclick="show('reset')">Open Full Reset</button></div></div></div>`}
-async function downloadBlob(content,type,filename){
-  try{
-    const blob=content instanceof Blob?content:new Blob([content],{type});
-    const url=URL.createObjectURL(blob);
-    const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||'');
-    if(mobile&&navigator.share&&navigator.canShare){
-      const file=new File([blob],filename,{type:blob.type||type});
-      if(navigator.canShare({files:[file]})){
-        try{await navigator.share({title:'LifeOS Backup',text:filename,files:[file]});setTimeout(()=>URL.revokeObjectURL(url),3000);return true}
-        catch(e){if(e?.name==='AbortError'){URL.revokeObjectURL(url);return false}}
-      }
-    }
-    const a=document.createElement('a');a.href=url;a.download=filename;a.rel='noopener';
-    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
-    return true;
-  }catch(e){toast('Export failed: '+(e?.message||e));return false}
-}
-async function exportTodayToComputer(){const handle=await loadExportDirectoryHandle();if(!handle)return setupComputerExport();const ok=await writeDailyExportToFolder(handle,today(),false);if(ok)toast("✅ Today's LifeOS archive updated on computer")}
-function exportDailyHtml(){downloadBlob(buildDailyExportHtml(today()),'text/html;charset=utf-8',`LifeOS-Daily-${exportDateKey(today())}.html`)}
-function exportData(){downloadBlob(JSON.stringify(data,null,2),'application/json','lifeos-backup.json')}
-function exportText(){downloadBlob(buildExportText(),'text/plain;charset=utf-8','lifeos-data.txt')}
-function exportCSV(){toast('CSV export removed in final build')}
-function csvCell(v){const x=String(v??'').replace(/\r?\n/g,' ');return /["]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}
-function exportExcel(){
-  try{
-    const rows=buildExportRows();
-
-    const html='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'+
-      '<table border="1"><thead><tr>'+
-      rows[0].map(v=>'<th>'+esc(String(v))+'</th>').join('')+
-      '</tr></thead><tbody>'+
-      rows.slice(1).map(r=>'<tr>'+
-        r.map(v=>'<td>'+esc(String(v??''))+'</td>').join('')+
-        '</tr>').join('')+
-      '</tbody></table></body></html>';
-
-    downloadBlob(
-      '\ufeff'+html,
-      'application/vnd.ms-excel;charset=utf-8',
-      'lifeos-data.xls'
-    );
-
-    toast('✅ Excel file तैयार हो रही है');
-  }catch(e){
-    toast('Excel export failed: '+(e?.message||e));
-  }
-}
-function financePeriodRows(period){const inc=(data.income||[]).filter(x=>periodOk(x.date,period));const out=(data.expenses||[]).filter(x=>periodOk(x.date,period));const incomeTotal=inc.reduce((n,x)=>n+Number(x.amount||0),0);const expenseTotal=out.reduce((n,x)=>n+Number(x.amount||0),0);const rows=[['LifeOS Finance Report','',period.toUpperCase()],['Metric','Amount','Count'],['Income',incomeTotal.toFixed(2),inc.length],['Expense',expenseTotal.toFixed(2),out.length],['Balance',(incomeTotal-expenseTotal).toFixed(2),inc.length+out.length],['','',''],['Type','Date','Source / Category','Amount','Note','ID']];[...inc.map(x=>({...x,type:'Income'})),...out.map(x=>({...x,type:'Expense'}))].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).forEach(x=>rows.push([x.type,x.date||'',x.source||'',Number(x.amount||0).toFixed(2),x.note||'',x.id||'']));return rows}
-function exportFinanceExcel(period){const rows=financePeriodRows(period);const title='LifeOS '+period[0].toUpperCase()+period.slice(1)+' Finance';const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>'+title+'</title><style>body{font-family:Arial}table{border-collapse:collapse}th,td{border:1px solid #999;padding:6px}th{font-weight:700}</style></head><body><h1>'+esc(title)+'</h1><p>Generated: '+esc(new Date().toLocaleString())+'</p><table><tbody>'+rows.map((r,i)=>'<tr>'+r.map(v=>(i===0||i===1||i===6)?'<th>'+esc(String(v??''))+'</th>':'<td>'+esc(String(v??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></body></html>';downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','lifeos-finance-'+period+'.xls')}
-function exportWord(){
-  try{
-    const text=buildExportText();
-
-    const html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>LifeOS Export</title></head><body>'+
-      '<h1>LifeOS Data Export</h1>'+
-      '<p>Exported: '+new Date().toLocaleString()+'</p>'+
-      '<pre style="font-family:Arial;white-space:pre-wrap">'+esc(text)+'</pre>'+
-      '</body></html>';
-
-    downloadBlob(
-      '\ufeff'+html,
-      'application/msword;charset=utf-8',
-      'lifeos-data.doc'
-    );
-
-    toast('✅ Word file तैयार हो रही है');
-  }catch(e){
-    toast('Word export failed: '+(e?.message||e));
-  }
-}
-function exportPDF(){
-  const w=window.open('','_blank');
-  if(!w){alert('Please allow pop-ups for PDF export.');return}
-  const html='<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>LifeOS PDF Export</title><style>body{font-family:Arial,sans-serif;padding:32px;line-height:1.5}h1{margin-top:0}.item{margin:5px 0;padding:4px 0;border-bottom:1px solid #ddd;white-space:pre-wrap}@media print{button{display:none}}</style></head><body><h1>LifeOS Data Export</h1><p>Exported: '+esc(new Date().toLocaleString())+'</p><pre style=\"white-space:pre-wrap;font-family:Arial\">'+esc(buildExportText())+'</pre><script>window.onload=function(){setTimeout(function(){window.print()},250)}<\/script></body></html>';
-  w.document.open();w.document.write(html);w.document.close();
-}
-function buildExportRows(){const rows=[['Type','Date/Name','Title/Item','Details','Status','Frequency','Times']];(data.income||[]).forEach(v=>rows.push(['Income',v.date||'',v.source||'',v.note||'', '', '', String(Number(v.amount||0).toFixed(2))]));(data.expenses||[]).forEach(v=>rows.push(['Expense',v.date||'',v.source||'',v.note||'', '', '', String(Number(v.amount||0).toFixed(2))]));Object.entries(data.daily||{}).forEach(([date,x])=>{rows.push(['Daily',date,'Target',x.target||'','','','']);rows.push(['Daily',date,'Progress',x.progress||'','','','']);(x.planPoints||[]).forEach(v=>rows.push(['Daily Plan',date,v.text||v.title||v,'',v.done?'Done':'Pending','','']));(x.achievementPoints||[]).forEach(v=>rows.push(['Achievement',date,v.text||v.title||v,'',v.done?'Done':'Pending','','']));(x.reflectionPoints||[]).forEach(v=>rows.push(['Reflection',date,v.text||v.title||v,'',v.done?'Done':'Pending','','']))});(data.tasks||[]).forEach(v=>rows.push(['Task',v.date||'',v.title||v.name||'',v.notes||v.description||'',v.done?'Done':'Pending','','']));(data.routines||[]).forEach(v=>rows.push(['Routine',v.date||'',v.title||v.name||'',v.notes||v.description||'',v.done?'Done':'Pending','','']));(data.habits||[]).forEach(v=>{const times=Array.isArray(v.times)?v.times.join(' | '):(v.time||'');rows.push(['Habit','',v.name||v.title||'',v.notes||'',v.done?'Done':'Pending',v.frequency||v.target||'',times])});(data.notes||[]).forEach(v=>rows.push(['Note',v.date||'',v.title||'',v.text||v.content||'','','','']));(data.journal||[]).forEach(v=>rows.push(['Journal',v.date||'',v.title||'',v.text||'','','','']));return rows}
-function buildExportText(){return buildExportRows().map(r=>r.map(v=>String(v??'')).join(' | ')).join('\n')}
+// Existing attachments are kept device-local in IndexedDB and hydrated when needed.
 
 let journalFiles=[];
 function journalCmd(cmd){const e=document.getElementById('jbody');if(e){e.focus();try{document.execCommand(cmd,false,null)}catch(_){}}}
@@ -687,21 +498,46 @@ function journalFontSize(v){const e=document.getElementById('jbody');if(e&&v){e.
 function journalColor(v){const e=document.getElementById('jbody');if(e&&v){e.focus();try{document.execCommand('foreColor',false,v)}catch(_){}}}
 function setJournalThemeColor(c){journalThemeColor=c||'#fff8c5';const e=document.getElementById('journalEditor');if(e)e.style.background=journalThemeColor;const p=document.getElementById('jcustom');if(p)p.value=journalThemeColor}
 async function previewJournalFiles(inp){journalFiles=[];const p=document.getElementById('jfilesPreview');if(!p)return;p.innerHTML='';for(const f of [...inp.files].slice(0,8)){if(f.size>5*1024*1024){toast('File 5 MB से बड़ी है: '+f.name);continue}let encoded=null;if(f.type.startsWith('image/'))encoded=await compressImage(f);else encoded=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(f)});if(!encoded){toast('File process नहीं हुआ: '+f.name);continue}journalFiles.push({name:f.name,type:f.type,data:encoded});const chip=document.createElement('span');chip.className='attachment-chip';chip.textContent=f.name;p.appendChild(chip)}}
-async function addJournal(){const body=document.getElementById('jbody'),title=document.getElementById('jtitle').value.trim()||'Daily Journal',plain=(body?.innerText||'').trim(),content=sanitizeRichHtml(body?.innerHTML.trim()||'');if(!plain&&!journalFiles.length)return toast('Journal में कुछ लिखें या photo/file जोड़ें');const entry={id:uid(),date:document.getElementById('jdate').value||today(),title,html:content,text:plain,color:document.getElementById('jcustom')?.value||journalThemeColor,files:journalFiles.slice(),updatedAt:Date.now()};data.journal.unshift(entry);const stored=await persistAttachmentItemToIDB('journal',entry);if(entry.files.length&&!stored)return toast('⚠️ File storage failed. Journal save रोक दिया गया — retry करें.');
+async function addJournal(){
+  const body=document.getElementById('jbody'),
+    title=document.getElementById('jtitle').value.trim()||'Daily Journal',
+    plain=(body?.innerText||'').trim(),
+    content=sanitizeRichHtml(body?.innerHTML.trim()||'');
+  if(!plain&&!journalFiles.length)return toast('Journal में कुछ लिखें या photo/file जोड़ें');
+  const entry={
+    id:uid(),
+    date:document.getElementById('jdate').value||today(),
+    title,
+    html:content,
+    text:plain,
+    color:document.getElementById('jcustom')?.value||journalThemeColor,
+    files:journalFiles.slice(),
+    updatedAt:Date.now()
+  };
+  data.journal.unshift(entry);
+  const stored=await persistAttachmentItemToIDB('journal',entry);
+  if(entry.files.length&&!stored){
+    data.journal=data.journal.filter(x=>x.id!==entry.id);
+    return toast('⚠️ File storage failed. Journal save रोक दिया गया — retry करें.');
+  }
+  journalFiles=[];
+  save();
+  renderJournal();
+  toast('Journal saved');
 }
-function deleteJournal(id){if(confirm('इस journal entry को delete करें?')){data.journal=data.journal.filter(x=>x.id!==id);deleteAttachmentSet('journal',id);save();renderJournal()}}
-function renderJournal(){journalThemeColor='#fff8c5';document.getElementById('journal').innerHTML=`<div class="two"><div class="card" id="journalEditor"><h2>📔 Daily Journal</h2><div class="form"><input id="jtitle" placeholder="Journal title">${dateFieldMarkup('jdate',today(),'Journal date')}<div class="full color-line"><span class="label">Note Theme</span><input id="jcustom" class="color-input" type="color" value="#fff8c5" onchange="setJournalThemeColor(this.value)"><span class="label">Any color</span></div><div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setJournalThemeColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setJournalThemeColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setJournalThemeColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setJournalThemeColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setJournalThemeColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setJournalThemeColor('#fff')"></button></div></div><div class="full"><div class="rich-toolbar"><button type="button" onclick="journalCmd('bold')"><b>B</b></button><button type="button" onclick="journalCmd('italic')"><i>I</i></button><button type="button" onclick="journalCmd('underline')"><u>U</u></button><button type="button" onclick="journalCmd('insertUnorderedList')">• List</button><select onchange="journalFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="journalColor(this.value)" title="Font color"></div><div id="jbody" class="rich-editor" contenteditable="true"></div></div><div class="full"><b>📎 Photo / File</b><input type="file" id="jfiles" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt,.csv" onchange="previewJournalFiles(this)"><div id="jfilesPreview" class="attachment-list"></div></div><button class="primary full" onclick="addJournal()">Save Journal</button></div></div><div class="card"><h2>📚 Journal Entries</h2><p class="muted">Daily memories, notes और attachments.</p></div></div><div class="card" style="margin-top:16px"><div class="grid g3">${(data.journal||[]).map(x=>`<article class="note-card" style="background:${/^#[0-9a-f]{6}$/i.test(x.color||'')?x.color:'#fff8c5'}"><div class="between"><div><b>${esc(x.title)}</b><div class="meta">${esc(x.date||'')}</div></div><button class="danger" onclick="deleteJournal('${x.id}')">Delete</button></div><div style="line-height:1.6;margin-top:10px">${x.html||esc(x.text||'')}</div>${(x.files||[]).map(f=>f.type?.startsWith('image/')?`<img loading="lazy" decoding="async" src="${esc(f.data)}" alt="${esc(f.name)}">`:`<div class="attachment-chip">📎 ${esc(f.name)}</div>`).join('')}</article>`).join('')||'<div class="muted">अभी कोई journal entry नहीं।</div>'}</div></div>`}
+async function deleteJournal(id){if(!confirm('इस journal entry को delete करें?'))return;data.journal=(data.journal||[]).filter(x=>x.id!==id);save();try{await deleteAttachmentSet('journal',id)}catch(e){console.warn(e)}renderJournal();toast('Journal deleted ✓')}
+function renderJournal(){journalThemeColor='#fff8c5';document.getElementById('journal').innerHTML=`<div class="two"><div class="card" id="journalEditor"><h2>📔 Detailed Daily Journal</h2><p class="muted">आज की पूरी घटना, विचार, सीख और memories यहाँ विस्तार से लिखें.</p><div class="form"><input id="jtitle" placeholder="Journal title">${dateFieldMarkup('jdate',today(),'Journal date')}<div class="full color-line"><span class="label">Note Theme</span><input id="jcustom" class="color-input" type="color" value="#fff8c5" onchange="setJournalThemeColor(this.value)"><span class="label">Any color</span></div><div class="full"><div class="theme-grid"><button class="swatch" style="background:#fff8c5" onclick="setJournalThemeColor('#fff8c5')"></button><button class="swatch" style="background:#f0edff" onclick="setJournalThemeColor('#f0edff')"></button><button class="swatch" style="background:#e9f8ef" onclick="setJournalThemeColor('#e9f8ef')"></button><button class="swatch" style="background:#eaf3ff" onclick="setJournalThemeColor('#eaf3ff')"></button><button class="swatch" style="background:#ffeef0" onclick="setJournalThemeColor('#ffeef0')"></button><button class="swatch" style="background:#fff" onclick="setJournalThemeColor('#fff')"></button></div></div><div class="full"><div class="rich-toolbar"><button type="button" onclick="journalCmd('bold')"><b>B</b></button><button type="button" onclick="journalCmd('italic')"><i>I</i></button><button type="button" onclick="journalCmd('underline')"><u>U</u></button><button type="button" onclick="journalCmd('insertUnorderedList')">• List</button><select onchange="journalFontSize(this.value);this.selectedIndex=0"><option>Size</option><option value="2">Small</option><option value="3">Normal</option><option value="5">Large</option><option value="7">Huge</option></select><input type="color" value="#202124" onchange="journalColor(this.value)" title="Font color"></div><div id="jbody" class="rich-editor" contenteditable="true"></div></div><div class="full"><b>📎 Photo / File</b><input type="file" id="jfiles" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt,.csv" onchange="previewJournalFiles(this)"><div id="jfilesPreview" class="attachment-list"></div></div><button class="primary full" onclick="addJournal()">Save Journal</button></div></div><div class="card"><h2>📚 Journal Entries</h2><p class="muted">Daily memories, notes और attachments.</p></div></div><div class="card" style="margin-top:16px"><div class="grid g3">${(data.journal||[]).map(x=>`<article class="note-card" style="background:${/^#[0-9a-f]{6}$/i.test(x.color||'')?x.color:'#fff8c5'}"><div class="between"><div><b>${esc(x.title)}</b><div class="meta">${esc(x.date||'')}</div></div><button class="danger" onclick="deleteJournal('${x.id}')">Delete</button></div><div style="line-height:1.6;margin-top:10px">${x.html||esc(x.text||'')}</div>${(x.files||[]).map(f=>f.type?.startsWith('image/')?`<img loading="lazy" decoding="async" src="${esc(f.data)}" alt="${esc(f.name)}">`:`<div class="attachment-chip">📎 ${esc(f.name)}</div>`).join('')}</article>`).join('')||'<div class="muted">अभी कोई journal entry नहीं।</div>'}</div></div>`}
 
 function renderGoals(){
  const goals=data.goals||[];const done=goals.filter(g=>Number(g.progress)>=100).length;
  document.getElementById('goals').innerHTML=`<div class="module-hero"><div><div class="eyebrow" style="color:#d8ccff">GOALS</div><h2 style="color:#fff;font-size:25px;margin:6px 0">Turn plans into measurable progress</h2><div class="muted">${done} of ${goals.length} goals completed</div></div><div class="big">${goals.length?Math.round(goals.reduce((a,g)=>a+Number(g.progress||0),0)/goals.length):0}%</div></div>
  <div class="two"><div class="card"><h2>➕ Add Goal</h2><div class="formgrid"><input id="goalTitle" placeholder="Goal title">${dateFieldMarkup('goalTarget','','Target date')}<input id="goalProgress" type="number" min="0" max="100" value="0" placeholder="Progress %"><input id="goalCategory" placeholder="Category"><textarea id="goalNote" class="full" placeholder="Why this goal matters / next milestone"></textarea><button class="primary full" onclick="addGoal()">Add Goal</button></div></div><div class="card"><h2>🎯 Goal system</h2><p class="muted">Set a clear outcome, track progress, and keep the next milestone visible.</p><div class="kpi"><div class="mini"><b>${goals.length}</b><br><span class="meta">Total</span></div><div class="mini"><b>${done}</b><br><span class="meta">Completed</span></div><div class="mini"><b>${goals.filter(g=>Number(g.progress)>0&&Number(g.progress)<100).length}</b><br><span class="meta">In progress</span></div></div></div></div>
- <div class="card" style="margin-top:16px"><div class="list">${goals.length?goals.map(g=>`<article class="item goal-card"><div class="between"><div><div class="title">${esc(g.title)}</div><div class="meta">${esc(g.category||'General')} ${g.targetDate?'· Target '+esc(g.targetDate):''}</div></div><div class="goal-actions"><button class="secondary" onclick="editGoal('${g.id}')">Edit</button><button class="danger" onclick="deleteGoal('${g.id}')">Delete</button></div></div><p class="muted" style="margin:0">${esc(g.note||'')}</p><div class="goal-progress"><div class="progress"><i style="width:${Math.max(0,Math.min(100,Number(g.progress)||0))}%"></i></div><b>${Math.round(Number(g.progress)||0)}%</b></div></article>`).join(''):'<div class="empty">अभी कोई goal नहीं।</div>'}</div></div>`;
+ <div class="card" style="margin-top:16px"><div class="list">${goals.length?goals.map(g=>`<article class="item goal-card ${Number(g.progress)>=100?'goal-completed':''}"><div class="between"><div><div class="title">${esc(g.title)}</div><div class="meta">${esc(g.category||'General')} ${g.targetDate?'· Target '+esc(g.targetDate):''}</div></div><div class="goal-actions"><button class="secondary" type="button" onclick="toggleGoalDone('${g.id}')">${Number(g.progress)>=100?'↩ Undo':'✓ Done'}</button><button class="danger" type="button" onclick="deleteGoal('${g.id}')">🗑 Delete</button></div></div><p class="muted" style="margin:0">${esc(g.note||'')}</p><div class="goal-progress"><div class="progress"><i style="width:${Math.max(0,Math.min(100,Number(g.progress)||0))}%"></i></div><b>${Math.round(Number(g.progress)||0)}%</b></div></article>`).join(''):'<div class="empty">अभी कोई goal नहीं।</div>'}</div></div>`;
 }
 function addGoal(){const title=document.getElementById('goalTitle').value.trim();if(!title)return toast('Goal title लिखें');data.goals.unshift({id:uid(),title,progress:Number(document.getElementById('goalProgress').value||0),targetDate:document.getElementById('goalTarget').value,category:document.getElementById('goalCategory').value.trim(),note:document.getElementById('goalNote').value.trim(),createdAt:Date.now()});save();renderGoals();toast('Goal added')}
-function editGoal(id){const g=data.goals.find(x=>x.id===id);if(!g)return;const p=prompt('Progress %',String(g.progress??0));if(p!==null){g.progress=Math.max(0,Math.min(100,Number(p)||0));save();renderGoals();}}
-function deleteGoal(id){if(!confirm('इस goal को delete करें?'))return;data.goals=data.goals.filter(x=>x.id!==id);save();renderGoals()}
 
+function toggleGoalDone(id){const g=(data.goals||[]).find(x=>x.id===id);if(!g)return;g.progress=Number(g.progress)>=100?0:100;save();renderGoals();toast(Number(g.progress)>=100?'Goal completed ✓':'Goal reopened ↩')}
+function deleteGoal(id){if(!confirm('इस goal को delete करें?'))return;data.goals=data.goals.filter(x=>x.id!==id);save();renderGoals();toast('Goal deleted ✓')}
 
 function drawFinanceDashboardChart(){const el=document.getElementById('financeDashboardChart');if(!el)return;const now=new Date(),m=[];for(let k=5;k>=0;k--){const d=new Date(now.getFullYear(),now.getMonth()-k,1);m.push({key:d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'),label:d.toLocaleDateString('en',{month:'short'}),income:0,expense:0})}for(const x of(data.income||[])){const q=m.find(a=>a.key===String(x.date||'').slice(0,7));if(q)q.income+=Number(x.amount||0)}for(const x of(data.expenses||[])){const q=m.find(a=>a.key===String(x.date||'').slice(0,7));if(q)q.expense+=Number(x.amount||0)}const max=Math.max(1,...m.flatMap(x=>[x.income,x.expense]));el.innerHTML=m.map(x=>`<div style="margin:8px 0"><div class="between"><span>${x.label}</span><span>₹${x.income.toFixed(0)} / ₹${x.expense.toFixed(0)}</span></div><div style="height:8px;background:linear-gradient(90deg,var(--green) ${x.income/max*100}%,transparent ${x.income/max*100}%);border-radius:99px"></div><div style="height:8px;background:linear-gradient(90deg,var(--red) ${x.expense/max*100}%,transparent ${x.expense/max*100}%);border-radius:99px;margin-top:3px"></div></div>`).join('')+'<div class="meta">Income / Expense · last 6 months</div>'}
 let focusTimer=null,focusRemaining=25*60,focusMode=25,focusModeSeconds=25*60;
@@ -727,8 +563,6 @@ function toggleFocus(){
   renderFocus();
 }
 function resetFocus(){if(focusTimer){clearInterval(focusTimer);focusTimer=null}focusRemaining=focusModeSeconds;renderFocus()}
-
-function renderAchievements(){const tasksDone=data.tasks.filter(x=>x.done).length,notes=data.notes.length,journals=data.journal.length,goalsDone=data.goals.filter(x=>Number(x.progress)>=100).length,sessions=data.focusSessions.length;const badges=[['⚡','First task',tasksDone>=1,'Complete your first task'],['🔥','10 tasks',tasksDone>=10,'Complete 10 tasks'],['📝','Note maker',notes>=5,'Save 5 notes'],['📔','Journal habit',journals>=5,'Write 5 journal entries'],['🎯','Goal finisher',goalsDone>=1,'Finish one goal'],['⏱','Deep focus',sessions>=5,'Complete 5 focus sessions']];document.getElementById('achievements').innerHTML=`<div class="module-hero"><div><div class="eyebrow" style="color:#d8ccff">ACHIEVEMENTS</div><h2 style="color:#fff;font-size:25px;margin:6px 0">Progress worth celebrating</h2><div class="muted">Keep building small wins into a bigger life.</div></div><div class="big">${badges.filter(x=>x[2]).length}/${badges.length}</div></div><div class="badge-grid">${badges.map(b=>`<article class="badge ${b[2]?'':'locked'}"><div class="badge-icon">${b[0]}</div><b>${b[1]}</b><small>${b[3]}</small><div style="margin-top:10px">${b[2]?'✓ Unlocked':'🔒 Locked'}</div></article>`).join('')}</div><div class="card" style="margin-top:16px"><h2>🏆 Daily achievement points</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button></div>`}
 
 function mentorQuoteForDate(date){
  const qs=data.mentorQuotes||[]; if(!qs.length)return null;
@@ -832,8 +666,8 @@ function renderMentor(){
  const td=data.tasks.filter(x=>x.date===date), inc=data.income.filter(x=>x.date===date).reduce((a,b)=>a+Number(b.amount||0),0), ex=data.expenses.filter(x=>x.date===date).reduce((a,b)=>a+Number(b.amount||0),0);
  el.innerHTML=`
  <div class="hero"><b>🧭 Mentor Mode — EARN + BUILD + HEAL + DISCIPLINE</b><div class="muted">Friendly support, strict accountability — रोज़ measurable action.</div></div>
- <div class="card mentor-date-card"><div class="section-title"><h2>📅 Mentor Date</h2><span class="tag">AD ${esc(date)} · BS ${esc(formatBsShort(date))}</span></div>${dateFieldMarkup('mentorSelectedDate',date,'Mentor date')}<div class="kpi" style="margin-top:12px"><div class="mini"><b>${td.filter(x=>x.done).length}/${td.length}</b><br><span class="meta">Tasks</span></div><div class="mini"><b>₹${inc.toFixed(0)}</b><br><span class="meta">Income</span></div><div class="mini"><b>₹${ex.toFixed(0)}</b><br><span class="meta">Expense</span></div></div></div>
- <div class="card mentor-quote-card"><div class="between mentor-quote-head"><div><span class="tag">${esc(q?.category||'Motivation')}</span><span class="meta">AD ${esc(date)} · BS ${esc(formatBsShort(date))}</span></div><span class="tag">Positive + Practical</span></div><div class="mentor-quote-text">“${esc(q?.text||'आज अपना Quote / Principle जोड़ें और उसे action बनाइए।')}”</div><div class="mentor-quote-author">— ${esc(q?.author||'Mentor')}</div>
+ <div class="card mentor-date-card"><div class="section-title"><h2>📅 Mentor Date</h2><span class="tag">AD ${esc(date)} · BS ${esc(formatBsShort(date))}</span></div>${dateFieldMarkup('mentorSelectedDate',date,'Mentor date')}<div class="kpi three-kpi mentor-date-kpis" style="margin-top:12px"><div class="mini"><b>${td.filter(x=>x.done).length}/${td.length}</b><br><span class="meta">Tasks</span></div><div class="mini"><b>₹${inc.toFixed(0)}</b><br><span class="meta">Income</span></div><div class="mini"><b>₹${ex.toFixed(0)}</b><br><span class="meta">Expense</span></div></div></div>
+ <div class="card mentor-quote-card"><div class="quote-head mentor-quote-head"><div class="quote-title"><div class="row"><span class="tag">${esc(q?.category||'Motivation')}</span></div><div class="meta quote-date">AD ${esc(date)} · BS ${esc(formatBsShort(date))}</div></div><span class="tag">Positive + Practical</span></div><div class="mentor-quote-text">“${esc(q?.text||'आज अपना Quote / Principle जोड़ें और उसे action बनाइए।')}”</div><div class="mentor-quote-author">— ${esc(q?.author||'Mentor')}</div>
  <div class="mentor-quote-form"><input id="mqText" placeholder="नया Quote / Principle लिखें"><input id="mqAuthor" placeholder="Author / Source"><input id="mqCategory" placeholder="Category: Discipline, Finance, Health..."><button class="primary" type="button" onclick="addMentorQuote()">＋ Add Quote / Principle</button></div></div>
  <div class="mentor-grid">
   <div class="card"><h2>💰 Capital Tracker</h2><p class="muted">₹${Number(m.startingCapital||0).toLocaleString("en-IN")} को consume नहीं—time, skill और income में convert करना है.</p>
@@ -879,59 +713,387 @@ const LIFEOS_CATEGORIES={
 function categoryKey(id){return 'lifeos_category_'+id}
 function getCategoryItems(id){try{return JSON.parse(localStorage.getItem(categoryKey(id))||'[]')}catch(e){return []}}
 function saveCategoryItems(id,items){try{localStorage.setItem(categoryKey(id),JSON.stringify(items))}catch(e){}}
-function renderCategory(id){
- const el=document.getElementById(id),meta=LIFEOS_CATEGORIES[id]; if(!el||!meta)return;
- const items=getCategoryItems(id);
- el.innerHTML=`<div class="hero"><div class="eyebrow">LIFE BALANCE</div><h2>${meta[0]}</h2><p>${meta[1]}</p></div><div class="two"><div class="card"><h2>＋ Add ${meta[0].replace(/^\S+\s/,'')} item</h2><div class="form"><input id="catTitle-${id}" placeholder="Title / priority"><textarea id="catText-${id}" placeholder="Write a thought, plan, habit, responsibility or next action..."></textarea><button class="primary" onclick="addCategoryItem('${id}')">Save Item</button></div></div><div class="card"><h2>Focus areas</h2><p class="muted">${meta[2]}</p><div class="list"><div class="item">Keep one clear next action.</div><div class="item">Review this area weekly.</div><div class="item">Avoid overloading the page with unnecessary effects.</div></div></div></div><div class="card" style="margin-top:14px"><div class="between"><h2>Saved items</h2><span class="tag">${items.length} items</span></div><div class="list">${items.length?items.map(x=>`<div class="item ${x.done?'done':''}"><div class="between"><label class="check"><input type="checkbox" ${x.done?'checked':''} onchange="toggleCategoryItem('${id}','${x.id}',this.checked)"><span><b>${esc(x.title)}</b><div class="meta">${esc(x.text||'')}</div></span></label><button class="danger" onclick="deleteCategoryItem('${id}','${x.id}')">Delete</button></div></div>`).join(''):'<div class="empty">अभी कोई item नहीं।</div>'}</div></div>`;
-}
+
 function addCategoryItem(id){const t=document.getElementById('catTitle-'+id),x=document.getElementById('catText-'+id);if(!t||!t.value.trim())return toast('Title लिखें');const a=getCategoryItems(id);a.unshift({id:uid(),title:t.value.trim(),text:x.value.trim(),done:false,createdAt:Date.now()});saveCategoryItems(id,a);renderCategory(id);toast('Saved')}
 function toggleCategoryItem(id,itemId,done){const a=getCategoryItems(id),x=a.find(v=>v.id===itemId);if(x){x.done=done;saveCategoryItems(id,a);renderCategory(id)}}
 function deleteCategoryItem(id,itemId){saveCategoryItems(id,getCategoryItems(id).filter(x=>x.id!==itemId));renderCategory(id)}
-function renderSettings(){
- const el=document.getElementById('settings');if(!el)return;
- el.innerHTML=`<div class="hero"><div class="eyebrow">CONTROL CENTER</div><h2>⚙️ Settings</h2><p>Theme, backup, device connection and lightweight app controls.</p></div><div class="two"><div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div><div class="card"><h2>💾 Backup & Export</h2><p class="muted">Document-friendly backups</p><div class="settings-backup-grid"><button class="primary" onclick="exportWord()">Word</button><button class="primary" onclick="exportExcel()">Excel</button><button class="primary" onclick="exportPDF()">PDF</button><button class="secondary" id="computerExportBtn" onclick="setupComputerExport()">🖥 Connect Computer</button></div><div class="meta" style="margin-top:10px">Computer connection saves daily LifeOS archive files into a folder you select (Chrome/Edge desktop).</div></div></div><div class="card" style="margin-top:14px"><h2>⚡ Performance</h2><p class="muted">Heavy glow, blur, animation and decorative layers are disabled in this final build for faster startup and clearer contrast on low-end devices.</p></div>`;
-}
 
-function updateComputerExportLabel(){
-  const b=document.getElementById('computerExportBtn');
-  if(!b)return;
-  b.textContent=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||'')?'📱 Transfer to Computer':'🖥 Connect Computer';
-}
 
-function render(){let id=document.querySelector('.section.active').id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='review')renderReview();if(id==='achievements')renderAchievements();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(id==='reset')renderReset();if(LIFEOS_CATEGORIES[id])renderCategory(id);if(id==='settings')renderSettings();updateComputerExportLabel();restoreDrafts()}
-if(new URLSearchParams(location.search).has('reset')) history.replaceState({},document.title,location.pathname);
+function render(){const active=document.querySelector('.section.active');if(!active)return;let id=active.id;if(id==='dashboard')renderDashboard();if(id==='mentor')renderMentor();if(id==='planner')renderPlanner();if(id==='tasks')renderTasks();if(id==='routine')renderRoutine();if(id==='notes')renderNotes();if(id==='journal')renderJournal();if(id==='habits')renderHabits();if(id==='expenses')renderExpenses();if(id==='goals')renderGoals();if(id==='focus')renderFocus();if(LIFEOS_CATEGORIES[id])renderCategory(id);if(id==='settings')renderSettings();restoreDrafts()}
 const __localDate = new Date();
 const __yyyy = __localDate.getFullYear();
 const __mm = String(__localDate.getMonth()+1).padStart(2,'0');
 const __dd = String(__localDate.getDate()).padStart(2,'0');
 const __todayInput=document.getElementById('today'); if(__todayInput) __todayInput.value=`${__yyyy}-${__mm}-${__dd}`;
-syncBsFromAd();
+
+  const CURRENCIES=[
+    ['AED','د.إ'],['AFN','؋'],['ALL','L'],['AMD','֏'],['ANG','ƒ'],['AOA','Kz'],['ARS','$'],['AUD','$'],['AWG','ƒ'],['AZN','₼'],
+    ['BAM','KM'],['BBD','$'],['BDT','৳'],['BGN','лв'],['BHD','.د.ب'],['BIF','FBu'],['BMD','$'],['BND','$'],['BOB','Bs.'],['BRL','R$'],
+    ['BSD','$'],['BTN','Nu.'],['BWP','P'],['BYN','Br'],['BZD','BZ$'],['CAD','$'],['CDF','FC'],['CHF','CHF'],['CLP','$'],['CNY','¥'],
+    ['COP','$'],['CRC','₡'],['CUP','$'],['CVE','$'],['CZK','Kč'],['DJF','Fdj'],['DKK','kr'],['DOP','RD$'],['DZD','دج'],['EGP','E£'],
+    ['ERN','Nfk'],['ETB','Br'],['EUR','€'],['FJD','$'],['FKP','£'],['GBP','£'],['GEL','₾'],['GHS','₵'],['GIP','£'],['GMD','D'],
+    ['GNF','FG'],['GTQ','Q'],['GYD','$'],['HKD','$'],['HNL','L'],['HTG','G'],['HUF','Ft'],['IDR','Rp'],['ILS','₪'],['INR','₹'],
+    ['IQD','ع.د'],['IRR','﷼'],['ISK','kr'],['JMD','J$'],['JOD','د.ا'],['JPY','¥'],['KES','KSh'],['KGS','сом'],['KHR','៛'],['KMF','CF'],
+    ['KPW','₩'],['KRW','₩'],['KWD','د.ك'],['KYD','$'],['KZT','₸'],['LAK','₭'],['LBP','ل.ل'],['LKR','Rs'],['LRD','$'],['LSL','L'],
+    ['LYD','ل.د'],['MAD','د.م.'],['MDL','L'],['MGA','Ar'],['MKD','ден'],['MMK','K'],['MNT','₮'],['MOP','MOP$'],['MRU','UM'],['MUR','₨'],
+    ['MVR','Rf'],['MWK','MK'],['MXN','$'],['MYR','RM'],['MZN','MT'],['NAD','$'],['NGN','₦'],['NIO','C$'],['NOK','kr'],['NPR','रू'],
+    ['NZD','$'],['OMR','ر.ع.'],['PAB','B/.'],['PEN','S/'],['PGK','K'],['PHP','₱'],['PKR','₨'],['PLN','zł'],['PYG','₲'],['QAR','ر.ق'],
+    ['RON','lei'],['RSD','дин'],['RUB','₽'],['RWF','FRw'],['SAR','﷼'],['SBD','$'],['SCR','₨'],['SDG','ج.س.'],['SEK','kr'],['SGD','$'],
+    ['SHP','£'],['SLE','Le'],['SOS','S'],['SRD','$'],['SSP','£'],['STN','Db'],['SYP','£'],['SZL','E'],['THB','฿'],['TJS','ЅМ'],
+    ['TMT','m'],['TND','د.ت'],['TOP','T$'],['TRY','₺'],['TTD','TT$'],['TWD','NT$'],['TZS','TSh'],['UAH','₴'],['UGX','USh'],['USD','$'],
+    ['UYU','$U'],['UZS','soʻm'],['VES','Bs.S'],['VND','₫'],['VUV','VT'],['WST','WS$'],['XAF','FCFA'],['XCD','$'],['XOF','CFA'],['XPF','₣'],
+    ['YER','﷼'],['ZAR','R'],['ZMW','ZK'],['ZWL','$']
+  ];
+  data.settings={...(data.settings||{}),currencyCode:(data.settings?.currencyCode||'NPR'),customCurrency:(data.settings?.customCurrency||{code:'CUSTOM',symbol:'¤'})};
+  function currencyInfo(){
+    const code=data.settings.currencyCode||'NPR';
+    if(code==='CUSTOM'){const c=data.settings.customCurrency||{};return ['CUSTOM',String(c.symbol||c.code||'¤').trim()||'¤'];}
+    const found=CURRENCIES.find(x=>x&&x[0]===code);return found&&found[1]? [found[0],String(found[1])] : ['NPR','रू'];
+  }
+  window.currencySymbol=()=>currencyInfo()[1];
+  window.currencyCode=()=>currencyInfo()[0];
+  window.money=(n,dec=2)=>currencySymbol()+Number(n||0).toLocaleString('en-IN',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  function applyCurrencyText(root=document.body){
+    const sym=currencySymbol(),walk=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];
+    while(walk.nextNode())nodes.push(walk.currentNode);
+    nodes.forEach(n=>{if(n.parentElement?.closest('script,style'))return;if(n.nodeValue.includes('₹'))n.nodeValue=n.nodeValue.replace(/₹/g,sym)});
+    root.querySelectorAll('input[placeholder],textarea[placeholder],input[title]').forEach(el=>{
+      if(el.placeholder?.includes('₹'))el.placeholder=el.placeholder.replace(/₹/g,sym);
+      if(el.title?.includes('₹'))el.title=el.title.replace(/₹/g,sym);
+    });
+  }
+
+  /* AD ↔ BS, both editable */
+  window.syncBsFromAd=function(){
+    const ad=document.getElementById('today')?.value||'',bs=adToBs(ad),b=document.getElementById('todayBs');
+    if(b)b.value=bs?bs.label:'';
+  };
+  window.syncTodayFromBs=function(){
+    const b=document.getElementById('todayBs'),ad=bsToAd(b?.value?.trim()||'');
+    if(!ad){toast('Valid BS date लिखें, जैसे 2083-06-02');return}
+    const a=document.getElementById('today');if(a)a.value=ad;syncBsFromAd();render();
+  };
+  window.syncFieldBs=function(id){
+    const a=document.getElementById(id),b=document.getElementById(id+'Bs');if(!a)return;
+    const bs=adToBs(a.value||'');if(b)b.value=bs?bs.label:'';
+    if(id==='mentorSelectedDate'){data.mentorSelectedDate=a.value||today();save();setTimeout(renderMentor,0)}
+  };
+  window.syncFieldAdFromBs=function(id){
+    const b=document.getElementById(id+'Bs'),ad=bsToAd(b?.value?.trim()||'');
+    if(!ad){toast('Valid BS date लिखें, जैसे 2083-06-02');return}
+    const a=document.getElementById(id);if(a)a.value=ad;syncFieldBs(id);
+  };
+  window.dateFieldMarkup=function(id,value='',label='Date'){
+    const bs=adToBs(value||'');
+    return `<div class="universal-date-field full"><div class="label" style="margin-bottom:4px">${esc(label)}</div><div class="universal-date-control"><label><span class="meta">AD</span><input id="${id}" type="date" value="${esc(value||'')}" aria-label="${esc(label)} (AD)" onchange="syncFieldBs('${id}')"></label><label><span class="meta">BS</span><input id="${id}Bs" class="bs-date-input" type="text" inputmode="numeric" value="${bs?esc(bs.label):''}" placeholder="YYYY-MM-DD" aria-label="${esc(label)} (BS)" onchange="syncFieldAdFromBs('${id}')"></label></div></div>`;
+  };
+  window.selectBsCalendarDate=function(ad){
+    const input=document.getElementById(bsCalendarTarget);if(!input)return;input.value=ad;
+    if(bsCalendarTarget==='today'){syncBsFromAd();render()}else{syncFieldBs(bsCalendarTarget)}closeBsCalendar();
+  };
+
+  /* Daily Plan */
+  window.saveDailyPlan=function(){
+    const key=today(),existing=data.daily[key]||{target:'',progress:'',planPoints:[],achievementPoints:[],reflectionPoints:[]};
+    const t=document.querySelector('#planner #dailyTarget'),p=document.querySelector('#planner #dailyProgress');
+    data.daily[key]={...existing,target:t?t.value:'',progress:p?p.value:''};
+    save();
+    toast('Daily Plan saved ✓');
+    renderPlanner();
+  };
+  window.deleteTodayPlan=function(){
+    if(!data.daily[today()])return toast('आज का Daily Plan खाली है');
+    if(!confirm('आज का पूरा Daily Plan delete करें?'))return;
+    delete data.daily[today()];save();renderPlanner();toast('Today deleted');
+  };
+  window.renderPlanner=function(){
+    const d=dayObj();
+    document.getElementById('planner').innerHTML=`<div class="two"><div class="card"><h2>📅 Daily Plan</h2><div class="formgrid"><div class="full"><label class="label">Main Target</label><input id="dailyTarget" value="${esc(d.target||'')}" placeholder="आज का मुख्य लक्ष्य"></div><div><label class="label">Progress</label><input id="dailyProgress" value="${esc(d.progress||'')}" placeholder="जैसे 70%"></div></div><div class="row" style="margin-top:10px"><button class="primary" type="button" onclick="saveDailyPlan()">💾 Save</button><button class="danger" type="button" onclick="deleteTodayPlan()">🗑 Delete Today</button></div><h2 style="margin-top:18px">📌 Top Priorities — Point Wise</h2><div class="points">${pointHtml('planPoints')}</div><button class="secondary" type="button" onclick="addPoint('planPoints')">+ Add Priority Point</button></div><div class="card"><h2>🏆 Achievement — Point Wise</h2><div class="points">${pointHtml('achievementPoints')}</div><button class="secondary" type="button" onclick="addPoint('achievementPoints')">+ Add Achievement Point</button><h2 style="margin-top:20px">🪞 Reflection — Point Wise</h2><div class="points">${pointHtml('reflectionPoints')}</div><button class="secondary" type="button" onclick="addPoint('reflectionPoints')">+ Add Reflection Point</button></div></div>`;
+  };
+
+  window.renderCategory=function(id){
+    const el=document.getElementById(id),meta=LIFEOS_CATEGORIES[id];if(!el||!meta)return;
+    const items=getCategoryItems(id);
+    el.innerHTML=`<div class="hero"><div class="eyebrow">LIFE BALANCE</div><h2>${meta[0]}</h2><p>${meta[1]}</p></div><div class="two"><div class="card"><h2>＋ Add ${meta[0].replace(/^\S+\s/,'')} item</h2><div class="form"><input id="catTitle-${id}" placeholder="Title / priority"><textarea id="catText-${id}" placeholder="Write a thought, plan, habit, responsibility or next action..."></textarea><button class="primary" onclick="addCategoryItem('${id}')">Save Item</button></div></div><div class="card"><h2>Focus areas</h2><p class="muted">${meta[2]}</p><div class="list"><div class="item">Keep one clear next action.</div><div class="item">Review this area weekly.</div><div class="item">Avoid overloading the page with unnecessary effects.</div></div></div></div><div class="card" style="margin-top:14px"><div class="between"><h2>Saved items</h2><span class="tag">${items.length} items</span></div><div class="list">${items.length?items.map(x=>`<div class="item ${x.done?'done':''}"><div class="saved-item-row"><div class="saved-main"><b>${esc(x.title)}</b><div class="meta">${esc(x.text||'')}</div></div><div class="saved-item-actions"><button class="secondary" type="button" onclick="toggleCategoryItem('${id}','${x.id}',${!x.done})">${x.done?'↩ Undo':'✓ Done'}</button><button class="danger" type="button" onclick="deleteCategoryItem('${id}','${x.id}')">🗑 Delete</button></div></div></div>`).join(''):'<div class="empty">अभी कोई item नहीं।</div>'}</div></div>`;
+  };
+  /* LifeOS Backup & Export + direct computer folder bridge */
+  const COMPUTER_DB='lifeos-computer-connector-v1';
+  const COMPUTER_STORE='connection';
+  let computerDBPromise=null;
+  let computerDirectoryHandle=null;
+
+  function openComputerDB(){
+    if(computerDBPromise)return computerDBPromise;
+    computerDBPromise=new Promise((resolve,reject)=>{
+      if(!('indexedDB' in window)){reject(new Error('IndexedDB unavailable'));return}
+      const req=indexedDB.open(COMPUTER_DB,1);
+      req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(COMPUTER_STORE))req.result.createObjectStore(COMPUTER_STORE)};
+      req.onsuccess=()=>resolve(req.result);
+      req.onerror=()=>reject(req.error||new Error('Computer connector storage unavailable'));
+    });
+    return computerDBPromise;
+  }
+  async function loadComputerConnection(){
+    try{
+      const db=await openComputerDB();
+      computerDirectoryHandle=await new Promise((resolve,reject)=>{
+        const tx=db.transaction(COMPUTER_STORE,'readonly'),req=tx.objectStore(COMPUTER_STORE).get('directory');
+        req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);
+      });
+      return computerDirectoryHandle;
+    }catch(e){return null}
+  }
+  async function saveComputerConnection(handle){
+    try{
+      const db=await openComputerDB();
+      await new Promise((resolve,reject)=>{
+        const tx=db.transaction(COMPUTER_STORE,'readwrite');
+        tx.objectStore(COMPUTER_STORE).put(handle,'directory');
+        tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Connection save failed'));
+      });
+    }catch(e){console.warn('Computer connection persistence failed',e)}
+  }
+  async function clearComputerConnection(){
+    computerDirectoryHandle=null;
+    try{
+      const db=await openComputerDB();
+      await new Promise((resolve,reject)=>{
+        const tx=db.transaction(COMPUTER_STORE,'readwrite');tx.objectStore(COMPUTER_STORE).delete('directory');
+        tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);
+      });
+    }catch(e){}
+    renderSettings();
+  }
+  async function ensureComputerPermission(handle){
+    if(!handle)return false;
+    try{
+      let p=await handle.queryPermission?.({mode:'readwrite'});
+      if(p==='granted')return true;
+      if(handle.requestPermission){p=await handle.requestPermission({mode:'readwrite'});return p==='granted'}
+      return false;
+    }catch(e){return false}
+  }
+  function computerConnected(){return !!computerDirectoryHandle}
+  function computerStatusHtml(){
+    return computerConnected()
+      ? `<span class="backup-connected">● Connected: ${esc(computerDirectoryHandle.name||'Computer folder')}</span>`
+      : `<span class="backup-connected backup-disconnected">● Not connected</span>`;
+  }
+  async function connectComputer(){
+    try{
+      if(!window.showDirectoryPicker){
+        toast('Chrome/Edge desktop में folder connection के लिए यह सुविधा चाहिए');
+        return false;
+      }
+      const handle=await window.showDirectoryPicker({mode:'readwrite'});
+      if(!(await ensureComputerPermission(handle)))throw new Error('Folder permission denied');
+      computerDirectoryHandle=handle;
+      await saveComputerConnection(handle);
+      renderSettings();
+      toast(`✓ Computer connected: ${handle.name}`);
+      return true;
+    }catch(e){
+      if(e?.name!=='AbortError')toast('Computer connection failed');
+      return false;
+    }
+  }
+  async function tryWindowsConnectorSave(filename,content){
+    try{
+      const base='http://127.0.0.1:8765';
+      let status=await fetch(base+'/status',{cache:'no-store'}).then(r=>r.ok?r.json():null);
+      if(!status?.ok)return null;
+      if(!status.connected){
+        const chosen=await fetch(base+'/choose',{method:'POST'}).then(r=>r.ok?r.json():null);
+        if(!chosen?.ok)return false;
+        status=chosen;
+      }
+      const body={filename,contentBase64:btoa(unescape(encodeURIComponent(content)))};
+      const result=await fetch(base+'/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r=>r.ok?r.json():null);
+      if(result?.ok){toast(`✓ Saved to Windows folder: ${filename}`);return true;}
+      return false;
+    }catch(e){return null}
+  }
+  async function saveToComputer(filename,content,mime){
+    /* Prefer the native Windows EXE connector when it is running. */
+    const helperResult=await tryWindowsConnectorSave(filename,content);
+    if(helperResult===true)return true;
+    if(helperResult===false)return false;
+    /* Otherwise use Chrome/Edge's native folder connection. */
+    const handle=computerDirectoryHandle || await loadComputerConnection();
+    if(!handle || !(await ensureComputerPermission(handle))){
+      const ok=await connectComputer();
+      if(!ok)return false;
+      return saveToComputer(filename,content,mime);
+    }
+    const fileHandle=await handle.getFileHandle(filename,{create:true});
+    const writable=await fileHandle.createWritable();
+    await writable.write(new Blob([content],{type:mime||'application/octet-stream'}));
+    await writable.close();
+    toast(`✓ Saved to ${handle.name}: ${filename}`);
+    return true;
+  }
+  function backupPayload(){
+    return {lifeOSBackup:'LifeOS',version:2,exportedAt:new Date().toISOString(),data:localSnapshot(data)};
+  }
+  function backupJson(){return JSON.stringify(backupPayload(),null,2)}
+  function htmlEscapeAttr(s){return esc(String(s??''))}
+  function valueToHtml(value,depth=0){
+    if(depth>6)return '<em>…</em>';
+    if(value===null||value===undefined)return '<span class="muted">null</span>';
+    if(typeof value==='object'){
+      if(Array.isArray(value))return value.length?`<ol>${value.map(v=>`<li>${valueToHtml(v,depth+1)}</li>`).join('')}</ol>`:'<span class="muted">[]</span>';
+      return Object.entries(value).map(([k,v])=>`<div style="margin:4px 0;padding:5px 7px;border-left:2px solid #e0e3e9"><b>${esc(k)}</b>: ${valueToHtml(v,depth+1)}</div>`).join('')||'<span class="muted">{}</span>';
+    }
+    return esc(String(value));
+  }
+  function backupReportHtml(title='LifeOS Backup'){
+    const payload=backupPayload();
+    return `<!doctype html><html><head><meta charset="utf-8"><title>${esc(title)}</title><style>body{font-family:Arial,Segoe UI,sans-serif;color:#1b2330;margin:28px;font-size:12px}h1{font-size:22px;margin:0 0 4px}h2{font-size:15px;margin:18px 0 7px}.meta{color:#667085;margin-bottom:16px}.box{border:1px solid #dfe3e9;border-radius:8px;padding:10px;margin:8px 0;page-break-inside:avoid}table{border-collapse:collapse;width:100%}th,td{border:1px solid #dfe3e9;padding:6px;text-align:left;vertical-align:top}th{background:#f5f6f8}.muted{color:#7b8494}</style></head><body><h1>${esc(title)}</h1><div class="meta">Exported: ${esc(payload.exportedAt)} · LifeOS backup version ${payload.version}</div><div class="box">${valueToHtml(payload.data)}</div></body></html>`;
+  }
+  function backupExcelHtml(){
+    const p=backupPayload(),rows=[];
+    const walk=(obj,path)=>{
+      if(obj===null||obj===undefined||typeof obj!=='object'){rows.push([path,String(obj??'')]);return}
+      if(Array.isArray(obj)){obj.forEach((v,i)=>walk(v,`${path}[${i}]`));if(!obj.length)rows.push([path,'']);return}
+      const entries=Object.entries(obj);if(!entries.length){rows.push([path,'']);return}
+      entries.forEach(([k,v])=>walk(v,path?`${path}.${k}`:k));
+    };
+    walk(p.data,'');
+    return `<!doctype html><html><head><meta charset="utf-8"><title>LifeOS Backup</title></head><body><h2>LifeOS Backup</h2><p>Exported: ${esc(p.exportedAt)}</p><table border="1"><tr><th>Field</th><th>Value</th></tr>${rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('')}</table></body></html>`;
+  }
+  window.exportLifeOSBackup=async function(){
+    try{
+      const name='LifeOS_Backup_'+today()+'.json',json=backupJson();
+      if(await saveToComputer(name,json,'application/json'))return;
+      const blob=new Blob([json],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+      a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ LifeOS backup exported');
+    }catch(e){toast('Backup export failed')}
+  };
+  window.exportLifeOSWord=async function(){
+    try{
+      const name='LifeOS_Backup_'+today()+'.doc',html=backupReportHtml('LifeOS Backup — Word');
+      if(await saveToComputer(name,html,'application/msword'))return;
+      const blob=new Blob([html],{type:'application/msword'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Word backup exported');
+    }catch(e){toast('Word export failed')}
+  };
+  window.exportLifeOSExcel=async function(){
+    try{
+      const name='LifeOS_Backup_'+today()+'.xls',html=backupExcelHtml();
+      if(await saveToComputer(name,html,'application/vnd.ms-excel'))return;
+      const blob=new Blob([html],{type:'application/vnd.ms-excel'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('✓ Excel backup exported');
+    }catch(e){toast('Excel export failed')}
+  };
+  window.exportLifeOSPdf=async function(){
+    try{
+      const html=backupReportHtml('LifeOS Backup — PDF');
+      const w=window.open('','_blank','noopener,noreferrer');
+      if(!w){toast('Popup blocked — allow popups for PDF export');return}
+      w.document.open();w.document.write(html.replace('</body>','<script>window.addEventListener("load",()=>setTimeout(()=>window.print(),250));<\/script></body>'));w.document.close();
+      toast('✓ PDF print window opened — choose Save as PDF');
+    }catch(e){toast('PDF export failed')}
+  };
+  window.importLifeOSBackup=function(input){
+    const file=input?.files?.[0];if(!file)return;
+    const reader=new FileReader();
+    reader.onload=async()=>{
+      try{
+        const payload=JSON.parse(String(reader.result||''));
+        if(!payload||payload.lifeOSBackup!=='LifeOS'||!payload.data||typeof payload.data!=='object')throw new Error('Invalid backup');
+        if(!confirm('Import this LifeOS backup? Current LifeOS data will be replaced by the backup.')){input.value='';return;}
+        data=payload.data;
+        data.__drafts=(data.__drafts&&typeof data.__drafts==='object')?data.__drafts:{};
+        data.settings=(data.settings&&typeof data.settings==='object')?data.settings:{mode:'light'};
+        await persistLocalNow();try{await persistDeviceNow()}catch(e){}
+        input.value='';render();renderSettings();toast('✓ LifeOS backup imported');
+      }catch(e){input.value='';toast('Invalid LifeOS backup file')}
+    };
+    reader.readAsText(file);
+  };
+  window.toggleBackupExportMenu=function(ev){
+    if(ev)ev.stopPropagation();
+    const m=document.getElementById('backupExportMenu');
+    if(m)m.classList.toggle('open');
+  };
+  document.addEventListener('click',e=>{
+    const m=document.getElementById('backupExportMenu');
+    if(m&&!e.target.closest('.backup-export-menu-wrap'))m.classList.remove('open');
+  });
+  window.connectComputer=connectComputer;
+  window.disconnectComputer=clearComputerConnection;
+  /* Settings + currency */
+  window.setCustomCurrency=function(v){
+    const raw=String(v??'').trim();data.settings.customCurrency={code:'CUSTOM',symbol:(raw||'¤').slice(0,8)};
+    data.settings.currencyCode='CUSTOM';save();renderSettings();
+  };
+  window.setLifeOSCurrency=function(code){
+    data.settings.currencyCode=code||'NPR';save();renderSettings();setTimeout(()=>{render();applyCurrencyText(document.body)},0);
+  };
+  window.convertCurrencyAmount=function(){
+    const amount=Number(document.getElementById('convAmount')?.value||0);
+    const rate=Number(document.getElementById('convRate')?.value||0);
+    const from=document.getElementById('convFrom')?.value||currencyCode();
+    const to=document.getElementById('convTo')?.value||'USD';
+    const result=document.getElementById('convResult');
+    if(!result)return;
+    if(!Number.isFinite(amount)||!Number.isFinite(rate)||rate<=0){result.textContent='Enter a valid amount and rate';return}
+    const fromInfo=from==='CUSTOM'?(data.settings.customCurrency||{symbol:'¤'}):(CURRENCIES.find(x=>x[0]===from)||[from,from]);
+    const toInfo=to==='CUSTOM'?(data.settings.customCurrency||{symbol:'¤'}):(CURRENCIES.find(x=>x[0]===to)||[to,to]);
+    const value=amount*rate;
+    result.textContent=`${fromInfo.symbol||from} ${amount.toLocaleString('en-IN')} = ${toInfo.symbol||to} ${value.toLocaleString('en-IN',{maximumFractionDigits:4})}`;
+  };
+
+  window.renderSettings=function(){
+    const el=document.getElementById('settings');if(!el)return;
+    const code=currencyCode(),info=currencyInfo();
+    el.innerHTML=`
+<div class="settings-layout-b">
+<div class="settings-left-stack">
+<div class="card">
+<div class="eyebrow">CONTROL CENTER</div>
+<h2>⚙️ Settings</h2>
+<p>Theme, currency and LifeOS backup controls.</p>
+</div>
+
+      <div class="card"><h2>🎨 Appearance</h2><p class="muted">Readable light mode is default. Theme switch remains available in the sidebar.</p><button class="secondary" type="button" onclick="window.toggleAppearance();return false">🌗 Toggle Light / Dark</button></div>
+      </div><div class="card"><div class="between"><div><h2>💾 Backup &amp; Export</h2><p class="muted">Document-friendly backups</p></div><div id="backupConnectionStatus">${computerStatusHtml()}</div></div><div class="backup-actions-title">Backup Controls</div><div class="backup-actions-grid"><label class="secondary backup-import-label">⬆️ Import<input type="file" accept="application/json,.json" onchange="window.importLifeOSBackup(this)"></label><div class="backup-export-menu-wrap"><button class="secondary" type="button" onclick="window.toggleBackupExportMenu(event)">⬇️ Export ▾</button><div class="backup-export-menu" id="backupExportMenu"><button type="button" onclick="window.exportLifeOSWord();window.toggleBackupExportMenu()">▣ Word</button><button type="button" onclick="window.exportLifeOSExcel();window.toggleBackupExportMenu()">▤ Excel</button><button type="button" onclick="window.exportLifeOSPdf();window.toggleBackupExportMenu()">▧ PDF</button></div></div><button class="secondary backup-connect" type="button" onclick="${computerConnected()?'window.disconnectComputer()':'window.connectComputer()'}">▣ ${computerConnected()?'Disconnect Computer':'Connect Computer'}</button></div><div class="currency-note" style="margin-top:9px">Connect Computer चुनकर कोई Windows folder select करें. उसके बाद Word/Excel/JSON backup सीधे उसी folder में save होंगे. PDF के लिए print dialog में “Save as PDF” चुनें.</div></div>
+    </div>
+    <div class="card settings-card"><h2>💱 Currency</h2><p class="muted">Changing currency changes display/accounting currency only. Existing amounts are not live-converted and no exchange-rate API is used.</p><div class="currency-grid"><label>Currency<select id="lifeosCurrencySelect" onchange="setLifeOSCurrency(this.value)">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]===code?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM" ${code==='CUSTOM'?'selected':''}>CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>Custom Currency Symbol / Code<input id="customCurrencyInput" value="${esc(data.settings.customCurrency?.symbol||'¤')}" placeholder="e.g. ₿ or XYZ" onchange="setCustomCurrency(this.value)"></label></div><div class="currency-note" style="margin-top:7px">Default: NPR — रू · Includes INR, USD, EUR, GBP, JPY, CNY, AUD, CAD, AED, SAR, RUB and the broader ISO-style list.</div></div>
+    <div class="card settings-card"><h2>🔄 Currency Converter</h2><p class="muted">Manual-rate converter: enter the rate as <b>1 From = X To</b>. No live exchange-rate API is used.</p><div class="currency-converter-grid"><label>From<select id="convFrom" onchange="convertCurrencyAmount()">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]===code?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM">CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>To<select id="convTo" onchange="convertCurrencyAmount()">${CURRENCIES.filter(x=>x&&x[0]).map(x=>`<option value="${esc(x[0])}" ${x[0]==='USD'?'selected':''}>${esc(x[0])} — ${esc(x[1]||x[0])}</option>`).join('')}<option value="CUSTOM">CUSTOM — ${esc(info[1]||'¤')}</option></select></label><label>Amount<input id="convAmount" type="number" step="any" min="0" value="1" oninput="convertCurrencyAmount()"></label><label>Rate (1 From = X To)<input id="convRate" type="number" step="any" min="0" value="1" oninput="convertCurrencyAmount()"></label></div><div id="convResult" class="currency-result" style="margin-top:9px">—</div></div>
+    <div class="card settings-card"><h2>⚡ Performance</h2><p class="muted">No external libraries, no external fonts, no heavy blur/animation layers, and lightweight local storage for fast startup on low-end devices.</p></div>`;
+    const panel=document.getElementById('settingsDeviceStorage');
+    const btn=document.getElementById('deviceStorageToggle');
+    const chev=document.getElementById('deviceStorageChevron');
+    if(panel){panel.hidden=true;panel.innerHTML='';}
+    if(btn)btn.setAttribute('aria-expanded','false');
+    if(chev)chev.textContent='▾';
+    convertCurrencyAmount();
+  };
+
+  /* Render wrapper: keep new currency/date UI synchronized. */
+  const baseShow=window.show;
+  window.show=function(id){
+    const r=baseShow.apply(this,arguments);
+    setTimeout(()=>{syncBsFromAd();applyCurrencyText(document.body)},0);
+    return r;
+  };
+  const baseRender=window.render;
+  window.render=function(){
+    const r=baseRender.apply(this,arguments);
+    setTimeout(()=>applyCurrencyText(document.body),0);
+    return r;
+  };
+
+  data.settings.currencyCode=data.settings.currencyCode||'NPR';
+  if(!data.settings.customCurrency||typeof data.settings.customCurrency!=='object')data.settings.customCurrency={code:'CUSTOM',symbol:'¤'};
+  data.settings.customCurrency.symbol=String(data.settings.customCurrency.symbol||data.settings.customCurrency.code||'¤').trim()||'¤';
+  save();
+  setTimeout(()=>{syncBsFromAd();applyCurrencyText(document.body)},0);
+
 nav();show('dashboard');
 
 // Keep below-the-fold images cheap; the brand logo stays eager for instant header paint.
 document.querySelectorAll('img:not(.brand-logo)').forEach(img=>{img.loading='lazy';img.decoding='async'});
 
-
 </script>
-<script>
-(function(){
-  const syncCompactNav=()=>{
-    const active=document.querySelector('.section.active');
-    const id=active&&active.id;
-    document.querySelectorAll('#mobileBottomNav button[data-section]').forEach(b=>{
-      b.classList.toggle('active',b.dataset.section===id);
-    });
-  };
-  const oldShow=window.show;
-  if(typeof oldShow==='function'){
-    window.show=function(){
-      const r=oldShow.apply(this,arguments);
-      requestAnimationFrame(syncCompactNav);
-      return r;
-    };
-  }
-  window.addEventListener('load',syncCompactNav);
-})();
-</script>
-
-</body></html>
+</body>
+</html>
